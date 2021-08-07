@@ -2,7 +2,27 @@
     "name": "FrontSight",
     "description": "gateway NR for sensor PCBV3 connected to NUCi3",
     "version": "0.0.1",
-    "dependencies": {},
+    "dependencies": {
+        "node-red-contrib-aedes": "0.5.2",
+        "node-red-contrib-moment": "4.0.0",
+        "node-red-contrib-ngrok": "2.0.0",
+        "node-red-contrib-postgrestor-next": "0.0.6c",
+        "node-red-contrib-random-item": "1.0.3",
+        "node-red-contrib-re-postgres": "0.3.2",
+        "node-red-contrib-remote": "1.2.1",
+        "node-red-contrib-telegrambot": "9.4.3",
+        "node-red-contrib-ui-etable": "4.6.3",
+        "node-red-contrib-web-worldmap": "2.13.3",
+        "node-red-dashboard": "2.29.0",
+        "node-red-node-base64": "0.3.0",
+        "node-red-node-data-generator": "0.2.0",
+        "node-red-node-email": "1.12.1",
+        "node-red-node-rbe": "0.5.0",
+        "node-red-node-serialport-wildcard": "0.7.2",
+        "node-red-node-ui-iframe": "0.2.1",
+        "random-generator_node-red-contrib": "1.0.0",
+        "thethingbox-node-timestamp": "2.0.0"
+    },
     "node-red": {
         "settings": {
             "flowFile": "flows_nuci3.json",
