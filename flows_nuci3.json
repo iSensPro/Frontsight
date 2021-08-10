@@ -285,7 +285,7 @@
                     "edited": true
                 },
                 "page-titlebar-backgroundColor": {
-                    "value": "#16e213",
+                    "value": "#080303",
                     "edited": true
                 },
                 "page-backgroundColor": {
@@ -305,19 +305,19 @@
                     "edited": true
                 },
                 "group-backgroundColor": {
-                    "value": "#033cf8",
+                    "value": "#ccc7c7",
                     "edited": true
                 },
                 "widget-textColor": {
-                    "value": "#060613",
+                    "value": "#ededf7",
                     "edited": true
                 },
                 "widget-backgroundColor": {
-                    "value": "#031af8",
+                    "value": "#575757",
                     "edited": true
                 },
                 "widget-borderColor": {
-                    "value": "#d2d8db",
+                    "value": "#34343d",
                     "edited": true
                 },
                 "base-font": {
@@ -882,8 +882,8 @@
         "newline": "\\n",
         "bin": "false",
         "out": "char",
-        "addchar": "",
-        "responsetimeout": "10000"
+        "addchar": false,
+        "responsetimeout": "50000"
     },
     {
         "id": "bbc3532f.41ca7",
@@ -1146,7 +1146,7 @@
         "bin": "false",
         "out": "char",
         "addchar": false,
-        "responsetimeout": "10000"
+        "responsetimeout": "50000"
     },
     {
         "id": "50f22906.5ea4b",
@@ -1160,7 +1160,7 @@
         "bin": "false",
         "out": "char",
         "addchar": false,
-        "responsetimeout": "10000"
+        "responsetimeout": "50000"
     },
     {
         "id": "bf3cfe69.4c1b78",
@@ -2410,7 +2410,7 @@
         "type": "debug",
         "z": "3fb5a67.37c495a",
         "name": "",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -8515,7 +8515,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "VLow",
-        "func": "var vlow;\n\n// set new flow variable\n//flow.set('vlowM1',msg.vlow);\n\nmsg.backspaces = 4;\nmsg.payload = '';\n\nvlow = String(msg.vlow);\n\n//padding before number\nfor(var j = 0; j < (msg.backspaces-vlow.length); j++)\n{ \n    msg.payload += '0';\n}\n\n\nfor(var i = 0; i < vlow.length; i++)\n{ \n    msg.payload += vlow[i];\n}\n\nmsg.payload = msg.payload.toString();\nmsg.topic = 5;\n\nreturn msg;",
+        "func": "var vlow;\n\n// set new flow variable\nflow.set('vlowM1',msg.vlow);\n\nmsg.backspaces = 4;\nmsg.payload = '';\n\nvlow = String(msg.vlow);\n\n//padding before number\nfor(var j = 0; j < (msg.backspaces-vlow.length); j++)\n{ \n    msg.payload += '0';\n}\n\n\nfor(var i = 0; i < vlow.length; i++)\n{ \n    msg.payload += vlow[i];\n}\n\nmsg.payload = msg.payload.toString();\nmsg.topic = 5;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -9508,7 +9508,7 @@
         "z": "3fb5a67.37c495a",
         "name": "vhigh",
         "label": "change V High (mV)",
-        "tooltip": "between 0 and 3170 mVolt",
+        "tooltip": "between VLow and 3170 mVolt",
         "group": "92957720.d414",
         "order": 2,
         "width": 6,
@@ -9531,7 +9531,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "validate input",
-        "func": "\nmsg.background = 'grey';\nif (msg.payload == '')\n{\n    msg.enabled = false;\n}\nelse\n{\n    if ((msg.payload <= 3170) && (msg.payload >=0))\n    {\n        msg.enabled = true;\n        msg.background = 'green';\n    }\n    else msg.enabled = false;\n}\n\nmsg.tooltip = 'between 0 and 3170 mVolt';\nreturn msg;",
+        "func": "var vlow = flow.get('vlowM1');\n\nmsg.background = 'grey';\nif (msg.payload == '')\n{\n    msg.enabled = false;\n}\nelse\n{\n    if ((msg.payload <= 3170) && (msg.payload > vlow))\n    {\n        msg.enabled = true;\n        msg.background = 'green';\n    }\n    else msg.enabled = false;\n}\n\nmsg.tooltip = 'between VLow and 3170 mVolt';\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -9625,7 +9625,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "validate input",
-        "func": "var vhigh = global.get('vhighM1');\n\nmsg.background = 'grey';\nif (msg.payload == '')\n{\n    msg.enabled = false;\n}\nelse\n{\n    if ((msg.payload < vhigh) && (msg.payload >= 1))\n    {\n        msg.enabled = true;\n        msg.background = 'green';\n    }\n    else msg.enabled = false;\n}\n\nmsg.tooltip = 'between 0 and VHigh';\nreturn msg;",
+        "func": "var vhigh = flow.get('vhighM1');\n\nmsg.background = 'grey';\nif (msg.payload == '')\n{\n    msg.enabled = false;\n}\nelse\n{\n    if ((msg.payload < vhigh) && (msg.payload >= 10))\n    {\n        msg.enabled = true;\n        msg.background = 'green';\n    }\n    else msg.enabled = false;\n}\n\nmsg.tooltip = 'between 10mV and VHigh';\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -9645,7 +9645,7 @@
         "z": "3fb5a67.37c495a",
         "name": "vlow",
         "label": "change V Low (mV)",
-        "tooltip": "between 0 and VHigh",
+        "tooltip": "between 10mV and VHigh",
         "group": "92957720.d414",
         "order": 3,
         "width": 6,
@@ -12210,7 +12210,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "VHigh",
-        "func": "var vhigh;\n\n// set new flow variable\nglobal.set('vhighM1',msg.vhigh);\n\nmsg.backspaces = 4;\nmsg.payload = '';\n\nvhigh = String(msg.vhigh);\n\n//padding before number\nfor(var j = 0; j < (msg.backspaces-vhigh.length); j++)\n{ \n    msg.payload += '0';\n}\n\n\nfor(var i = 0; i < vhigh.length; i++)\n{ \n    msg.payload += vhigh[i];\n}\n\nmsg.payload = msg.payload.toString();\nmsg.topic = 4;\n\nreturn msg;",
+        "func": "var vhigh;\n\n// set new flow variable\nflow.set('vhighM2',msg.vhigh);\n\nmsg.backspaces = 4;\nmsg.payload = '';\n\nvhigh = String(msg.vhigh);\n\n//padding before number\nfor(var j = 0; j < (msg.backspaces-vhigh.length); j++)\n{ \n    msg.payload += '0';\n}\n\n\nfor(var i = 0; i < vhigh.length; i++)\n{ \n    msg.payload += vhigh[i];\n}\n\nmsg.payload = msg.payload.toString();\nmsg.topic = 4;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -12229,7 +12229,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "VLow",
-        "func": "var vlow;\n\n// set new flow variable\n//global.set('vlowM2',msg.vlow);\n\nmsg.backspaces = 4;\nmsg.payload = '';\n\nvlow = String(msg.vlow);\n\n//padding before number\nfor(var j = 0; j < (msg.backspaces-vlow.length); j++)\n{ \n    msg.payload += '0';\n}\n\n\nfor(var i = 0; i < vlow.length; i++)\n{ \n    msg.payload += vlow[i];\n}\n\nmsg.payload = msg.payload.toString();\nmsg.topic = 5;\n\nreturn msg;",
+        "func": "var vlow;\n\n// set new flow variable\nflow.set('vlowM2',msg.vlow);\n\nmsg.backspaces = 4;\nmsg.payload = '';\n\nvlow = String(msg.vlow);\n\n//padding before number\nfor(var j = 0; j < (msg.backspaces-vlow.length); j++)\n{ \n    msg.payload += '0';\n}\n\n\nfor(var i = 0; i < vlow.length; i++)\n{ \n    msg.payload += vlow[i];\n}\n\nmsg.payload = msg.payload.toString();\nmsg.topic = 5;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -12567,7 +12567,7 @@
         "z": "3fb5a67.37c495a",
         "name": "vhigh",
         "label": "change V High (mV)",
-        "tooltip": "between 0 and 3170 mVolt",
+        "tooltip": "between VLow and 3170 mVolt",
         "group": "92957720.d414",
         "order": 15,
         "width": 6,
@@ -12590,7 +12590,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "validate input",
-        "func": "\nmsg.background = 'grey';\nif (msg.payload == '')\n{\n    msg.enabled = false;\n}\nelse\n{\n    if ((msg.payload <= 3170) && (msg.payload >=0))\n    {\n        msg.enabled = true;\n        msg.background = 'green';\n    }\n    else msg.enabled = false;\n}\n\nmsg.tooltip = 'between 0 and 3170 mVolt';\nreturn msg;",
+        "func": "var vlow = flow.get('vlowM2');\n\nmsg.background = 'grey';\nif (msg.payload == '')\n{\n    msg.enabled = false;\n}\nelse\n{\n    if ((msg.payload <= 3170) && (msg.payload > vlow))\n    {\n        msg.enabled = true;\n        msg.background = 'green';\n    }\n    else msg.enabled = false;\n}\n\nmsg.tooltip = 'between VLow and 3170 mVolt';\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -12683,7 +12683,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "validate input",
-        "func": "var vhigh = global.get('vhighM2');\n\nmsg.background = 'grey';\nif (msg.payload == '')\n{\n    msg.enabled = false;\n}\nelse\n{\n    if ((msg.payload < vhigh) && (msg.payload >= 1))\n    {\n        msg.enabled = true;\n        msg.background = 'green';\n    }\n    else msg.enabled = false;\n}\n\nmsg.tooltip = 'between 0 and VHigh';\nreturn msg;",
+        "func": "var vhigh = flow.get('vhighM2');\n\nmsg.background = 'grey';\nif (msg.payload == '')\n{\n    msg.enabled = false;\n}\nelse\n{\n    if ((msg.payload < vhigh) & (msg.payload >= 10))\n    {\n        msg.enabled = true;\n        msg.background = 'green';\n    }\n    else msg.enabled = false;\n}\n\nmsg.tooltip = 'between 10mV and VHigh';\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -12703,7 +12703,7 @@
         "z": "3fb5a67.37c495a",
         "name": "vlow",
         "label": "change V Low (mV)",
-        "tooltip": "between 0 and VHigh",
+        "tooltip": "between 10mV and VHigh",
         "group": "92957720.d414",
         "order": 16,
         "width": 6,
