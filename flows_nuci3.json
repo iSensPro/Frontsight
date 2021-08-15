@@ -1163,15 +1163,6 @@
         "responsetimeout": "50000"
     },
     {
-        "id": "bf3cfe69.4c1b78",
-        "type": "ui_spacer",
-        "name": "spacer",
-        "group": "f12df54.fdd1f08",
-        "order": 9,
-        "width": "6",
-        "height": "3"
-    },
-    {
         "id": "aeeff6f.236b988",
         "type": "ui_spacer",
         "name": "spacer",
@@ -1185,7 +1176,7 @@
         "type": "ui_spacer",
         "name": "spacer",
         "group": "f12df54.fdd1f08",
-        "order": 14,
+        "order": 16,
         "width": "12",
         "height": "2"
     },
@@ -1212,7 +1203,7 @@
         "type": "ui_spacer",
         "name": "spacer",
         "group": "f12df54.fdd1f08",
-        "order": 22,
+        "order": 24,
         "width": "6",
         "height": "3"
     },
@@ -2062,7 +2053,7 @@
         "type": "postgrestor",
         "z": "3fb5a67.37c495a",
         "name": "sensor_data@localhost",
-        "query": "DROP TABLE IF EXISTS \"{{ msg.topic }}\" CASCADE;\n\nCREATE TABLE \"{{ msg.topic }}\" (\n\t\"ts\" timestamptz NOT NULL,\n\t\"masterid\" varchar[50] NOT NULL,\n\t\"sensorid\" integer NOT NULL,\n\t\"cap\" integer NOT NULL,\n\t\"accel\" integer NOT NULL,\n\t\"surftemp\" integer NOT NULL,\n\t\"inttemp\" integer NOT NULL,\n\t\"exttemp\" integer NOT NULL,\n\t\"mvbat\" integer NOT NULL,\n\t\"mvnoise\" integer,\n\t\"vhigh\" integer,\n    \"vlow\" integer,\n    \"rcharge\" integer,\n    \"mwindow\" integer,\n    \"mperiod\" integer,\n    \"sequence\" integer,\n    \"average\" integer,\n    \"stdev\" float,\n    \"z\" float,\n\tCONSTRAINT \"sensor_data_table_pk\" PRIMARY KEY (\"ts\")\n) WITH (\n  OIDS=FALSE\n)\nTABLESPACE pg_default;\n",
+        "query": "DROP TABLE IF EXISTS \"{{ msg.topic }}\" CASCADE;\n\nCREATE TABLE \"{{ msg.topic }}\" (\n\t\"ts\" timestamptz NOT NULL,\n\t\"masterid\" varchar[50] NOT NULL,\n\t\"sensorid\" integer NOT NULL,\n\t\"description\" varchar[50],\n\t\"cap\" integer NOT NULL,\n\t\"accel\" integer NOT NULL,\n\t\"surftemp\" integer NOT NULL,\n\t\"inttemp\" integer NOT NULL,\n\t\"exttemp\" integer NOT NULL,\n\t\"mvbat\" integer NOT NULL,\n\t\"mvnoise\" integer,\n\t\"vhigh\" integer,\n    \"vlow\" integer,\n    \"rcharge\" integer,\n    \"mwindow\" integer,\n    \"mperiod\" integer,\n    \"sequence\" integer,\n    \"average\" integer,\n    \"stdev\" float,\n    \"z\" float,\n\tCONSTRAINT \"sensor_data_table_pk\" PRIMARY KEY (\"ts\")\n) WITH (\n  OIDS=FALSE\n)\nTABLESPACE pg_default;\n",
         "postgresDB": "de28406b.eebd5",
         "output": true,
         "outputs": 1,
@@ -2187,7 +2178,7 @@
         "type": "postgrestor",
         "z": "3fb5a67.37c495a",
         "name": "sensor_data@localhost",
-        "query": "INSERT INTO sensor_data_table \n(\n    ts, \n    masterid,\n    sensorid, \n    cap, \n    accel, \n    surftemp,\n    inttemp, \n    exttemp, \n    mvbat, \n    mvnoise,\n    vhigh,\n    vlow,\n    rcharge,\n    mwindow,\n    mperiod,\n    sequence,\n    average,\n    stdev,\n    z\n) VALUES\n(\n    '{{msg.timestamp}}', \n    '{{{msg.masterid}}}',\n    '{{msg.sensorid}}', \n    '{{msg.cap}}', \n    '{{msg.accel}}', \n    '{{msg.surftemp}}', \n    '{{msg.inttemp}}', \n    '{{msg.exttemp}}', \n    '{{msg.mvbat}}',\n    '{{msg.mvnoise}}',\n    '{{msg.vhigh}}',\n    '{{msg.vlow}}',\n    '{{msg.rcharge}}',\n    '{{msg.mwindow}}',\n    '{{msg.period}}',\n    '{{msg.sequence}}',\n    '{{msg.avg}}',\n    '{{msg.stdev}}',\n    '{{msg.z}}'\n);\n\n--SELECT \n--    pg_terminate_backend(pid) \n--FROM \n--    pg_stat_activity \n--WHERE \n    -- don't kill my own connection!\n--    pid <> pg_backend_pid();",
+        "query": "INSERT INTO sensor_data_table \n(\n    ts, \n    masterid,\n    sensorid,\n    cap, \n    accel, \n    surftemp,\n    inttemp, \n    exttemp, \n    mvbat, \n    mvnoise,\n    vhigh,\n    vlow,\n    rcharge,\n    mwindow,\n    mperiod,\n    sequence,\n    average,\n    stdev,\n    z\n) VALUES\n(\n    '{{msg.timestamp}}', \n    '{{{msg.masterid}}}',\n    '{{msg.sensorid}}', \n    '{{msg.cap}}', \n    '{{msg.accel}}', \n    '{{msg.surftemp}}', \n    '{{msg.inttemp}}', \n    '{{msg.exttemp}}', \n    '{{msg.mvbat}}',\n    '{{msg.mvnoise}}',\n    '{{msg.vhigh}}',\n    '{{msg.vlow}}',\n    '{{msg.rcharge}}',\n    '{{msg.mwindow}}',\n    '{{msg.period}}',\n    '{{msg.sequence}}',\n    '{{msg.avg}}',\n    '{{msg.stdev}}',\n    '{{msg.z}}'\n);\n\n--SELECT \n--    pg_terminate_backend(pid) \n--FROM \n--    pg_stat_activity \n--WHERE \n    -- don't kill my own connection!\n--    pid <> pg_backend_pid();",
         "postgresDB": "de6b1325.f01d58",
         "output": true,
         "outputs": 1,
@@ -2410,7 +2401,7 @@
         "type": "debug",
         "z": "3fb5a67.37c495a",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -3370,7 +3361,7 @@
         "name": "Get coordinates",
         "info": "",
         "x": 440,
-        "y": 700,
+        "y": 600,
         "wires": []
     },
     {
@@ -6388,7 +6379,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "",
-        "func": "//msg.topic = msg.port.slice(-1);\nmsg.masterid = msg.topic;\nmsg.sensorid = msg.payload.nodeid;\nmsg.date = msg.payload.date;\nmsg.time = msg.payload.time;\nmsg.surftemp = parseInt(msg.payload.temp1 *100);\nmsg.exttemp = parseInt(msg.payload.temp2*100);\nmsg.inttemp = parseInt(msg.payload.temp2*100);\nmsg.accel = msg.payload.accel;\nmsg.mvnoise = msg.payload.noise;\nmsg.mvbat = msg.payload.battery;\nmsg.cap = msg.payload.value;\nmsg.vhigh = msg.payload.vhigh;\nmsg.vlow = msg.payload.vlow;\nmsg.rcharge = msg.payload.rcharge;\nmsg.mwindow = msg.payload.mwindow;\nmsg.sequence = msg.payload.no;\nmsg.noise = msg.payload.noise;\nmsg.avg = msg.payload.avg;\nmsg.stdev = msg.payload.stdv;\nmsg.z = msg.payload.z;\nmsg.batterymv = msg.payload.battery;\nreturn msg;",
+        "func": "//msg.topic = msg.port.slice(-1);\nmsg.masterid = msg.topic;\nmsg.sensorid = msg.payload.nodeid;\nmsg.date = msg.payload.date;\nmsg.time = msg.payload.time;\nmsg.surftemp = parseInt(msg.payload.temp1 *100);\nmsg.exttemp = parseInt(msg.payload.temp2*100);\nmsg.inttemp = parseInt(msg.payload.temp2*100);\nmsg.accel = msg.payload.accel;\nmsg.mvnoise = msg.payload.noise;\nmsg.mvbat = msg.payload.battery;\nmsg.cap = msg.payload.value;\nmsg.vhigh = msg.payload.vhigh;\nmsg.vlow = msg.payload.vlow;\nmsg.rcharge = msg.payload.rcharge;\nmsg.mwindow = msg.payload.mwindow;\nmsg.sequence = msg.payload.no;\nmsg.noise = msg.payload.noise;\nmsg.avg = msg.payload.avg;\nmsg.stdev = msg.payload.stdv;\nmsg.z = msg.payload.z;\nmsg.batterymv = msg.payload.battery;\n//msg.description = msg.payload.description;\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -6445,7 +6436,7 @@
         "type": "function",
         "z": "23aae268.c697d6",
         "name": "",
-        "func": "\nmsg.payload =   'Dear,\\n\\r' + \n                ' an iSensPro gateway access link has been created for you :\\n' + \n                '    for configuration  : https://nrcust1gw1.eu.ngrok.io/ui \\n' +\n                '    for graphs         : https://grcust1gw1.eu.ngrok.io/d/X6NRqJznk/isenspro?orgId=1&refresh=5m \\n'+\n                ' for a duration of 1 hour';\n\nmsg.originator = msg.from;\nmsg.to = msg.from + ',' + msg.cc;\nmsg.cc = 'log@isenspro.com';\nmsg.from = msg.header.to.value[0].address;\nmsg.topic = 'iSensPro access request granted';\n\nreturn msg;",
+        "func": "\nmsg.payload =   'Dear,\\n\\r' + \n                ' an iSensPro gateway access link has been created for you :\\n' + \n                '    for configuration  : https://nrcust1gw1.eu.ngrok.io/ui \\n' +\n                '    for graphs         : https://grcust1gw1.eu.ngrok.io/d/X6NRqJznk/isenspro?orgId=1&refresh=5m \\n'+\n                ' for a duration of 1 hour';\n\nmsg.originator = msg.from;\nmsg.to = msg.from + ',' + msg.cc;\nmsg.cc = 'log@isenspro.com';\n// msg.from = gateway address; subsequent request to this gateway will be bo-locked, but customers can use the existing tunnel for the remaining time\nmsg.from = msg.header.to.value[0].address;\nmsg.topic = 'iSensPro access request granted';\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -6732,7 +6723,7 @@
         "finalize": "",
         "libs": [],
         "x": 1230,
-        "y": 1440,
+        "y": 1600,
         "wires": [
             [
                 "9ceb2bbb.7655c8"
@@ -6751,7 +6742,7 @@
         "finalize": "",
         "libs": [],
         "x": 1200,
-        "y": 1480,
+        "y": 1640,
         "wires": [
             [
                 "9ceb2bbb.7655c8"
@@ -6770,7 +6761,7 @@
         "finalize": "",
         "libs": [],
         "x": 1190,
-        "y": 1520,
+        "y": 1680,
         "wires": [
             [
                 "9ceb2bbb.7655c8"
@@ -6789,7 +6780,7 @@
         "finalize": "",
         "libs": [],
         "x": 1210,
-        "y": 1560,
+        "y": 1720,
         "wires": [
             [
                 "9ceb2bbb.7655c8"
@@ -6808,7 +6799,7 @@
         "finalize": "",
         "libs": [],
         "x": 1180,
-        "y": 1600,
+        "y": 1760,
         "wires": [
             [
                 "9ceb2bbb.7655c8"
@@ -6827,7 +6818,7 @@
         "finalize": "",
         "libs": [],
         "x": 1200,
-        "y": 1680,
+        "y": 1840,
         "wires": [
             [
                 "9ceb2bbb.7655c8"
@@ -6846,7 +6837,7 @@
         "finalize": "",
         "libs": [],
         "x": 1180,
-        "y": 1640,
+        "y": 1800,
         "wires": [
             [
                 "9ceb2bbb.7655c8"
@@ -6864,8 +6855,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 920,
-        "y": 1720,
+        "x": 900,
+        "y": 1880,
         "wires": [
             [
                 "e9d2472.d03f5b8"
@@ -6883,8 +6874,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1250,
-        "y": 1720,
+        "x": 1230,
+        "y": 1880,
         "wires": [
             [
                 "a8bb996d.ba216"
@@ -6916,8 +6907,8 @@
         "randomLast": "5",
         "randomUnits": "seconds",
         "drop": false,
-        "x": 1100,
-        "y": 1720,
+        "x": 1080,
+        "y": 1880,
         "wires": [
             [
                 "1e136941.9970a7"
@@ -7076,7 +7067,7 @@
         "type": "debug",
         "z": "23aae268.c697d6",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -7089,47 +7080,10 @@
         "wires": []
     },
     {
-        "id": "efcb2c5.fad22d",
-        "type": "inject",
-        "z": "23aae268.c697d6",
-        "name": "rest ngrok",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            },
-            {
-                "p": "reset",
-                "v": "true",
-                "vt": "bool"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 1150,
-        "y": 260,
-        "wires": [
-            [
-                "556670db.2ce408",
-                "98b51c0f.fa4d1",
-                "abad2f99.75e8f",
-                "d7204e7e.924718"
-            ]
-        ]
-    },
-    {
         "id": "26317863.e57f6",
         "type": "exec",
         "z": "23aae268.c697d6",
-        "command": "/home/nuci3/Downloads/ngrok start nodered2 grafana2 postgres2",
+        "command": "/home/nuci3/Downloads/ngrok start nodered2 grafana2 postgres2 remmina2",
         "addpay": "",
         "append": "",
         "useSpawn": "false",
@@ -7180,14 +7134,14 @@
         "type": "function",
         "z": "23aae268.c697d6",
         "name": "",
-        "func": "\nmsg.payload =   'Dear,\\n\\r' + \n                ' an iSensPro gateway access link has been created for you :\\n\\r' + \n                '    for configuration  : https://nrisensprocust1gw1.eu.ngrok.io \\n\\r' +\n                '    for graphs         : https://grisensprocust1gw1.eu.ngrok.io \\n\\r' +\n                '    for postgres       : https://pgisensprocust1gw1.eu.ngrok.io \\n\\r'+\n                ' for a duration of 4 hours';\n\nmsg.originator = msg.from;\nmsg.to = msg.from + ',' + msg.cc;\nmsg.cc = 'log@isenspro.com';\nmsg.from = msg.header.to.value[0].address;\nmsg.topic = 'iSensPro access request granted';\n\nreturn msg;",
+        "func": "\nmsg.payload =   'Dear,\\n\\r' + \n                ' an iSensPro gateway access link has been created for you :\\n\\r' + \n                '    for configuration  : https://nrisensprocust1gw1.eu.ngrok.io \\n\\r' +\n                '    for graphs         : https://grisensprocust1gw1.eu.ngrok.io \\n\\r' +\n                '    for postgres       : https://pgisensprocust1gw1.eu.ngrok.io \\n\\r'+\n                '    for vnc            : https://vncisensprocust1gw1.eu.ngrok.io \\n\\r'+\n                ' for a duration of 4 hours';\n\nmsg.originator = msg.from;\nmsg.to = msg.from + ',' + msg.cc;\nmsg.cc = 'log@isenspro.com';\n// msg.from = gateway address; subsequent request to this gateway will be bo-locked, but customers can use the existing tunnel for the remaining time\nmsg.from = msg.header.to.value[0].address;\nmsg.topic = 'iSensPro access request granted';\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
         "x": 560,
-        "y": 340,
+        "y": 360,
         "wires": [
             [
                 "fa83f601.a9576",
@@ -7200,7 +7154,7 @@
         "type": "debug",
         "z": "23aae268.c697d6",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -7236,7 +7190,7 @@
         "type": "debug",
         "z": "23aae268.c697d6",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -7257,7 +7211,7 @@
         "gap": "",
         "start": "",
         "inout": "out",
-        "septopics": true,
+        "septopics": false,
         "property": "from",
         "x": 950,
         "y": 180,
@@ -7273,17 +7227,17 @@
         "type": "function",
         "z": "23aae268.c697d6",
         "name": "reset block",
-        "func": "msg.reset = true;\nreturn msg;",
+        "func": "msg.reset = true;\nmsg.topic = 'iSensPro access request granted';\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 690,
-        "y": 140,
+        "x": 810,
+        "y": 120,
         "wires": [
             [
-                "e28f53ba.e38a1"
+                "98b51c0f.fa4d1"
             ]
         ]
     },
@@ -7296,10 +7250,10 @@
         "gap": "",
         "start": "",
         "inout": "out",
-        "septopics": true,
+        "septopics": false,
         "property": "from",
         "x": 930,
-        "y": 340,
+        "y": 360,
         "wires": [
             [
                 "26317863.e57f6",
@@ -7337,7 +7291,6 @@
         "wires": [
             [
                 "be04ab5a.f8e3a",
-                "7f77b620.4bab28",
                 "abad2f99.75e8f"
             ]
         ]
@@ -7362,7 +7315,6 @@
         "wires": [
             [
                 "be04ab5a.f8e3a",
-                "78b0f5ef.4aff4c",
                 "d7204e7e.924718"
             ]
         ]
@@ -7372,60 +7324,14 @@
         "type": "function",
         "z": "23aae268.c697d6",
         "name": "reset block",
-        "func": "msg.reset = true;\nreturn msg;",
+        "func": "msg.reset = true;\nmsg.topic = 'iSensPro access request granted';\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 710,
-        "y": 380,
-        "wires": [
-            [
-                "77644bb1.328d74"
-            ]
-        ]
-    },
-    {
-        "id": "e28f53ba.e38a1",
-        "type": "delay",
-        "z": "23aae268.c697d6",
-        "name": "",
-        "pauseType": "delay",
-        "timeout": "2",
-        "timeoutUnits": "minutes",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "x": 860,
-        "y": 140,
-        "wires": [
-            [
-                "98b51c0f.fa4d1"
-            ]
-        ]
-    },
-    {
-        "id": "77644bb1.328d74",
-        "type": "delay",
-        "z": "23aae268.c697d6",
-        "name": "",
-        "pauseType": "delay",
-        "timeout": "2",
-        "timeoutUnits": "minutes",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "x": 860,
-        "y": 380,
+        "x": 810,
+        "y": 420,
         "wires": [
             [
                 "556670db.2ce408"
@@ -7453,8 +7359,8 @@
         "topic": "access request",
         "payload": "",
         "payloadType": "date",
-        "x": 1110,
-        "y": 80,
+        "x": 1230,
+        "y": 120,
         "wires": [
             [
                 "86b8cee1.18ef8"
@@ -7794,7 +7700,7 @@
         "type": "debug",
         "z": "23aae268.c697d6",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -7814,7 +7720,7 @@
         "scope": null,
         "uncaught": false,
         "x": 1480,
-        "y": 60,
+        "y": 80,
         "wires": [
             [
                 "4dfb7e75.be88e8"
@@ -7832,8 +7738,8 @@
         "tostatus": false,
         "complete": "true",
         "targetType": "full",
-        "x": 1690,
-        "y": 60,
+        "x": 1670,
+        "y": 80,
         "wires": []
     },
     {
@@ -7859,7 +7765,8 @@
         "y": 200,
         "wires": [
             [
-                "6dc0bc71.708564"
+                "6dc0bc71.708564",
+                "7f77b620.4bab28"
             ]
         ]
     },
@@ -7907,7 +7814,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1650,
+        "x": 1690,
         "y": 140,
         "wires": [
             [
@@ -7920,7 +7827,7 @@
         "type": "debug",
         "z": "23aae268.c697d6",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -7953,7 +7860,7 @@
         "type": "debug",
         "z": "23aae268.c697d6",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -7988,7 +7895,8 @@
         "y": 380,
         "wires": [
             [
-                "4e1b9e4d.3c9788"
+                "4e1b9e4d.3c9788",
+                "78b0f5ef.4aff4c"
             ]
         ]
     },
@@ -8049,7 +7957,7 @@
         "type": "debug",
         "z": "23aae268.c697d6",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -8086,7 +7994,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 1350,
-        "y": 400,
+        "y": 420,
         "wires": [
             [
                 "d7204e7e.924718"
@@ -8163,7 +8071,7 @@
         "topic": "isenspro access request",
         "payload": "",
         "payloadType": "date",
-        "x": 1110,
+        "x": 1090,
         "y": 420,
         "wires": [
             [
@@ -9117,7 +9025,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "validate input",
-        "func": "\nmsg.background = 'grey';\nif (msg.payload == '')\n{\n    msg.enabled = false;\n}\nelse\n{\n    if (msg.payload <= 240) \n    {\n        msg.enabled = true;\n        msg.background = 'green';\n    }\n    else msg.enabled = false;\n}\nmsg.tooltip = 'between 0 and 240';\nmsg.enabled = false;\n\nreturn msg;",
+        "func": "var ID = flow.get('master1ID');\n\nmsg.background = 'grey';\nif (msg.payload == '')\n{\n    msg.enabled = false;\n}\nelse\n{\n    if (msg.payload <= 240  && (ID != '')) \n    {\n        msg.enabled = true;\n        msg.background = 'green';\n    }\n    else msg.enabled = false;\n}\nmsg.tooltip = 'between 0 and 240';\nmsg.enabled = false;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -9384,7 +9292,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "validate input",
-        "func": "\nmsg.background = 'grey';\nif (msg.payload == '')\n{\n    msg.enabled = false;\n}\nelse\n{\n    if ((msg.payload <= 16666666) && (msg.payload >=5))\n    {\n        msg.enabled = true;\n        msg.background = 'green';\n    }\n    else msg.enabled = false;\n}\n\nmsg.tooltip = 'between 5 and 16666666 secs';\nmsg.topic = 'Set new value';\nreturn msg;",
+        "func": "var ID = flow.get('master1ID');\n\nmsg.background = 'grey';\nif (msg.payload == '')\n{\n    msg.enabled = false;\n}\nelse\n{\n    if ((msg.payload <= 16666666) && (msg.payload >=5) && (ID != ''))\n    {\n        msg.enabled = true;\n        msg.background = 'green';\n    }\n    else msg.enabled = false;\n}\n\nmsg.tooltip = 'between 5 and 16666666 secs';\nmsg.topic = 'Set new value';\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -9443,7 +9351,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "validate input",
-        "func": "\nmsg.background = 'grey';\nif (msg.payload == '')\n{\n    msg.enabled = false;\n}\nelse\n{\n    if ((msg.payload <= 4000) && (msg.payload >=1))\n    {\n        msg.enabled = true;\n        msg.background = 'green';\n    }\n    else msg.enabled = false;\n}\n\nmsg.tooltip = 'between 1 and 4000 secs';\nreturn msg;",
+        "func": "var ID = flow.get('master1ID');\n\nmsg.background = 'grey';\nif (msg.payload == '')\n{\n    msg.enabled = false;\n}\nelse\n{\n    if ((msg.payload <= 4000) && (msg.payload >=1) && (ID != ''))\n    {\n        msg.enabled = true;\n        msg.background = 'green';\n    }\n    else msg.enabled = false;\n}\n\nmsg.tooltip = 'between 1 and 4000 secs';\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -9531,7 +9439,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "validate input",
-        "func": "var vlow = flow.get('vlowM1');\n\nmsg.background = 'grey';\nif (msg.payload == '')\n{\n    msg.enabled = false;\n}\nelse\n{\n    if ((msg.payload <= 3170) && (msg.payload > vlow))\n    {\n        msg.enabled = true;\n        msg.background = 'green';\n    }\n    else msg.enabled = false;\n}\n\nmsg.tooltip = 'between VLow and 3170 mVolt';\nreturn msg;",
+        "func": "var vlow = flow.get('vlowM1');\nvar ID = flow.get('master1ID');\n\nmsg.background = 'grey';\nif (msg.payload == '')\n{\n    msg.enabled = false;\n}\nelse\n{\n    if ((msg.payload <= 3170) && (msg.payload > vlow) && (ID != ''))\n    {\n        msg.enabled = true;\n        msg.background = 'green';\n    }\n    else msg.enabled = false;\n}\n\nmsg.tooltip = 'between VLow and 3170 mVolt';\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -9625,7 +9533,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "validate input",
-        "func": "var vhigh = flow.get('vhighM1');\n\nmsg.background = 'grey';\nif (msg.payload == '')\n{\n    msg.enabled = false;\n}\nelse\n{\n    if ((msg.payload < vhigh) && (msg.payload >= 10))\n    {\n        msg.enabled = true;\n        msg.background = 'green';\n    }\n    else msg.enabled = false;\n}\n\nmsg.tooltip = 'between 10mV and VHigh';\nreturn msg;",
+        "func": "var vhigh = flow.get('vhighM1');\nvar ID = flow.get('master1ID');\n\nmsg.background = 'grey';\nif (msg.payload == '')\n{\n    msg.enabled = false;\n}\nelse\n{\n    if ((msg.payload < vhigh) && (msg.payload >= 10) && (ID != ''))\n    {\n        msg.enabled = true;\n        msg.background = 'green';\n    }\n    else msg.enabled = false;\n}\n\nmsg.tooltip = 'between 10mV and VHigh';\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -9684,7 +9592,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "validate input",
-        "func": "msg.background = 'grey';\nif (msg.payload == '')\n{\n    msg.enabled = false;\n}\nelse\n{\n    if ((msg.payload <= 730000) && (msg.payload >=1))\n    {\n        msg.enabled = true;\n        msg.background = 'green';\n    }\n    else msg.enabled = false;\n}\n\nmsg.tooltip = 'between 1 and 730000 Ohm';\nreturn msg;",
+        "func": "var ID = flow.get('master1ID');\n\nmsg.background = 'grey';\nif (msg.payload == '')\n{\n    msg.enabled = false;\n}\nelse\n{\n    if ((msg.payload <= 730000) && (msg.payload >=1) && (ID != ''))\n    {\n        msg.enabled = true;\n        msg.background = 'green';\n    }\n    else msg.enabled = false;\n}\n\nmsg.tooltip = 'between 1 and 730000 Ohm';\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -9704,7 +9612,7 @@
         "z": "3fb5a67.37c495a",
         "name": "",
         "group": "f12df54.fdd1f08",
-        "order": 11,
+        "order": 12,
         "width": 6,
         "height": 1,
         "passthru": false,
@@ -9739,7 +9647,7 @@
         "finalize": "",
         "libs": [],
         "x": 370,
-        "y": 1420,
+        "y": 1580,
         "wires": [
             [
                 "7216aed1.1c3c9"
@@ -9758,7 +9666,7 @@
         "finalize": "",
         "libs": [],
         "x": 380,
-        "y": 1540,
+        "y": 1700,
         "wires": [
             [
                 "2a7f6ad5.0a9456",
@@ -9804,7 +9712,7 @@
         "label": "Actual noise value (mV):",
         "tooltip": "",
         "group": "f12df54.fdd1f08",
-        "order": 12,
+        "order": 14,
         "width": 0,
         "height": 0,
         "wrap": false,
@@ -9816,7 +9724,7 @@
         "max": "0",
         "step": "0",
         "x": 590,
-        "y": 1420,
+        "y": 1580,
         "wires": [
             []
         ]
@@ -9841,7 +9749,7 @@
         "max": "0",
         "step": "0",
         "x": 550,
-        "y": 1540,
+        "y": 1700,
         "wires": [
             []
         ]
@@ -9858,7 +9766,7 @@
         "finalize": "",
         "libs": [],
         "x": 370,
-        "y": 1640,
+        "y": 1800,
         "wires": [
             [
                 "3fd4d0ab.6b95b"
@@ -9885,7 +9793,7 @@
         "max": "0",
         "step": "0",
         "x": 520,
-        "y": 1640,
+        "y": 1800,
         "wires": [
             []
         ]
@@ -9902,7 +9810,7 @@
         "finalize": "",
         "libs": [],
         "x": 380,
-        "y": 1680,
+        "y": 1840,
         "wires": [
             [
                 "232c8272.12dcd6"
@@ -9929,7 +9837,7 @@
         "max": "0",
         "step": "0",
         "x": 600,
-        "y": 1680,
+        "y": 1840,
         "wires": [
             []
         ]
@@ -9946,7 +9854,7 @@
         "finalize": "",
         "libs": [],
         "x": 390,
-        "y": 1480,
+        "y": 1640,
         "wires": [
             [
                 "54ca8a7.7724274"
@@ -9961,7 +9869,7 @@
         "label": "Maximum noise value (mV):",
         "tooltip": "",
         "group": "f12df54.fdd1f08",
-        "order": 13,
+        "order": 15,
         "width": 0,
         "height": 0,
         "wrap": false,
@@ -9973,7 +9881,7 @@
         "max": "0",
         "step": "0",
         "x": 600,
-        "y": 1480,
+        "y": 1640,
         "wires": [
             []
         ]
@@ -10132,7 +10040,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 770,
+        "x": 750,
         "y": 1380,
         "wires": [
             [
@@ -10156,7 +10064,7 @@
         "delay": "100",
         "topic": "",
         "topicType": "str",
-        "x": 380,
+        "x": 400,
         "y": 1380,
         "wires": [
             [
@@ -10332,7 +10240,8 @@
                 "6457015c.1b7008",
                 "d48d82a4.bee28",
                 "4b2737d8.912c5",
-                "c380e12b.d7ed1"
+                "c380e12b.d7ed1",
+                "c949d133.f96d6"
             ]
         ]
     },
@@ -10499,7 +10408,7 @@
         "format": "{{value | uppercase}}",
         "layout": "col-center",
         "x": 930,
-        "y": 1600,
+        "y": 1760,
         "wires": []
     },
     {
@@ -10514,7 +10423,7 @@
         "finalize": "",
         "libs": [],
         "x": 790,
-        "y": 1600,
+        "y": 1760,
         "wires": [
             [
                 "9819ea83.866a38"
@@ -10533,7 +10442,7 @@
         "finalize": "",
         "libs": [],
         "x": 630,
-        "y": 1600,
+        "y": 1760,
         "wires": [
             [
                 "c380e12b.d7ed1"
@@ -10787,8 +10696,8 @@
         "fwdInMessages": true,
         "resendOnRefresh": true,
         "templateScope": "local",
-        "x": 720,
-        "y": 1720,
+        "x": 700,
+        "y": 1880,
         "wires": [
             []
         ]
@@ -10804,8 +10713,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 300,
-        "y": 1720,
+        "x": 280,
+        "y": 1880,
         "wires": [
             [
                 "4757d887.183fc8"
@@ -10833,8 +10742,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "str",
-        "x": 130,
-        "y": 1720,
+        "x": 110,
+        "y": 1880,
         "wires": [
             [
                 "bc137f20.f932b"
@@ -10851,8 +10760,8 @@
         "chunk": false,
         "sendError": false,
         "encoding": "none",
-        "x": 450,
-        "y": 1720,
+        "x": 430,
+        "y": 1880,
         "wires": [
             [
                 "db2e5ea3.ed84"
@@ -10866,8 +10775,8 @@
         "name": "",
         "action": "str",
         "property": "payload",
-        "x": 580,
-        "y": 1720,
+        "x": 560,
+        "y": 1880,
         "wires": [
             [
                 "3a1bff0b.55d3c"
@@ -11207,7 +11116,8 @@
         "y": 1100,
         "wires": [
             [
-                "bb223f84.15df6"
+                "bb223f84.15df6",
+                "c30ded45.66768"
             ]
         ]
     },
@@ -11284,7 +11194,7 @@
         "type": "postgrestor",
         "z": "3fb5a67.37c495a",
         "name": "sensor_config@localhost",
-        "query": "INSERT INTO sensor_config_table \n(\n--\t\"ts\" timestamptz DEFAULT NOW(),\n--\t\"localisation\" point,\n--\tdescription,\n--\t\"customerID\" int8,\n    masterid,\n    sensorid,\n--\t\"timeslot\" smallint,\n\tvhigh,\n\tvlow,\n\tmeastime,\n\tmeasperiod,\n\trcharge\n--\taccel\n--\t\"masterID_RX\" char,\n--\t\"sensorID_RX\" char\n) VALUES\n(\n    '{{{msg.masterid}}}',\n    '{{msg.sensorid}}', \n    '{{msg.vhigh}}',\n    '{{msg.vlow}}',\n    '{{msg.mwindow}}',\n    '{{msg.mperiod}}',\n    '{{msg.rcharge}}'\n);",
+        "query": "INSERT INTO sensor_config_table \n(\n--\t\"ts\" timestamptz DEFAULT NOW(),\n--\t\"localisation\" point,\n\tdescription,\n--\t\"customerID\" int8,\n    masterid,\n    sensorid,\n--\t\"timeslot\" smallint,\n\tvhigh,\n\tvlow,\n\tmeastime,\n\tmeasperiod,\n\trcharge\n--\taccel\n--\t\"masterID_RX\" char,\n--\t\"sensorID_RX\" char\n) VALUES\n(\n    '{{msg.description}}',\n    '{{{msg.masterid}}}',\n    '{{msg.sensorid}}', \n    '{{msg.vhigh}}',\n    '{{msg.vlow}}',\n    '{{msg.mwindow}}',\n    '{{msg.mperiod}}',\n    '{{msg.rcharge}}'\n);",
         "postgresDB": "6733d493.9cca6c",
         "output": true,
         "outputs": 1,
@@ -11301,7 +11211,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "",
-        "func": "// get flow variables\nvar mperiod = parseInt(flow.get('mperiodM1'));\nvar rcharge = parseInt(flow.get('rchargeM1'));\nvar vhigh = parseInt(flow.get('vhighM1'));\nvar vlow = parseInt(flow.get('vlowM1'));\nvar mwindow = parseInt(flow.get('mwindowM1'));\n\nvar masterID = flow.get(\"master1ID\");\n\nmsg.masterid = masterID;\nmsg.sensorid = 0;\n\nisNaN(mperiod) ? msg.mperiod = 0 :  msg.mperiod = mperiod;\nisNaN(rcharge) ? msg.rcharge = 0 : msg.rcharge = rcharge;\nisNaN(vhigh) ? msg.vhigh = 0 : msg.vhigh = vhigh;\nisNaN(vlow) ? msg.vlow = 0 : msg.vlow = vlow;\nisNaN(mwindow) ? msg.mwindow = 0 : msg.mwindow = mwindow;\n\nreturn msg;",
+        "func": "// get flow variables\nvar mperiod = parseInt(flow.get('mperiodM1'));\nvar rcharge = parseInt(flow.get('rchargeM1'));\nvar vhigh = parseInt(flow.get('vhighM1'));\nvar vlow = parseInt(flow.get('vlowM1'));\nvar mwindow = parseInt(flow.get('mwindowM1'));\nvar description = flow.get('descriptionM1');\n\nvar masterID = flow.get(\"master1ID\");\n\nmsg.masterid = masterID;\nmsg.sensorid = 0;\n\nisNaN(mperiod) ? msg.mperiod = 0 :  msg.mperiod = mperiod;\nisNaN(rcharge) ? msg.rcharge = 0 : msg.rcharge = rcharge;\nisNaN(vhigh) ? msg.vhigh = 0 : msg.vhigh = vhigh;\nisNaN(vlow) ? msg.vlow = 0 : msg.vlow = vlow;\nisNaN(mwindow) ? msg.mwindow = 0 : msg.mwindow = mwindow;\n\nmsg.description = description;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -11321,7 +11231,7 @@
         "type": "debug",
         "z": "3fb5a67.37c495a",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -11329,7 +11239,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1550,
+        "x": 1570,
         "y": 900,
         "wires": []
     },
@@ -11338,7 +11248,7 @@
         "type": "debug",
         "z": "3fb5a67.37c495a",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -11617,7 +11527,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "",
-        "func": "var ID = flow.get(\"master1ID\");\nif (msg.masterid == ID)\n{\n   return [msg,null]; \n}\nelse\n{\n   return [null,msg]; \n}",
+        "func": "var ID = flow.get(\"master1ID\");\n\nif ((msg.masterid == ID) && (ID =! ''))\n{\n   return [msg,null]; \n}\nelse\n{\n   return [null,msg]; \n}",
         "outputs": 2,
         "noerr": 0,
         "initialize": "",
@@ -11639,7 +11549,8 @@
                 "d59e10ae.bcf648",
                 "f4629d6f.602868",
                 "6be38186.0c759",
-                "eb6ce2e2.ec5f68"
+                "eb6ce2e2.ec5f68",
+                "ed1ab1fb.11868"
             ],
             []
         ]
@@ -12374,7 +12285,7 @@
         "type": "ui_text",
         "z": "3fb5a67.37c495a",
         "group": "f12df54.fdd1f08",
-        "order": 17,
+        "order": 19,
         "width": 6,
         "height": 1,
         "name": "",
@@ -12391,7 +12302,7 @@
         "z": "3fb5a67.37c495a",
         "name": "",
         "group": "f12df54.fdd1f08",
-        "order": 19,
+        "order": 21,
         "width": 6,
         "height": 1,
         "passthru": false,
@@ -12422,7 +12333,7 @@
         "label": "change Measurement Period (secs)",
         "tooltip": "between 5 and 4000 secs",
         "group": "f12df54.fdd1f08",
-        "order": 15,
+        "order": 17,
         "width": 6,
         "height": 1,
         "passthru": true,
@@ -12462,7 +12373,7 @@
         "type": "ui_text",
         "z": "3fb5a67.37c495a",
         "group": "f12df54.fdd1f08",
-        "order": 18,
+        "order": 20,
         "width": 6,
         "height": 1,
         "name": "",
@@ -12481,7 +12392,7 @@
         "label": "change Measurement window (secs)",
         "tooltip": "between 1 and 4000 secs",
         "group": "f12df54.fdd1f08",
-        "order": 16,
+        "order": 18,
         "width": 6,
         "height": 1,
         "passthru": true,
@@ -12522,7 +12433,7 @@
         "z": "3fb5a67.37c495a",
         "name": "",
         "group": "f12df54.fdd1f08",
-        "order": 20,
+        "order": 22,
         "width": 6,
         "height": 1,
         "passthru": false,
@@ -12726,7 +12637,7 @@
         "type": "ui_text",
         "z": "3fb5a67.37c495a",
         "group": "f12df54.fdd1f08",
-        "order": 23,
+        "order": 25,
         "width": 6,
         "height": 1,
         "name": "",
@@ -12762,7 +12673,7 @@
         "z": "3fb5a67.37c495a",
         "name": "",
         "group": "f12df54.fdd1f08",
-        "order": 24,
+        "order": 26,
         "width": 6,
         "height": 1,
         "passthru": false,
@@ -12862,7 +12773,7 @@
         "label": "Actual noise value (mV):",
         "tooltip": "",
         "group": "f12df54.fdd1f08",
-        "order": 25,
+        "order": 27,
         "width": 0,
         "height": 0,
         "wrap": false,
@@ -13019,7 +12930,7 @@
         "label": "Maximum noise value (mV):",
         "tooltip": "",
         "group": "f12df54.fdd1f08",
-        "order": 26,
+        "order": 28,
         "width": 0,
         "height": 0,
         "wrap": false,
@@ -13206,7 +13117,7 @@
         "label": "change Charging resistor (Ohm)",
         "tooltip": "between 1 and 730000 Ohm",
         "group": "f12df54.fdd1f08",
-        "order": 21,
+        "order": 23,
         "width": 6,
         "height": 1,
         "passthru": true,
@@ -14770,5 +14681,254 @@
                 "cc410522.513ea"
             ]
         ]
+    },
+    {
+        "id": "c30ded45.66768",
+        "type": "e-mail",
+        "z": "3fb5a67.37c495a",
+        "server": "mail.isenspro.com",
+        "port": "465",
+        "secure": true,
+        "tls": true,
+        "name": "log@isenspro.com",
+        "dname": "log email",
+        "x": 2560,
+        "y": 1140,
+        "wires": []
+    },
+    {
+        "id": "f79cdec1.a2e858",
+        "type": "ui_text",
+        "z": "3fb5a67.37c495a",
+        "group": "f12df54.fdd1f08",
+        "order": 11,
+        "width": 6,
+        "height": 1,
+        "name": "",
+        "label": "Actual Description : ",
+        "format": "{{msg.topic}}",
+        "layout": "row-left",
+        "x": 970,
+        "y": 1440,
+        "wires": []
+    },
+    {
+        "id": "e06d89d.6fbbf78",
+        "type": "function",
+        "z": "3fb5a67.37c495a",
+        "name": "validate input",
+        "func": "var ID = flow.get('master1ID');\n\nmsg.background = 'grey';\nif ((msg.payload == ''))\n{\n    msg.enabled = false;\n}\nelse\n{\n      if ((ID != ''))\n    {\n        msg.enabled = true;\n        msg.background = 'green';\n    }\n    else msg.enabled = false;\n}\n\nmsg.tooltip = 'description of measurement setup';\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 550,
+        "y": 1520,
+        "wires": [
+            [
+                "f7ada61e.413aa8"
+            ]
+        ]
+    },
+    {
+        "id": "c949d133.f96d6",
+        "type": "ui_button",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "group": "f12df54.fdd1f08",
+        "order": 13,
+        "width": 6,
+        "height": 1,
+        "passthru": false,
+        "label": "Set new value",
+        "tooltip": "{{tooltip}}",
+        "color": "",
+        "bgcolor": "{{background}}",
+        "icon": "",
+        "payload": "descriptionM1",
+        "payloadType": "flow",
+        "topic": "descriptionM1",
+        "topicType": "flow",
+        "x": 960,
+        "y": 1520,
+        "wires": [
+            [
+                "6112a500.1a7014",
+                "2e15fdd1.3cad52"
+            ]
+        ]
+    },
+    {
+        "id": "f7ada61e.413aa8",
+        "type": "change",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "descriptionM1",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 740,
+        "y": 1520,
+        "wires": [
+            [
+                "c949d133.f96d6"
+            ]
+        ]
+    },
+    {
+        "id": "a63a6e6e.c3f828",
+        "type": "ui_text_input",
+        "z": "3fb5a67.37c495a",
+        "name": "Description",
+        "label": "change Description",
+        "tooltip": "Description of measurement setup",
+        "group": "f12df54.fdd1f08",
+        "order": 9,
+        "width": 6,
+        "height": 1,
+        "passthru": true,
+        "mode": "text",
+        "delay": "100",
+        "topic": "",
+        "topicType": "str",
+        "x": 390,
+        "y": 1520,
+        "wires": [
+            [
+                "e06d89d.6fbbf78"
+            ]
+        ]
+    },
+    {
+        "id": "2b7f1c7.b87f2e4",
+        "type": "postgrestor",
+        "z": "3fb5a67.37c495a",
+        "name": "sensor_config@localhost",
+        "query": "SELECT * FROM sensor_config_table\nWHERE masterid = '{{{ msg.masterid }}}'\nORDER BY ts  DESC\nLIMIT 1;",
+        "postgresDB": "6733d493.9cca6c",
+        "output": true,
+        "outputs": 1,
+        "x": 550,
+        "y": 1440,
+        "wires": [
+            [
+                "809f5e0c.fab7c8",
+                "cfb0e285.66383"
+            ]
+        ]
+    },
+    {
+        "id": "809f5e0c.fab7c8",
+        "type": "debug",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 490,
+        "y": 1480,
+        "wires": []
+    },
+    {
+        "id": "ed1ab1fb.11868",
+        "type": "function",
+        "z": "3fb5a67.37c495a",
+        "name": "Description",
+        "func": "var ID = flow.get('master1ID');\n\nmsg.masterid = ID;\nmsg.payload = '';\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 350,
+        "y": 1440,
+        "wires": [
+            [
+                "2b7f1c7.b87f2e4"
+            ]
+        ]
+    },
+    {
+        "id": "cfb0e285.66383",
+        "type": "function",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "func": "msg.topic = msg.payload.rows[0].description;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 760,
+        "y": 1420,
+        "wires": [
+            [
+                "f79cdec1.a2e858",
+                "1bd00b11.6e783d"
+            ]
+        ]
+    },
+    {
+        "id": "539b6b2b.f925cc",
+        "type": "inject",
+        "z": "3fb5a67.37c495a",
+        "name": "init",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "enabled",
+                "v": "true",
+                "vt": "bool"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "x": 90,
+        "y": 1520,
+        "wires": [
+            [
+                "a63a6e6e.c3f828"
+            ]
+        ]
+    },
+    {
+        "id": "1bd00b11.6e783d",
+        "type": "debug",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1190,
+        "y": 1460,
+        "wires": []
     }
 ]
