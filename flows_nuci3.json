@@ -1117,15 +1117,6 @@
         "hidden": false
     },
     {
-        "id": "261c6858.26c4a",
-        "type": "ui_spacer",
-        "name": "spacer",
-        "group": "f12df54.fdd1f08",
-        "order": 1,
-        "width": 12,
-        "height": 1
-    },
-    {
         "id": "e893fc50.bfa898",
         "type": "ui_spacer",
         "name": "spacer",
@@ -1176,9 +1167,9 @@
         "type": "ui_spacer",
         "name": "spacer",
         "group": "f12df54.fdd1f08",
-        "order": 16,
-        "width": "12",
-        "height": "2"
+        "order": 19,
+        "width": "6",
+        "height": "1"
     },
     {
         "id": "328ab2a8.6d0dc6",
@@ -1199,15 +1190,6 @@
         "height": "2"
     },
     {
-        "id": "a874f950.1a0108",
-        "type": "ui_spacer",
-        "name": "spacer",
-        "group": "f12df54.fdd1f08",
-        "order": 24,
-        "width": "6",
-        "height": "3"
-    },
-    {
         "id": "6c87328.948a94c",
         "type": "ui_spacer",
         "name": "spacer",
@@ -1215,6 +1197,38 @@
         "order": 21,
         "width": "6",
         "height": "3"
+    },
+    {
+        "id": "6787392.d78b7c8",
+        "type": "postgresDB",
+        "name": "postgres@127.0.0.1:5432/translations",
+        "host": "127.0.0.1",
+        "hostFieldType": "str",
+        "port": "5432",
+        "portFieldType": "num",
+        "database": "translations",
+        "databaseFieldType": "str",
+        "ssl": "false",
+        "sslFieldType": "bool",
+        "max": "50",
+        "maxFieldType": "num",
+        "min": "1",
+        "minFieldType": "num",
+        "idle": "1000",
+        "idleFieldType": "num",
+        "user": "postgres",
+        "userFieldType": "str",
+        "password": "isenspro",
+        "passwordFieldType": "str"
+    },
+    {
+        "id": "2498a941.d1e16e",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "f12df54.fdd1f08",
+        "order": 17,
+        "width": "12",
+        "height": 1
     },
     {
         "id": "3794180a.7bf398",
@@ -2376,8 +2390,8 @@
         "z": "3fb5a67.37c495a",
         "name": "Setup replication Timescale database",
         "info": "",
-        "x": 450,
-        "y": 340,
+        "x": 930,
+        "y": 220,
         "wires": []
     },
     {
@@ -2703,6 +2717,7 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "bridge_config",
+        "payloadType": "str",
         "x": 140,
         "y": 300,
         "wires": [
@@ -6608,7 +6623,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1220,
+        "x": 1420,
         "y": 980,
         "wires": [
             [
@@ -6627,7 +6642,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1190,
+        "x": 1390,
         "y": 1060,
         "wires": [
             [
@@ -6646,7 +6661,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1200,
+        "x": 1380,
         "y": 1140,
         "wires": [
             [
@@ -6665,7 +6680,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1230,
+        "x": 1430,
         "y": 1220,
         "wires": [
             [
@@ -6684,7 +6699,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1230,
+        "x": 1430,
         "y": 1300,
         "wires": [
             [
@@ -6703,7 +6718,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1220,
+        "x": 1420,
         "y": 1380,
         "wires": [
             [
@@ -6722,7 +6737,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1230,
+        "x": 1430,
         "y": 1600,
         "wires": [
             [
@@ -6741,7 +6756,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1200,
+        "x": 1400,
         "y": 1640,
         "wires": [
             [
@@ -6760,7 +6775,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1190,
+        "x": 1390,
         "y": 1680,
         "wires": [
             [
@@ -6779,7 +6794,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1210,
+        "x": 1410,
         "y": 1720,
         "wires": [
             [
@@ -6798,7 +6813,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1180,
+        "x": 1380,
         "y": 1760,
         "wires": [
             [
@@ -6817,7 +6832,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1200,
+        "x": 1400,
         "y": 1840,
         "wires": [
             [
@@ -6836,7 +6851,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1180,
+        "x": 1380,
         "y": 1800,
         "wires": [
             [
@@ -6855,7 +6870,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 900,
+        "x": 1280,
         "y": 1880,
         "wires": [
             [
@@ -6874,7 +6889,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1230,
+        "x": 1610,
         "y": 1880,
         "wires": [
             [
@@ -6888,7 +6903,7 @@
         "z": "3fb5a67.37c495a",
         "name": "",
         "serial": "dc726705.a597c8",
-        "x": 1820,
+        "x": 2020,
         "y": 1300,
         "wires": []
     },
@@ -6907,7 +6922,7 @@
         "randomLast": "5",
         "randomUnits": "seconds",
         "drop": false,
-        "x": 1080,
+        "x": 1460,
         "y": 1880,
         "wires": [
             [
@@ -6972,6 +6987,7 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "customer_config_table",
+        "payloadType": "str",
         "x": 160,
         "y": 900,
         "wires": [
@@ -8335,7 +8351,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1460,
+        "x": 1640,
         "y": 1360,
         "wires": [
             [
@@ -8357,8 +8373,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1510,
-        "y": 1280,
+        "x": 1710,
+        "y": 1300,
         "wires": []
     },
     {
@@ -8366,13 +8382,13 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "M Period",
-        "func": "var mperiod;\n\nmsg.backspaces = 5;\nmsg.payload = '';\n\n// set new flow variable\n//flow.set('mperiodM1',msg.period);\n\nvar tempstr = String(msg.period);\n\n//padding\nfor(var j = 0; j < (msg.backspaces-tempstr.length); j++)\n{ \n    msg.payload += '0';\n}\n\n\nfor(var i = 0; i < tempstr.length; i++)\n{ \n    msg.payload += tempstr[i];\n}\n\nmsg.payload = msg.payload.toString();\nmsg.topic = 2;\n\nreturn msg;",
+        "func": "var mperiod;\n\n// set new flow variable\n//flow.set('mperiodM1',msg.period);\n\nmsg.label = msg.payload.rows[0].fr;\n //msg.label = 'actua test';\n \n msg.backspaces = 5;\nmsg.payload = '';\n\nvar tempstr = String(msg.period);\n\n//padding\nfor(var j = 0; j < (msg.backspaces-tempstr.length); j++)\n{ \n    msg.payload += '0';\n}\n\n\nfor(var i = 0; i < tempstr.length; i++)\n{ \n    msg.payload += tempstr[i];\n}\n\nmsg.payload = msg.payload.toString();\nmsg.topic = 2;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 380,
+        "x": 740,
         "y": 1020,
         "wires": [
             [
@@ -8385,13 +8401,13 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "M Window",
-        "func": "var mwindow;\n\n// set new flow variable\n//flow.set('mwindowM1',msg.mwindow);\n\nmsg.backspaces = 5;\nmsg.payload = '';\n\nmwindow = String(msg.mwindow);\n\n//padding before number\nfor(var j = 0; j < (msg.backspaces-mwindow.length); j++)\n{ \n    msg.payload += '0';\n}\n\n\nfor(var i = 0; i < mwindow.length; i++)\n{ \n    msg.payload += mwindow[i];\n}\n\nmsg.payload = msg.payload.toString();\nmsg.topic = 3;\n\nreturn msg;",
+        "func": "var mwindow;\n\n// set new flow variable\n//flow.set('mwindowM1',msg.mwindow);\n\nmsg.label = msg.payload.rows[0].fr;\n\nmsg.backspaces = 5;\nmsg.payload = '';\n\nmwindow = String(msg.mwindow);\n\n//padding before number\nfor(var j = 0; j < (msg.backspaces-mwindow.length); j++)\n{ \n    msg.payload += '0';\n}\n\n\nfor(var i = 0; i < mwindow.length; i++)\n{ \n    msg.payload += mwindow[i];\n}\n\nmsg.payload = msg.payload.toString();\nmsg.topic = 3;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 390,
+        "x": 710,
         "y": 1100,
         "wires": [
             [
@@ -8404,13 +8420,13 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "VHigh",
-        "func": "var vhigh;\n\n// set new flow variable\nflow.set('vhighM1',msg.vhigh);\n\nmsg.backspaces = 4;\nmsg.payload = '';\n\nvhigh = String(msg.vhigh);\n\n//padding before number\nfor(var j = 0; j < (msg.backspaces-vhigh.length); j++)\n{ \n    msg.payload += '0';\n}\n\n\nfor(var i = 0; i < vhigh.length; i++)\n{ \n    msg.payload += vhigh[i];\n}\n\nmsg.payload = msg.payload.toString();\nmsg.topic = 4;\n\nreturn msg;",
+        "func": "var vhigh;\n\n// set new flow variable\nflow.set('vhighM1',msg.vhigh);\n\nmsg.label = msg.payload.rows[0].fr;\n\nmsg.backspaces = 4;\nmsg.payload = '';\n\nvhigh = String(msg.vhigh);\n\n//padding before number\nfor(var j = 0; j < (msg.backspaces-vhigh.length); j++)\n{ \n    msg.payload += '0';\n}\n\n\nfor(var i = 0; i < vhigh.length; i++)\n{ \n    msg.payload += vhigh[i];\n}\n\nmsg.payload = msg.payload.toString();\nmsg.topic = 4;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 370,
+        "x": 690,
         "y": 1180,
         "wires": [
             [
@@ -8423,13 +8439,13 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "VLow",
-        "func": "var vlow;\n\n// set new flow variable\nflow.set('vlowM1',msg.vlow);\n\nmsg.backspaces = 4;\nmsg.payload = '';\n\nvlow = String(msg.vlow);\n\n//padding before number\nfor(var j = 0; j < (msg.backspaces-vlow.length); j++)\n{ \n    msg.payload += '0';\n}\n\n\nfor(var i = 0; i < vlow.length; i++)\n{ \n    msg.payload += vlow[i];\n}\n\nmsg.payload = msg.payload.toString();\nmsg.topic = 5;\n\nreturn msg;",
+        "func": "var vlow;\n\n// set new flow variable\nflow.set('vlowM1',msg.vlow);\n\nmsg.label = msg.payload.rows[0].fr;\n\nmsg.backspaces = 4;\nmsg.payload = '';\n\nvlow = String(msg.vlow);\n\n//padding before number\nfor(var j = 0; j < (msg.backspaces-vlow.length); j++)\n{ \n    msg.payload += '0';\n}\n\n\nfor(var i = 0; i < vlow.length; i++)\n{ \n    msg.payload += vlow[i];\n}\n\nmsg.payload = msg.payload.toString();\nmsg.topic = 5;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 370,
+        "x": 690,
         "y": 1260,
         "wires": [
             [
@@ -8442,13 +8458,13 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "RCharge",
-        "func": "var rcharge;\n\n// set new flow variable\n//flow.set('rchargeM1',msg.rcharge);\n\nmsg.backspaces = 6;\nmsg.payload = '';\n\nrcharge = String(msg.rcharge);\n\n//padding before number\nfor(var j = 0; j < (msg.backspaces-rcharge.length); j++)\n{ \n    msg.payload += '0';\n}\n\nfor(var i = 0; i < rcharge.length; i++)\n{ \n    msg.payload += rcharge[i];\n}\n\nmsg.payload = msg.payload.toString();\nmsg.topic = 6;\n\nreturn msg;",
+        "func": "var rcharge;\n\n// set new flow variable\n//flow.set('rchargeM1',msg.rcharge);\n\nmsg.label = msg.payload.rows[0].fr;\n\nmsg.backspaces = 6;\nmsg.payload = '';\n\nrcharge = String(msg.rcharge);\n\n//padding before number\nfor(var j = 0; j < (msg.backspaces-rcharge.length); j++)\n{ \n    msg.payload += '0';\n}\n\nfor(var i = 0; i < rcharge.length; i++)\n{ \n    msg.payload += rcharge[i];\n}\n\nmsg.payload = msg.payload.toString();\nmsg.topic = 6;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 380,
+        "x": 700,
         "y": 1340,
         "wires": [
             [
@@ -8461,13 +8477,13 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "Sensor ID",
-        "func": "var sensorid;\n\n// set new flow variable\n//flow.set('sensorM1',msg.sensorid);\n\nmsg.backspaces = 3;\nmsg.payload = '';\n\nsensorid = String(msg.sensorid);\n\n//padding before number\nfor(var j = 0; j < (msg.backspaces-sensorid.length); j++)\n{ \n    msg.payload += '0';\n}\n\n\nfor(var i = 0; i < sensorid.length; i++)\n{ \n    msg.payload += sensorid[i];\n}\n\nmsg.payload = msg.payload.toString();\nmsg.payload.masterID = msg.payload;\nmsg.topic = 1;\n\nreturn msg;",
+        "func": "var sensorid;\n\n// set new flow variable\n//flow.set('sensorM1',msg.sensorid);\n\nmsg.label = msg.payload.rows[0].fr;\n\nmsg.backspaces = 3;\nmsg.payload = '';\n\nsensorid = String(msg.sensorid);\n\n//padding before number\nfor(var j = 0; j < (msg.backspaces-sensorid.length); j++)\n{ \n    msg.payload += '0';\n}\n\n\nfor(var i = 0; i < sensorid.length; i++)\n{ \n    msg.payload += sensorid[i];\n}\n\nmsg.payload = msg.payload.toString();\nmsg.payload.masterID = msg.payload;\nmsg.topic = 1;\n\n\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 380,
+        "x": 800,
         "y": 940,
         "wires": [
             [
@@ -9013,10 +9029,10 @@
         "width": 6,
         "height": 1,
         "name": "",
-        "label": "Sensor ID : ",
+        "label": "{{msg.label}}",
         "format": "{{msg.payload}}",
         "layout": "row-left",
-        "x": 550,
+        "x": 930,
         "y": 940,
         "wires": []
     },
@@ -9031,7 +9047,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 550,
+        "x": 690,
         "y": 980,
         "wires": [
             [
@@ -9058,7 +9074,7 @@
         "payloadType": "flow",
         "topic": "master1ID",
         "topicType": "flow",
-        "x": 980,
+        "x": 1140,
         "y": 980,
         "wires": [
             [
@@ -9084,7 +9100,7 @@
         "delay": "100",
         "topic": "",
         "topicType": "str",
-        "x": 400,
+        "x": 320,
         "y": 980,
         "wires": [
             [
@@ -9223,14 +9239,14 @@
         "type": "ui_text",
         "z": "3fb5a67.37c495a",
         "group": "f12df54.fdd1f08",
-        "order": 4,
+        "order": 5,
         "width": 6,
         "height": 1,
         "name": "",
-        "label": "Actual period : ",
+        "label": "{{msg.label}}",
         "format": "{{msg.payload}}",
         "layout": "row-left",
-        "x": 560,
+        "x": 870,
         "y": 1020,
         "wires": []
     },
@@ -9240,7 +9256,7 @@
         "z": "3fb5a67.37c495a",
         "name": "",
         "group": "f12df54.fdd1f08",
-        "order": 6,
+        "order": 7,
         "width": 6,
         "height": 1,
         "passthru": false,
@@ -9253,7 +9269,7 @@
         "payloadType": "flow",
         "topic": "mperiodM1",
         "topicType": "flow",
-        "x": 960,
+        "x": 1120,
         "y": 1060,
         "wires": [
             [
@@ -9271,7 +9287,7 @@
         "label": "change Measurement Period (secs)",
         "tooltip": "between 5 and 16M secs",
         "group": "f12df54.fdd1f08",
-        "order": 2,
+        "order": 3,
         "width": 6,
         "height": 1,
         "passthru": true,
@@ -9298,7 +9314,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 550,
+        "x": 710,
         "y": 1060,
         "wires": [
             [
@@ -9311,14 +9327,14 @@
         "type": "ui_text",
         "z": "3fb5a67.37c495a",
         "group": "f12df54.fdd1f08",
-        "order": 5,
+        "order": 6,
         "width": 6,
         "height": 1,
         "name": "",
-        "label": "Actual window : ",
+        "label": "{{msg.label}}",
         "format": "{{msg.payload}}",
         "layout": "row-left",
-        "x": 560,
+        "x": 870,
         "y": 1100,
         "wires": []
     },
@@ -9330,7 +9346,7 @@
         "label": "change Measurement window (secs)",
         "tooltip": "between 1 and 4000 secs",
         "group": "f12df54.fdd1f08",
-        "order": 3,
+        "order": 4,
         "width": 6,
         "height": 1,
         "passthru": true,
@@ -9371,7 +9387,7 @@
         "z": "3fb5a67.37c495a",
         "name": "",
         "group": "f12df54.fdd1f08",
-        "order": 7,
+        "order": 8,
         "width": 6,
         "height": 1,
         "passthru": false,
@@ -9384,7 +9400,7 @@
         "payloadType": "flow",
         "topic": "mwindowM1",
         "topicType": "flow",
-        "x": 960,
+        "x": 1120,
         "y": 1140,
         "wires": [
             [
@@ -9403,10 +9419,10 @@
         "width": 6,
         "height": 1,
         "name": "",
-        "label": "Actual VHigh : ",
+        "label": "{{msg.label}}",
         "format": "{{msg.payload}}",
         "layout": "row-left",
-        "x": 560,
+        "x": 870,
         "y": 1180,
         "wires": []
     },
@@ -9472,14 +9488,13 @@
         "payloadType": "flow",
         "topic": "vhighM1",
         "topicType": "flow",
-        "x": 960,
+        "x": 1120,
         "y": 1220,
         "wires": [
             [
                 "3c8baa35.b20efe",
                 "2e15fdd1.3cad52",
-                "6112a500.1a7014",
-                "8a4bde45.2ffa7"
+                "6112a500.1a7014"
             ]
         ]
     },
@@ -9492,10 +9507,10 @@
         "width": 6,
         "height": 1,
         "name": "",
-        "label": "Actual VLow : ",
+        "label": "{{msg.label}}",
         "format": "{{msg.payload}}",
         "layout": "row-left",
-        "x": 560,
+        "x": 870,
         "y": 1260,
         "wires": []
     },
@@ -9518,7 +9533,7 @@
         "payloadType": "flow",
         "topic": "vlowM1",
         "topicType": "flow",
-        "x": 960,
+        "x": 1120,
         "y": 1300,
         "wires": [
             [
@@ -9576,14 +9591,14 @@
         "type": "ui_text",
         "z": "3fb5a67.37c495a",
         "group": "f12df54.fdd1f08",
-        "order": 10,
+        "order": 11,
         "width": 6,
         "height": 1,
         "name": "",
-        "label": "Actual resistor : ",
+        "label": "{{msg.label}}",
         "format": "{{msg.payload}}",
         "layout": "row-left",
-        "x": 560,
+        "x": 870,
         "y": 1340,
         "wires": []
     },
@@ -9612,7 +9627,7 @@
         "z": "3fb5a67.37c495a",
         "name": "",
         "group": "f12df54.fdd1f08",
-        "order": 12,
+        "order": 13,
         "width": 6,
         "height": 1,
         "passthru": false,
@@ -9625,7 +9640,7 @@
         "payloadType": "flow",
         "topic": "rchargeM1",
         "topicType": "flow",
-        "x": 960,
+        "x": 1120,
         "y": 1380,
         "wires": [
             [
@@ -9640,13 +9655,13 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "Noise",
-        "func": "var noise;\n\n// set new flow variable\n//flow.set('noiseM1',msg.noise);\n\n//noise = String(msg.noise);\n\nmsg.payload = msg.noise;\nmsg.enabled = false;\n\nreturn msg;",
+        "func": "var noise;\n\n// set new flow variable\n//flow.set('noiseM1',msg.noise);\n\n//noise = String(msg.noise);\n\nmsg.label = msg.payload.rows[0].fr;\n\nmsg.payload = msg.noise;\nmsg.enabled = false;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 370,
+        "x": 690,
         "y": 1580,
         "wires": [
             [
@@ -9659,13 +9674,13 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "Sequence",
-        "func": "var sequence;\n\n// set new flow variable\n//flow.set('sequenceM1',msg.sequence);\n\nmsg.payload = msg.sequence;\nmsg.enabled = false;\n// msg.topic = 'Sequence :';\n\nreturn msg;",
+        "func": "var sequence;\n\n// set new flow variable\n//flow.set('sequenceM1',msg.sequence);\n\nmsg.label = msg.payload.rows[0].fr;\n\nmsg.payload = msg.sequence;\nmsg.enabled = false;\n// msg.topic = 'Sequence :';\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 380,
+        "x": 660,
         "y": 1700,
         "wires": [
             [
@@ -9709,164 +9724,7 @@
         "type": "ui_numeric",
         "z": "3fb5a67.37c495a",
         "name": "",
-        "label": "Actual noise value (mV):",
-        "tooltip": "",
-        "group": "f12df54.fdd1f08",
-        "order": 14,
-        "width": 0,
-        "height": 0,
-        "wrap": false,
-        "passthru": false,
-        "topic": "topic",
-        "topicType": "msg",
-        "format": "{{value}}",
-        "min": 0,
-        "max": "0",
-        "step": "0",
-        "x": 590,
-        "y": 1580,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "2a7f6ad5.0a9456",
-        "type": "ui_numeric",
-        "z": "3fb5a67.37c495a",
-        "name": "",
-        "label": "Sequence :",
-        "tooltip": "",
-        "group": "92957720.d414",
-        "order": 12,
-        "width": "0",
-        "height": "0",
-        "wrap": false,
-        "passthru": false,
-        "topic": "topic",
-        "topicType": "msg",
-        "format": "{{value}}",
-        "min": 0,
-        "max": "0",
-        "step": "0",
-        "x": 550,
-        "y": 1700,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "39f77f8a.4d56d8",
-        "type": "function",
-        "z": "3fb5a67.37c495a",
-        "name": "Cap",
-        "func": "// set new flow variable\n//flow.set('measurementM1',msg.cap);\n\n//measurement = String(msg.measurement);\n\nmsg.payload = msg.cap;\nmsg.enabled = false;\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 370,
-        "y": 1800,
-        "wires": [
-            [
-                "3fd4d0ab.6b95b"
-            ]
-        ]
-    },
-    {
-        "id": "3fd4d0ab.6b95b",
-        "type": "ui_numeric",
-        "z": "3fb5a67.37c495a",
-        "name": "",
-        "label": "Actual value :",
-        "tooltip": "",
-        "group": "f726791c.9d1d88",
-        "order": 6,
-        "width": 0,
-        "height": 0,
-        "wrap": false,
-        "passthru": false,
-        "topic": "topic",
-        "topicType": "msg",
-        "format": "{{value}}",
-        "min": 0,
-        "max": "0",
-        "step": "0",
-        "x": 520,
-        "y": 1800,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "8fa3a30b.7e3858",
-        "type": "function",
-        "z": "3fb5a67.37c495a",
-        "name": "Average",
-        "func": "// set new flow variable\n//flow.set('avg_measurementM1',msg.avg);\n\nmsg.payload = msg.avg;\nmsg.enabled = false;\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 380,
-        "y": 1840,
-        "wires": [
-            [
-                "232c8272.12dcd6"
-            ]
-        ]
-    },
-    {
-        "id": "232c8272.12dcd6",
-        "type": "ui_numeric",
-        "z": "3fb5a67.37c495a",
-        "name": "",
-        "label": "Actual average :",
-        "tooltip": "",
-        "group": "f726791c.9d1d88",
-        "order": 7,
-        "width": 0,
-        "height": 0,
-        "wrap": false,
-        "passthru": false,
-        "topic": "topic",
-        "topicType": "msg",
-        "format": "{{value}}",
-        "min": 0,
-        "max": "0",
-        "step": "0",
-        "x": 600,
-        "y": 1840,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "fe217ba8.cb07a",
-        "type": "function",
-        "z": "3fb5a67.37c495a",
-        "name": "Max Noise",
-        "func": "var maxnoise;\n\n// set new flow variable\nmaxnoise = flow.get('maxnoiseM1') || 0;\n\nif (msg.noise > maxnoise) \n{\n    flow.set('maxnoiseM1', msg.noise);\n    msg.payload = msg.noise;\n}\nelse\n{\n    msg.payload = maxnoise;\n}\n\nmsg.enabled = false;\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 390,
-        "y": 1640,
-        "wires": [
-            [
-                "54ca8a7.7724274"
-            ]
-        ]
-    },
-    {
-        "id": "54ca8a7.7724274",
-        "type": "ui_numeric",
-        "z": "3fb5a67.37c495a",
-        "name": "",
-        "label": "Maximum noise value (mV):",
+        "label": "{{msg.label}}",
         "tooltip": "",
         "group": "f12df54.fdd1f08",
         "order": 15,
@@ -9880,7 +9738,164 @@
         "min": 0,
         "max": "0",
         "step": "0",
-        "x": 600,
+        "x": 820,
+        "y": 1580,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2a7f6ad5.0a9456",
+        "type": "ui_numeric",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "label": "{{msg.label}}",
+        "tooltip": "",
+        "group": "92957720.d414",
+        "order": 12,
+        "width": "0",
+        "height": "0",
+        "wrap": false,
+        "passthru": false,
+        "topic": "topic",
+        "topicType": "msg",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "0",
+        "step": "0",
+        "x": 820,
+        "y": 1700,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "39f77f8a.4d56d8",
+        "type": "function",
+        "z": "3fb5a67.37c495a",
+        "name": "Cap",
+        "func": "// set new flow variable\n//flow.set('measurementM1',msg.cap);\n\n//measurement = String(msg.measurement);\n\nmsg.label = msg.payload.rows[0].fr;\n\nmsg.payload = msg.cap;\nmsg.enabled = false;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 690,
+        "y": 1800,
+        "wires": [
+            [
+                "3fd4d0ab.6b95b"
+            ]
+        ]
+    },
+    {
+        "id": "3fd4d0ab.6b95b",
+        "type": "ui_numeric",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "label": "{{msg.label}}",
+        "tooltip": "",
+        "group": "f726791c.9d1d88",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "wrap": false,
+        "passthru": false,
+        "topic": "topic",
+        "topicType": "msg",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "0",
+        "step": "0",
+        "x": 820,
+        "y": 1800,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8fa3a30b.7e3858",
+        "type": "function",
+        "z": "3fb5a67.37c495a",
+        "name": "Average",
+        "func": "// set new flow variable\n//flow.set('avg_measurementM1',msg.avg);\n\nmsg.label = msg.payload.rows[0].fr;\n\nmsg.payload = msg.avg;\nmsg.enabled = false;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 680,
+        "y": 1840,
+        "wires": [
+            [
+                "232c8272.12dcd6"
+            ]
+        ]
+    },
+    {
+        "id": "232c8272.12dcd6",
+        "type": "ui_numeric",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "label": "{{msg.label}}",
+        "tooltip": "",
+        "group": "f726791c.9d1d88",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "wrap": false,
+        "passthru": false,
+        "topic": "topic",
+        "topicType": "msg",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "0",
+        "step": "0",
+        "x": 820,
+        "y": 1840,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fe217ba8.cb07a",
+        "type": "function",
+        "z": "3fb5a67.37c495a",
+        "name": "Max Noise",
+        "func": "var maxnoise;\n\n// set new flow variable\nmaxnoise = flow.get('maxnoiseM1') || 0;\n\nmsg.label = msg.payload.rows[0].fr;\n\nif (msg.noise > maxnoise) \n{\n    flow.set('maxnoiseM1', msg.noise);\n    msg.payload = msg.noise;\n}\nelse\n{\n    msg.payload = maxnoise;\n}\n\nmsg.enabled = false;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 670,
+        "y": 1640,
+        "wires": [
+            [
+                "54ca8a7.7724274"
+            ]
+        ]
+    },
+    {
+        "id": "54ca8a7.7724274",
+        "type": "ui_numeric",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "label": "{{msg.label}}",
+        "tooltip": "",
+        "group": "f12df54.fdd1f08",
+        "order": 16,
+        "width": 0,
+        "height": 0,
+        "wrap": false,
+        "passthru": false,
+        "topic": "topic",
+        "topicType": "msg",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "0",
+        "step": "0",
+        "x": 820,
         "y": 1640,
         "wires": [
             []
@@ -9905,7 +9920,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 780,
+        "x": 880,
         "y": 980,
         "wires": [
             [
@@ -9932,7 +9947,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 750,
+        "x": 890,
         "y": 1060,
         "wires": [
             [
@@ -10056,7 +10071,7 @@
         "label": "change Charging resistor (Ohm)",
         "tooltip": "between 1 and 730000 Ohm",
         "group": "f12df54.fdd1f08",
-        "order": 8,
+        "order": 9,
         "width": 6,
         "height": 1,
         "passthru": true,
@@ -10230,7 +10245,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 940,
+        "x": 1100,
         "y": 920,
         "wires": [
             [
@@ -10465,7 +10480,7 @@
         "delay": "1000",
         "topic": "topic",
         "topicType": "msg",
-        "x": 1880,
+        "x": 2080,
         "y": 1220,
         "wires": [
             [
@@ -10492,7 +10507,7 @@
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 2170,
+        "x": 2370,
         "y": 940,
         "wires": [
             [
@@ -10696,8 +10711,8 @@
         "fwdInMessages": true,
         "resendOnRefresh": true,
         "templateScope": "local",
-        "x": 700,
-        "y": 1880,
+        "x": 820,
+        "y": 1900,
         "wires": [
             []
         ]
@@ -10713,8 +10728,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 280,
-        "y": 1880,
+        "x": 390,
+        "y": 1900,
         "wires": [
             [
                 "4757d887.183fc8"
@@ -10742,8 +10757,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "str",
-        "x": 110,
-        "y": 1880,
+        "x": 250,
+        "y": 1900,
         "wires": [
             [
                 "bc137f20.f932b"
@@ -10760,8 +10775,8 @@
         "chunk": false,
         "sendError": false,
         "encoding": "none",
-        "x": 430,
-        "y": 1880,
+        "x": 530,
+        "y": 1900,
         "wires": [
             [
                 "db2e5ea3.ed84"
@@ -10775,8 +10790,8 @@
         "name": "",
         "action": "str",
         "property": "payload",
-        "x": 560,
-        "y": 1880,
+        "x": 680,
+        "y": 1900,
         "wires": [
             [
                 "3a1bff0b.55d3c"
@@ -10794,7 +10809,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1940,
+        "x": 2140,
         "y": 940,
         "wires": [
             [
@@ -10813,7 +10828,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 2350,
+        "x": 2550,
         "y": 940,
         "wires": [
             [
@@ -10843,7 +10858,7 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 1770,
+        "x": 1970,
         "y": 940,
         "wires": [
             [
@@ -10862,7 +10877,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 2340,
+        "x": 2540,
         "y": 880,
         "wires": [
             [
@@ -10880,7 +10895,7 @@
         "createDir": false,
         "overwriteFile": "delete",
         "encoding": "none",
-        "x": 2500,
+        "x": 2700,
         "y": 880,
         "wires": [
             []
@@ -10897,7 +10912,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1900,
+        "x": 2100,
         "y": 1100,
         "wires": [
             [
@@ -10918,7 +10933,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 2530,
+        "x": 2730,
         "y": 940,
         "wires": []
     },
@@ -10941,7 +10956,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 2100,
+        "x": 2300,
         "y": 1220,
         "wires": [
             [
@@ -10971,7 +10986,7 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 1770,
+        "x": 1970,
         "y": 1020,
         "wires": [
             [
@@ -10990,7 +11005,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1940,
+        "x": 2140,
         "y": 1020,
         "wires": [
             [
@@ -11017,7 +11032,7 @@
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 2140,
+        "x": 2340,
         "y": 1020,
         "wires": [
             [
@@ -11038,7 +11053,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 2420,
+        "x": 2620,
         "y": 1020,
         "wires": [
             [
@@ -11052,7 +11067,7 @@
         "z": "3fb5a67.37c495a",
         "name": "data logging ui ",
         "info": "",
-        "x": 1800,
+        "x": 2000,
         "y": 880,
         "wires": []
     },
@@ -11085,7 +11100,7 @@
         "chunk": false,
         "sendError": false,
         "encoding": "none",
-        "x": 2070,
+        "x": 2270,
         "y": 1100,
         "wires": [
             [
@@ -11112,7 +11127,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 2280,
+        "x": 2480,
         "y": 1100,
         "wires": [
             [
@@ -11131,7 +11146,7 @@
         "tls": true,
         "name": "",
         "dname": "",
-        "x": 2490,
+        "x": 2690,
         "y": 1100,
         "wires": []
     },
@@ -11148,7 +11163,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 2270,
+        "x": 2470,
         "y": 1160,
         "wires": []
     },
@@ -11163,7 +11178,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 2400,
+        "x": 2600,
         "y": 1220,
         "wires": [
             [
@@ -11198,7 +11213,7 @@
         "postgresDB": "6733d493.9cca6c",
         "output": true,
         "outputs": 1,
-        "x": 1370,
+        "x": 1590,
         "y": 900,
         "wires": [
             [
@@ -11217,7 +11232,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1160,
+        "x": 1380,
         "y": 900,
         "wires": [
             [
@@ -11239,7 +11254,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1570,
+        "x": 1790,
         "y": 900,
         "wires": []
     },
@@ -11256,7 +11271,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1310,
+        "x": 1590,
         "y": 860,
         "wires": []
     },
@@ -11464,8 +11479,8 @@
         "payload": "",
         "topic": "topic",
         "topicType": "msg",
-        "x": 970,
-        "y": 780,
+        "x": 1750,
+        "y": 820,
         "wires": [
             [
                 "5a0746d6.c5b938"
@@ -11491,8 +11506,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1150,
-        "y": 800,
+        "x": 1930,
+        "y": 820,
         "wires": [
             []
         ]
@@ -11514,8 +11529,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "str",
-        "x": 630,
-        "y": 800,
+        "x": 1410,
+        "y": 820,
         "wires": [
             [
                 "f93d3e8f.3d8778"
@@ -11538,19 +11553,19 @@
         "wires": [
             [
                 "1b73761c.98f072",
-                "a7188d1d.89f8a8",
-                "fe217ba8.cb07a",
-                "4b6aa6bc.9fae38",
-                "39f77f8a.4d56d8",
-                "8fa3a30b.7e3858",
-                "63f9d66e.7b49b",
-                "e31e4144.4eb278",
-                "d2feafb2.f66178",
-                "d59e10ae.bcf648",
-                "f4629d6f.602868",
-                "6be38186.0c759",
                 "eb6ce2e2.ec5f68",
-                "ed1ab1fb.11868"
+                "ed1ab1fb.11868",
+                "e9b447bf.24ac58",
+                "bd7748c5.1705f8",
+                "32bdb2ea.712cb6",
+                "1552ea08.727bee",
+                "c1c56d91.222cb8",
+                "1c04be2f.98dae2",
+                "a89cc17a.c6be5",
+                "3a58413d.149c1e",
+                "2b710a88.c45126",
+                "8c25f946.e15788",
+                "4bd3c16c.3e58d"
             ],
             []
         ]
@@ -11560,7 +11575,7 @@
         "type": "debug",
         "z": "3fb5a67.37c495a",
         "name": "",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -11578,7 +11593,7 @@
         "z": "3fb5a67.37c495a",
         "name": "",
         "serial": "fd6c249c.71f2d8",
-        "x": 1820,
+        "x": 2020,
         "y": 1380,
         "wires": []
     },
@@ -11588,7 +11603,7 @@
         "z": "3fb5a67.37c495a",
         "name": "",
         "serial": "50f22906.5ea4b",
-        "x": 1820,
+        "x": 2020,
         "y": 1460,
         "wires": []
     },
@@ -11619,7 +11634,7 @@
         "checkall": "true",
         "repair": false,
         "outputs": 3,
-        "x": 1650,
+        "x": 1830,
         "y": 1360,
         "wires": [
             [
@@ -11867,8 +11882,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1220,
-        "y": 2620,
+        "x": 1180,
+        "y": 2800,
         "wires": [
             [
                 "e752fb6e.e9aee8"
@@ -11886,8 +11901,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1210,
-        "y": 2660,
+        "x": 1170,
+        "y": 2840,
         "wires": [
             [
                 "e752fb6e.e9aee8"
@@ -11905,8 +11920,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1230,
-        "y": 2700,
+        "x": 1190,
+        "y": 2880,
         "wires": [
             [
                 "e752fb6e.e9aee8"
@@ -11924,8 +11939,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1200,
-        "y": 2740,
+        "x": 1160,
+        "y": 2920,
         "wires": [
             [
                 "e752fb6e.e9aee8"
@@ -11943,8 +11958,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1220,
-        "y": 2820,
+        "x": 1180,
+        "y": 3000,
         "wires": [
             [
                 "e752fb6e.e9aee8"
@@ -11962,8 +11977,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1200,
-        "y": 2780,
+        "x": 1160,
+        "y": 2960,
         "wires": [
             [
                 "e752fb6e.e9aee8"
@@ -11981,8 +11996,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 940,
-        "y": 2860,
+        "x": 900,
+        "y": 3040,
         "wires": [
             [
                 "15dde266.a4b8a6"
@@ -12000,8 +12015,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1270,
-        "y": 2860,
+        "x": 1230,
+        "y": 3040,
         "wires": [
             [
                 "306b34aa.8b3814"
@@ -12033,8 +12048,8 @@
         "randomLast": "5",
         "randomUnits": "seconds",
         "drop": false,
-        "x": 1120,
-        "y": 2860,
+        "x": 1080,
+        "y": 3040,
         "wires": [
             [
                 "83e85f92.8d8738"
@@ -12178,7 +12193,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "Sensor ID",
-        "func": "var sensorid;\nmsg.backspaces = 3;\nmsg.payload = '';\n\nsensorid = String(msg.sensorid);\n\n//padding before number\nfor(var j = 0; j < (msg.backspaces-sensorid.length); j++)\n{ \n    msg.payload += '0';\n}\n\n\nfor(var i = 0; i < sensorid.length; i++)\n{ \n    msg.payload += sensorid[i];\n}\n\nmsg.payload = msg.payload.toString();\nmsg.payload.masterID = msg.payload;\nmsg.topic = 1;\n\nreturn msg;",
+        "func": "var sensorid;\nmsg.backspaces = 3;\nmsg.payload = '';\n\nsensorid = String(msg.sensorid);\n\n//padding before number\nfor(var j = 0; j < (msg.backspaces-sensorid.length); j++)\n{ \n    msg.payload += '0';\n}\n\n\nfor(var i = 0; i < sensorid.length; i++)\n{ \n    msg.payload += sensorid[i];\n}\n\nmsg.payload = msg.payload.toString();\nmsg.payload.masterID = msg.payload;\nmsg.topic = 1;\n\nmsg.label = 'Sensor ID: '\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -12201,10 +12216,10 @@
         "width": 6,
         "height": 1,
         "name": "",
-        "label": "Sensor ID : ",
+        "label": "{{msg.label}}",
         "format": "{{msg.payload}}",
         "layout": "row-left",
-        "x": 570,
+        "x": 550,
         "y": 2080,
         "wires": []
     },
@@ -12213,7 +12228,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "validate input",
-        "func": "\nmsg.background = 'grey';\nif (msg.payload == '')\n{\n    msg.enabled = false;\n}\nelse\n{\n    if (msg.payload <= 240) \n    {\n        msg.enabled = true;\n        msg.background = 'green';\n    }\n    else msg.enabled = false;\n}\nmsg.tooltip = 'between 0 and 240';\nmsg.enabled = false;\n\nreturn msg;",
+        "func": "var ID = flow.get('master2ID');\n\nmsg.background = 'grey';\nif ((msg.payload == '')  && (ID != ''))\n{\n    msg.enabled = false;\n}\nelse\n{\n    if (msg.payload <= 240) \n    {\n        msg.enabled = true;\n        msg.background = 'green';\n    }\n    else msg.enabled = false;\n}\nmsg.tooltip = 'between 0 and 240';\nmsg.enabled = false;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -12285,7 +12300,7 @@
         "type": "ui_text",
         "z": "3fb5a67.37c495a",
         "group": "f12df54.fdd1f08",
-        "order": 19,
+        "order": 22,
         "width": 6,
         "height": 1,
         "name": "",
@@ -12302,7 +12317,7 @@
         "z": "3fb5a67.37c495a",
         "name": "",
         "group": "f12df54.fdd1f08",
-        "order": 21,
+        "order": 24,
         "width": 6,
         "height": 1,
         "passthru": false,
@@ -12333,7 +12348,7 @@
         "label": "change Measurement Period (secs)",
         "tooltip": "between 5 and 4000 secs",
         "group": "f12df54.fdd1f08",
-        "order": 17,
+        "order": 20,
         "width": 6,
         "height": 1,
         "passthru": true,
@@ -12354,7 +12369,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "validate input",
-        "func": "\nmsg.background = 'grey';\nif (msg.payload == '')\n{\n    msg.enabled = false;\n}\nelse\n{\n    if ((msg.payload <= 4000) && (msg.payload >=5))\n    {\n        msg.enabled = true;\n        msg.background = 'green';\n    }\n    else msg.enabled = false;\n}\n\nmsg.tooltip = 'between 5 and 4000 secs';\nmsg.topic = 'Set new value';\nreturn msg;",
+        "func": "var ID = flow.get('master2ID');\n\nmsg.background = 'grey';\nif (msg.payload == '')\n{\n    msg.enabled = false;\n}\nelse\n{\n    if ((msg.payload <= 4000) && (msg.payload >=5)  && (ID != ''))\n    {\n        msg.enabled = true;\n        msg.background = 'green';\n    }\n    else msg.enabled = false;\n}\n\nmsg.tooltip = 'between 5 and 4000 secs';\nmsg.topic = 'Set new value';\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -12373,7 +12388,7 @@
         "type": "ui_text",
         "z": "3fb5a67.37c495a",
         "group": "f12df54.fdd1f08",
-        "order": 20,
+        "order": 23,
         "width": 6,
         "height": 1,
         "name": "",
@@ -12392,7 +12407,7 @@
         "label": "change Measurement window (secs)",
         "tooltip": "between 1 and 4000 secs",
         "group": "f12df54.fdd1f08",
-        "order": 18,
+        "order": 21,
         "width": 6,
         "height": 1,
         "passthru": true,
@@ -12413,7 +12428,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "validate input",
-        "func": "\nmsg.background = 'grey';\nif (msg.payload == '')\n{\n    msg.enabled = false;\n}\nelse\n{\n    if ((msg.payload <= 4000) && (msg.payload >=1))\n    {\n        msg.enabled = true;\n        msg.background = 'green';\n    }\n    else msg.enabled = false;\n}\n\nmsg.tooltip = 'between 1 and 4000 secs';\nreturn msg;",
+        "func": "var ID = flow.get('master2ID');\n\nmsg.background = 'grey';\nif (msg.payload == '')\n{\n    msg.enabled = false;\n}\nelse\n{\n    if ((msg.payload <= 4000) && (msg.payload >=1)  && (ID != ''))\n    {\n        msg.enabled = true;\n        msg.background = 'green';\n    }\n    else msg.enabled = false;\n}\n\nmsg.tooltip = 'between 1 and 4000 secs';\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -12433,7 +12448,7 @@
         "z": "3fb5a67.37c495a",
         "name": "",
         "group": "f12df54.fdd1f08",
-        "order": 22,
+        "order": 25,
         "width": 6,
         "height": 1,
         "passthru": false,
@@ -12501,7 +12516,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "validate input",
-        "func": "var vlow = flow.get('vlowM2');\n\nmsg.background = 'grey';\nif (msg.payload == '')\n{\n    msg.enabled = false;\n}\nelse\n{\n    if ((msg.payload <= 3170) && (msg.payload > vlow))\n    {\n        msg.enabled = true;\n        msg.background = 'green';\n    }\n    else msg.enabled = false;\n}\n\nmsg.tooltip = 'between VLow and 3170 mVolt';\nreturn msg;",
+        "func": "var vlow = flow.get('vlowM2');\nvar ID = flow.get('master2ID');\n\nmsg.background = 'grey';\nif (msg.payload == '')\n{\n    msg.enabled = false;\n}\nelse\n{\n    if ((msg.payload <= 3170) && (msg.payload > vlow)  && (ID != ''))\n    {\n        msg.enabled = true;\n        msg.background = 'green';\n    }\n    else msg.enabled = false;\n}\n\nmsg.tooltip = 'between VLow and 3170 mVolt';\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -12594,7 +12609,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "validate input",
-        "func": "var vhigh = flow.get('vhighM2');\n\nmsg.background = 'grey';\nif (msg.payload == '')\n{\n    msg.enabled = false;\n}\nelse\n{\n    if ((msg.payload < vhigh) & (msg.payload >= 10))\n    {\n        msg.enabled = true;\n        msg.background = 'green';\n    }\n    else msg.enabled = false;\n}\n\nmsg.tooltip = 'between 10mV and VHigh';\nreturn msg;",
+        "func": "var vhigh = flow.get('vhighM2');\nvar ID = flow.get('master2ID');\n\nmsg.background = 'grey';\nif (msg.payload == '')\n{\n    msg.enabled = false;\n}\nelse\n{\n    if ((msg.payload < vhigh) & (msg.payload >= 10)  && (ID != ''))\n    {\n        msg.enabled = true;\n        msg.background = 'green';\n    }\n    else msg.enabled = false;\n}\n\nmsg.tooltip = 'between 10mV and VHigh';\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -12637,7 +12652,7 @@
         "type": "ui_text",
         "z": "3fb5a67.37c495a",
         "group": "f12df54.fdd1f08",
-        "order": 25,
+        "order": 28,
         "width": 6,
         "height": 1,
         "name": "",
@@ -12653,7 +12668,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "validate input",
-        "func": "msg.background = 'grey';\nif (msg.payload == '')\n{\n    msg.enabled = false;\n}\nelse\n{\n    if ((msg.payload <= 730000) && (msg.payload >=1))\n    {\n        msg.enabled = true;\n        msg.background = 'green';\n    }\n    else msg.enabled = false;\n}\n\nmsg.tooltip = 'between 1 and 730000 Ohm';\nreturn msg;",
+        "func": "var ID = flow.get('master2ID');\n\nmsg.background = 'grey';\nif (msg.payload == '')\n{\n    msg.enabled = false;\n}\nelse\n{\n    if ((msg.payload <= 730000) && (msg.payload >=1)  && (ID != ''))\n    {\n        msg.enabled = true;\n        msg.background = 'green';\n    }\n    else msg.enabled = false;\n}\n\nmsg.tooltip = 'between 1 and 730000 Ohm';\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -12673,7 +12688,7 @@
         "z": "3fb5a67.37c495a",
         "name": "",
         "group": "f12df54.fdd1f08",
-        "order": 26,
+        "order": 30,
         "width": 6,
         "height": 1,
         "passthru": false,
@@ -12726,8 +12741,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 400,
-        "y": 2680,
+        "x": 360,
+        "y": 2860,
         "wires": [
             [
                 "2e653453.fc4bf4",
@@ -12773,7 +12788,7 @@
         "label": "Actual noise value (mV):",
         "tooltip": "",
         "group": "f12df54.fdd1f08",
-        "order": 27,
+        "order": 32,
         "width": 0,
         "height": 0,
         "wrap": false,
@@ -12809,8 +12824,8 @@
         "min": 0,
         "max": "0",
         "step": "0",
-        "x": 570,
-        "y": 2680,
+        "x": 530,
+        "y": 2860,
         "wires": [
             []
         ]
@@ -12826,8 +12841,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 390,
-        "y": 2780,
+        "x": 350,
+        "y": 2960,
         "wires": [
             [
                 "f8d498c3.944678"
@@ -12853,8 +12868,8 @@
         "min": 0,
         "max": "0",
         "step": "0",
-        "x": 540,
-        "y": 2780,
+        "x": 500,
+        "y": 2960,
         "wires": [
             []
         ]
@@ -12870,8 +12885,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 400,
-        "y": 2820,
+        "x": 360,
+        "y": 3000,
         "wires": [
             [
                 "6f07f2f2.c68c6c"
@@ -12897,8 +12912,8 @@
         "min": 0,
         "max": "0",
         "step": "0",
-        "x": 620,
-        "y": 2820,
+        "x": 580,
+        "y": 3000,
         "wires": [
             []
         ]
@@ -12914,8 +12929,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 410,
-        "y": 2620,
+        "x": 370,
+        "y": 2800,
         "wires": [
             [
                 "5eb23861.20c77"
@@ -12930,7 +12945,7 @@
         "label": "Maximum noise value (mV):",
         "tooltip": "",
         "group": "f12df54.fdd1f08",
-        "order": 28,
+        "order": 33,
         "width": 0,
         "height": 0,
         "wrap": false,
@@ -12941,8 +12956,8 @@
         "min": 0,
         "max": "0",
         "step": "0",
-        "x": 620,
-        "y": 2620,
+        "x": 580,
+        "y": 2800,
         "wires": [
             []
         ]
@@ -13117,7 +13132,7 @@
         "label": "change Charging resistor (Ohm)",
         "tooltip": "between 1 and 730000 Ohm",
         "group": "f12df54.fdd1f08",
-        "order": 23,
+        "order": 26,
         "width": 6,
         "height": 1,
         "passthru": true,
@@ -13154,7 +13169,8 @@
                 "9fdc448d.82c688",
                 "31d5fac3.94199e",
                 "6429e384.1b5c14",
-                "355792d6.428b46"
+                "355792d6.428b46",
+                "67acb62b.19b26"
             ]
         ]
     },
@@ -13320,8 +13336,8 @@
         "label": "{{topic}}",
         "format": "{{value | uppercase}}",
         "layout": "col-center",
-        "x": 950,
-        "y": 2740,
+        "x": 910,
+        "y": 2920,
         "wires": []
     },
     {
@@ -13335,8 +13351,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 810,
-        "y": 2740,
+        "x": 770,
+        "y": 2920,
         "wires": [
             [
                 "bd26540b.2c2f6"
@@ -13354,8 +13370,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 650,
-        "y": 2740,
+        "x": 610,
+        "y": 2920,
         "wires": [
             [
                 "355792d6.428b46"
@@ -13430,8 +13446,8 @@
         "fwdInMessages": true,
         "resendOnRefresh": true,
         "templateScope": "local",
-        "x": 740,
-        "y": 2860,
+        "x": 700,
+        "y": 3040,
         "wires": [
             []
         ]
@@ -13447,8 +13463,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 320,
-        "y": 2860,
+        "x": 280,
+        "y": 3040,
         "wires": [
             [
                 "6037ae56.e843f"
@@ -13476,8 +13492,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "str",
-        "x": 150,
-        "y": 2860,
+        "x": 110,
+        "y": 3040,
         "wires": [
             [
                 "bc5b4b44.0ad878"
@@ -13494,8 +13510,8 @@
         "chunk": false,
         "sendError": false,
         "encoding": "none",
-        "x": 470,
-        "y": 2860,
+        "x": 430,
+        "y": 3040,
         "wires": [
             [
                 "2b588b06.a55b4c"
@@ -13509,8 +13525,8 @@
         "name": "",
         "action": "str",
         "property": "payload",
-        "x": 600,
-        "y": 2860,
+        "x": 560,
+        "y": 3040,
         "wires": [
             [
                 "cf9d5263.6f4158"
@@ -13907,7 +13923,7 @@
         "type": "postgrestor",
         "z": "3fb5a67.37c495a",
         "name": "sensor_config@localhost",
-        "query": "INSERT INTO sensor_config_table \n(\n--\t\"ts\" timestamptz DEFAULT NOW(),\n--\t\"localisation\" point,\n--\tdescription,\n--\t\"customerID\" int8,\n    masterid,\n    sensorid,\n--\t\"timeslot\" smallint,\n\tvhigh,\n\tvlow,\n\tmeastime,\n\tmeasperiod,\n\trcharge\n--\taccel\n--\t\"masterID_RX\" char,\n--\t\"sensorID_RX\" char\n) VALUES\n(\n    '{{{msg.masterid}}}',\n    '{{msg.sensorid}}', \n    '{{msg.vhigh}}',\n    '{{msg.vlow}}',\n    '{{msg.mwindow}}',\n    '{{msg.mperiod}}',\n    '{{msg.rcharge}}'\n);",
+        "query": "INSERT INTO sensor_config_table \n(\n--\t\"ts\" timestamptz DEFAULT NOW(),\n--\t\"localisation\" point,\n\tdescription,\n--\t\"customerID\" int8,\n    masterid,\n    sensorid,\n--\t\"timeslot\" smallint,\n\tvhigh,\n\tvlow,\n\tmeastime,\n\tmeasperiod,\n\trcharge\n--\taccel\n--\t\"masterID_RX\" char,\n--\t\"sensorID_RX\" char\n) VALUES\n(\n    '{{msg.description}}',\n    '{{{msg.masterid}}}',\n    '{{msg.sensorid}}', \n    '{{msg.vhigh}}',\n    '{{msg.vlow}}',\n    '{{msg.mwindow}}',\n    '{{msg.mperiod}}',\n    '{{msg.rcharge}}'\n);",
         "postgresDB": "6733d493.9cca6c",
         "output": true,
         "outputs": 1,
@@ -13924,7 +13940,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "",
-        "func": "// get flow variables\nvar mperiod = parseInt(flow.get('mperiodM2'));\nvar rcharge = parseInt(flow.get('rchargeM2'));\nvar vhigh = parseInt(flow.get('vhighM2'));\nvar vlow = parseInt(flow.get('vlowM2'));\nvar mwindow = parseInt(flow.get('mwindowM2'));\n\nvar masterID = flow.get(\"master2ID\");\n\nmsg.masterid = masterID;\nmsg.sensorid = 0;\n\nisNaN(mperiod) ? msg.mperiod = 0 :  msg.mperiod = mperiod;\nisNaN(rcharge) ? msg.rcharge = 0 : msg.rcharge = rcharge;\nisNaN(vhigh) ? msg.vhigh = 0 : msg.vhigh = vhigh;\nisNaN(vlow) ? msg.vlow = 0 : msg.vlow = vlow;\nisNaN(mwindow) ? msg.mwindow = 0 : msg.mwindow = mwindow;\n\nreturn msg;",
+        "func": "// get flow variables\nvar mperiod = parseInt(flow.get('mperiodM2'));\nvar rcharge = parseInt(flow.get('rchargeM2'));\nvar vhigh = parseInt(flow.get('vhighM2'));\nvar vlow = parseInt(flow.get('vlowM2'));\nvar mwindow = parseInt(flow.get('mwindowM2'));\nvar description = flow.get('descriptionM2');\n\nvar masterID = flow.get(\"master2ID\");\n\nmsg.masterid = masterID;\nmsg.sensorid = 0;\n\nisNaN(mperiod) ? msg.mperiod = 0 :  msg.mperiod = mperiod;\nisNaN(rcharge) ? msg.rcharge = 0 : msg.rcharge = rcharge;\nisNaN(vhigh) ? msg.vhigh = 0 : msg.vhigh = vhigh;\nisNaN(vlow) ? msg.vlow = 0 : msg.vlow = vlow;\nisNaN(mwindow) ? msg.mwindow = 0 : msg.mwindow = mwindow;\n\nmsg.description = description;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -14007,8 +14023,8 @@
         "payload": "",
         "topic": "topic",
         "topicType": "msg",
-        "x": 1030,
-        "y": 1920,
+        "x": 1730,
+        "y": 1960,
         "wires": [
             [
                 "a75ebb6.8bdc348"
@@ -14034,8 +14050,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1210,
-        "y": 1940,
+        "x": 1910,
+        "y": 1960,
         "wires": [
             []
         ]
@@ -14057,8 +14073,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "str",
-        "x": 670,
-        "y": 1940,
+        "x": 1390,
+        "y": 1960,
         "wires": [
             [
                 "a0492f8b.131988"
@@ -14092,7 +14108,8 @@
                 "8eb2f3f2.c4f3a8",
                 "d41af9b4.689e58",
                 "3fabaa4a.2e2a76",
-                "b241abde.4cd14"
+                "b241abde.4cd14",
+                "5019d201.b1ee94"
             ],
             []
         ]
@@ -14133,8 +14150,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 850,
-        "y": 1940,
+        "x": 1550,
+        "y": 1960,
         "wires": [
             [
                 "e047d1f7.dc91f8"
@@ -14287,7 +14304,7 @@
         "z": "3fb5a67.37c495a",
         "name": "data logging",
         "info": "",
-        "x": 510,
+        "x": 370,
         "y": 1940,
         "wires": []
     },
@@ -14304,25 +14321,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1750,
+        "x": 1950,
         "y": 1260,
-        "wires": []
-    },
-    {
-        "id": "8a4bde45.2ffa7",
-        "type": "debug",
-        "z": "3fb5a67.37c495a",
-        "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1470,
-        "y": 1180,
         "wires": []
     },
     {
@@ -14491,8 +14491,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 790,
-        "y": 800,
+        "x": 1570,
+        "y": 820,
         "wires": [
             [
                 "881accc2.12a77"
@@ -14628,7 +14628,7 @@
         "topic": "",
         "payload": "",
         "payloadType": "str",
-        "x": 2250,
+        "x": 2450,
         "y": 1280,
         "wires": [
             [
@@ -14649,7 +14649,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 2550,
+        "x": 2750,
         "y": 1240,
         "wires": []
     },
@@ -14692,7 +14692,7 @@
         "tls": true,
         "name": "log@isenspro.com",
         "dname": "log email",
-        "x": 2560,
+        "x": 2760,
         "y": 1140,
         "wires": []
     },
@@ -14701,14 +14701,14 @@
         "type": "ui_text",
         "z": "3fb5a67.37c495a",
         "group": "f12df54.fdd1f08",
-        "order": 11,
+        "order": 12,
         "width": 6,
         "height": 1,
         "name": "",
         "label": "Actual Description : ",
         "format": "{{msg.topic}}",
         "layout": "row-left",
-        "x": 970,
+        "x": 1130,
         "y": 1440,
         "wires": []
     },
@@ -14737,7 +14737,7 @@
         "z": "3fb5a67.37c495a",
         "name": "",
         "group": "f12df54.fdd1f08",
-        "order": 13,
+        "order": 14,
         "width": 6,
         "height": 1,
         "passthru": false,
@@ -14750,7 +14750,7 @@
         "payloadType": "flow",
         "topic": "descriptionM1",
         "topicType": "flow",
-        "x": 960,
+        "x": 1120,
         "y": 1520,
         "wires": [
             [
@@ -14794,7 +14794,7 @@
         "label": "change Description",
         "tooltip": "Description of measurement setup",
         "group": "f12df54.fdd1f08",
-        "order": 9,
+        "order": 10,
         "width": 6,
         "height": 1,
         "passthru": true,
@@ -14815,11 +14815,11 @@
         "type": "postgrestor",
         "z": "3fb5a67.37c495a",
         "name": "sensor_config@localhost",
-        "query": "SELECT * FROM sensor_config_table\nWHERE masterid = '{{{ msg.masterid }}}'\nORDER BY ts  DESC\nLIMIT 1;",
+        "query": "SELECT * FROM sensor_config_table\nWHERE masterid = '{{{ msg.masterid }}}' AND description <> ''\nORDER BY ts  DESC\nLIMIT 1;",
         "postgresDB": "6733d493.9cca6c",
         "output": true,
         "outputs": 1,
-        "x": 550,
+        "x": 570,
         "y": 1440,
         "wires": [
             [
@@ -14841,7 +14841,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 490,
+        "x": 610,
         "y": 1480,
         "wires": []
     },
@@ -14875,12 +14875,11 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 760,
-        "y": 1420,
+        "x": 800,
+        "y": 1440,
         "wires": [
             [
-                "f79cdec1.a2e858",
-                "1bd00b11.6e783d"
+                "f79cdec1.a2e858"
             ]
         ]
     },
@@ -14915,7 +14914,139 @@
         ]
     },
     {
-        "id": "1bd00b11.6e783d",
+        "id": "fe5e842c.ba46d",
+        "type": "ui_text",
+        "z": "3fb5a67.37c495a",
+        "group": "f12df54.fdd1f08",
+        "order": 29,
+        "width": 6,
+        "height": 1,
+        "name": "",
+        "label": "Actual Description : ",
+        "format": "{{msg.topic}}",
+        "layout": "row-left",
+        "x": 990,
+        "y": 2620,
+        "wires": []
+    },
+    {
+        "id": "83e1d0ff.4cf518",
+        "type": "function",
+        "z": "3fb5a67.37c495a",
+        "name": "validate input",
+        "func": "var ID = flow.get('master2ID');\n\nmsg.background = 'grey';\nif ((msg.payload == ''))\n{\n    msg.enabled = false;\n}\nelse\n{\n      if ((ID != ''))\n    {\n        msg.enabled = true;\n        msg.background = 'green';\n    }\n    else msg.enabled = false;\n}\n\nmsg.tooltip = 'description of measurement setup';\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 570,
+        "y": 2700,
+        "wires": [
+            [
+                "64192180.97c3e"
+            ]
+        ]
+    },
+    {
+        "id": "67acb62b.19b26",
+        "type": "ui_button",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "group": "f12df54.fdd1f08",
+        "order": 31,
+        "width": 6,
+        "height": 1,
+        "passthru": false,
+        "label": "Set new value",
+        "tooltip": "{{tooltip}}",
+        "color": "",
+        "bgcolor": "{{background}}",
+        "icon": "",
+        "payload": "descriptionM2",
+        "payloadType": "flow",
+        "topic": "descriptionM2",
+        "topicType": "flow",
+        "x": 980,
+        "y": 2700,
+        "wires": [
+            [
+                "7cc784f.f7ff57c",
+                "5145b42a.220b74"
+            ]
+        ]
+    },
+    {
+        "id": "64192180.97c3e",
+        "type": "change",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "descriptionM2",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 760,
+        "y": 2700,
+        "wires": [
+            [
+                "67acb62b.19b26"
+            ]
+        ]
+    },
+    {
+        "id": "b2c6eb89.d1df6",
+        "type": "ui_text_input",
+        "z": "3fb5a67.37c495a",
+        "name": "Description",
+        "label": "change Description",
+        "tooltip": "Description of measurement setup",
+        "group": "f12df54.fdd1f08",
+        "order": 27,
+        "width": 6,
+        "height": 1,
+        "passthru": true,
+        "mode": "text",
+        "delay": "100",
+        "topic": "",
+        "topicType": "str",
+        "x": 410,
+        "y": 2700,
+        "wires": [
+            [
+                "83e1d0ff.4cf518"
+            ]
+        ]
+    },
+    {
+        "id": "ef9528e.3b0c2d8",
+        "type": "postgrestor",
+        "z": "3fb5a67.37c495a",
+        "name": "sensor_config@localhost",
+        "query": "SELECT * FROM sensor_config_table\nWHERE masterid = '{{{ msg.masterid }}}' AND description <> ''\nORDER BY ts  DESC\nLIMIT 1;",
+        "postgresDB": "6733d493.9cca6c",
+        "output": true,
+        "outputs": 1,
+        "x": 570,
+        "y": 2620,
+        "wires": [
+            [
+                "99517fe0.bc91e8",
+                "a5df1565.d55b98"
+            ]
+        ]
+    },
+    {
+        "id": "99517fe0.bc91e8",
         "type": "debug",
         "z": "3fb5a67.37c495a",
         "name": "",
@@ -14927,8 +15058,1550 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1190,
-        "y": 1460,
+        "x": 510,
+        "y": 2660,
         "wires": []
+    },
+    {
+        "id": "5019d201.b1ee94",
+        "type": "function",
+        "z": "3fb5a67.37c495a",
+        "name": "Description",
+        "func": "var ID = flow.get('master2ID');\n\nmsg.masterid = ID;\nmsg.payload = '';\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 370,
+        "y": 2620,
+        "wires": [
+            [
+                "ef9528e.3b0c2d8"
+            ]
+        ]
+    },
+    {
+        "id": "a5df1565.d55b98",
+        "type": "function",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "func": "msg.topic = msg.payload.rows[0].description;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 780,
+        "y": 2620,
+        "wires": [
+            [
+                "fe5e842c.ba46d"
+            ]
+        ]
+    },
+    {
+        "id": "583eb22f.766204",
+        "type": "inject",
+        "z": "3fb5a67.37c495a",
+        "name": "init",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "enabled",
+                "v": "true",
+                "vt": "bool"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "x": 110,
+        "y": 2700,
+        "wires": [
+            [
+                "b2c6eb89.d1df6"
+            ]
+        ]
+    },
+    {
+        "id": "ce5c0b77.bc54d",
+        "type": "inject",
+        "z": "a66ad1ae.ff0e18",
+        "name": "translations::database",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "translations",
+        "payloadType": "str",
+        "x": 140,
+        "y": 1140,
+        "wires": [
+            [
+                "9fdcfe85.fcdbc"
+            ]
+        ]
+    },
+    {
+        "id": "d152f38.65baa9",
+        "type": "debug",
+        "z": "a66ad1ae.ff0e18",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 850,
+        "y": 1140,
+        "wires": []
+    },
+    {
+        "id": "9f7bfed6.b3ee6",
+        "type": "comment",
+        "z": "a66ad1ae.ff0e18",
+        "name": "Translations",
+        "info": "",
+        "x": 90,
+        "y": 1080,
+        "wires": []
+    },
+    {
+        "id": "ff200785.91879",
+        "type": "postgrestor",
+        "z": "a66ad1ae.ff0e18",
+        "name": "translations@localhost",
+        "query": "DROP TABLE IF EXISTS \"{{ msg.topic }}\" CASCADE;\n\nCREATE TABLE \"{{ msg.topic }}\" (\n\t\"en\" varchar(50),\n\t\"nl\" varchar(50),\n\t\"fr\" varchar(50),\n\t\"de\" varchar(50),\n\t\"jp\" varchar(50),\n\t\"sw\" varchar(50),\n\t\"no\" varchar(50),\n\t\"ru\" varchar(50),\n\t\"fi\" varchar(50),\n\tCONSTRAINT \"translations_table_pk\" PRIMARY KEY (\"en\")\n) WITH (\n  OIDS=FALSE\n)\nTABLESPACE pg_default;\n",
+        "postgresDB": "6787392.d78b7c8",
+        "output": true,
+        "outputs": 1,
+        "x": 380,
+        "y": 1200,
+        "wires": [
+            [
+                "aae0770a.116a38"
+            ]
+        ]
+    },
+    {
+        "id": "1440568d.554631",
+        "type": "inject",
+        "z": "a66ad1ae.ff0e18",
+        "name": "translations_table",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "translations_table",
+        "payloadType": "str",
+        "x": 120,
+        "y": 1200,
+        "wires": [
+            [
+                "ff200785.91879"
+            ]
+        ]
+    },
+    {
+        "id": "aae0770a.116a38",
+        "type": "debug",
+        "z": "a66ad1ae.ff0e18",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 590,
+        "y": 1200,
+        "wires": []
+    },
+    {
+        "id": "9fdcfe85.fcdbc",
+        "type": "template",
+        "z": "a66ad1ae.ff0e18",
+        "name": "extensions",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "echo '\\x \\\\ DROP DATABASE IF EXISTS {{payload}};' | psql -U postgres -h localhost\n\necho '\\x \\\\ CREATE DATABASE {{payload}};' | psql -U postgres -h localhost\necho '\\x \\\\ CREATE EXTENSION IF NOT EXISTS postgis CASCADE;' | psql -U postgres -h localhost -d weather_data\n",
+        "output": "str",
+        "x": 350,
+        "y": 1140,
+        "wires": [
+            [
+                "cec4e557.e2ba68"
+            ]
+        ]
+    },
+    {
+        "id": "cec4e557.e2ba68",
+        "type": "exec",
+        "z": "a66ad1ae.ff0e18",
+        "command": "",
+        "addpay": "payload",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "oldrc": false,
+        "name": "",
+        "x": 550,
+        "y": 1140,
+        "wires": [
+            [],
+            [],
+            [
+                "d152f38.65baa9"
+            ]
+        ]
+    },
+    {
+        "id": "e587a339.37909",
+        "type": "inject",
+        "z": "a66ad1ae.ff0e18",
+        "name": "Translate EN word",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "Select language ",
+        "payloadType": "str",
+        "x": 150,
+        "y": 1300,
+        "wires": [
+            [
+                "2a8dc65a.ad90fa",
+                "676e7ab7.dadee4",
+                "ec3fdfd0.2a77f",
+                "cc4fd54f.6558b",
+                "24f04687.b5ea1a",
+                "59315de8.64b4ac",
+                "9efbd77a.b8a96",
+                "b327d4af.9f643"
+            ]
+        ]
+    },
+    {
+        "id": "2a8dc65a.ad90fa",
+        "type": "deepl",
+        "z": "a66ad1ae.ff0e18",
+        "name": "Deepl to FR",
+        "auth_key": "40942aeb-6118-f285-28d9-95f24488eb51:fx",
+        "option": "https://api-free.deepl.com/v2/translate",
+        "source_lang": "EN",
+        "text": "",
+        "target_lang": "FR",
+        "x": 330,
+        "y": 1340,
+        "wires": [
+            [
+                "d8d91dca.1e4b5"
+            ]
+        ]
+    },
+    {
+        "id": "ba3d544.70a9128",
+        "type": "debug",
+        "z": "a66ad1ae.ff0e18",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 650,
+        "y": 1340,
+        "wires": []
+    },
+    {
+        "id": "d8d91dca.1e4b5",
+        "type": "function",
+        "z": "a66ad1ae.ff0e18",
+        "name": "",
+        "func": "msg.fr = msg.payload.translations[0].text;\nflow.set(\"fr\",msg.fr);\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 1340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3f959dd0.88cd62",
+        "type": "function",
+        "z": "a66ad1ae.ff0e18",
+        "name": "",
+        "func": "msg.en = msg.payload;\nflow.set(\"en\",msg.en);\n\nvar fr = flow.get(\"fr\");\nmsg.fr = fr;\n\nvar de = flow.get(\"de\");\nmsg.de = de;\n\nvar nl = flow.get(\"nl\");\nmsg.nl = nl;\n\nvar jp = flow.get(\"jp\");\nmsg.jp = jp;\n\nvar sw = flow.get(\"sw\");\nmsg.sw = sw;\n\nvar fi = flow.get(\"fi\");\nmsg.fi = fi;\n\nvar ru = flow.get(\"ru\");\nmsg.ru = ru;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 660,
+        "y": 1300,
+        "wires": [
+            [
+                "ba3d544.70a9128",
+                "ecb8c3b4.688d7"
+            ]
+        ]
+    },
+    {
+        "id": "9ca8b0fa.9ad5d8",
+        "type": "deepl",
+        "z": "a66ad1ae.ff0e18",
+        "name": "Deepl to DE",
+        "auth_key": "40942aeb-6118-f285-28d9-95f24488eb51:fx",
+        "option": "https://api-free.deepl.com/v2/translate",
+        "source_lang": "EN",
+        "text": "",
+        "target_lang": "DE",
+        "x": 530,
+        "y": 1380,
+        "wires": [
+            [
+                "3d7c4c70.fc0f64"
+            ]
+        ]
+    },
+    {
+        "id": "199f9099.af8e5f",
+        "type": "deepl",
+        "z": "a66ad1ae.ff0e18",
+        "name": "Deepl to NL",
+        "auth_key": "40942aeb-6118-f285-28d9-95f24488eb51:fx",
+        "option": "https://api-free.deepl.com/v2/translate",
+        "source_lang": "EN",
+        "text": "",
+        "target_lang": "NL",
+        "x": 530,
+        "y": 1420,
+        "wires": [
+            [
+                "7a9856c8.ef0a18"
+            ]
+        ]
+    },
+    {
+        "id": "d6519f5a.a2291",
+        "type": "deepl",
+        "z": "a66ad1ae.ff0e18",
+        "name": "Deepl to JP",
+        "auth_key": "40942aeb-6118-f285-28d9-95f24488eb51:fx",
+        "option": "https://api-free.deepl.com/v2/translate",
+        "source_lang": "EN",
+        "text": "",
+        "target_lang": "JA",
+        "x": 530,
+        "y": 1460,
+        "wires": [
+            [
+                "f5efcf49.5ce178"
+            ]
+        ]
+    },
+    {
+        "id": "54b1d069.2e098",
+        "type": "deepl",
+        "z": "a66ad1ae.ff0e18",
+        "name": "Deepl to SW",
+        "auth_key": "40942aeb-6118-f285-28d9-95f24488eb51:fx",
+        "option": "https://api-free.deepl.com/v2/translate",
+        "source_lang": "EN",
+        "text": "",
+        "target_lang": "SV",
+        "x": 530,
+        "y": 1500,
+        "wires": [
+            [
+                "3b37f9bd.1693fe"
+            ]
+        ]
+    },
+    {
+        "id": "66931d33.549d3c",
+        "type": "deepl",
+        "z": "a66ad1ae.ff0e18",
+        "name": "Deepl to FI",
+        "auth_key": "40942aeb-6118-f285-28d9-95f24488eb51:fx",
+        "option": "https://api-free.deepl.com/v2/translate",
+        "source_lang": "EN",
+        "text": "",
+        "target_lang": "FI",
+        "x": 530,
+        "y": 1540,
+        "wires": [
+            [
+                "2a33a903.06886e"
+            ]
+        ]
+    },
+    {
+        "id": "c4264afb.535ae",
+        "type": "deepl",
+        "z": "a66ad1ae.ff0e18",
+        "name": "Deepl to RU",
+        "auth_key": "40942aeb-6118-f285-28d9-95f24488eb51:fx",
+        "option": "https://api-free.deepl.com/v2/translate",
+        "source_lang": "EN",
+        "text": "",
+        "target_lang": "RU",
+        "x": 530,
+        "y": 1580,
+        "wires": [
+            [
+                "9ccf1ca.e812ce"
+            ]
+        ]
+    },
+    {
+        "id": "3d7c4c70.fc0f64",
+        "type": "function",
+        "z": "a66ad1ae.ff0e18",
+        "name": "",
+        "func": "msg.de = msg.payload.translations[0].text;\nflow.set(\"de\",msg.de);\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 1380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7a9856c8.ef0a18",
+        "type": "function",
+        "z": "a66ad1ae.ff0e18",
+        "name": "",
+        "func": "msg.nl = msg.payload.translations[0].text;\nflow.set(\"nl\",msg.nl);\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 1420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f5efcf49.5ce178",
+        "type": "function",
+        "z": "a66ad1ae.ff0e18",
+        "name": "",
+        "func": "msg.jp = msg.payload.translations[0].text;\nflow.set(\"jp\",msg.jp);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 1460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3b37f9bd.1693fe",
+        "type": "function",
+        "z": "a66ad1ae.ff0e18",
+        "name": "",
+        "func": "msg.sw = msg.payload.translations[0].text;\nflow.set(\"sw\",msg.sw);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 1500,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2a33a903.06886e",
+        "type": "function",
+        "z": "a66ad1ae.ff0e18",
+        "name": "",
+        "func": "msg.fi = msg.payload.translations[0].text;\nflow.set(\"fi\",msg.fi);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 1540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9ccf1ca.e812ce",
+        "type": "function",
+        "z": "a66ad1ae.ff0e18",
+        "name": "",
+        "func": "msg.ru = msg.payload.translations[0].text;\nflow.set(\"ru\",msg.ru);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 1580,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ecb8c3b4.688d7",
+        "type": "postgrestor",
+        "z": "a66ad1ae.ff0e18",
+        "name": "translations@localhost",
+        "query": "-- timestamp inserted automatically with default value now()\n\n\nINSERT INTO translations_table \n(\n en,\n fr,\n de,\n nl,\n jp,\n sw,\n fi,\n ru\n) \n    VALUES\n(\n '{{msg.en}}',\n '{{msg.fr}}',\n '{{msg.de}}',\n '{{msg.nl}}',\n '{{msg.jp}}',\n '{{msg.sw}}',\n '{{msg.fi}}',\n '{{msg.ru}}'\n);\n\n",
+        "postgresDB": "6787392.d78b7c8",
+        "output": true,
+        "outputs": 1,
+        "x": 840,
+        "y": 1300,
+        "wires": [
+            [
+                "a5e00f91.9ea3e8"
+            ]
+        ]
+    },
+    {
+        "id": "a5e00f91.9ea3e8",
+        "type": "debug",
+        "z": "a66ad1ae.ff0e18",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 830,
+        "y": 1340,
+        "wires": []
+    },
+    {
+        "id": "f08bf0b0.7e098",
+        "type": "postgrestor",
+        "z": "3fb5a67.37c495a",
+        "name": "translations@localhost",
+        "query": "SELECT fr FROM translations_table\nWHERE en = '{{ msg.label }}'\nORDER BY en  DESC\nLIMIT 1;",
+        "postgresDB": "6787392.d78b7c8",
+        "output": true,
+        "outputs": 1,
+        "x": 520,
+        "y": 940,
+        "wires": [
+            [
+                "6b9f1be1.03df64",
+                "d2feafb2.f66178"
+            ]
+        ]
+    },
+    {
+        "id": "e9b447bf.24ac58",
+        "type": "function",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "func": "var lang = global.get(\"language1ID\");\nmsg.to = lang;\n\nmsg.label = 'Sensor ID : ';\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 940,
+        "wires": [
+            [
+                "f08bf0b0.7e098"
+            ]
+        ]
+    },
+    {
+        "id": "6b9f1be1.03df64",
+        "type": "debug",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 690,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "d56e25b.87965d8",
+        "type": "postgrestor",
+        "z": "3fb5a67.37c495a",
+        "name": "translations@localhost",
+        "query": "SELECT fr FROM translations_table\nWHERE en = '{{ msg.label }}'\nORDER BY en  DESC\nLIMIT 1;",
+        "postgresDB": "6787392.d78b7c8",
+        "output": true,
+        "outputs": 1,
+        "x": 520,
+        "y": 1020,
+        "wires": [
+            [
+                "63f9d66e.7b49b",
+                "f1034d88.f062"
+            ]
+        ]
+    },
+    {
+        "id": "bd7748c5.1705f8",
+        "type": "function",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "func": "var lang = global.get(\"language1ID\");\nmsg.to = lang;\n\nmsg.label = 'Actual period : ';\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 1020,
+        "wires": [
+            [
+                "d56e25b.87965d8",
+                "40e6f434.386234"
+            ]
+        ]
+    },
+    {
+        "id": "38f8b2c8.6ee65e",
+        "type": "postgrestor",
+        "z": "3fb5a67.37c495a",
+        "name": "translations@localhost",
+        "query": "SELECT fr FROM translations_table\nWHERE en = '{{ msg.label }}'\nORDER BY en  DESC\nLIMIT 1;",
+        "postgresDB": "6787392.d78b7c8",
+        "output": true,
+        "outputs": 1,
+        "x": 520,
+        "y": 1100,
+        "wires": [
+            [
+                "e31e4144.4eb278"
+            ]
+        ]
+    },
+    {
+        "id": "32bdb2ea.712cb6",
+        "type": "function",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "func": "var lang = global.get(\"language1ID\");\nmsg.to = lang;\n\nmsg.label = 'Actual window : ';\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 1100,
+        "wires": [
+            [
+                "38f8b2c8.6ee65e"
+            ]
+        ]
+    },
+    {
+        "id": "f7764615.98b4a",
+        "type": "postgrestor",
+        "z": "3fb5a67.37c495a",
+        "name": "translations@localhost",
+        "query": "SELECT fr FROM translations_table\nWHERE en = '{{ msg.label }}'\nORDER BY en  DESC\nLIMIT 1;",
+        "postgresDB": "6787392.d78b7c8",
+        "output": true,
+        "outputs": 1,
+        "x": 520,
+        "y": 1180,
+        "wires": [
+            [
+                "d59e10ae.bcf648"
+            ]
+        ]
+    },
+    {
+        "id": "1552ea08.727bee",
+        "type": "function",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "func": "var lang = global.get(\"language1ID\");\nmsg.to = lang;\n\nmsg.label = 'Actual High Voltage : ';\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 1180,
+        "wires": [
+            [
+                "f7764615.98b4a"
+            ]
+        ]
+    },
+    {
+        "id": "7ae1585d.a3f4e",
+        "type": "postgrestor",
+        "z": "3fb5a67.37c495a",
+        "name": "translations@localhost",
+        "query": "SELECT fr FROM translations_table\nWHERE en = '{{ msg.label }}'\nORDER BY en  DESC\nLIMIT 1;",
+        "postgresDB": "6787392.d78b7c8",
+        "output": true,
+        "outputs": 1,
+        "x": 520,
+        "y": 1260,
+        "wires": [
+            [
+                "f4629d6f.602868"
+            ]
+        ]
+    },
+    {
+        "id": "c1c56d91.222cb8",
+        "type": "function",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "func": "var lang = global.get(\"language1ID\");\nmsg.to = lang;\n\nmsg.label = 'Actual Low Voltage : ';\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 1260,
+        "wires": [
+            [
+                "7ae1585d.a3f4e"
+            ]
+        ]
+    },
+    {
+        "id": "6ec705a5.bb6d44",
+        "type": "postgrestor",
+        "z": "3fb5a67.37c495a",
+        "name": "translations@localhost",
+        "query": "SELECT fr FROM translations_table\nWHERE en = '{{ msg.label }}'\nORDER BY en  DESC\nLIMIT 1;",
+        "postgresDB": "6787392.d78b7c8",
+        "output": true,
+        "outputs": 1,
+        "x": 520,
+        "y": 1340,
+        "wires": [
+            [
+                "6be38186.0c759"
+            ]
+        ]
+    },
+    {
+        "id": "1c04be2f.98dae2",
+        "type": "function",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "func": "var lang = global.get(\"language1ID\");\nmsg.to = lang;\n\nmsg.label = 'Actual resistor : ';\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 1340,
+        "wires": [
+            [
+                "6ec705a5.bb6d44"
+            ]
+        ]
+    },
+    {
+        "id": "42ceea4d.1fd8d4",
+        "type": "postgrestor",
+        "z": "3fb5a67.37c495a",
+        "name": "translations@localhost",
+        "query": "SELECT fr FROM translations_table\nWHERE en = '{{ msg.label }}'\nORDER BY en  DESC\nLIMIT 1;",
+        "postgresDB": "6787392.d78b7c8",
+        "output": true,
+        "outputs": 1,
+        "x": 480,
+        "y": 1580,
+        "wires": [
+            [
+                "a7188d1d.89f8a8"
+            ]
+        ]
+    },
+    {
+        "id": "a89cc17a.c6be5",
+        "type": "function",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "func": "var lang = global.get(\"language1ID\");\nmsg.to = lang;\n\nmsg.label = 'Actual noise value (mV) : ';\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 1580,
+        "wires": [
+            [
+                "42ceea4d.1fd8d4"
+            ]
+        ]
+    },
+    {
+        "id": "31ea7fdb.c80f08",
+        "type": "postgrestor",
+        "z": "3fb5a67.37c495a",
+        "name": "translations@localhost",
+        "query": "SELECT fr FROM translations_table\nWHERE en = '{{ msg.label }}'\nORDER BY en  DESC\nLIMIT 1;",
+        "postgresDB": "6787392.d78b7c8",
+        "output": true,
+        "outputs": 1,
+        "x": 480,
+        "y": 1640,
+        "wires": [
+            [
+                "fe217ba8.cb07a"
+            ]
+        ]
+    },
+    {
+        "id": "3a58413d.149c1e",
+        "type": "function",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "func": "var lang = global.get(\"language1ID\");\nmsg.to = lang;\n\nmsg.label = 'Maximum noise value (mV) : ';\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 1640,
+        "wires": [
+            [
+                "31ea7fdb.c80f08"
+            ]
+        ]
+    },
+    {
+        "id": "9f211d04.bd8558",
+        "type": "postgrestor",
+        "z": "3fb5a67.37c495a",
+        "name": "translations@localhost",
+        "query": "SELECT fr FROM translations_table\nWHERE en = '{{ msg.label }}'\nORDER BY en  DESC\nLIMIT 1;",
+        "postgresDB": "6787392.d78b7c8",
+        "output": true,
+        "outputs": 1,
+        "x": 480,
+        "y": 1700,
+        "wires": [
+            [
+                "4b6aa6bc.9fae38"
+            ]
+        ]
+    },
+    {
+        "id": "2b710a88.c45126",
+        "type": "function",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "func": "var lang = global.get(\"language1ID\");\nmsg.to = lang;\n\nmsg.label = 'Sequence : ';\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 1700,
+        "wires": [
+            [
+                "9f211d04.bd8558"
+            ]
+        ]
+    },
+    {
+        "id": "585c5651.86d478",
+        "type": "postgrestor",
+        "z": "3fb5a67.37c495a",
+        "name": "translations@localhost",
+        "query": "SELECT fr FROM translations_table\nWHERE en = '{{ msg.label }}'\nORDER BY en  DESC\nLIMIT 1;",
+        "postgresDB": "6787392.d78b7c8",
+        "output": true,
+        "outputs": 1,
+        "x": 480,
+        "y": 1800,
+        "wires": [
+            [
+                "39f77f8a.4d56d8"
+            ]
+        ]
+    },
+    {
+        "id": "8c25f946.e15788",
+        "type": "function",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "func": "var lang = global.get(\"language1ID\");\nmsg.to = lang;\n\nmsg.label = 'Actual value : ';\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 1800,
+        "wires": [
+            [
+                "585c5651.86d478"
+            ]
+        ]
+    },
+    {
+        "id": "bfc24887.341d98",
+        "type": "postgrestor",
+        "z": "3fb5a67.37c495a",
+        "name": "translations@localhost",
+        "query": "SELECT fr FROM translations_table\nWHERE en = '{{ msg.label }}'\nORDER BY en  DESC\nLIMIT 1;",
+        "postgresDB": "6787392.d78b7c8",
+        "output": true,
+        "outputs": 1,
+        "x": 480,
+        "y": 1840,
+        "wires": [
+            [
+                "8fa3a30b.7e3858"
+            ]
+        ]
+    },
+    {
+        "id": "4bd3c16c.3e58d",
+        "type": "function",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "func": "var lang = global.get(\"language1ID\");\nmsg.to = lang;\n\nmsg.label = 'Actual average : ';\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 1840,
+        "wires": [
+            [
+                "bfc24887.341d98"
+            ]
+        ]
+    },
+    {
+        "id": "743d6ac3.d7c194",
+        "type": "ui_dropdown",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "label": "{{msg.label}}",
+        "tooltip": "",
+        "place": "",
+        "group": "f12df54.fdd1f08",
+        "order": 1,
+        "width": "12",
+        "height": "1",
+        "passthru": true,
+        "multiple": false,
+        "options": [
+            {
+                "label": "English",
+                "value": "en",
+                "type": "str"
+            },
+            {
+                "label": "Deutsch",
+                "value": "de",
+                "type": "str"
+            },
+            {
+                "label": "Français",
+                "value": "fr",
+                "type": "str"
+            },
+            {
+                "label": "Nederlands",
+                "value": "nl",
+                "type": "str"
+            },
+            {
+                "label": "日本 ",
+                "value": "jp",
+                "type": "str"
+            },
+            {
+                "label": "svenska",
+                "value": "sw",
+                "type": "str"
+            },
+            {
+                "label": "suomen",
+                "value": "fi",
+                "type": "str"
+            },
+            {
+                "label": "русский",
+                "value": "ru",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 1680,
+        "y": 720,
+        "wires": [
+            [
+                "3cb69028.38adb",
+                "efb5c96f.59ba2"
+            ]
+        ]
+    },
+    {
+        "id": "3cb69028.38adb",
+        "type": "change",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "language1ID",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1880,
+        "y": 720,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b1aea487.6c0a1",
+        "type": "change",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "language1ID",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1480,
+        "y": 720,
+        "wires": [
+            [
+                "743d6ac3.d7c194"
+            ]
+        ]
+    },
+    {
+        "id": "597e3a31.c1b67c",
+        "type": "inject",
+        "z": "3fb5a67.37c495a",
+        "name": "init",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "label",
+                "v": "Select language",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "en",
+        "payloadType": "str",
+        "x": 1290,
+        "y": 720,
+        "wires": [
+            [
+                "b1aea487.6c0a1"
+            ]
+        ]
+    },
+    {
+        "id": "5011a05.ed93d6",
+        "type": "ui_dropdown",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "label": "Language",
+        "tooltip": "",
+        "place": "Select language",
+        "group": "f12df54.fdd1f08",
+        "order": 18,
+        "width": "6",
+        "height": "1",
+        "passthru": true,
+        "multiple": false,
+        "options": [
+            {
+                "label": "English",
+                "value": "en",
+                "type": "str"
+            },
+            {
+                "label": "Deutsch",
+                "value": "de",
+                "type": "str"
+            },
+            {
+                "label": "Français",
+                "value": "fr",
+                "type": "str"
+            },
+            {
+                "label": "Nederlands",
+                "value": "nl",
+                "type": "str"
+            },
+            {
+                "label": "日本 ",
+                "value": "jp",
+                "type": "str"
+            },
+            {
+                "label": "svenska",
+                "value": "sw",
+                "type": "str"
+            },
+            {
+                "label": "suomen",
+                "value": "fi",
+                "type": "str"
+            },
+            {
+                "label": "русский",
+                "value": "ru",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 1740,
+        "y": 1920,
+        "wires": [
+            [
+                "3cc1378c.e4d55"
+            ]
+        ]
+    },
+    {
+        "id": "3cc1378c.e4d55",
+        "type": "change",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "language2ID",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1920,
+        "y": 1920,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3bd85ec9.db6762",
+        "type": "change",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "language2ID",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1560,
+        "y": 1920,
+        "wires": [
+            [
+                "5011a05.ed93d6"
+            ]
+        ]
+    },
+    {
+        "id": "c6762667.9f204",
+        "type": "inject",
+        "z": "3fb5a67.37c495a",
+        "name": "init",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "en",
+        "payloadType": "str",
+        "x": 1390,
+        "y": 1920,
+        "wires": [
+            [
+                "3bd85ec9.db6762"
+            ]
+        ]
+    },
+    {
+        "id": "676e7ab7.dadee4",
+        "type": "delay",
+        "z": "a66ad1ae.ff0e18",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "8",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 460,
+        "y": 1300,
+        "wires": [
+            [
+                "3f959dd0.88cd62"
+            ]
+        ]
+    },
+    {
+        "id": "ec3fdfd0.2a77f",
+        "type": "delay",
+        "z": "a66ad1ae.ff0e18",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 340,
+        "y": 1380,
+        "wires": [
+            [
+                "9ca8b0fa.9ad5d8"
+            ]
+        ]
+    },
+    {
+        "id": "cc4fd54f.6558b",
+        "type": "delay",
+        "z": "a66ad1ae.ff0e18",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "2",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 340,
+        "y": 1420,
+        "wires": [
+            [
+                "199f9099.af8e5f"
+            ]
+        ]
+    },
+    {
+        "id": "24f04687.b5ea1a",
+        "type": "delay",
+        "z": "a66ad1ae.ff0e18",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "3",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 340,
+        "y": 1460,
+        "wires": [
+            [
+                "d6519f5a.a2291"
+            ]
+        ]
+    },
+    {
+        "id": "59315de8.64b4ac",
+        "type": "delay",
+        "z": "a66ad1ae.ff0e18",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "4",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 340,
+        "y": 1500,
+        "wires": [
+            [
+                "54b1d069.2e098"
+            ]
+        ]
+    },
+    {
+        "id": "9efbd77a.b8a96",
+        "type": "delay",
+        "z": "a66ad1ae.ff0e18",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 340,
+        "y": 1540,
+        "wires": [
+            [
+                "66931d33.549d3c"
+            ]
+        ]
+    },
+    {
+        "id": "b327d4af.9f643",
+        "type": "delay",
+        "z": "a66ad1ae.ff0e18",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "6",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 340,
+        "y": 1580,
+        "wires": [
+            [
+                "c4264afb.535ae"
+            ]
+        ]
+    },
+    {
+        "id": "40e6f434.386234",
+        "type": "debug",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 510,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "f1034d88.f062",
+        "type": "debug",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 850,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "1f3b60b1.b34b6f",
+        "type": "postgrestor",
+        "z": "3fb5a67.37c495a",
+        "name": "translations@localhost",
+        "query": "SELECT * FROM translations_table\nWHERE en = 'Select language '\nORDER BY en  DESC\nLIMIT 1;",
+        "postgresDB": "6787392.d78b7c8",
+        "output": true,
+        "outputs": 1,
+        "x": 1700,
+        "y": 620,
+        "wires": [
+            [
+                "6f6f5051.2af7d8",
+                "15a0ee4b.2ff532"
+            ]
+        ]
+    },
+    {
+        "id": "efb5c96f.59ba2",
+        "type": "function",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "func": "msg.lang = msg.payload;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1500,
+        "y": 620,
+        "wires": [
+            [
+                "1f3b60b1.b34b6f"
+            ]
+        ]
+    },
+    {
+        "id": "6f6f5051.2af7d8",
+        "type": "debug",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1890,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "15a0ee4b.2ff532",
+        "type": "function",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1910,
+        "y": 640,
+        "wires": [
+            []
+        ]
     }
 ]
