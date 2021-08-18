@@ -15186,7 +15186,7 @@
         "type": "postgrestor",
         "z": "a66ad1ae.ff0e18",
         "name": "translations@localhost",
-        "query": "DROP TABLE IF EXISTS \"{{ msg.topic }}\" CASCADE;\n\nCREATE TABLE \"{{ msg.topic }}\" (\n\t\"en\" varchar(50),\n\t\"nl\" varchar(50),\n\t\"fr\" varchar(50),\n\t\"de\" varchar(50),\n\t\"jp\" varchar(50),\n\t\"sw\" varchar(50),\n\t\"no\" varchar(50),\n\t\"ru\" varchar(50),\n\t\"fi\" varchar(50),\n\tCONSTRAINT \"translations_table_pk\" PRIMARY KEY (\"en\")\n) WITH (\n  OIDS=FALSE\n)\nTABLESPACE pg_default;\n",
+        "query": "DROP TABLE IF EXISTS \"{{ msg.topic }}\" CASCADE;\n\nCREATE TABLE \"{{ msg.topic }}\" (\n\t\"en\" varchar(50),\n\t\"nl\" varchar(50),\n\t\"fr\" varchar(50),\n\t\"de\" varchar(50),\n\t\"jp\" varchar(50),\n\t\"sw\" varchar(50),\n\t\"no\" varchar(50),\n\t\"ru\" varchar(50),\n\t\"fi\" varchar(50),\n\t\"ar\" varchar(50),\n\tCONSTRAINT \"translations_table_pk\" PRIMARY KEY (\"en\")\n) WITH (\n  OIDS=FALSE\n)\nTABLESPACE pg_default;\n",
         "postgresDB": "6787392.d78b7c8",
         "output": true,
         "outputs": 1,

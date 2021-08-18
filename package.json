@@ -21,7 +21,8 @@
         "node-red-node-serialport-wildcard": "0.7.2",
         "node-red-node-ui-iframe": "0.2.1",
         "random-generator_node-red-contrib": "1.0.0",
-        "thethingbox-node-timestamp": "2.0.0"
+        "thethingbox-node-timestamp": "2.0.0",
+        "node-red-contrib-deepl": "0.2.92"
     },
     "node-red": {
         "settings": {
