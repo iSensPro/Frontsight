@@ -84,6 +84,13 @@
         "info": ""
     },
     {
+        "id": "e73b0862.e9edb",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": ""
+    },
+    {
         "id": "2924702c.b33a7",
         "type": "subflow",
         "name": "ui-table handler",
@@ -1229,6 +1236,42 @@
         "order": 17,
         "width": "12",
         "height": 1
+    },
+    {
+        "id": "d6060f19.2b834",
+        "type": "ui_group",
+        "name": "Default",
+        "tab": "93443fe0.36117",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "93443fe0.36117",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "65dfd687.bc39a8",
+        "type": "ui_group",
+        "name": "Default",
+        "tab": "5394d338.3dd19c",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "5394d338.3dd19c",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
     },
     {
         "id": "3794180a.7bf398",
@@ -2415,7 +2458,7 @@
         "type": "debug",
         "z": "3fb5a67.37c495a",
         "name": "",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -8382,13 +8425,13 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "M Period",
-        "func": "var mperiod;\n\n// set new flow variable\n//flow.set('mperiodM1',msg.period);\n\nmsg.label = msg.payload.rows[0].fr;\n //msg.label = 'actua test';\n \n msg.backspaces = 5;\nmsg.payload = '';\n\nvar tempstr = String(msg.period);\n\n//padding\nfor(var j = 0; j < (msg.backspaces-tempstr.length); j++)\n{ \n    msg.payload += '0';\n}\n\n\nfor(var i = 0; i < tempstr.length; i++)\n{ \n    msg.payload += tempstr[i];\n}\n\nmsg.payload = msg.payload.toString();\nmsg.topic = 2;\n\nreturn msg;",
+        "func": "var mperiod;\n\n// set new flow variable\n//flow.set('mperiodM1',msg.period);\n\nmsg.label = msg.payload.rows[0].translated;\n //msg.label = 'actua test';\n \n msg.backspaces = 5;\nmsg.payload = '';\n\nvar tempstr = String(msg.period);\n\n//padding\nfor(var j = 0; j < (msg.backspaces-tempstr.length); j++)\n{ \n    msg.payload += '0';\n}\n\n\nfor(var i = 0; i < tempstr.length; i++)\n{ \n    msg.payload += tempstr[i];\n}\n\nmsg.payload = msg.payload.toString();\nmsg.topic = 2;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 740,
+        "x": 760,
         "y": 1020,
         "wires": [
             [
@@ -8401,13 +8444,13 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "M Window",
-        "func": "var mwindow;\n\n// set new flow variable\n//flow.set('mwindowM1',msg.mwindow);\n\nmsg.label = msg.payload.rows[0].fr;\n\nmsg.backspaces = 5;\nmsg.payload = '';\n\nmwindow = String(msg.mwindow);\n\n//padding before number\nfor(var j = 0; j < (msg.backspaces-mwindow.length); j++)\n{ \n    msg.payload += '0';\n}\n\n\nfor(var i = 0; i < mwindow.length; i++)\n{ \n    msg.payload += mwindow[i];\n}\n\nmsg.payload = msg.payload.toString();\nmsg.topic = 3;\n\nreturn msg;",
+        "func": "var mwindow;\n\n// set new flow variable\n//flow.set('mwindowM1',msg.mwindow);\n\nmsg.label = msg.payload.rows[0].translated;\n\nmsg.backspaces = 5;\nmsg.payload = '';\n\nmwindow = String(msg.mwindow);\n\n//padding before number\nfor(var j = 0; j < (msg.backspaces-mwindow.length); j++)\n{ \n    msg.payload += '0';\n}\n\n\nfor(var i = 0; i < mwindow.length; i++)\n{ \n    msg.payload += mwindow[i];\n}\n\nmsg.payload = msg.payload.toString();\nmsg.topic = 3;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 710,
+        "x": 770,
         "y": 1100,
         "wires": [
             [
@@ -8420,13 +8463,13 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "VHigh",
-        "func": "var vhigh;\n\n// set new flow variable\nflow.set('vhighM1',msg.vhigh);\n\nmsg.label = msg.payload.rows[0].fr;\n\nmsg.backspaces = 4;\nmsg.payload = '';\n\nvhigh = String(msg.vhigh);\n\n//padding before number\nfor(var j = 0; j < (msg.backspaces-vhigh.length); j++)\n{ \n    msg.payload += '0';\n}\n\n\nfor(var i = 0; i < vhigh.length; i++)\n{ \n    msg.payload += vhigh[i];\n}\n\nmsg.payload = msg.payload.toString();\nmsg.topic = 4;\n\nreturn msg;",
+        "func": "var vhigh;\n\n// set new flow variable\nflow.set('vhighM1',msg.vhigh);\n\nmsg.label = msg.payload.rows[0].translated;\n\nmsg.backspaces = 4;\nmsg.payload = '';\n\nvhigh = String(msg.vhigh);\n\n//padding before number\nfor(var j = 0; j < (msg.backspaces-vhigh.length); j++)\n{ \n    msg.payload += '0';\n}\n\n\nfor(var i = 0; i < vhigh.length; i++)\n{ \n    msg.payload += vhigh[i];\n}\n\nmsg.payload = msg.payload.toString();\nmsg.topic = 4;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 690,
+        "x": 750,
         "y": 1180,
         "wires": [
             [
@@ -8439,13 +8482,13 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "VLow",
-        "func": "var vlow;\n\n// set new flow variable\nflow.set('vlowM1',msg.vlow);\n\nmsg.label = msg.payload.rows[0].fr;\n\nmsg.backspaces = 4;\nmsg.payload = '';\n\nvlow = String(msg.vlow);\n\n//padding before number\nfor(var j = 0; j < (msg.backspaces-vlow.length); j++)\n{ \n    msg.payload += '0';\n}\n\n\nfor(var i = 0; i < vlow.length; i++)\n{ \n    msg.payload += vlow[i];\n}\n\nmsg.payload = msg.payload.toString();\nmsg.topic = 5;\n\nreturn msg;",
+        "func": "var vlow;\n\n// set new flow variable\nflow.set('vlowM1',msg.vlow);\n\nmsg.label = msg.payload.rows[0].translated;\n\nmsg.backspaces = 4;\nmsg.payload = '';\n\nvlow = String(msg.vlow);\n\n//padding before number\nfor(var j = 0; j < (msg.backspaces-vlow.length); j++)\n{ \n    msg.payload += '0';\n}\n\n\nfor(var i = 0; i < vlow.length; i++)\n{ \n    msg.payload += vlow[i];\n}\n\nmsg.payload = msg.payload.toString();\nmsg.topic = 5;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 690,
+        "x": 750,
         "y": 1260,
         "wires": [
             [
@@ -8458,13 +8501,13 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "RCharge",
-        "func": "var rcharge;\n\n// set new flow variable\n//flow.set('rchargeM1',msg.rcharge);\n\nmsg.label = msg.payload.rows[0].fr;\n\nmsg.backspaces = 6;\nmsg.payload = '';\n\nrcharge = String(msg.rcharge);\n\n//padding before number\nfor(var j = 0; j < (msg.backspaces-rcharge.length); j++)\n{ \n    msg.payload += '0';\n}\n\nfor(var i = 0; i < rcharge.length; i++)\n{ \n    msg.payload += rcharge[i];\n}\n\nmsg.payload = msg.payload.toString();\nmsg.topic = 6;\n\nreturn msg;",
+        "func": "var rcharge;\n\n// set new flow variable\n//flow.set('rchargeM1',msg.rcharge);\n\nmsg.label = msg.payload.rows[0].translated;\n\nmsg.backspaces = 6;\nmsg.payload = '';\n\nrcharge = String(msg.rcharge);\n\n//padding before number\nfor(var j = 0; j < (msg.backspaces-rcharge.length); j++)\n{ \n    msg.payload += '0';\n}\n\nfor(var i = 0; i < rcharge.length; i++)\n{ \n    msg.payload += rcharge[i];\n}\n\nmsg.payload = msg.payload.toString();\nmsg.topic = 6;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 700,
+        "x": 760,
         "y": 1340,
         "wires": [
             [
@@ -8477,17 +8520,19 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "Sensor ID",
-        "func": "var sensorid;\n\n// set new flow variable\n//flow.set('sensorM1',msg.sensorid);\n\nmsg.label = msg.payload.rows[0].fr;\n\nmsg.backspaces = 3;\nmsg.payload = '';\n\nsensorid = String(msg.sensorid);\n\n//padding before number\nfor(var j = 0; j < (msg.backspaces-sensorid.length); j++)\n{ \n    msg.payload += '0';\n}\n\n\nfor(var i = 0; i < sensorid.length; i++)\n{ \n    msg.payload += sensorid[i];\n}\n\nmsg.payload = msg.payload.toString();\nmsg.payload.masterID = msg.payload;\nmsg.topic = 1;\n\n\n\nreturn msg;",
+        "func": "var sensorid;\n\n// set new flow variable\n//flow.set('sensorM1',msg.sensorid);\n\nmsg.backspaces = 3;\nmsg.payload = '';\n\nsensorid = String(msg.sensorid);\n\n//padding before number\nfor(var j = 0; j < (msg.backspaces-sensorid.length); j++)\n{ \n    msg.payload += '0';\n}\n\n\nfor(var i = 0; i < sensorid.length; i++)\n{ \n    msg.payload += sensorid[i];\n}\n\nmsg.payload = msg.payload.toString();\nmsg.payload.masterID = msg.payload;\nmsg.topic = 1;\n\n// awaiting change of sensorID implementation\nmsg.enabled = false;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 800,
-        "y": 940,
+        "x": 760,
+        "y": 920,
         "wires": [
             [
-                "2bc94027.6a9238"
+                "2bc94027.6a9238",
+                "bfc4456.37f28b8",
+                "32b898b.df952e8"
             ]
         ]
     },
@@ -9033,7 +9078,7 @@
         "format": "{{msg.payload}}",
         "layout": "row-left",
         "x": 930,
-        "y": 940,
+        "y": 920,
         "wires": []
     },
     {
@@ -9041,7 +9086,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "validate input",
-        "func": "var ID = flow.get('master1ID');\n\nmsg.background = 'grey';\nif (msg.payload == '')\n{\n    msg.enabled = false;\n}\nelse\n{\n    if (msg.payload <= 240  && (ID != '')) \n    {\n        msg.enabled = true;\n        msg.background = 'green';\n    }\n    else msg.enabled = false;\n}\nmsg.tooltip = 'between 0 and 240';\nmsg.enabled = false;\n\nreturn msg;",
+        "func": "var ID = flow.get('master1ID');\n\nmsg.background = 'grey';\nif (msg.payload == '')\n{\n    msg.enabled = false;\n}\nelse\n{\n    if (msg.payload <= 240  && (msg.payload >= 0) && (ID != '')) \n    {\n        msg.enabled = true;\n        msg.background = 'green';\n    }\n    else msg.enabled = false;\n}\n\nmsg.enabled = false;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -9065,8 +9110,8 @@
         "width": 6,
         "height": 1,
         "passthru": false,
-        "label": "Set new value",
-        "tooltip": "{{tooltip}}",
+        "label": "{{ msg.set }}",
+        "tooltip": "{{ msg.tooltip }}",
         "color": "",
         "bgcolor": "{{background}}",
         "icon": "",
@@ -9074,7 +9119,7 @@
         "payloadType": "flow",
         "topic": "master1ID",
         "topicType": "flow",
-        "x": 1140,
+        "x": 1110,
         "y": 980,
         "wires": [
             [
@@ -9089,18 +9134,18 @@
         "type": "ui_text_input",
         "z": "3fb5a67.37c495a",
         "name": "sensorID",
-        "label": "change Sensor ID",
-        "tooltip": "between 0 and 240",
+        "label": "{{change}}",
+        "tooltip": "{{tooltip}}",
         "group": "f726791c.9d1d88",
         "order": 2,
         "width": 6,
         "height": 1,
-        "passthru": true,
+        "passthru": false,
         "mode": "text",
-        "delay": "100",
+        "delay": "0",
         "topic": "",
         "topicType": "str",
-        "x": 320,
+        "x": 540,
         "y": 980,
         "wires": [
             [
@@ -9246,7 +9291,7 @@
         "label": "{{msg.label}}",
         "format": "{{msg.payload}}",
         "layout": "row-left",
-        "x": 870,
+        "x": 930,
         "y": 1020,
         "wires": []
     },
@@ -9295,7 +9340,7 @@
         "delay": "100",
         "topic": "",
         "topicType": "str",
-        "x": 400,
+        "x": 540,
         "y": 1060,
         "wires": [
             [
@@ -9314,7 +9359,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 710,
+        "x": 690,
         "y": 1060,
         "wires": [
             [
@@ -9334,7 +9379,7 @@
         "label": "{{msg.label}}",
         "format": "{{msg.payload}}",
         "layout": "row-left",
-        "x": 870,
+        "x": 930,
         "y": 1100,
         "wires": []
     },
@@ -9354,7 +9399,7 @@
         "delay": "100",
         "topic": "",
         "topicType": "str",
-        "x": 400,
+        "x": 540,
         "y": 1140,
         "wires": [
             [
@@ -9373,7 +9418,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 550,
+        "x": 690,
         "y": 1140,
         "wires": [
             [
@@ -9422,7 +9467,7 @@
         "label": "{{msg.label}}",
         "format": "{{msg.payload}}",
         "layout": "row-left",
-        "x": 870,
+        "x": 930,
         "y": 1180,
         "wires": []
     },
@@ -9442,7 +9487,7 @@
         "delay": "100",
         "topic": "",
         "topicType": "str",
-        "x": 390,
+        "x": 530,
         "y": 1220,
         "wires": [
             [
@@ -9461,7 +9506,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 550,
+        "x": 690,
         "y": 1220,
         "wires": [
             [
@@ -9510,7 +9555,7 @@
         "label": "{{msg.label}}",
         "format": "{{msg.payload}}",
         "layout": "row-left",
-        "x": 870,
+        "x": 930,
         "y": 1260,
         "wires": []
     },
@@ -9554,7 +9599,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 550,
+        "x": 690,
         "y": 1300,
         "wires": [
             [
@@ -9578,7 +9623,7 @@
         "delay": "100",
         "topic": "vlow",
         "topicType": "str",
-        "x": 390,
+        "x": 530,
         "y": 1300,
         "wires": [
             [
@@ -9598,7 +9643,7 @@
         "label": "{{msg.label}}",
         "format": "{{msg.payload}}",
         "layout": "row-left",
-        "x": 870,
+        "x": 930,
         "y": 1340,
         "wires": []
     },
@@ -9613,7 +9658,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 550,
+        "x": 690,
         "y": 1380,
         "wires": [
             [
@@ -9655,13 +9700,13 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "Noise",
-        "func": "var noise;\n\n// set new flow variable\n//flow.set('noiseM1',msg.noise);\n\n//noise = String(msg.noise);\n\nmsg.label = msg.payload.rows[0].fr;\n\nmsg.payload = msg.noise;\nmsg.enabled = false;\n\nreturn msg;",
+        "func": "var noise;\n\n// set new flow variable\n//flow.set('noiseM1',msg.noise);\n\n//noise = String(msg.noise);\n\nmsg.label = msg.payload.rows[0].translated;\n\nmsg.payload = msg.noise;\nmsg.enabled = false;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 690,
+        "x": 770,
         "y": 1580,
         "wires": [
             [
@@ -9674,13 +9719,13 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "Sequence",
-        "func": "var sequence;\n\n// set new flow variable\n//flow.set('sequenceM1',msg.sequence);\n\nmsg.label = msg.payload.rows[0].fr;\n\nmsg.payload = msg.sequence;\nmsg.enabled = false;\n// msg.topic = 'Sequence :';\n\nreturn msg;",
+        "func": "var sequence;\n\n// set new flow variable\n//flow.set('sequenceM1',msg.sequence);\n\nmsg.label = msg.payload.rows[0].translated;\n\nmsg.payload = msg.sequence;\nmsg.enabled = false;\n// msg.topic = 'Sequence :';\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 660,
+        "x": 780,
         "y": 1700,
         "wires": [
             [
@@ -9702,6 +9747,26 @@
                 "p": "enabled",
                 "v": "false",
                 "vt": "bool"
+            },
+            {
+                "p": "change",
+                "v": "change sensor ID",
+                "vt": "str"
+            },
+            {
+                "p": "tooltip",
+                "v": "between 0 and 240",
+                "vt": "str"
+            },
+            {
+                "p": "label",
+                "v": "Sensor ID : ",
+                "vt": "str"
+            },
+            {
+                "p": "set",
+                "v": "Set new ID",
+                "vt": "str"
             }
         ],
         "repeat": "",
@@ -9738,7 +9803,7 @@
         "min": 0,
         "max": "0",
         "step": "0",
-        "x": 820,
+        "x": 940,
         "y": 1580,
         "wires": [
             []
@@ -9763,7 +9828,7 @@
         "min": 0,
         "max": "0",
         "step": "0",
-        "x": 820,
+        "x": 940,
         "y": 1700,
         "wires": [
             []
@@ -9774,13 +9839,13 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "Cap",
-        "func": "// set new flow variable\n//flow.set('measurementM1',msg.cap);\n\n//measurement = String(msg.measurement);\n\nmsg.label = msg.payload.rows[0].fr;\n\nmsg.payload = msg.cap;\nmsg.enabled = false;\n\nreturn msg;",
+        "func": "// set new flow variable\n//flow.set('measurementM1',msg.cap);\n\n//measurement = String(msg.measurement);\n\nmsg.label = msg.payload.rows[0].translated;\n\nmsg.payload = msg.cap;\nmsg.enabled = false;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 690,
+        "x": 770,
         "y": 1800,
         "wires": [
             [
@@ -9807,7 +9872,7 @@
         "min": 0,
         "max": "0",
         "step": "0",
-        "x": 820,
+        "x": 940,
         "y": 1800,
         "wires": [
             []
@@ -9818,14 +9883,14 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "Average",
-        "func": "// set new flow variable\n//flow.set('avg_measurementM1',msg.avg);\n\nmsg.label = msg.payload.rows[0].fr;\n\nmsg.payload = msg.avg;\nmsg.enabled = false;\n\nreturn msg;",
+        "func": "// set new flow variable\n//flow.set('avg_measurementM1',msg.avg);\n\nmsg.label = msg.payload.rows[0].translated;\n\nmsg.payload = msg.avg;\nmsg.enabled = false;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 680,
-        "y": 1840,
+        "x": 780,
+        "y": 1860,
         "wires": [
             [
                 "232c8272.12dcd6"
@@ -9851,8 +9916,8 @@
         "min": 0,
         "max": "0",
         "step": "0",
-        "x": 820,
-        "y": 1840,
+        "x": 940,
+        "y": 1860,
         "wires": [
             []
         ]
@@ -9862,13 +9927,13 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "Max Noise",
-        "func": "var maxnoise;\n\n// set new flow variable\nmaxnoise = flow.get('maxnoiseM1') || 0;\n\nmsg.label = msg.payload.rows[0].fr;\n\nif (msg.noise > maxnoise) \n{\n    flow.set('maxnoiseM1', msg.noise);\n    msg.payload = msg.noise;\n}\nelse\n{\n    msg.payload = maxnoise;\n}\n\nmsg.enabled = false;\n\nreturn msg;",
+        "func": "var maxnoise;\n\n// set new flow variable\nmaxnoise = flow.get('maxnoiseM1') || 0;\n\nmsg.label = msg.payload.rows[0].translated;\n\nif (msg.noise > maxnoise) \n{\n    flow.set('maxnoiseM1', msg.noise);\n    msg.payload = msg.noise;\n}\nelse\n{\n    msg.payload = maxnoise;\n}\n\nmsg.enabled = false;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 670,
+        "x": 790,
         "y": 1640,
         "wires": [
             [
@@ -9895,7 +9960,7 @@
         "min": 0,
         "max": "0",
         "step": "0",
-        "x": 820,
+        "x": 940,
         "y": 1640,
         "wires": [
             []
@@ -9947,7 +10012,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 890,
+        "x": 870,
         "y": 1060,
         "wires": [
             [
@@ -9974,7 +10039,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 760,
+        "x": 880,
         "y": 1140,
         "wires": [
             [
@@ -10001,7 +10066,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 740,
+        "x": 860,
         "y": 1220,
         "wires": [
             [
@@ -10028,7 +10093,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 740,
+        "x": 860,
         "y": 1300,
         "wires": [
             [
@@ -10055,7 +10120,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 750,
+        "x": 890,
         "y": 1380,
         "wires": [
             [
@@ -10079,7 +10144,7 @@
         "delay": "100",
         "topic": "",
         "topicType": "str",
-        "x": 400,
+        "x": 540,
         "y": 1380,
         "wires": [
             [
@@ -10255,8 +10320,8 @@
                 "6457015c.1b7008",
                 "d48d82a4.bee28",
                 "4b2737d8.912c5",
-                "c380e12b.d7ed1",
-                "c949d133.f96d6"
+                "c949d133.f96d6",
+                "c013982a.cf6248"
             ]
         ]
     },
@@ -10273,6 +10338,26 @@
                 "p": "enabled",
                 "v": "true",
                 "vt": "bool"
+            },
+            {
+                "p": "change",
+                "v": "change Measurement Period (secs)",
+                "vt": "str"
+            },
+            {
+                "p": "tooltip",
+                "v": "between 5 and 16M secs",
+                "vt": "str"
+            },
+            {
+                "p": "label",
+                "v": "Actual period : ",
+                "vt": "str"
+            },
+            {
+                "p": "set",
+                "v": "Set new period",
+                "vt": "str"
             }
         ],
         "repeat": "",
@@ -10303,6 +10388,26 @@
                 "p": "enabled",
                 "v": "true",
                 "vt": "bool"
+            },
+            {
+                "p": "change",
+                "v": "change Measurement window (secs)",
+                "vt": "str"
+            },
+            {
+                "p": "tooltip",
+                "v": "between 1 and 4000 secs",
+                "vt": "str"
+            },
+            {
+                "p": "label",
+                "v": "Measurement duration : ",
+                "vt": "str"
+            },
+            {
+                "p": "set",
+                "v": "Set new window",
+                "vt": "str"
             }
         ],
         "repeat": "",
@@ -10333,6 +10438,26 @@
                 "p": "enabled",
                 "v": "true",
                 "vt": "bool"
+            },
+            {
+                "p": "change",
+                "v": "change V High (mV)",
+                "vt": "str"
+            },
+            {
+                "p": "tooltip",
+                "v": "between VLow and 3170 mVolt",
+                "vt": "str"
+            },
+            {
+                "p": "label",
+                "v": "Actual High Voltage : ",
+                "vt": "str"
+            },
+            {
+                "p": "set",
+                "v": "Set new value",
+                "vt": "str"
             }
         ],
         "repeat": "",
@@ -10363,6 +10488,26 @@
                 "p": "enabled",
                 "v": "true",
                 "vt": "bool"
+            },
+            {
+                "p": "change",
+                "v": "change V Low (mV)",
+                "vt": "str"
+            },
+            {
+                "p": "tooltip",
+                "v": "between 10mV and VHigh",
+                "vt": "str"
+            },
+            {
+                "p": "label",
+                "v": "Actual Low Voltage : ",
+                "vt": "str"
+            },
+            {
+                "p": "set",
+                "v": "Set new value",
+                "vt": "str"
             }
         ],
         "repeat": "",
@@ -10393,6 +10538,26 @@
                 "p": "enabled",
                 "v": "true",
                 "vt": "bool"
+            },
+            {
+                "p": "change",
+                "v": "change Charging resistor (Ohm)",
+                "vt": "str"
+            },
+            {
+                "p": "tooltip",
+                "v": "between 1 and 730000 Ohm",
+                "vt": "str"
+            },
+            {
+                "p": "label",
+                "v": "Actual resistor : ",
+                "vt": "str"
+            },
+            {
+                "p": "set",
+                "v": "Set new value",
+                "vt": "str"
             }
         ],
         "repeat": "",
@@ -10437,7 +10602,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 790,
+        "x": 770,
         "y": 1760,
         "wires": [
             [
@@ -10456,11 +10621,11 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 630,
+        "x": 360,
         "y": 1760,
         "wires": [
             [
-                "c380e12b.d7ed1"
+                "c013982a.cf6248"
             ]
         ]
     },
@@ -11450,9 +11615,9 @@
         "type": "ui_dropdown",
         "z": "3fb5a67.37c495a",
         "name": "",
-        "label": "Master1 ID",
+        "label": "{{msg.master_label}}",
         "tooltip": "",
-        "place": "Select Master sensor",
+        "place": "",
         "group": "f726791c.9d1d88",
         "order": 1,
         "width": 0,
@@ -11479,7 +11644,7 @@
         "payload": "",
         "topic": "topic",
         "topicType": "msg",
-        "x": 1750,
+        "x": 1900,
         "y": 820,
         "wires": [
             [
@@ -11506,7 +11671,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1930,
+        "x": 2090,
         "y": 820,
         "wires": [
             []
@@ -11520,6 +11685,11 @@
         "props": [
             {
                 "p": "payload"
+            },
+            {
+                "p": "master_label",
+                "v": "Master1 ID",
+                "vt": "str"
             }
         ],
         "repeat": "",
@@ -11527,13 +11697,13 @@
         "once": true,
         "onceDelay": "1",
         "topic": "",
-        "payload": "",
+        "payload": "en",
         "payloadType": "str",
-        "x": 1410,
+        "x": 1390,
         "y": 820,
         "wires": [
             [
-                "f93d3e8f.3d8778"
+                "8a658423.c1bb08"
             ]
         ]
     },
@@ -11556,16 +11726,15 @@
                 "eb6ce2e2.ec5f68",
                 "ed1ab1fb.11868",
                 "e9b447bf.24ac58",
-                "bd7748c5.1705f8",
-                "32bdb2ea.712cb6",
-                "1552ea08.727bee",
-                "c1c56d91.222cb8",
-                "1c04be2f.98dae2",
-                "a89cc17a.c6be5",
-                "3a58413d.149c1e",
-                "2b710a88.c45126",
-                "8c25f946.e15788",
-                "4bd3c16c.3e58d"
+                "227659b0.ea0b0e",
+                "70ed7170.d90e38",
+                "f996ad86.32d81",
+                "111ef4bb.33e273",
+                "de2e59c0.e825e8",
+                "fea77453.727b48",
+                "36749289.c99cde",
+                "8f69284d.59fe38",
+                "dfbefc3.9ba7"
             ],
             []
         ]
@@ -11575,7 +11744,7 @@
         "type": "debug",
         "z": "3fb5a67.37c495a",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -11583,7 +11752,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 270,
+        "x": 290,
         "y": 860,
         "wires": []
     },
@@ -14127,7 +14296,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 310,
+        "x": 170,
         "y": 1980,
         "wires": []
     },
@@ -14491,7 +14660,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1570,
+        "x": 1710,
         "y": 820,
         "wires": [
             [
@@ -14708,7 +14877,7 @@
         "label": "Actual Description : ",
         "format": "{{msg.topic}}",
         "layout": "row-left",
-        "x": 1130,
+        "x": 1390,
         "y": 1440,
         "wires": []
     },
@@ -14723,7 +14892,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 550,
+        "x": 690,
         "y": 1520,
         "wires": [
             [
@@ -14778,7 +14947,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 740,
+        "x": 880,
         "y": 1520,
         "wires": [
             [
@@ -14802,7 +14971,7 @@
         "delay": "100",
         "topic": "",
         "topicType": "str",
-        "x": 390,
+        "x": 530,
         "y": 1520,
         "wires": [
             [
@@ -14896,6 +15065,26 @@
                 "p": "enabled",
                 "v": "true",
                 "vt": "bool"
+            },
+            {
+                "p": "change",
+                "v": "change Description",
+                "vt": "str"
+            },
+            {
+                "p": "tooltip",
+                "v": "Description of measurement setup",
+                "vt": "str"
+            },
+            {
+                "p": "label",
+                "v": "Actual Description : ",
+                "vt": "str"
+            },
+            {
+                "p": "set",
+                "v": "Set new description",
+                "vt": "str"
             }
         ],
         "repeat": "",
@@ -15295,7 +15484,7 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "Select language ",
+        "payload": "between 5 and 16M secs",
         "payloadType": "str",
         "x": 150,
         "y": 1300,
@@ -15603,7 +15792,7 @@
         "postgresDB": "6787392.d78b7c8",
         "output": true,
         "outputs": 1,
-        "x": 840,
+        "x": 860,
         "y": 1300,
         "wires": [
             [
@@ -15629,39 +15818,21 @@
         "wires": []
     },
     {
-        "id": "f08bf0b0.7e098",
-        "type": "postgrestor",
-        "z": "3fb5a67.37c495a",
-        "name": "translations@localhost",
-        "query": "SELECT fr FROM translations_table\nWHERE en = '{{ msg.label }}'\nORDER BY en  DESC\nLIMIT 1;",
-        "postgresDB": "6787392.d78b7c8",
-        "output": true,
-        "outputs": 1,
-        "x": 520,
-        "y": 940,
-        "wires": [
-            [
-                "6b9f1be1.03df64",
-                "d2feafb2.f66178"
-            ]
-        ]
-    },
-    {
         "id": "e9b447bf.24ac58",
         "type": "function",
         "z": "3fb5a67.37c495a",
-        "name": "",
-        "func": "var lang = global.get(\"language1ID\");\nmsg.to = lang;\n\nmsg.label = 'Sensor ID : ';\n\nreturn msg;",
+        "name": "translations",
+        "func": "var label = global.get('sensorid_label');\nvar change = global.get('sensorid_change');\nvar tooltip = global.get('sensorid_tooltip');\nvar set = global.get('sensorid_set');\n\nmsg.label = label;\nmsg.change = change;\nmsg.tooltip = tooltip;\nmsg.set = set;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 320,
-        "y": 940,
+        "x": 530,
+        "y": 920,
         "wires": [
             [
-                "f08bf0b0.7e098"
+                "d2feafb2.f66178"
             ]
         ]
     },
@@ -15678,27 +15849,9 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 690,
-        "y": 900,
+        "x": 670,
+        "y": 880,
         "wires": []
-    },
-    {
-        "id": "d56e25b.87965d8",
-        "type": "postgrestor",
-        "z": "3fb5a67.37c495a",
-        "name": "translations@localhost",
-        "query": "SELECT fr FROM translations_table\nWHERE en = '{{ msg.label }}'\nORDER BY en  DESC\nLIMIT 1;",
-        "postgresDB": "6787392.d78b7c8",
-        "output": true,
-        "outputs": 1,
-        "x": 520,
-        "y": 1020,
-        "wires": [
-            [
-                "63f9d66e.7b49b",
-                "f1034d88.f062"
-            ]
-        ]
     },
     {
         "id": "bd7748c5.1705f8",
@@ -15711,29 +15864,11 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 320,
-        "y": 1020,
+        "x": 380,
+        "y": 1040,
         "wires": [
             [
-                "d56e25b.87965d8",
-                "40e6f434.386234"
-            ]
-        ]
-    },
-    {
-        "id": "38f8b2c8.6ee65e",
-        "type": "postgrestor",
-        "z": "3fb5a67.37c495a",
-        "name": "translations@localhost",
-        "query": "SELECT fr FROM translations_table\nWHERE en = '{{ msg.label }}'\nORDER BY en  DESC\nLIMIT 1;",
-        "postgresDB": "6787392.d78b7c8",
-        "output": true,
-        "outputs": 1,
-        "x": 520,
-        "y": 1100,
-        "wires": [
-            [
-                "e31e4144.4eb278"
+                "b7041100.cb555"
             ]
         ]
     },
@@ -15748,28 +15883,11 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 320,
-        "y": 1100,
+        "x": 380,
+        "y": 1120,
         "wires": [
             [
-                "38f8b2c8.6ee65e"
-            ]
-        ]
-    },
-    {
-        "id": "f7764615.98b4a",
-        "type": "postgrestor",
-        "z": "3fb5a67.37c495a",
-        "name": "translations@localhost",
-        "query": "SELECT fr FROM translations_table\nWHERE en = '{{ msg.label }}'\nORDER BY en  DESC\nLIMIT 1;",
-        "postgresDB": "6787392.d78b7c8",
-        "output": true,
-        "outputs": 1,
-        "x": 520,
-        "y": 1180,
-        "wires": [
-            [
-                "d59e10ae.bcf648"
+                "fe6856ba.b57f88"
             ]
         ]
     },
@@ -15784,28 +15902,11 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 320,
-        "y": 1180,
+        "x": 380,
+        "y": 1200,
         "wires": [
             [
-                "f7764615.98b4a"
-            ]
-        ]
-    },
-    {
-        "id": "7ae1585d.a3f4e",
-        "type": "postgrestor",
-        "z": "3fb5a67.37c495a",
-        "name": "translations@localhost",
-        "query": "SELECT fr FROM translations_table\nWHERE en = '{{ msg.label }}'\nORDER BY en  DESC\nLIMIT 1;",
-        "postgresDB": "6787392.d78b7c8",
-        "output": true,
-        "outputs": 1,
-        "x": 520,
-        "y": 1260,
-        "wires": [
-            [
-                "f4629d6f.602868"
+                "4cb58678.ca535"
             ]
         ]
     },
@@ -15820,28 +15921,11 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 320,
-        "y": 1260,
+        "x": 380,
+        "y": 1280,
         "wires": [
             [
-                "7ae1585d.a3f4e"
-            ]
-        ]
-    },
-    {
-        "id": "6ec705a5.bb6d44",
-        "type": "postgrestor",
-        "z": "3fb5a67.37c495a",
-        "name": "translations@localhost",
-        "query": "SELECT fr FROM translations_table\nWHERE en = '{{ msg.label }}'\nORDER BY en  DESC\nLIMIT 1;",
-        "postgresDB": "6787392.d78b7c8",
-        "output": true,
-        "outputs": 1,
-        "x": 520,
-        "y": 1340,
-        "wires": [
-            [
-                "6be38186.0c759"
+                "d460703d.86ffe8"
             ]
         ]
     },
@@ -15856,191 +15940,11 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 300,
-        "y": 1340,
+        "x": 380,
+        "y": 1360,
         "wires": [
             [
-                "6ec705a5.bb6d44"
-            ]
-        ]
-    },
-    {
-        "id": "42ceea4d.1fd8d4",
-        "type": "postgrestor",
-        "z": "3fb5a67.37c495a",
-        "name": "translations@localhost",
-        "query": "SELECT fr FROM translations_table\nWHERE en = '{{ msg.label }}'\nORDER BY en  DESC\nLIMIT 1;",
-        "postgresDB": "6787392.d78b7c8",
-        "output": true,
-        "outputs": 1,
-        "x": 480,
-        "y": 1580,
-        "wires": [
-            [
-                "a7188d1d.89f8a8"
-            ]
-        ]
-    },
-    {
-        "id": "a89cc17a.c6be5",
-        "type": "function",
-        "z": "3fb5a67.37c495a",
-        "name": "",
-        "func": "var lang = global.get(\"language1ID\");\nmsg.to = lang;\n\nmsg.label = 'Actual noise value (mV) : ';\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 300,
-        "y": 1580,
-        "wires": [
-            [
-                "42ceea4d.1fd8d4"
-            ]
-        ]
-    },
-    {
-        "id": "31ea7fdb.c80f08",
-        "type": "postgrestor",
-        "z": "3fb5a67.37c495a",
-        "name": "translations@localhost",
-        "query": "SELECT fr FROM translations_table\nWHERE en = '{{ msg.label }}'\nORDER BY en  DESC\nLIMIT 1;",
-        "postgresDB": "6787392.d78b7c8",
-        "output": true,
-        "outputs": 1,
-        "x": 480,
-        "y": 1640,
-        "wires": [
-            [
-                "fe217ba8.cb07a"
-            ]
-        ]
-    },
-    {
-        "id": "3a58413d.149c1e",
-        "type": "function",
-        "z": "3fb5a67.37c495a",
-        "name": "",
-        "func": "var lang = global.get(\"language1ID\");\nmsg.to = lang;\n\nmsg.label = 'Maximum noise value (mV) : ';\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 300,
-        "y": 1640,
-        "wires": [
-            [
-                "31ea7fdb.c80f08"
-            ]
-        ]
-    },
-    {
-        "id": "9f211d04.bd8558",
-        "type": "postgrestor",
-        "z": "3fb5a67.37c495a",
-        "name": "translations@localhost",
-        "query": "SELECT fr FROM translations_table\nWHERE en = '{{ msg.label }}'\nORDER BY en  DESC\nLIMIT 1;",
-        "postgresDB": "6787392.d78b7c8",
-        "output": true,
-        "outputs": 1,
-        "x": 480,
-        "y": 1700,
-        "wires": [
-            [
-                "4b6aa6bc.9fae38"
-            ]
-        ]
-    },
-    {
-        "id": "2b710a88.c45126",
-        "type": "function",
-        "z": "3fb5a67.37c495a",
-        "name": "",
-        "func": "var lang = global.get(\"language1ID\");\nmsg.to = lang;\n\nmsg.label = 'Sequence : ';\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 300,
-        "y": 1700,
-        "wires": [
-            [
-                "9f211d04.bd8558"
-            ]
-        ]
-    },
-    {
-        "id": "585c5651.86d478",
-        "type": "postgrestor",
-        "z": "3fb5a67.37c495a",
-        "name": "translations@localhost",
-        "query": "SELECT fr FROM translations_table\nWHERE en = '{{ msg.label }}'\nORDER BY en  DESC\nLIMIT 1;",
-        "postgresDB": "6787392.d78b7c8",
-        "output": true,
-        "outputs": 1,
-        "x": 480,
-        "y": 1800,
-        "wires": [
-            [
-                "39f77f8a.4d56d8"
-            ]
-        ]
-    },
-    {
-        "id": "8c25f946.e15788",
-        "type": "function",
-        "z": "3fb5a67.37c495a",
-        "name": "",
-        "func": "var lang = global.get(\"language1ID\");\nmsg.to = lang;\n\nmsg.label = 'Actual value : ';\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 300,
-        "y": 1800,
-        "wires": [
-            [
-                "585c5651.86d478"
-            ]
-        ]
-    },
-    {
-        "id": "bfc24887.341d98",
-        "type": "postgrestor",
-        "z": "3fb5a67.37c495a",
-        "name": "translations@localhost",
-        "query": "SELECT fr FROM translations_table\nWHERE en = '{{ msg.label }}'\nORDER BY en  DESC\nLIMIT 1;",
-        "postgresDB": "6787392.d78b7c8",
-        "output": true,
-        "outputs": 1,
-        "x": 480,
-        "y": 1840,
-        "wires": [
-            [
-                "8fa3a30b.7e3858"
-            ]
-        ]
-    },
-    {
-        "id": "4bd3c16c.3e58d",
-        "type": "function",
-        "z": "3fb5a67.37c495a",
-        "name": "",
-        "func": "var lang = global.get(\"language1ID\");\nmsg.to = lang;\n\nmsg.label = 'Actual average : ';\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 300,
-        "y": 1840,
-        "wires": [
-            [
-                "bfc24887.341d98"
+                "6792f289.62d7d4"
             ]
         ]
     },
@@ -16049,14 +15953,14 @@
         "type": "ui_dropdown",
         "z": "3fb5a67.37c495a",
         "name": "",
-        "label": "{{msg.label}}",
+        "label": "{{msg.label1}}",
         "tooltip": "",
         "place": "",
         "group": "f12df54.fdd1f08",
         "order": 1,
         "width": "12",
         "height": "1",
-        "passthru": true,
+        "passthru": false,
         "multiple": false,
         "options": [
             {
@@ -16098,12 +16002,22 @@
                 "label": "русский",
                 "value": "ru",
                 "type": "str"
+            },
+            {
+                "label": "عربى",
+                "value": "ar",
+                "type": "str"
+            },
+            {
+                "label": "norsk",
+                "value": "no",
+                "type": "str"
             }
         ],
         "payload": "",
         "topic": "topic",
         "topicType": "msg",
-        "x": 1680,
+        "x": 1780,
         "y": 720,
         "wires": [
             [
@@ -16131,10 +16045,12 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1880,
+        "x": 1980,
         "y": 720,
         "wires": [
-            []
+            [
+                "21b84409.362b1c"
+            ]
         ]
     },
     {
@@ -16156,7 +16072,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1480,
+        "x": 1580,
         "y": 720,
         "wires": [
             [
@@ -16174,7 +16090,7 @@
                 "p": "payload"
             },
             {
-                "p": "label",
+                "p": "label1",
                 "v": "Select language",
                 "vt": "str"
             }
@@ -16186,7 +16102,7 @@
         "topic": "",
         "payload": "en",
         "payloadType": "str",
-        "x": 1290,
+        "x": 1390,
         "y": 720,
         "wires": [
             [
@@ -16504,7 +16420,7 @@
         "type": "debug",
         "z": "3fb5a67.37c495a",
         "name": "",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -16513,65 +16429,11 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 510,
-        "y": 900,
+        "y": 880,
         "wires": []
     },
     {
         "id": "f1034d88.f062",
-        "type": "debug",
-        "z": "3fb5a67.37c495a",
-        "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 850,
-        "y": 900,
-        "wires": []
-    },
-    {
-        "id": "1f3b60b1.b34b6f",
-        "type": "postgrestor",
-        "z": "3fb5a67.37c495a",
-        "name": "translations@localhost",
-        "query": "SELECT * FROM translations_table\nWHERE en = 'Select language '\nORDER BY en  DESC\nLIMIT 1;",
-        "postgresDB": "6787392.d78b7c8",
-        "output": true,
-        "outputs": 1,
-        "x": 1700,
-        "y": 620,
-        "wires": [
-            [
-                "6f6f5051.2af7d8",
-                "15a0ee4b.2ff532"
-            ]
-        ]
-    },
-    {
-        "id": "efb5c96f.59ba2",
-        "type": "function",
-        "z": "3fb5a67.37c495a",
-        "name": "",
-        "func": "msg.lang = msg.payload;\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1500,
-        "y": 620,
-        "wires": [
-            [
-                "1f3b60b1.b34b6f"
-            ]
-        ]
-    },
-    {
-        "id": "6f6f5051.2af7d8",
         "type": "debug",
         "z": "3fb5a67.37c495a",
         "name": "",
@@ -16583,25 +16445,713 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1890,
-        "y": 580,
+        "x": 850,
+        "y": 880,
         "wires": []
     },
     {
-        "id": "15a0ee4b.2ff532",
+        "id": "1f3b60b1.b34b6f",
+        "type": "postgrestor",
+        "z": "3fb5a67.37c495a",
+        "name": "translations@localhost",
+        "query": "SELECT \"{{msg.lang}}\" AS translated FROM translations_table\nWHERE en = 'Select language '\nORDER BY en  DESC\nLIMIT 1;\n\nSELECT \"{{msg.lang}}\" AS label FROM translations_table\nWHERE en = 'Master1 ID'\nORDER BY en  DESC\nLIMIT 1;",
+        "postgresDB": "6787392.d78b7c8",
+        "output": true,
+        "outputs": 1,
+        "x": 1780,
+        "y": 660,
+        "wires": [
+            [
+                "15a0ee4b.2ff532",
+                "7887ea1e.2a5d8c"
+            ]
+        ]
+    },
+    {
+        "id": "efb5c96f.59ba2",
         "type": "function",
         "z": "3fb5a67.37c495a",
-        "name": "",
-        "func": "\nreturn msg;",
+        "name": "Selected language",
+        "func": "msg.lang = msg.payload;\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1910,
-        "y": 640,
+        "x": 1450,
+        "y": 660,
+        "wires": [
+            [
+                "1f3b60b1.b34b6f"
+            ]
+        ]
+    },
+    {
+        "id": "15a0ee4b.2ff532",
+        "type": "function",
+        "z": "3fb5a67.37c495a",
+        "name": "Translate",
+        "func": "\nmsg.label1 = msg.payload[0].rows[0].translated;\nmsg.label2 = msg.payload[1].rows[0].label;\n\nmsg.payload = msg.lang;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1980,
+        "y": 660,
+        "wires": [
+            [
+                "d3d148e3.cdec28",
+                "743d6ac3.d7c194",
+                "fe25f7a5.7b32"
+            ]
+        ]
+    },
+    {
+        "id": "d3d148e3.cdec28",
+        "type": "debug",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2130,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "fd7c54f.cd630a8",
+        "type": "comment",
+        "z": "3fb5a67.37c495a",
+        "name": "Language choice",
+        "info": "",
+        "x": 1400,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "42cca9bb.83e3",
+        "type": "comment",
+        "z": "3fb5a67.37c495a",
+        "name": "Master choice",
+        "info": "",
+        "x": 1370,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "7887ea1e.2a5d8c",
+        "type": "debug",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1970,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "ad679f0d.ca4fe",
+        "type": "ui_template",
+        "z": "3fb5a67.37c495a",
+        "group": "65dfd687.bc39a8",
+        "name": "",
+        "order": 16,
+        "width": 0,
+        "height": 0,
+        "format": "<div id=\"{{'my_'+$id}}\">Some text</div>\n<script>\n(function(scope) {\n  scope.$watch('msg', function(msg) {\n    if (msg) {\n      // Do something when msg arrives\n      $(\"#my_\"+scope.$id).html(msg.payload);\n      $(\"#my_\"+scope.$id).closest(\"md-card\").css(\"background\",msg.background)\n      \n    }\n  });\n})(scope);\n</script>",
+        "storeOutMessages": true,
+        "fwdInMessages": false,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "x": 1580,
+        "y": 220,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "1f833d09.5f5843",
+        "type": "inject",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "background",
+                "v": "red",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "Text one",
+        "payloadType": "str",
+        "x": 1400,
+        "y": 180,
+        "wires": [
+            [
+                "ad679f0d.ca4fe"
+            ]
+        ]
+    },
+    {
+        "id": "b6c4ef1c.c474d",
+        "type": "inject",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "background",
+                "v": "blue",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "Text other",
+        "payloadType": "str",
+        "x": 1400,
+        "y": 280,
+        "wires": [
+            [
+                "ad679f0d.ca4fe"
+            ]
+        ]
+    },
+    {
+        "id": "fe25f7a5.7b32",
+        "type": "function",
+        "z": "3fb5a67.37c495a",
+        "name": "To be translated",
+        "func": "var lang = global.get(\"language1ID\");\nmsg.lang = msg.payload;\n\nmsg.master_label = 'Master1 ID';\n\nmsg.sensorid_change = 'change sensor ID';\nmsg.sensorid_tooltip = 'between 0 and 240';\nmsg.sensorid_label = 'Sensor ID : ';\nmsg.sensorid_set = 'Set new ID';\n\nmsg.mperiod_change = 'change Measurement Period (secs)';\nmsg.mperiod_tooltip = 'between 5 and 16M secs';\nmsg.mperiod_label = 'Actual period : ';\nmsg.mperiod_set = 'Set new period';\n\nmsg.mwindow_change = 'change Measurement window (secs)';\nmsg.mwindow_tooltip = 'between 1 and 4000 secs';\nmsg.mwindow_label = 'Measurement duration : ';\nmsg.mwindow_set = 'Set new window';\n\nmsg.vhigh_change = 'change V High (mV)';\nmsg.vhigh_tooltip = 'between VLow and 3170 mVolt';\nmsg.vhigh_label = 'Actual High Voltage : ';\nmsg.vhigh_set = 'Set new value';\n\nmsg.vlow_change = 'change V Low (mV)';\nmsg.vlow_tooltip = 'between 10mV and VHigh';\nmsg.vlow_label = 'Actual Low Voltage : ';\nmsg.vlow_set = 'Set new value';\n\nmsg.rcharge_change = 'change Charging resistor (Ohm)';\nmsg.rcharge_tooltip = 'between 1 and 730000 Ohm';\nmsg.rcharge_label = 'Actual resistor : ';\nmsg.rcharge_set = 'Set new value';\n\nmsg.desc_change = 'change Description';\nmsg.desc_tooltip = 'Description of measurement setup';\nmsg.desc_label = 'Actual Description : ';\nmsg.desc_set = 'Set new description';\n\nmsg.maxwnoise_label = 'Actual noise value (mV) : ';\n\nmsg.noise_label = 'Maximum noise value (mV) : ';\n\nmsg.sequence_label = 'Sequence : ';\n\nmsg.cap_label = 'Actual value : ';\n\nmsg.avgcap_label = 'Actual average : ';\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2200,
+        "y": 660,
+        "wires": [
+            [
+                "aa1cc20a.6bd5e",
+                "12430944.ab7717"
+            ]
+        ]
+    },
+    {
+        "id": "aa1cc20a.6bd5e",
+        "type": "postgrestor",
+        "z": "3fb5a67.37c495a",
+        "name": "translations@localhost",
+        "query": "SELECT \"{{msg.lang}}\" AS master_label FROM translations_table\nWHERE en = '{{ msg.master_label }}'\nLIMIT 1;\n\nSELECT \"{{msg.lang}}\" AS sensorid_label FROM translations_table\nWHERE en = '{{ msg.sensorid_label }}'\nLIMIT 1;\n\nSELECT \"{{msg.lang}}\" AS sensorid_change FROM translations_table\nWHERE en = '{{ msg.sensorid_change }}'\nLIMIT 1;\n\nSELECT \"{{msg.lang}}\" AS sensorid_tooltip FROM translations_table\nWHERE en = '{{ msg.sensorid_tooltip }}'\nLIMIT 1;\n\nSELECT \"{{msg.lang}}\" AS sensorid_set FROM translations_table\nWHERE en = '{{ msg.sensorid_set }}'\nLIMIT 1;\n",
+        "postgresDB": "6787392.d78b7c8",
+        "output": true,
+        "outputs": 1,
+        "x": 2420,
+        "y": 660,
+        "wires": [
+            [
+                "592ce377.5077cc",
+                "d425b770.1ed9d"
+            ]
+        ]
+    },
+    {
+        "id": "592ce377.5077cc",
+        "type": "function",
+        "z": "3fb5a67.37c495a",
+        "name": "Translations",
+        "func": "global.set('master_label',msg.payload[0].rows[0].master_label);\n\nglobal.set('sensorid_label',msg.payload[1].rows[0].sensorid_label);\nglobal.set('sensorid_change',msg.payload[2].rows[0].sensorid_change);\nglobal.set('sensorid_tooltip',msg.payload[3].rows[0].sensorid_tooltip);\nglobal.set('sensorid_set',msg.payload[4].rows[0].sensorid_set);\n\nmsg.payload = '';\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2630,
+        "y": 660,
+        "wires": [
+            [
+                "a4b1082e.061d48",
+                "179035e8.f0c72a"
+            ]
+        ]
+    },
+    {
+        "id": "d425b770.1ed9d",
+        "type": "debug",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2590,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "12430944.ab7717",
+        "type": "debug",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2330,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "21b84409.362b1c",
+        "type": "debug",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2150,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "2d1838df.0d4f2",
+        "type": "inject",
+        "z": "3fb5a67.37c495a",
+        "name": "init",
+        "props": [
+            {
+                "p": "lang",
+                "v": "en",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "x": 1570,
+        "y": 600,
+        "wires": [
+            [
+                "1f3b60b1.b34b6f"
+            ]
+        ]
+    },
+    {
+        "id": "8a658423.c1bb08",
+        "type": "function",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "func": "var master_label = global.get('master_label');\n\nmsg.master_label = master_label;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1540,
+        "y": 820,
+        "wires": [
+            [
+                "f93d3e8f.3d8778"
+            ]
+        ]
+    },
+    {
+        "id": "a4b1082e.061d48",
+        "type": "link out",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "links": [
+            "7e8ec8e8.972498",
+            "a018cb9c.3ea22",
+            "eb349368.ef836",
+            "1f33aeda.ad4039",
+            "b7e8b958.e2d9b8",
+            "524f8eff.0b5fe"
+        ],
+        "x": 2755,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "7e8ec8e8.972498",
+        "type": "link in",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "links": [
+            "a4b1082e.061d48"
+        ],
+        "x": 275,
+        "y": 960,
+        "wires": [
+            [
+                "75dddb0.63096a4"
+            ]
+        ]
+    },
+    {
+        "id": "75dddb0.63096a4",
+        "type": "function",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "func": "var change = global.get(\"sensorid_change\");\nvar tooltip = global.get(\"sensorid_tooltip\");\n\nmsg.tooltip = tooltip;\nmsg.change = change;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 960,
+        "wires": [
+            [
+                "32b898b.df952e8"
+            ]
+        ]
+    },
+    {
+        "id": "227659b0.ea0b0e",
+        "type": "function",
+        "z": "3fb5a67.37c495a",
+        "name": "translations",
+        "func": "var label = global.get('sensorid_label');\nvar change = global.get('sensorid_change');\nvar tooltip = global.get('sensorid_tooltip');\nvar set = global.get('sensorid_set');\n\nmsg.label = label;\nmsg.change = change;\nmsg.tooltip = tooltip;\nmsg.set = set;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 530,
+        "y": 1020,
+        "wires": [
+            [
+                "63f9d66e.7b49b"
+            ]
+        ]
+    },
+    {
+        "id": "a018cb9c.3ea22",
+        "type": "link in",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "links": [
+            "a4b1082e.061d48"
+        ],
+        "x": 275,
+        "y": 1040,
+        "wires": [
+            [
+                "bd7748c5.1705f8"
+            ]
+        ]
+    },
+    {
+        "id": "70ed7170.d90e38",
+        "type": "function",
+        "z": "3fb5a67.37c495a",
+        "name": "translations",
+        "func": "var label = global.get('sensorid_label');\nvar change = global.get('sensorid_change');\nvar tooltip = global.get('sensorid_tooltip');\nvar set = global.get('sensorid_set');\n\nmsg.label = label;\nmsg.change = change;\nmsg.tooltip = tooltip;\nmsg.set = set;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 530,
+        "y": 1100,
+        "wires": [
+            [
+                "e31e4144.4eb278"
+            ]
+        ]
+    },
+    {
+        "id": "eb349368.ef836",
+        "type": "link in",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "links": [
+            "a4b1082e.061d48"
+        ],
+        "x": 275,
+        "y": 1120,
+        "wires": [
+            [
+                "32bdb2ea.712cb6"
+            ]
+        ]
+    },
+    {
+        "id": "f996ad86.32d81",
+        "type": "function",
+        "z": "3fb5a67.37c495a",
+        "name": "translations",
+        "func": "var label = global.get('sensorid_label');\nvar change = global.get('sensorid_change');\nvar tooltip = global.get('sensorid_tooltip');\nvar set = global.get('sensorid_set');\n\nmsg.label = label;\nmsg.change = change;\nmsg.tooltip = tooltip;\nmsg.set = set;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 530,
+        "y": 1180,
+        "wires": [
+            [
+                "d59e10ae.bcf648"
+            ]
+        ]
+    },
+    {
+        "id": "1f33aeda.ad4039",
+        "type": "link in",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "links": [
+            "a4b1082e.061d48"
+        ],
+        "x": 275,
+        "y": 1200,
+        "wires": [
+            [
+                "1552ea08.727bee"
+            ]
+        ]
+    },
+    {
+        "id": "111ef4bb.33e273",
+        "type": "function",
+        "z": "3fb5a67.37c495a",
+        "name": "translations",
+        "func": "var label = global.get('sensorid_label');\nvar change = global.get('sensorid_change');\nvar tooltip = global.get('sensorid_tooltip');\nvar set = global.get('sensorid_set');\n\nmsg.label = label;\nmsg.change = change;\nmsg.tooltip = tooltip;\nmsg.set = set;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 530,
+        "y": 1260,
+        "wires": [
+            [
+                "f4629d6f.602868"
+            ]
+        ]
+    },
+    {
+        "id": "de2e59c0.e825e8",
+        "type": "function",
+        "z": "3fb5a67.37c495a",
+        "name": "translations",
+        "func": "var label = global.get('sensorid_label');\nvar change = global.get('sensorid_change');\nvar tooltip = global.get('sensorid_tooltip');\nvar set = global.get('sensorid_set');\n\nmsg.label = label;\nmsg.change = change;\nmsg.tooltip = tooltip;\nmsg.set = set;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 530,
+        "y": 1340,
+        "wires": [
+            [
+                "6be38186.0c759"
+            ]
+        ]
+    },
+    {
+        "id": "fea77453.727b48",
+        "type": "function",
+        "z": "3fb5a67.37c495a",
+        "name": "translations",
+        "func": "var label = global.get('sensorid_label');\nvar change = global.get('sensorid_change');\nvar tooltip = global.get('sensorid_tooltip');\nvar set = global.get('sensorid_set');\n\nmsg.label = label;\nmsg.change = change;\nmsg.tooltip = tooltip;\nmsg.set = set;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 530,
+        "y": 1580,
+        "wires": [
+            [
+                "a7188d1d.89f8a8"
+            ]
+        ]
+    },
+    {
+        "id": "36749289.c99cde",
+        "type": "function",
+        "z": "3fb5a67.37c495a",
+        "name": "translations",
+        "func": "var label = global.get('sensorid_label');\nvar change = global.get('sensorid_change');\nvar tooltip = global.get('sensorid_tooltip');\nvar set = global.get('sensorid_set');\n\nmsg.label = label;\nmsg.change = change;\nmsg.tooltip = tooltip;\nmsg.set = set;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 530,
+        "y": 1640,
+        "wires": [
+            [
+                "fe217ba8.cb07a"
+            ]
+        ]
+    },
+    {
+        "id": "8f69284d.59fe38",
+        "type": "function",
+        "z": "3fb5a67.37c495a",
+        "name": "translations",
+        "func": "var label = global.get('sensorid_label');\nvar change = global.get('sensorid_change');\nvar tooltip = global.get('sensorid_tooltip');\nvar set = global.get('sensorid_set');\n\nmsg.label = label;\nmsg.change = change;\nmsg.tooltip = tooltip;\nmsg.set = set;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 530,
+        "y": 1700,
+        "wires": [
+            [
+                "4b6aa6bc.9fae38"
+            ]
+        ]
+    },
+    {
+        "id": "c013982a.cf6248",
+        "type": "function",
+        "z": "3fb5a67.37c495a",
+        "name": "translations",
+        "func": "var label = global.get('sensorid_label');\nvar change = global.get('sensorid_change');\nvar tooltip = global.get('sensorid_tooltip');\nvar set = global.get('sensorid_set');\n\nmsg.label = label;\nmsg.change = change;\nmsg.tooltip = tooltip;\nmsg.set = set;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 610,
+        "y": 1760,
+        "wires": [
+            [
+                "c380e12b.d7ed1"
+            ]
+        ]
+    },
+    {
+        "id": "dfbefc3.9ba7",
+        "type": "function",
+        "z": "3fb5a67.37c495a",
+        "name": "translations",
+        "func": "var label = global.get('sensorid_label');\nvar change = global.get('sensorid_change');\nvar tooltip = global.get('sensorid_tooltip');\nvar set = global.get('sensorid_set');\n\nmsg.label = label;\nmsg.change = change;\nmsg.tooltip = tooltip;\nmsg.set = set;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 530,
+        "y": 1800,
+        "wires": [
+            [
+                "39f77f8a.4d56d8"
+            ]
+        ]
+    },
+    {
+        "id": "e38c221e.374eb",
+        "type": "function",
+        "z": "3fb5a67.37c495a",
+        "name": "translations",
+        "func": "var label = global.get('sensorid_label');\nvar change = global.get('sensorid_change');\nvar tooltip = global.get('sensorid_tooltip');\nvar set = global.get('sensorid_set');\n\nmsg.label = label;\nmsg.change = change;\nmsg.tooltip = tooltip;\nmsg.set = set;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 530,
+        "y": 1860,
+        "wires": [
+            [
+                "8fa3a30b.7e3858"
+            ]
+        ]
+    },
+    {
+        "id": "b7e8b958.e2d9b8",
+        "type": "link in",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "links": [
+            "a4b1082e.061d48"
+        ],
+        "x": 275,
+        "y": 1280,
+        "wires": [
+            [
+                "c1c56d91.222cb8"
+            ]
+        ]
+    },
+    {
+        "id": "524f8eff.0b5fe",
+        "type": "link in",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "links": [
+            "a4b1082e.061d48"
+        ],
+        "x": 275,
+        "y": 1360,
+        "wires": [
+            [
+                "1c04be2f.98dae2"
+            ]
+        ]
+    },
+    {
+        "id": "179035e8.f0c72a",
+        "type": "function",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "func": "var master_label = global.get('master_label');\n\nmsg.master_label = master_label;\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2350,
+        "y": 740,
+        "wires": [
+            [
+                "881accc2.12a77"
+            ]
         ]
     }
 ]
