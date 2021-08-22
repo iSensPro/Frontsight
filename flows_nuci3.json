@@ -2458,7 +2458,7 @@
         "type": "debug",
         "z": "3fb5a67.37c495a",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -6660,7 +6660,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "Change sensor ID (1)",
-        "func": "msg.return_start = 1;\nmsg.return_end = 13;\nmsg.backspaces = 3;\n\n// reset max noise level\nflow.set('maxnoiseM1',0);\n\nreturn msg;",
+        "func": "msg.return_start = 1;\nmsg.return_end = 13;\nmsg.backspaces = 3;\n\n// reset max noise level\nflow.set('maxnoiseM1',0);\n\nmsg.newvalue = '';\n\nvar sensorid = String(flow.get('sensorIDM1'));\n\n//padding before number\nfor(var j = 0; j < (msg.backspaces-sensorid.length); j++)\n{ \n    msg.newvalue += '0';\n}\n\n\nfor(var i = 0; i < sensorid.length; i++)\n{ \n    msg.newvalue += sensorid[i];\n}\n\nmsg.newvalue = msg.newvalue.toString();\nmsg.topic = 1;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -6679,7 +6679,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "Change measurement period (2)",
-        "func": "msg.return_start = 2;\nmsg.return_end = 12;\nmsg.backspaces = 5;\nmsg.newvalue = msg.payload;\n\n// reset max noise level\nflow.set('maxnoiseM1',0);\n\nreturn msg;",
+        "func": "msg.return_start = 2;\nmsg.return_end = 12;\nmsg.backspaces = 5;\nmsg.newvalue = msg.payload;\n\n// reset max noise level\nflow.set('maxnoiseM1',0);\n\nmsg.newvalue = '';\n\nvar mperiod = String(flow.get('mperiodM1'));\n\n//padding before number\nfor(var j = 0; j < (msg.backspaces-mperiod.length); j++)\n{ \n    msg.newvalue += '0';\n}\n\n\nfor(var i = 0; i < mperiod.length; i++)\n{ \n    msg.newvalue += mperiod[i];\n}\n\nmsg.newvalue = msg.newvalue.toString();\nmsg.topic = 2;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -6698,7 +6698,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "Change measurement window (3)",
-        "func": "msg.return_start = 3;\nmsg.return_end = 11;\nmsg.backspaces = 5;\nmsg.newvalue = msg.payload;\n\n// reset max noise level\nflow.set('maxnoiseM1',0);\n\nreturn msg;",
+        "func": "msg.return_start = 3;\nmsg.return_end = 11;\nmsg.backspaces = 5;\nmsg.newvalue = msg.payload;\n\n// reset max noise level\nflow.set('maxnoiseM1',0);\n\nmsg.newvalue = '';\n\nvar vhigh = String(flow.get('mwindowM1'));\n\n//padding before number\nfor(var j = 0; j < (msg.backspaces-mwindow.length); j++)\n{ \n    msg.newvalue += '0';\n}\n\n\nfor(var i = 0; i < mwindow.length; i++)\n{ \n    msg.newvalue += mwindow[i];\n}\n\nmsg.newvalue = msg.newvalue.toString();\nmsg.topic = 3;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -6717,7 +6717,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "Change VHigh (4)",
-        "func": "msg.return_start = 4;\nmsg.return_end = 10;\nmsg.backspaces = 4;\nmsg.newvalue = msg.payload;\n\n// reset max noise level\nflow.set('maxnoiseM1',0);\n\nreturn msg;",
+        "func": "msg.return_start = 4;\nmsg.return_end = 10;\nmsg.backspaces = 4;\n\n// reset max noise level\nflow.set('maxnoiseM1',0);\n\nmsg.newvalue = '';\n\nvar vhigh = String(flow.get('vhighM1'));\n\n//padding before number\nfor(var j = 0; j < (msg.backspaces-vhigh.length); j++)\n{ \n    msg.newvalue += '0';\n}\n\n\nfor(var i = 0; i < vhigh.length; i++)\n{ \n    msg.newvalue += vhigh[i];\n}\n\nmsg.newvalue = msg.newvalue.toString();\nmsg.topic = 4;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -6736,7 +6736,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "Change VLow (5)",
-        "func": "msg.return_start = 5;\nmsg.return_end = 9;\nmsg.backspaces = 4;\nmsg.newvalue = msg.payload;\n\n// reset max noise level\nflow.set('maxnoiseM1',0);\n\nreturn msg;",
+        "func": "msg.return_start = 5;\nmsg.return_end = 9;\nmsg.backspaces = 4;\nmsg.newvalue = msg.payload;\n\n// reset max noise level\nflow.set('maxnoiseM1',0);\n\nmsg.newvalue = '';\n\nvar vhigh = String(flow.get('vlowM1'));\n\n//padding before number\nfor(var j = 0; j < (msg.backspaces-vlow.length); j++)\n{ \n    msg.newvalue += '0';\n}\n\n\nfor(var i = 0; i < vlow.length; i++)\n{ \n    msg.newvalue += vlow[i];\n}\n\nmsg.newvalue = msg.newvalue.toString();\nmsg.topic = 5;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -6755,7 +6755,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "Change RCharge (6)",
-        "func": "msg.return_start = 6;\nmsg.return_end = 8;\nmsg.backspaces = 6;\nmsg.newvalue = msg.payload;\n\n// reset max noise level\nflow.set('maxnoiseM1',0);\n\nreturn msg;",
+        "func": "msg.return_start = 6;\nmsg.return_end = 8;\nmsg.backspaces = 6;\nmsg.newvalue = msg.payload;\n\n// reset max noise level\nflow.set('maxnoiseM1',0);\n\nmsg.newvalue = '';\n\nvar vhigh = String(flow.get('rchargeM1'));\n\n//padding before number\nfor(var j = 0; j < (msg.backspaces-rcharge.length); j++)\n{ \n    msg.newvalue += '0';\n}\n\n\nfor(var i = 0; i < rcharge.length; i++)\n{ \n    msg.newvalue += rcharge[i];\n}\n\nmsg.newvalue = msg.newvalue.toString();\nmsg.topic = 6;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -8408,7 +8408,7 @@
         "type": "debug",
         "z": "3fb5a67.37c495a",
         "name": "",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -8425,7 +8425,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "M Period",
-        "func": "var mperiod;\n\n// set new flow variable\n//flow.set('mperiodM1',msg.period);\n\nmsg.label = msg.payload.rows[0].translated;\n //msg.label = 'actua test';\n \n msg.backspaces = 5;\nmsg.payload = '';\n\nvar tempstr = String(msg.period);\n\n//padding\nfor(var j = 0; j < (msg.backspaces-tempstr.length); j++)\n{ \n    msg.payload += '0';\n}\n\n\nfor(var i = 0; i < tempstr.length; i++)\n{ \n    msg.payload += tempstr[i];\n}\n\nmsg.payload = msg.payload.toString();\nmsg.topic = 2;\n\nreturn msg;",
+        "func": "var mperiod;\n\n// set new flow variable\n//flow.set('mperiodM1',parseInt(msg.period));\n \nmsg.backspaces = 5;\nmsg.payload = '';\n\nvar tempstr = String(msg.period);\n\n//padding\nfor(var j = 0; j < (msg.backspaces-tempstr.length); j++)\n{ \n    msg.payload += '0';\n}\n\n\nfor(var i = 0; i < tempstr.length; i++)\n{ \n    msg.payload += tempstr[i];\n}\n\nmsg.payload = msg.payload.toString();\nmsg.topic = 2;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -8444,13 +8444,13 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "M Window",
-        "func": "var mwindow;\n\n// set new flow variable\n//flow.set('mwindowM1',msg.mwindow);\n\nmsg.label = msg.payload.rows[0].translated;\n\nmsg.backspaces = 5;\nmsg.payload = '';\n\nmwindow = String(msg.mwindow);\n\n//padding before number\nfor(var j = 0; j < (msg.backspaces-mwindow.length); j++)\n{ \n    msg.payload += '0';\n}\n\n\nfor(var i = 0; i < mwindow.length; i++)\n{ \n    msg.payload += mwindow[i];\n}\n\nmsg.payload = msg.payload.toString();\nmsg.topic = 3;\n\nreturn msg;",
+        "func": "var mwindow;\n\n// set new flow variable\n//flow.set('mwindowM1',parseInt(msg.mwindow));\n\nmsg.backspaces = 5;\nmsg.payload = '';\n\nmwindow = String(msg.mwindow);\n\n//padding before number\nfor(var j = 0; j < (msg.backspaces-mwindow.length); j++)\n{ \n    msg.payload += '0';\n}\n\n\nfor(var i = 0; i < mwindow.length; i++)\n{ \n    msg.payload += mwindow[i];\n}\n\nmsg.payload = msg.payload.toString();\nmsg.topic = 3;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 770,
+        "x": 750,
         "y": 1100,
         "wires": [
             [
@@ -8463,13 +8463,13 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "VHigh",
-        "func": "var vhigh;\n\n// set new flow variable\nflow.set('vhighM1',msg.vhigh);\n\nmsg.label = msg.payload.rows[0].translated;\n\nmsg.backspaces = 4;\nmsg.payload = '';\n\nvhigh = String(msg.vhigh);\n\n//padding before number\nfor(var j = 0; j < (msg.backspaces-vhigh.length); j++)\n{ \n    msg.payload += '0';\n}\n\n\nfor(var i = 0; i < vhigh.length; i++)\n{ \n    msg.payload += vhigh[i];\n}\n\nmsg.payload = msg.payload.toString();\nmsg.topic = 4;\n\nreturn msg;",
+        "func": "var vhigh;\n\n// set new flow variable\nflow.set('vhighM1',parseInt(msg.vhigh));\n\nmsg.backspaces = 4;\nmsg.payload = '';\n\nvhigh = String(msg.vhigh);\n\n//padding before number\nfor(var j = 0; j < (msg.backspaces-vhigh.length); j++)\n{ \n    msg.payload += '0';\n}\n\n\nfor(var i = 0; i < vhigh.length; i++)\n{ \n    msg.payload += vhigh[i];\n}\n\nmsg.payload = msg.payload.toString();\nmsg.topic = 4;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 750,
+        "x": 770,
         "y": 1180,
         "wires": [
             [
@@ -8482,13 +8482,13 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "VLow",
-        "func": "var vlow;\n\n// set new flow variable\nflow.set('vlowM1',msg.vlow);\n\nmsg.label = msg.payload.rows[0].translated;\n\nmsg.backspaces = 4;\nmsg.payload = '';\n\nvlow = String(msg.vlow);\n\n//padding before number\nfor(var j = 0; j < (msg.backspaces-vlow.length); j++)\n{ \n    msg.payload += '0';\n}\n\n\nfor(var i = 0; i < vlow.length; i++)\n{ \n    msg.payload += vlow[i];\n}\n\nmsg.payload = msg.payload.toString();\nmsg.topic = 5;\n\nreturn msg;",
+        "func": "var vlow;\n\n// set new flow variable\nflow.set('vlowM1',parseInt(msg.vlow));\n\nmsg.backspaces = 4;\nmsg.payload = '';\n\nvlow = String(msg.vlow);\n\n//padding before number\nfor(var j = 0; j < (msg.backspaces-vlow.length); j++)\n{ \n    msg.payload += '0';\n}\n\n\nfor(var i = 0; i < vlow.length; i++)\n{ \n    msg.payload += vlow[i];\n}\n\nmsg.payload = msg.payload.toString();\nmsg.topic = 5;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 750,
+        "x": 770,
         "y": 1260,
         "wires": [
             [
@@ -8501,7 +8501,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "RCharge",
-        "func": "var rcharge;\n\n// set new flow variable\n//flow.set('rchargeM1',msg.rcharge);\n\nmsg.label = msg.payload.rows[0].translated;\n\nmsg.backspaces = 6;\nmsg.payload = '';\n\nrcharge = String(msg.rcharge);\n\n//padding before number\nfor(var j = 0; j < (msg.backspaces-rcharge.length); j++)\n{ \n    msg.payload += '0';\n}\n\nfor(var i = 0; i < rcharge.length; i++)\n{ \n    msg.payload += rcharge[i];\n}\n\nmsg.payload = msg.payload.toString();\nmsg.topic = 6;\n\nreturn msg;",
+        "func": "var rcharge;\n\n// set new flow variable\n//flow.set('rchargeM1',parseInt(msg.rcharge));\n\nmsg.backspaces = 6;\nmsg.payload = '';\n\nrcharge = String(msg.rcharge);\n\n//padding before number\nfor(var j = 0; j < (msg.backspaces-rcharge.length); j++)\n{ \n    msg.payload += '0';\n}\n\nfor(var i = 0; i < rcharge.length; i++)\n{ \n    msg.payload += rcharge[i];\n}\n\nmsg.payload = msg.payload.toString();\nmsg.topic = 6;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -8520,7 +8520,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "Sensor ID",
-        "func": "var sensorid;\n\n// set new flow variable\n//flow.set('sensorM1',msg.sensorid);\n\nmsg.backspaces = 3;\nmsg.payload = '';\n\nsensorid = String(msg.sensorid);\n\n//padding before number\nfor(var j = 0; j < (msg.backspaces-sensorid.length); j++)\n{ \n    msg.payload += '0';\n}\n\n\nfor(var i = 0; i < sensorid.length; i++)\n{ \n    msg.payload += sensorid[i];\n}\n\nmsg.payload = msg.payload.toString();\nmsg.payload.masterID = msg.payload;\nmsg.topic = 1;\n\n// awaiting change of sensorID implementation\nmsg.enabled = false;\n\nreturn msg;",
+        "func": "var sensorid;\n\n// set new flow variable\n//flow.set('sensorM1',parseInt(msg.sensorid));\n\nmsg.backspaces = 3;\nmsg.payload = '';\n\nsensorid = String(msg.sensorid);\n\n//padding before number\nfor(var j = 0; j < (msg.backspaces-sensorid.length); j++)\n{ \n    msg.payload += '0';\n}\n\n\nfor(var i = 0; i < sensorid.length; i++)\n{ \n    msg.payload += sensorid[i];\n}\n\nmsg.payload = msg.payload.toString();\nmsg.payload.masterID = msg.payload;\nmsg.topic = 1;\n\n// awaiting change of sensorID implementation\nmsg.enabled = false;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -8531,8 +8531,7 @@
         "wires": [
             [
                 "2bc94027.6a9238",
-                "bfc4456.37f28b8",
-                "32b898b.df952e8"
+                "bfc4456.37f28b8"
             ]
         ]
     },
@@ -9086,14 +9085,14 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "validate input",
-        "func": "var ID = flow.get('master1ID');\n\nmsg.background = 'grey';\nif (msg.payload == '')\n{\n    msg.enabled = false;\n}\nelse\n{\n    if (msg.payload <= 240  && (msg.payload >= 0) && (ID != '')) \n    {\n        msg.enabled = true;\n        msg.background = 'green';\n    }\n    else msg.enabled = false;\n}\n\nmsg.enabled = false;\n\nreturn msg;",
+        "func": "var ID = flow.get('master1ID');\n\nmsg.background = 'grey';\nif (msg.payload == '')\n{\n    msg.enabled = false;\n}\nelse\n{\n    if ((parseInt(msg.payload) <= 240)  && (parseInt(msg.payload) >= 0) && (ID != '')) \n    {\n        msg.enabled = true;\n        msg.background = 'green';\n    }\n    else msg.enabled = false;\n}\n\nmsg.enabled = false;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 690,
-        "y": 980,
+        "x": 710,
+        "y": 960,
         "wires": [
             [
                 "d047bb1d.85a868"
@@ -9140,13 +9139,13 @@
         "order": 2,
         "width": 6,
         "height": 1,
-        "passthru": false,
+        "passthru": true,
         "mode": "text",
         "delay": "0",
         "topic": "",
         "topicType": "str",
         "x": 540,
-        "y": 980,
+        "y": 960,
         "wires": [
             [
                 "f0051fb7.595838"
@@ -9305,8 +9304,8 @@
         "width": 6,
         "height": 1,
         "passthru": false,
-        "label": "Set new period",
-        "tooltip": "{{tooltip}}",
+        "label": "{{ msg.set }}",
+        "tooltip": "{{msg.tooltip}}",
         "color": "",
         "bgcolor": "{{background}}",
         "icon": "",
@@ -9314,7 +9313,7 @@
         "payloadType": "flow",
         "topic": "mperiodM1",
         "topicType": "flow",
-        "x": 1120,
+        "x": 1110,
         "y": 1060,
         "wires": [
             [
@@ -9329,15 +9328,15 @@
         "type": "ui_text_input",
         "z": "3fb5a67.37c495a",
         "name": "mperiod",
-        "label": "change Measurement Period (secs)",
-        "tooltip": "between 5 and 16M secs",
+        "label": "{{change}}",
+        "tooltip": "{{tooltip}}",
         "group": "f12df54.fdd1f08",
         "order": 3,
         "width": 6,
         "height": 1,
         "passthru": true,
         "mode": "text",
-        "delay": "100",
+        "delay": "0",
         "topic": "",
         "topicType": "str",
         "x": 540,
@@ -9353,13 +9352,13 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "validate input",
-        "func": "var ID = flow.get('master1ID');\n\nmsg.background = 'grey';\nif (msg.payload == '')\n{\n    msg.enabled = false;\n}\nelse\n{\n    if ((msg.payload <= 16666666) && (msg.payload >=5) && (ID != ''))\n    {\n        msg.enabled = true;\n        msg.background = 'green';\n    }\n    else msg.enabled = false;\n}\n\nmsg.tooltip = 'between 5 and 16666666 secs';\nmsg.topic = 'Set new value';\nreturn msg;",
+        "func": "var ID = flow.get('master1ID');\n\nvar label = global.get('mperiod_label');\nvar change = global.get('mperiod_change');\nvar tooltip = global.get('mperiod_tooltip');\nvar set = global.get('mperiod_set');\n\nmsg.label = label;\nmsg.change = change;\nmsg.tooltip = tooltip;\nmsg.set = set;\n\nmsg.background = 'grey';\nif (msg.payload == '')\n{\n    msg.enabled = false;\n}\nelse\n{\n    if ((parseInt(msg.payload) <= 16666666) && (parseInt(msg.payload) >= 5) && (ID != ''))\n    {\n        msg.enabled = true;\n        msg.background = 'green';\n    }\n    else msg.enabled = false;\n}\nmsg.payload = parseInt(msg.payload);\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 690,
+        "x": 710,
         "y": 1060,
         "wires": [
             [
@@ -9388,15 +9387,15 @@
         "type": "ui_text_input",
         "z": "3fb5a67.37c495a",
         "name": "mwindow",
-        "label": "change Measurement window (secs)",
-        "tooltip": "between 1 and 4000 secs",
+        "label": "{{change}}",
+        "tooltip": "{{tooltip}}",
         "group": "f12df54.fdd1f08",
         "order": 4,
         "width": 6,
         "height": 1,
         "passthru": true,
         "mode": "text",
-        "delay": "100",
+        "delay": "0",
         "topic": "",
         "topicType": "str",
         "x": 540,
@@ -9412,13 +9411,13 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "validate input",
-        "func": "var ID = flow.get('master1ID');\n\nmsg.background = 'grey';\nif (msg.payload == '')\n{\n    msg.enabled = false;\n}\nelse\n{\n    if ((msg.payload <= 4000) && (msg.payload >=1) && (ID != ''))\n    {\n        msg.enabled = true;\n        msg.background = 'green';\n    }\n    else msg.enabled = false;\n}\n\nmsg.tooltip = 'between 1 and 4000 secs';\nreturn msg;",
+        "func": "var ID = flow.get('master1ID');\n\nvar label = global.get('mwindow_label');\nvar change = global.get('mwindow_change');\nvar tooltip = global.get('mwindow_tooltip');\nvar set = global.get('mwindow_set');\n\nmsg.label = label;\nmsg.change = change;\nmsg.tooltip = tooltip;\nmsg.set = set;\n\nmsg.background = 'grey';\nif (msg.payload == '')\n{\n    msg.enabled = false;\n}\nelse\n{\n    if ((parseInt(msg.payload) <= 4000) && (parseInt(msg.payload) >=1) && (ID != ''))\n    {\n        msg.enabled = true;\n        msg.background = 'green';\n    }\n    else msg.enabled = false;\n}\n\nmsg.payload = parseInt(msg.payload);\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 690,
+        "x": 710,
         "y": 1140,
         "wires": [
             [
@@ -9436,8 +9435,8 @@
         "width": 6,
         "height": 1,
         "passthru": false,
-        "label": "Set new window",
-        "tooltip": "{{tooltip}}",
+        "label": "{{ msg.set }}",
+        "tooltip": "{{msg.tooltip}}",
         "color": "",
         "bgcolor": "{{background}}",
         "icon": "",
@@ -9445,7 +9444,7 @@
         "payloadType": "flow",
         "topic": "mwindowM1",
         "topicType": "flow",
-        "x": 1120,
+        "x": 1110,
         "y": 1140,
         "wires": [
             [
@@ -9476,22 +9475,23 @@
         "type": "ui_text_input",
         "z": "3fb5a67.37c495a",
         "name": "vhigh",
-        "label": "change V High (mV)",
-        "tooltip": "between VLow and 3170 mVolt",
+        "label": "{{change}}",
+        "tooltip": "{{tooltip}}",
         "group": "92957720.d414",
         "order": 2,
         "width": 6,
         "height": 1,
         "passthru": true,
         "mode": "text",
-        "delay": "100",
-        "topic": "",
+        "delay": "0",
+        "topic": "vhigh",
         "topicType": "str",
         "x": 530,
         "y": 1220,
         "wires": [
             [
-                "d961a652.79784"
+                "d961a652.79784",
+                "f4c105f1.f86128"
             ]
         ]
     },
@@ -9500,17 +9500,18 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "validate input",
-        "func": "var vlow = flow.get('vlowM1');\nvar ID = flow.get('master1ID');\n\nmsg.background = 'grey';\nif (msg.payload == '')\n{\n    msg.enabled = false;\n}\nelse\n{\n    if ((msg.payload <= 3170) && (msg.payload > vlow) && (ID != ''))\n    {\n        msg.enabled = true;\n        msg.background = 'green';\n    }\n    else msg.enabled = false;\n}\n\nmsg.tooltip = 'between VLow and 3170 mVolt';\nreturn msg;",
+        "func": "// get last config value of vlow\nvar vlow = flow.get('vlowM1') || null;\nif (vlow == null) vlow = msg.vlow;\n\n// newly entered vhigh\nvar vhigh = parseInt(msg.payload);\n\nvar ID = flow.get('master1ID');\nvar label = global.get('vhigh_label');\nvar change = global.get('vhigh_change');\nvar tooltip = global.get('vhigh_tooltip');\nvar set = global.get('vhigh_set');\n\nmsg.label = label;\nmsg.change = change;\nmsg.tooltip = tooltip;\nmsg.set = set;\n\nmsg.background = 'grey';\n\nif (msg.payload == '')\n{\n    msg.enabled = false;\n}\nelse\n{\n    msg.vlowvalue = vlow;\n    msg.vhighvalue = vhigh;\n    if ((vhigh <= 3170) && (vhigh > vlow) && (ID != ''))\n    {\n        msg.enabled = true;\n        msg.background = 'green';\n    }\n    else msg.enabled = false;\n}\n\nmsg.payload = vhigh;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 690,
+        "x": 770,
         "y": 1220,
         "wires": [
             [
-                "e9a3e5b.82fc318"
+                "e9a3e5b.82fc318",
+                "da36e4de.1aaad8"
             ]
         ]
     },
@@ -9524,8 +9525,8 @@
         "width": 6,
         "height": 1,
         "passthru": false,
-        "label": "Set new value",
-        "tooltip": "{{tooltip}}",
+        "label": "{{ msg.set }}",
+        "tooltip": "{{msg.tooltip}}",
         "color": "",
         "bgcolor": "{{background}}",
         "icon": "",
@@ -9533,13 +9534,14 @@
         "payloadType": "flow",
         "topic": "vhighM1",
         "topicType": "flow",
-        "x": 1120,
+        "x": 1110,
         "y": 1220,
         "wires": [
             [
                 "3c8baa35.b20efe",
                 "2e15fdd1.3cad52",
-                "6112a500.1a7014"
+                "6112a500.1a7014",
+                "24e6b977.a26f6e"
             ]
         ]
     },
@@ -9569,8 +9571,8 @@
         "width": 6,
         "height": 1,
         "passthru": false,
-        "label": "Set new value",
-        "tooltip": "{{tooltip}}",
+        "label": "{{ msg.set }}",
+        "tooltip": "{{msg.tooltip}}",
         "color": "",
         "bgcolor": "{{background}}",
         "icon": "",
@@ -9578,7 +9580,7 @@
         "payloadType": "flow",
         "topic": "vlowM1",
         "topicType": "flow",
-        "x": 1120,
+        "x": 1110,
         "y": 1300,
         "wires": [
             [
@@ -9593,17 +9595,18 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "validate input",
-        "func": "var vhigh = flow.get('vhighM1');\nvar ID = flow.get('master1ID');\n\nmsg.background = 'grey';\nif (msg.payload == '')\n{\n    msg.enabled = false;\n}\nelse\n{\n    if ((msg.payload < vhigh) && (msg.payload >= 10) && (ID != ''))\n    {\n        msg.enabled = true;\n        msg.background = 'green';\n    }\n    else msg.enabled = false;\n}\n\nmsg.tooltip = 'between 10mV and VHigh';\nreturn msg;",
+        "func": "// get last config value of vhigh\nvar vhigh = flow.get('vhighM1') || null;\nif (vhigh == null) vhigh = msg.vhigh;\n\n// newly entered vhigh\nvar vlow = parseInt(msg.payload);\n\n\nvar ID = flow.get('master1ID');\nvar label = global.get('vlow_label');\nvar change = global.get('vlow_change');\nvar tooltip = global.get('vlow_tooltip');\nvar set = global.get('vlow_set');\n\nmsg.label = label;\nmsg.change = change;\nmsg.tooltip = tooltip;\nmsg.set = set;\n\nmsg.background = 'grey';\n\nif (msg.payload == '')\n{\n    msg.enabled = false;\n}\nelse\n{\n    msg.vlowvalue = vlow;\n    msg.vhighvalue = vhigh;\n    \n    if ((vlow < vhigh) && (vlow >= 10) && (ID != ''))\n    {\n        msg.enabled = true;\n        msg.background = 'green';\n    }\n    else msg.enabled = false;\n}\n\nmsg.payload = vlow;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 690,
+        "x": 710,
         "y": 1300,
         "wires": [
             [
-                "56226fa6.5d421"
+                "56226fa6.5d421",
+                "6b9f1be1.03df64"
             ]
         ]
     },
@@ -9612,22 +9615,23 @@
         "type": "ui_text_input",
         "z": "3fb5a67.37c495a",
         "name": "vlow",
-        "label": "change V Low (mV)",
-        "tooltip": "between 10mV and VHigh",
+        "label": "{{change}}",
+        "tooltip": "{{tooltip}}",
         "group": "92957720.d414",
         "order": 3,
         "width": 6,
         "height": 1,
         "passthru": true,
         "mode": "text",
-        "delay": "100",
+        "delay": "0",
         "topic": "vlow",
         "topicType": "str",
         "x": 530,
         "y": 1300,
         "wires": [
             [
-                "eaa6923c.08ab4"
+                "eaa6923c.08ab4",
+                "40e6f434.386234"
             ]
         ]
     },
@@ -9652,13 +9656,13 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "validate input",
-        "func": "var ID = flow.get('master1ID');\n\nmsg.background = 'grey';\nif (msg.payload == '')\n{\n    msg.enabled = false;\n}\nelse\n{\n    if ((msg.payload <= 730000) && (msg.payload >=1) && (ID != ''))\n    {\n        msg.enabled = true;\n        msg.background = 'green';\n    }\n    else msg.enabled = false;\n}\n\nmsg.tooltip = 'between 1 and 730000 Ohm';\nreturn msg;",
+        "func": "var ID = flow.get('master1ID');\n\nvar label = global.get('rcharge_label');\nvar change = global.get('rcharge_change');\nvar tooltip = global.get('rcharge_tooltip');\nvar set = global.get('rcharge_set');\n\nmsg.label = label;\nmsg.change = change;\nmsg.tooltip = tooltip;\nmsg.set = set;\n\nmsg.background = 'grey';\nif (msg.payload == '')\n{\n    msg.enabled = false;\n}\nelse\n{\n    if ((parseInt(msg.payload) <= 730000) && (parseInt(msg.payload) >=1) && (ID != ''))\n    {\n        msg.enabled = true;\n        msg.background = 'green';\n    }\n    else msg.enabled = false;\n}\n\nmsg.payload = parseInt(msg.payload);\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 690,
+        "x": 710,
         "y": 1380,
         "wires": [
             [
@@ -9676,8 +9680,8 @@
         "width": 6,
         "height": 1,
         "passthru": false,
-        "label": "Set new value",
-        "tooltip": "{{tooltip}}",
+        "label": "{{ msg.set }}",
+        "tooltip": "{{msg.tooltip}}",
         "color": "",
         "bgcolor": "{{background}}",
         "icon": "",
@@ -9685,7 +9689,7 @@
         "payloadType": "flow",
         "topic": "rchargeM1",
         "topicType": "flow",
-        "x": 1120,
+        "x": 1110,
         "y": 1380,
         "wires": [
             [
@@ -9700,7 +9704,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "Noise",
-        "func": "var noise;\n\n// set new flow variable\n//flow.set('noiseM1',msg.noise);\n\n//noise = String(msg.noise);\n\nmsg.label = msg.payload.rows[0].translated;\n\nmsg.payload = msg.noise;\nmsg.enabled = false;\n\nreturn msg;",
+        "func": "var noise;\n\n// set new flow variable\n//flow.set('noiseM1',msg.noise);\n\nmsg.payload = msg.noise;\nmsg.enabled = false;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -9719,7 +9723,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "Sequence",
-        "func": "var sequence;\n\n// set new flow variable\n//flow.set('sequenceM1',msg.sequence);\n\nmsg.label = msg.payload.rows[0].translated;\n\nmsg.payload = msg.sequence;\nmsg.enabled = false;\n// msg.topic = 'Sequence :';\n\nreturn msg;",
+        "func": "var sequence;\n\n// set new flow variable\n//flow.set('sequenceM1',msg.sequence);\n\nmsg.payload = msg.sequence;\nmsg.enabled = false;\n// msg.topic = 'Sequence :';\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -9745,12 +9749,12 @@
             },
             {
                 "p": "enabled",
-                "v": "false",
+                "v": "true",
                 "vt": "bool"
             },
             {
                 "p": "change",
-                "v": "change sensor ID",
+                "v": "",
                 "vt": "str"
             },
             {
@@ -9839,7 +9843,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "Cap",
-        "func": "// set new flow variable\n//flow.set('measurementM1',msg.cap);\n\n//measurement = String(msg.measurement);\n\nmsg.label = msg.payload.rows[0].translated;\n\nmsg.payload = msg.cap;\nmsg.enabled = false;\n\nreturn msg;",
+        "func": "// set new flow variable\n//flow.set('measurementM1',msg.cap);\n\nmsg.payload = msg.cap;\nmsg.enabled = false;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -9883,7 +9887,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "Average",
-        "func": "// set new flow variable\n//flow.set('avg_measurementM1',msg.avg);\n\nmsg.label = msg.payload.rows[0].translated;\n\nmsg.payload = msg.avg;\nmsg.enabled = false;\n\nreturn msg;",
+        "func": "// set new flow variable\n//flow.set('avg_measurementM1',msg.avg);\n\nmsg.payload = msg.avg;\nmsg.enabled = false;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -9927,7 +9931,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "Max Noise",
-        "func": "var maxnoise;\n\n// set new flow variable\nmaxnoise = flow.get('maxnoiseM1') || 0;\n\nmsg.label = msg.payload.rows[0].translated;\n\nif (msg.noise > maxnoise) \n{\n    flow.set('maxnoiseM1', msg.noise);\n    msg.payload = msg.noise;\n}\nelse\n{\n    msg.payload = maxnoise;\n}\n\nmsg.enabled = false;\n\nreturn msg;",
+        "func": "var maxnoise;\n\n// set new flow variable\nmaxnoise = flow.get('maxnoiseM1') || 0;\n\nif (msg.noise > maxnoise) \n{\n    flow.set('maxnoiseM1', msg.noise);\n    msg.payload = msg.noise;\n}\nelse\n{\n    msg.payload = maxnoise;\n}\n\nmsg.enabled = false;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -9985,8 +9989,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 880,
-        "y": 980,
+        "x": 920,
+        "y": 960,
         "wires": [
             [
                 "bfc4456.37f28b8"
@@ -10012,7 +10016,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 870,
+        "x": 910,
         "y": 1060,
         "wires": [
             [
@@ -10039,7 +10043,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 880,
+        "x": 920,
         "y": 1140,
         "wires": [
             [
@@ -10066,7 +10070,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 860,
+        "x": 940,
         "y": 1220,
         "wires": [
             [
@@ -10093,7 +10097,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 860,
+        "x": 900,
         "y": 1300,
         "wires": [
             [
@@ -10120,7 +10124,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 890,
+        "x": 910,
         "y": 1380,
         "wires": [
             [
@@ -10133,15 +10137,15 @@
         "type": "ui_text_input",
         "z": "3fb5a67.37c495a",
         "name": "rcharge",
-        "label": "change Charging resistor (Ohm)",
-        "tooltip": "between 1 and 730000 Ohm",
+        "label": "{{change}}",
+        "tooltip": "{{tooltip}}",
         "group": "f12df54.fdd1f08",
         "order": 9,
         "width": 6,
         "height": 1,
         "passthru": true,
         "mode": "text",
-        "delay": "100",
+        "delay": "0",
         "topic": "",
         "topicType": "str",
         "x": 540,
@@ -10322,256 +10326,6 @@
                 "4b2737d8.912c5",
                 "c949d133.f96d6",
                 "c013982a.cf6248"
-            ]
-        ]
-    },
-    {
-        "id": "fe5a7d10.ffa52",
-        "type": "inject",
-        "z": "3fb5a67.37c495a",
-        "name": "init",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "enabled",
-                "v": "true",
-                "vt": "bool"
-            },
-            {
-                "p": "change",
-                "v": "change Measurement Period (secs)",
-                "vt": "str"
-            },
-            {
-                "p": "tooltip",
-                "v": "between 5 and 16M secs",
-                "vt": "str"
-            },
-            {
-                "p": "label",
-                "v": "Actual period : ",
-                "vt": "str"
-            },
-            {
-                "p": "set",
-                "v": "Set new period",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "str",
-        "x": 90,
-        "y": 1060,
-        "wires": [
-            [
-                "b7041100.cb555"
-            ]
-        ]
-    },
-    {
-        "id": "a24c575b.d726e",
-        "type": "inject",
-        "z": "3fb5a67.37c495a",
-        "name": "init",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "enabled",
-                "v": "true",
-                "vt": "bool"
-            },
-            {
-                "p": "change",
-                "v": "change Measurement window (secs)",
-                "vt": "str"
-            },
-            {
-                "p": "tooltip",
-                "v": "between 1 and 4000 secs",
-                "vt": "str"
-            },
-            {
-                "p": "label",
-                "v": "Measurement duration : ",
-                "vt": "str"
-            },
-            {
-                "p": "set",
-                "v": "Set new window",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "str",
-        "x": 90,
-        "y": 1140,
-        "wires": [
-            [
-                "fe6856ba.b57f88"
-            ]
-        ]
-    },
-    {
-        "id": "4abb49e2.871fa",
-        "type": "inject",
-        "z": "3fb5a67.37c495a",
-        "name": "init",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "enabled",
-                "v": "true",
-                "vt": "bool"
-            },
-            {
-                "p": "change",
-                "v": "change V High (mV)",
-                "vt": "str"
-            },
-            {
-                "p": "tooltip",
-                "v": "between VLow and 3170 mVolt",
-                "vt": "str"
-            },
-            {
-                "p": "label",
-                "v": "Actual High Voltage : ",
-                "vt": "str"
-            },
-            {
-                "p": "set",
-                "v": "Set new value",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "str",
-        "x": 90,
-        "y": 1220,
-        "wires": [
-            [
-                "4cb58678.ca535"
-            ]
-        ]
-    },
-    {
-        "id": "190b421e.805e8e",
-        "type": "inject",
-        "z": "3fb5a67.37c495a",
-        "name": "init",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "enabled",
-                "v": "true",
-                "vt": "bool"
-            },
-            {
-                "p": "change",
-                "v": "change V Low (mV)",
-                "vt": "str"
-            },
-            {
-                "p": "tooltip",
-                "v": "between 10mV and VHigh",
-                "vt": "str"
-            },
-            {
-                "p": "label",
-                "v": "Actual Low Voltage : ",
-                "vt": "str"
-            },
-            {
-                "p": "set",
-                "v": "Set new value",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "str",
-        "x": 90,
-        "y": 1300,
-        "wires": [
-            [
-                "d460703d.86ffe8"
-            ]
-        ]
-    },
-    {
-        "id": "15676504.191093",
-        "type": "inject",
-        "z": "3fb5a67.37c495a",
-        "name": "init",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "enabled",
-                "v": "true",
-                "vt": "bool"
-            },
-            {
-                "p": "change",
-                "v": "change Charging resistor (Ohm)",
-                "vt": "str"
-            },
-            {
-                "p": "tooltip",
-                "v": "between 1 and 730000 Ohm",
-                "vt": "str"
-            },
-            {
-                "p": "label",
-                "v": "Actual resistor : ",
-                "vt": "str"
-            },
-            {
-                "p": "set",
-                "v": "Set new value",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "str",
-        "x": 90,
-        "y": 1380,
-        "wires": [
-            [
-                "6792f289.62d7d4"
             ]
         ]
     },
@@ -11391,7 +11145,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "",
-        "func": "// get flow variables\nvar mperiod = parseInt(flow.get('mperiodM1'));\nvar rcharge = parseInt(flow.get('rchargeM1'));\nvar vhigh = parseInt(flow.get('vhighM1'));\nvar vlow = parseInt(flow.get('vlowM1'));\nvar mwindow = parseInt(flow.get('mwindowM1'));\nvar description = flow.get('descriptionM1');\n\nvar masterID = flow.get(\"master1ID\");\n\nmsg.masterid = masterID;\nmsg.sensorid = 0;\n\nisNaN(mperiod) ? msg.mperiod = 0 :  msg.mperiod = mperiod;\nisNaN(rcharge) ? msg.rcharge = 0 : msg.rcharge = rcharge;\nisNaN(vhigh) ? msg.vhigh = 0 : msg.vhigh = vhigh;\nisNaN(vlow) ? msg.vlow = 0 : msg.vlow = vlow;\nisNaN(mwindow) ? msg.mwindow = 0 : msg.mwindow = mwindow;\n\nmsg.description = description;\n\nreturn msg;",
+        "func": "// get flow variables\nvar mperiod = parseInt(flow.get('mperiodM1'));\nvar rcharge = parseInt(flow.get('rchargeM1'));\nvar vhigh = parseInt(flow.get('vhighM1'));\nvar vlow = parseInt(flow.get('vlowM1'));\nvar mwindow = parseInt(flow.get('mwindowM1'));\nvar description = flow.get('descriptionM1');\n\nvar masterID = flow.get(\"master1ID\");\n\nmsg.masterid = masterID;\nmsg.sensorid = 0;\n\nisNaN(mperiod) ? msg.mperiod = 5 :  msg.mperiod = mperiod;\nisNaN(rcharge) ? msg.rcharge = 730000 : msg.rcharge = rcharge;\nisNaN(vhigh) ? msg.vhigh = 3000 : msg.vhigh = vhigh;\nisNaN(vlow) ? msg.vlow = 10 : msg.vlow = vlow;\nisNaN(mwindow) ? msg.mwindow = 1 : msg.mwindow = mwindow;\n\nmsg.description = description;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -11648,7 +11402,8 @@
         "y": 820,
         "wires": [
             [
-                "5a0746d6.c5b938"
+                "5a0746d6.c5b938",
+                "804a3896.233a2"
             ]
         ]
     },
@@ -11672,7 +11427,7 @@
         "to": "",
         "reg": false,
         "x": 2090,
-        "y": 820,
+        "y": 800,
         "wires": [
             []
         ]
@@ -11682,24 +11437,14 @@
         "type": "inject",
         "z": "3fb5a67.37c495a",
         "name": "init",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "master_label",
-                "v": "Master1 ID",
-                "vt": "str"
-            }
-        ],
+        "props": [],
         "repeat": "",
         "crontab": "",
         "once": true,
         "onceDelay": "1",
         "topic": "",
-        "payload": "en",
         "payloadType": "str",
-        "x": 1390,
+        "x": 1370,
         "y": 820,
         "wires": [
             [
@@ -11722,9 +11467,7 @@
         "y": 920,
         "wires": [
             [
-                "1b73761c.98f072",
                 "eb6ce2e2.ec5f68",
-                "ed1ab1fb.11868",
                 "e9b447bf.24ac58",
                 "227659b0.ea0b0e",
                 "70ed7170.d90e38",
@@ -11752,8 +11495,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 290,
-        "y": 860,
+        "x": 350,
+        "y": 880,
         "wires": []
     },
     {
@@ -13322,13 +13065,13 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "disable",
-        "func": "var period = global.get('period');\n\n\nmsg.enabled = false;\nmsg.topic = 'Waiting for at least ' + 2*period + ' secs';\n\nreturn msg;",
+        "func": "var period = global.get('mperiodM1');\n\n\nmsg.enabled = false;\nmsg.topic = 'Waiting for at least ' + 2*period + ' secs';\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 960,
+        "x": 980,
         "y": 2040,
         "wires": [
             [
@@ -14874,11 +14617,11 @@
         "width": 6,
         "height": 1,
         "name": "",
-        "label": "Actual Description : ",
-        "format": "{{msg.topic}}",
+        "label": "{{msg.label}}",
+        "format": "{{msg.payload}}",
         "layout": "row-left",
-        "x": 1390,
-        "y": 1440,
+        "x": 910,
+        "y": 1460,
         "wires": []
     },
     {
@@ -14886,14 +14629,14 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "validate input",
-        "func": "var ID = flow.get('master1ID');\n\nmsg.background = 'grey';\nif ((msg.payload == ''))\n{\n    msg.enabled = false;\n}\nelse\n{\n      if ((ID != ''))\n    {\n        msg.enabled = true;\n        msg.background = 'green';\n    }\n    else msg.enabled = false;\n}\n\nmsg.tooltip = 'description of measurement setup';\nreturn msg;",
+        "func": "var ID = flow.get('master1ID');\n\nvar label = global.get('desc_label');\nvar change = global.get('desc_change');\nvar tooltip = global.get('desc_tooltip');\nvar set = global.get('desc_set');\n\nmsg.label = label;\nmsg.change = change;\nmsg.tooltip = tooltip;\nmsg.set = set;\n\nmsg.background = 'grey';\nif ((msg.payload == ''))\n{\n    msg.enabled = false;\n}\nelse\n{\n      if ((ID != ''))\n    {\n        msg.enabled = true;\n        msg.background = 'green';\n    }\n    else msg.enabled = false;\n}\n\n//msg.tooltip = 'description of measurement setup';\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 690,
-        "y": 1520,
+        "x": 710,
+        "y": 1500,
         "wires": [
             [
                 "f7ada61e.413aa8"
@@ -14910,8 +14653,8 @@
         "width": 6,
         "height": 1,
         "passthru": false,
-        "label": "Set new value",
-        "tooltip": "{{tooltip}}",
+        "label": "{{ msg.set }}",
+        "tooltip": "{{msg.tooltip}}",
         "color": "",
         "bgcolor": "{{background}}",
         "icon": "",
@@ -14919,8 +14662,8 @@
         "payloadType": "flow",
         "topic": "descriptionM1",
         "topicType": "flow",
-        "x": 1120,
-        "y": 1520,
+        "x": 1110,
+        "y": 1500,
         "wires": [
             [
                 "6112a500.1a7014",
@@ -14947,8 +14690,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 880,
-        "y": 1520,
+        "x": 920,
+        "y": 1500,
         "wires": [
             [
                 "c949d133.f96d6"
@@ -14960,8 +14703,8 @@
         "type": "ui_text_input",
         "z": "3fb5a67.37c495a",
         "name": "Description",
-        "label": "change Description",
-        "tooltip": "Description of measurement setup",
+        "label": "{{change}}",
+        "tooltip": "{{tooltip}}",
         "group": "f12df54.fdd1f08",
         "order": 10,
         "width": 6,
@@ -14971,134 +14714,11 @@
         "delay": "100",
         "topic": "",
         "topicType": "str",
-        "x": 530,
-        "y": 1520,
+        "x": 550,
+        "y": 1500,
         "wires": [
             [
                 "e06d89d.6fbbf78"
-            ]
-        ]
-    },
-    {
-        "id": "2b7f1c7.b87f2e4",
-        "type": "postgrestor",
-        "z": "3fb5a67.37c495a",
-        "name": "sensor_config@localhost",
-        "query": "SELECT * FROM sensor_config_table\nWHERE masterid = '{{{ msg.masterid }}}' AND description <> ''\nORDER BY ts  DESC\nLIMIT 1;",
-        "postgresDB": "6733d493.9cca6c",
-        "output": true,
-        "outputs": 1,
-        "x": 570,
-        "y": 1440,
-        "wires": [
-            [
-                "809f5e0c.fab7c8",
-                "cfb0e285.66383"
-            ]
-        ]
-    },
-    {
-        "id": "809f5e0c.fab7c8",
-        "type": "debug",
-        "z": "3fb5a67.37c495a",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 610,
-        "y": 1480,
-        "wires": []
-    },
-    {
-        "id": "ed1ab1fb.11868",
-        "type": "function",
-        "z": "3fb5a67.37c495a",
-        "name": "Description",
-        "func": "var ID = flow.get('master1ID');\n\nmsg.masterid = ID;\nmsg.payload = '';\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 350,
-        "y": 1440,
-        "wires": [
-            [
-                "2b7f1c7.b87f2e4"
-            ]
-        ]
-    },
-    {
-        "id": "cfb0e285.66383",
-        "type": "function",
-        "z": "3fb5a67.37c495a",
-        "name": "",
-        "func": "msg.topic = msg.payload.rows[0].description;\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 800,
-        "y": 1440,
-        "wires": [
-            [
-                "f79cdec1.a2e858"
-            ]
-        ]
-    },
-    {
-        "id": "539b6b2b.f925cc",
-        "type": "inject",
-        "z": "3fb5a67.37c495a",
-        "name": "init",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "enabled",
-                "v": "true",
-                "vt": "bool"
-            },
-            {
-                "p": "change",
-                "v": "change Description",
-                "vt": "str"
-            },
-            {
-                "p": "tooltip",
-                "v": "Description of measurement setup",
-                "vt": "str"
-            },
-            {
-                "p": "label",
-                "v": "Actual Description : ",
-                "vt": "str"
-            },
-            {
-                "p": "set",
-                "v": "Set new description",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "str",
-        "x": 90,
-        "y": 1520,
-        "wires": [
-            [
-                "a63a6e6e.c3f828"
             ]
         ]
     },
@@ -15484,7 +15104,7 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "between 5 and 16M secs",
+        "payload": "between 1 and 4000 secs",
         "payloadType": "str",
         "x": 150,
         "y": 1300,
@@ -15858,14 +15478,14 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "",
-        "func": "var lang = global.get(\"language1ID\");\nmsg.to = lang;\n\nmsg.label = 'Actual period : ';\nreturn msg;",
+        "func": "var label = global.get('mperiod_label');\nvar change = global.get('mperiod_change');\nvar tooltip = global.get('mperiod_tooltip');\nvar set = global.get('mperiod_set');\n\nmsg.label = label;\nmsg.change = change;\nmsg.tooltip = tooltip;\nmsg.set = set;\n\nmsg.enabled = true;\n\nmsg.backspaces = 5;\nmsg.payload = '';\nvar tempstr = String(msg.mperiod);\n\n//padding\nfor(var j = 0; j < (msg.backspaces-tempstr.length); j++)\n{ \n    msg.payload += '0';\n}\n\n\nfor(var i = 0; i < tempstr.length; i++)\n{ \n    msg.payload += tempstr[i];\n}\n\nmsg.payload = msg.payload.toString();\nmsg.topic = 2;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
         "x": 380,
-        "y": 1040,
+        "y": 1060,
         "wires": [
             [
                 "b7041100.cb555"
@@ -15877,14 +15497,14 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "",
-        "func": "var lang = global.get(\"language1ID\");\nmsg.to = lang;\n\nmsg.label = 'Actual window : ';\nreturn msg;",
+        "func": "var label = global.get('mwindow_label');\nvar change = global.get('mwindow_change');\nvar tooltip = global.get('mwindow_tooltip');\nvar set = global.get('mwindow_set');\n\nmsg.label = label;\nmsg.change = change;\nmsg.tooltip = tooltip;\nmsg.set = set;\n\nmsg.enabled = true;\n\nmsg.backspaces = 5;\nmsg.payload = '';\nvar mwindow = String(msg.mwindow);\n\n//padding before number\nfor(var j = 0; j < (msg.backspaces-mwindow.length); j++)\n{ \n    msg.payload += '0';\n}\n\n\nfor(var i = 0; i < mwindow.length; i++)\n{ \n    msg.payload += mwindow[i];\n}\n\nmsg.payload = msg.payload.toString();\nmsg.topic = 3;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
         "x": 380,
-        "y": 1120,
+        "y": 1140,
         "wires": [
             [
                 "fe6856ba.b57f88"
@@ -15896,17 +15516,18 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "",
-        "func": "var lang = global.get(\"language1ID\");\nmsg.to = lang;\n\nmsg.label = 'Actual High Voltage : ';\nreturn msg;",
+        "func": "var label = global.get('vhigh_label');\nvar change = global.get('vhigh_change');\nvar tooltip = global.get('vhigh_tooltip');\nvar set = global.get('vhigh_set');\n\nmsg.label = label;\nmsg.change = change;\nmsg.tooltip = tooltip;\nmsg.set = set;\n\nmsg.enabled = true;\n\nmsg.backspaces = 4;\nmsg.payload = '';\nvar vhigh = String(msg.vhigh);\n\n//padding before number\nfor(var j = 0; j < (msg.backspaces-vhigh.length); j++)\n{ \n    msg.payload += '0';\n}\n\n\nfor(var i = 0; i < vhigh.length; i++)\n{ \n    msg.payload += vhigh[i];\n}\n\nmsg.payload = msg.payload.toString();\nmsg.topic = 4;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
         "x": 380,
-        "y": 1200,
+        "y": 1220,
         "wires": [
             [
-                "4cb58678.ca535"
+                "4cb58678.ca535",
+                "1b73761c.98f072"
             ]
         ]
     },
@@ -15915,14 +15536,14 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "",
-        "func": "var lang = global.get(\"language1ID\");\nmsg.to = lang;\n\nmsg.label = 'Actual Low Voltage : ';\nreturn msg;",
+        "func": "var label = global.get('vlow_label');\nvar change = global.get('vlow_change');\nvar tooltip = global.get('vlow_tooltip');\nvar set = global.get('vlow_set');\n\nmsg.label = label;\nmsg.change = change;\nmsg.tooltip = tooltip;\nmsg.set = set;\n\nmsg.enabled = true;\n\nmsg.backspaces = 4;\nmsg.payload = '';\nvar vlow = String(msg.vlow);\n\n//padding before number\nfor(var j = 0; j < (msg.backspaces-vlow.length); j++)\n{ \n    msg.payload += '0';\n}\n\n\nfor(var i = 0; i < vlow.length; i++)\n{ \n    msg.payload += vlow[i];\n}\n\nmsg.payload = msg.payload.toString();\nmsg.topic = 5;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
         "x": 380,
-        "y": 1280,
+        "y": 1300,
         "wires": [
             [
                 "d460703d.86ffe8"
@@ -15934,14 +15555,14 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "",
-        "func": "var lang = global.get(\"language1ID\");\nmsg.to = lang;\n\nmsg.label = 'Actual resistor : ';\nreturn msg;",
+        "func": "var label = global.get('rcharge_label');\nvar change = global.get('rcharge_change');\nvar tooltip = global.get('rcharge_tooltip');\nvar set = global.get('rcharge_set');\n\nmsg.label = label;\nmsg.change = change;\nmsg.tooltip = tooltip;\nmsg.set = set;\n\nmsg.enabled = true;\n\nmsg.backspaces = 6;\nmsg.payload = '';\nvar rcharge = String(msg.rcharge);\n\n//padding before number\nfor(var j = 0; j < (msg.backspaces-rcharge.length); j++)\n{ \n    msg.payload += '0';\n}\n\nfor(var i = 0; i < rcharge.length; i++)\n{ \n    msg.payload += rcharge[i];\n}\n\nmsg.payload = msg.payload.toString();\nmsg.topic = 6;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
         "x": 380,
-        "y": 1360,
+        "y": 1380,
         "wires": [
             [
                 "6792f289.62d7d4"
@@ -16048,9 +15669,7 @@
         "x": 1980,
         "y": 720,
         "wires": [
-            [
-                "21b84409.362b1c"
-            ]
+            []
         ]
     },
     {
@@ -16105,9 +15724,7 @@
         "x": 1390,
         "y": 720,
         "wires": [
-            [
-                "b1aea487.6c0a1"
-            ]
+            []
         ]
     },
     {
@@ -16433,23 +16050,6 @@
         "wires": []
     },
     {
-        "id": "f1034d88.f062",
-        "type": "debug",
-        "z": "3fb5a67.37c495a",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 850,
-        "y": 880,
-        "wires": []
-    },
-    {
         "id": "1f3b60b1.b34b6f",
         "type": "postgrestor",
         "z": "3fb5a67.37c495a",
@@ -16646,7 +16246,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "To be translated",
-        "func": "var lang = global.get(\"language1ID\");\nmsg.lang = msg.payload;\n\nmsg.master_label = 'Master1 ID';\n\nmsg.sensorid_change = 'change sensor ID';\nmsg.sensorid_tooltip = 'between 0 and 240';\nmsg.sensorid_label = 'Sensor ID : ';\nmsg.sensorid_set = 'Set new ID';\n\nmsg.mperiod_change = 'change Measurement Period (secs)';\nmsg.mperiod_tooltip = 'between 5 and 16M secs';\nmsg.mperiod_label = 'Actual period : ';\nmsg.mperiod_set = 'Set new period';\n\nmsg.mwindow_change = 'change Measurement window (secs)';\nmsg.mwindow_tooltip = 'between 1 and 4000 secs';\nmsg.mwindow_label = 'Measurement duration : ';\nmsg.mwindow_set = 'Set new window';\n\nmsg.vhigh_change = 'change V High (mV)';\nmsg.vhigh_tooltip = 'between VLow and 3170 mVolt';\nmsg.vhigh_label = 'Actual High Voltage : ';\nmsg.vhigh_set = 'Set new value';\n\nmsg.vlow_change = 'change V Low (mV)';\nmsg.vlow_tooltip = 'between 10mV and VHigh';\nmsg.vlow_label = 'Actual Low Voltage : ';\nmsg.vlow_set = 'Set new value';\n\nmsg.rcharge_change = 'change Charging resistor (Ohm)';\nmsg.rcharge_tooltip = 'between 1 and 730000 Ohm';\nmsg.rcharge_label = 'Actual resistor : ';\nmsg.rcharge_set = 'Set new value';\n\nmsg.desc_change = 'change Description';\nmsg.desc_tooltip = 'Description of measurement setup';\nmsg.desc_label = 'Actual Description : ';\nmsg.desc_set = 'Set new description';\n\nmsg.maxwnoise_label = 'Actual noise value (mV) : ';\n\nmsg.noise_label = 'Maximum noise value (mV) : ';\n\nmsg.sequence_label = 'Sequence : ';\n\nmsg.cap_label = 'Actual value : ';\n\nmsg.avgcap_label = 'Actual average : ';\n\nreturn msg;",
+        "func": "var lang = global.get(\"language1ID\");\nmsg.lang = msg.payload;\n\nmsg.master_label = 'Master1 ID';\n\nmsg.sensorid_change = 'change sensor ID';\nmsg.sensorid_tooltip = 'between 0 and 240';\nmsg.sensorid_label = 'Sensor ID : ';\nmsg.sensorid_set = 'Set new ID';\n\nmsg.mperiod_change = 'change Measurement Period (secs)';\nmsg.mperiod_tooltip = 'between 5 and 16M secs';\nmsg.mperiod_label = 'Actual period : ';\nmsg.mperiod_set = 'Set new period';\n\nmsg.mwindow_change = 'change Measurement duration (secs)';\nmsg.mwindow_tooltip = 'between 1 and 4000 secs';\nmsg.mwindow_label = 'Measurement duration : ';\nmsg.mwindow_set = 'Set new duration';\n\nmsg.vhigh_change = 'change V High (mV)';\nmsg.vhigh_tooltip = 'between VLow and 3170 mVolt';\nmsg.vhigh_label = 'Actual High Voltage : ';\nmsg.vhigh_set = 'Set new value';\n\nmsg.vlow_change = 'change V Low (mV)';\nmsg.vlow_tooltip = 'between 10mV and VHigh';\nmsg.vlow_label = 'Actual Low Voltage : ';\nmsg.vlow_set = 'Set new value';\n\nmsg.rcharge_change = 'change Charging resistor (Ohm)';\nmsg.rcharge_tooltip = 'between 1 and 730000 Ohm';\nmsg.rcharge_label = 'Actual resistor : ';\nmsg.rcharge_set = 'Set new value';\n\nmsg.desc_change = 'change Description';\nmsg.desc_tooltip = 'Description of measurement setup';\nmsg.desc_label = 'Actual Description : ';\nmsg.desc_set = 'Set new description';\n\nmsg.maxnoise_label = 'Actual noise value (mV) : ';\n\nmsg.noise_label = 'Maximum noise value (mV) : ';\n\nmsg.sequence_label = 'Sequence : ';\n\nmsg.cap_label = 'Actual value : ';\n\nmsg.avgcap_label = 'Actual average : ';\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -16666,7 +16266,7 @@
         "type": "postgrestor",
         "z": "3fb5a67.37c495a",
         "name": "translations@localhost",
-        "query": "SELECT \"{{msg.lang}}\" AS master_label FROM translations_table\nWHERE en = '{{ msg.master_label }}'\nLIMIT 1;\n\nSELECT \"{{msg.lang}}\" AS sensorid_label FROM translations_table\nWHERE en = '{{ msg.sensorid_label }}'\nLIMIT 1;\n\nSELECT \"{{msg.lang}}\" AS sensorid_change FROM translations_table\nWHERE en = '{{ msg.sensorid_change }}'\nLIMIT 1;\n\nSELECT \"{{msg.lang}}\" AS sensorid_tooltip FROM translations_table\nWHERE en = '{{ msg.sensorid_tooltip }}'\nLIMIT 1;\n\nSELECT \"{{msg.lang}}\" AS sensorid_set FROM translations_table\nWHERE en = '{{ msg.sensorid_set }}'\nLIMIT 1;\n",
+        "query": "--master---------------------------------------------\nSELECT \"{{msg.lang}}\" AS master_label FROM translations_table\nWHERE en = '{{ msg.master_label }}'\nLIMIT 1;\n\n--sensorid---------------------------------------------\nSELECT \"{{msg.lang}}\" AS sensorid_change FROM translations_table\nWHERE en = '{{ msg.sensorid_change }}'\nLIMIT 1;\nSELECT \"{{msg.lang}}\" AS sensorid_tooltip FROM translations_table\nWHERE en = '{{ msg.sensorid_tooltip }}'\nLIMIT 1;\nSELECT \"{{msg.lang}}\" AS sensorid_label FROM translations_table\nWHERE en = '{{ msg.sensorid_label }}'\nLIMIT 1;\nSELECT \"{{msg.lang}}\" AS sensorid_set FROM translations_table\nWHERE en = '{{ msg.sensorid_set }}'\nLIMIT 1;\n\n--mperiod----------------------------------------------------------\nSELECT \"{{msg.lang}}\" AS mperiod_change FROM translations_table\nWHERE en = '{{ msg.mperiod_change }}'\nLIMIT 1;\nSELECT \"{{msg.lang}}\" AS mperiod_tooltip FROM translations_table\nWHERE en = '{{ msg.mperiod_tooltip }}'\nLIMIT 1;\nSELECT \"{{msg.lang}}\" AS mperiod_label FROM translations_table\nWHERE en = '{{ msg.mperiod_label }}'\nLIMIT 1;\nSELECT \"{{msg.lang}}\" AS mperiod_set FROM translations_table\nWHERE en = '{{ msg.mperiod_set }}'\nLIMIT 1;\n\n--mwindow----------------------------------------------------------\nSELECT \"{{msg.lang}}\" AS mwindow_change FROM translations_table\nWHERE en = '{{ msg.mwindow_change }}'\nLIMIT 1;\nSELECT \"{{msg.lang}}\" AS mwindow_tooltip FROM translations_table\nWHERE en = '{{ msg.mwindow_tooltip }}'\nLIMIT 1;\nSELECT \"{{msg.lang}}\" AS mwindow_label FROM translations_table\nWHERE en = '{{ msg.mwindow_label }}'\nLIMIT 1;\nSELECT \"{{msg.lang}}\" AS mwindow_set FROM translations_table\nWHERE en = '{{ msg.mwindow_set }}'\nLIMIT 1;\n\n--vhigh----------------------------------------------------------\nSELECT \"{{msg.lang}}\" AS vhigh_change FROM translations_table\nWHERE en = '{{ msg.vhigh_change }}'\nLIMIT 1;\nSELECT \"{{msg.lang}}\" AS vhigh_tooltip FROM translations_table\nWHERE en = '{{ msg.vhigh_tooltip }}'\nLIMIT 1;\nSELECT \"{{msg.lang}}\" AS vhigh_label FROM translations_table\nWHERE en = '{{ msg.vhigh_label }}'\nLIMIT 1;\nSELECT \"{{msg.lang}}\" AS vhigh_set FROM translations_table\nWHERE en = '{{ msg.vhigh_set }}'\nLIMIT 1;\n\n--vlow----------------------------------------------------------\nSELECT \"{{msg.lang}}\" AS vlow_change FROM translations_table\nWHERE en = '{{ msg.vlow_change }}'\nLIMIT 1;\nSELECT \"{{msg.lang}}\" AS vlow_tooltip FROM translations_table\nWHERE en = '{{ msg.vlow_tooltip }}'\nLIMIT 1;\nSELECT \"{{msg.lang}}\" AS vlow_label FROM translations_table\nWHERE en = '{{ msg.vlow_label }}'\nLIMIT 1;\nSELECT \"{{msg.lang}}\" AS vlow_set FROM translations_table\nWHERE en = '{{ msg.vlow_set }}'\nLIMIT 1;\n\n--rcharge----------------------------------------------------------\nSELECT \"{{msg.lang}}\" AS rcharge_change FROM translations_table\nWHERE en = '{{ msg.rcharge_change }}'\nLIMIT 1;\nSELECT \"{{msg.lang}}\" AS rcharge_tooltip FROM translations_table\nWHERE en = '{{ msg.rcharge_tooltip }}'\nLIMIT 1;\nSELECT \"{{msg.lang}}\" AS rcharge_label FROM translations_table\nWHERE en = '{{ msg.rcharge_label }}'\nLIMIT 1;\nSELECT \"{{msg.lang}}\" AS rcharge_set FROM translations_table\nWHERE en = '{{ msg.rcharge_set }}'\nLIMIT 1;\n\n--desc----------------------------------------------------------\nSELECT \"{{msg.lang}}\" AS desc_change FROM translations_table\nWHERE en = '{{ msg.desc_change }}'\nLIMIT 1;\nSELECT \"{{msg.lang}}\" AS desc_tooltip FROM translations_table\nWHERE en = '{{ msg.desc_tooltip }}'\nLIMIT 1;\nSELECT \"{{msg.lang}}\" AS desc_label FROM translations_table\nWHERE en = '{{ msg.desc_label }}'\nLIMIT 1;\nSELECT \"{{msg.lang}}\" AS desc_set FROM translations_table\nWHERE en = '{{ msg.desc_set }}'\nLIMIT 1;\n\n--maxnoise----------------------------------------------------------\nSELECT \"{{msg.lang}}\" AS maxnoise_label FROM translations_table\nWHERE en = '{{ msg.maxnoise_label }}'\nLIMIT 1;\n\n--noise----------------------------------------------------------\nSELECT \"{{msg.lang}}\" AS noise_label FROM translations_table\nWHERE en = '{{ msg.noise_label }}'\nLIMIT 1;\n\n--sequence----------------------------------------------------------\nSELECT \"{{msg.lang}}\" AS sequence_label FROM translations_table\nWHERE en = '{{ msg.sequence_label }}'\nLIMIT 1;\n\n--cap----------------------------------------------------------\nSELECT \"{{msg.lang}}\" AS cap_label FROM translations_table\nWHERE en = '{{ msg.cap_label }}'\nLIMIT 1;\n\n--avgcap----------------------------------------------------------\nSELECT \"{{msg.lang}}\" AS avgcap_label FROM translations_table\nWHERE en = '{{ msg.avgcap_label }}'\nLIMIT 1;\n",
         "postgresDB": "6787392.d78b7c8",
         "output": true,
         "outputs": 1,
@@ -16674,8 +16274,7 @@
         "y": 660,
         "wires": [
             [
-                "592ce377.5077cc",
-                "d425b770.1ed9d"
+                "592ce377.5077cc"
             ]
         ]
     },
@@ -16684,7 +16283,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "Translations",
-        "func": "global.set('master_label',msg.payload[0].rows[0].master_label);\n\nglobal.set('sensorid_label',msg.payload[1].rows[0].sensorid_label);\nglobal.set('sensorid_change',msg.payload[2].rows[0].sensorid_change);\nglobal.set('sensorid_tooltip',msg.payload[3].rows[0].sensorid_tooltip);\nglobal.set('sensorid_set',msg.payload[4].rows[0].sensorid_set);\n\nmsg.payload = '';\n\nreturn msg;",
+        "func": "//master---------------------------------------------\nglobal.set('master_label',msg.payload[0].rows[0].master_label);\n\n//sensorid---------------------------------------------\nglobal.set('sensorid_change',msg.payload[1].rows[0].sensorid_change);\nglobal.set('sensorid_tooltip',msg.payload[2].rows[0].sensorid_tooltip);\nglobal.set('sensorid_label',msg.payload[3].rows[0].sensorid_label);\nglobal.set('sensorid_set',msg.payload[4].rows[0].sensorid_set);\n\n//mperiod----------------------------------------------------------\nglobal.set('mperiod_change',msg.payload[5].rows[0].mperiod_change);\nglobal.set('mperiod_tooltip',msg.payload[6].rows[0].mperiod_tooltip);\nglobal.set('mperiod_label',msg.payload[7].rows[0].mperiod_label);\nglobal.set('mperiod_set',msg.payload[8].rows[0].mperiod_set);\n\n//mwindow----------------------------------------------------------\nglobal.set('mwindow_change',msg.payload[9].rows[0].mwindow_change);\nglobal.set('mwindow_tooltip',msg.payload[10].rows[0].mwindow_tooltip);\nglobal.set('mwindow_label',msg.payload[11].rows[0].mwindow_label);\nglobal.set('mwindow_set',msg.payload[12].rows[0].mwindow_set);\n\n//vhigh----------------------------------------------------------\nglobal.set('vhigh_change',msg.payload[13].rows[0].vhigh_change);\nglobal.set('vhigh_tooltip',msg.payload[14].rows[0].vhigh_tooltip);\nglobal.set('vhigh_label',msg.payload[15].rows[0].vhigh_label);\nglobal.set('vhigh_set',msg.payload[16].rows[0].vhigh_set);\n\n//vlow----------------------------------------------------------\nglobal.set('vlow_change',msg.payload[17].rows[0].vlow_change);\nglobal.set('vlow_tooltip',msg.payload[18].rows[0].vlow_tooltip);\nglobal.set('vlow_label',msg.payload[19].rows[0].vlow_label);\nglobal.set('vlow_set',msg.payload[20].rows[0].vlow_set);\n\n//rcharge----------------------------------------------------------\nglobal.set('rcharge_change',msg.payload[21].rows[0].rcharge_change);\nglobal.set('rcharge_tooltip',msg.payload[22].rows[0].rcharge_tooltip);\nglobal.set('rcharge_label',msg.payload[23].rows[0].rcharge_label);\nglobal.set('rcharge_set',msg.payload[24].rows[0].rcharge_set);\n\n//desc----------------------------------------------------------\nglobal.set('desc_change',msg.payload[25].rows[0].desc_change);\nglobal.set('desc_tooltip',msg.payload[26].rows[0].desc_tooltip);\nglobal.set('desc_label',msg.payload[27].rows[0].desc_label);\nglobal.set('desc_set',msg.payload[28].rows[0].desc_set);\n\n//maxnoise----------------------------------------------------------\nglobal.set('maxnoise_label',msg.payload[29].rows[0].maxnoise_label);\n\n//noise----------------------------------------------------------\nglobal.set('noise_label',msg.payload[30].rows[0].noise_label);\n\n//sequence----------------------------------------------------------\nglobal.set('sequence_label',msg.payload[31].rows[0].sequence_label);\n\n//cap----------------------------------------------------------\nglobal.set('cap_label',msg.payload[32].rows[0].cap_label);\n\n//avgcap----------------------------------------------------------\nglobal.set('avgcap_label',msg.payload[33].rows[0].avgcap_label);\n\n\nmsg.payload = '';\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -16695,7 +16294,7 @@
         "wires": [
             [
                 "a4b1082e.061d48",
-                "179035e8.f0c72a"
+                "8a658423.c1bb08"
             ]
         ]
     },
@@ -16712,8 +16311,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 2590,
-        "y": 620,
+        "x": 2310,
+        "y": 800,
         "wires": []
     },
     {
@@ -16734,23 +16333,6 @@
         "wires": []
     },
     {
-        "id": "21b84409.362b1c",
-        "type": "debug",
-        "z": "3fb5a67.37c495a",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 2150,
-        "y": 720,
-        "wires": []
-    },
-    {
         "id": "2d1838df.0d4f2",
         "type": "inject",
         "z": "3fb5a67.37c495a",
@@ -16767,6 +16349,7 @@
         "once": true,
         "onceDelay": "1",
         "topic": "",
+        "payloadType": "str",
         "x": 1570,
         "y": 600,
         "wires": [
@@ -16780,7 +16363,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "",
-        "func": "var master_label = global.get('master_label');\n\nmsg.master_label = master_label;\nreturn msg;",
+        "func": "var master_label = global.get('master_label');\n\nmsg.master_label = master_label;\nmsg.payload = '';\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -16805,7 +16388,8 @@
             "eb349368.ef836",
             "1f33aeda.ad4039",
             "b7e8b958.e2d9b8",
-            "524f8eff.0b5fe"
+            "524f8eff.0b5fe",
+            "93d7b3e6.9b3438"
         ],
         "x": 2755,
         "y": 660,
@@ -16832,14 +16416,14 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "",
-        "func": "var change = global.get(\"sensorid_change\");\nvar tooltip = global.get(\"sensorid_tooltip\");\n\nmsg.tooltip = tooltip;\nmsg.change = change;\n\nreturn msg;",
+        "func": "var label = global.get('sensorid_label');\nvar change = global.get('sensorid_change');\nvar tooltip = global.get('sensorid_tooltip');\nvar set = global.get('sensorid_set');\n\nmsg.label = label;\nmsg.change = change;\nmsg.tooltip = tooltip;\nmsg.set = set;\n\nmsg.payload = '';\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
         "x": 380,
-        "y": 960,
+        "y": 940,
         "wires": [
             [
                 "32b898b.df952e8"
@@ -16851,7 +16435,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "translations",
-        "func": "var label = global.get('sensorid_label');\nvar change = global.get('sensorid_change');\nvar tooltip = global.get('sensorid_tooltip');\nvar set = global.get('sensorid_set');\n\nmsg.label = label;\nmsg.change = change;\nmsg.tooltip = tooltip;\nmsg.set = set;\n\nreturn msg;",
+        "func": "var label = global.get('mperiod_label');\nvar change = global.get('mperiod_change');\nvar tooltip = global.get('mperiod_tooltip');\nvar set = global.get('mperiod_set');\n\nmsg.label = label;\nmsg.change = change;\nmsg.tooltip = tooltip;\nmsg.set = set;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -16874,7 +16458,7 @@
             "a4b1082e.061d48"
         ],
         "x": 275,
-        "y": 1040,
+        "y": 1060,
         "wires": [
             [
                 "bd7748c5.1705f8"
@@ -16886,7 +16470,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "translations",
-        "func": "var label = global.get('sensorid_label');\nvar change = global.get('sensorid_change');\nvar tooltip = global.get('sensorid_tooltip');\nvar set = global.get('sensorid_set');\n\nmsg.label = label;\nmsg.change = change;\nmsg.tooltip = tooltip;\nmsg.set = set;\n\nreturn msg;",
+        "func": "var label = global.get('mwindow_label');\nvar change = global.get('mwindow_change');\nvar tooltip = global.get('mwindow_tooltip');\nvar set = global.get('mwindow_set');\n\nmsg.label = label;\nmsg.change = change;\nmsg.tooltip = tooltip;\nmsg.set = set;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -16909,7 +16493,7 @@
             "a4b1082e.061d48"
         ],
         "x": 275,
-        "y": 1120,
+        "y": 1140,
         "wires": [
             [
                 "32bdb2ea.712cb6"
@@ -16921,7 +16505,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "translations",
-        "func": "var label = global.get('sensorid_label');\nvar change = global.get('sensorid_change');\nvar tooltip = global.get('sensorid_tooltip');\nvar set = global.get('sensorid_set');\n\nmsg.label = label;\nmsg.change = change;\nmsg.tooltip = tooltip;\nmsg.set = set;\n\nreturn msg;",
+        "func": "var label = global.get('vhigh_label');\nvar change = global.get('vhigh_change');\nvar tooltip = global.get('vhigh_tooltip');\nvar set = global.get('vhigh_set');\n\nmsg.label = label;\nmsg.change = change;\nmsg.tooltip = tooltip;\nmsg.set = set;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -16944,7 +16528,7 @@
             "a4b1082e.061d48"
         ],
         "x": 275,
-        "y": 1200,
+        "y": 1220,
         "wires": [
             [
                 "1552ea08.727bee"
@@ -16956,7 +16540,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "translations",
-        "func": "var label = global.get('sensorid_label');\nvar change = global.get('sensorid_change');\nvar tooltip = global.get('sensorid_tooltip');\nvar set = global.get('sensorid_set');\n\nmsg.label = label;\nmsg.change = change;\nmsg.tooltip = tooltip;\nmsg.set = set;\n\nreturn msg;",
+        "func": "var label = global.get('vlow_label');\nvar change = global.get('vlow_change');\nvar tooltip = global.get('vlow_tooltip');\nvar set = global.get('vlow_set');\n\nmsg.label = label;\nmsg.change = change;\nmsg.tooltip = tooltip;\nmsg.set = set;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -16975,7 +16559,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "translations",
-        "func": "var label = global.get('sensorid_label');\nvar change = global.get('sensorid_change');\nvar tooltip = global.get('sensorid_tooltip');\nvar set = global.get('sensorid_set');\n\nmsg.label = label;\nmsg.change = change;\nmsg.tooltip = tooltip;\nmsg.set = set;\n\nreturn msg;",
+        "func": "var label = global.get('rcharge_label');\nvar change = global.get('rcharge_change');\nvar tooltip = global.get('rcharge_tooltip');\nvar set = global.get('rcharge_set');\n\nmsg.label = label;\nmsg.change = change;\nmsg.tooltip = tooltip;\nmsg.set = set;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -16994,7 +16578,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "translations",
-        "func": "var label = global.get('sensorid_label');\nvar change = global.get('sensorid_change');\nvar tooltip = global.get('sensorid_tooltip');\nvar set = global.get('sensorid_set');\n\nmsg.label = label;\nmsg.change = change;\nmsg.tooltip = tooltip;\nmsg.set = set;\n\nreturn msg;",
+        "func": "var label = global.get('noise_label');\n\nmsg.label = label;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -17013,7 +16597,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "translations",
-        "func": "var label = global.get('sensorid_label');\nvar change = global.get('sensorid_change');\nvar tooltip = global.get('sensorid_tooltip');\nvar set = global.get('sensorid_set');\n\nmsg.label = label;\nmsg.change = change;\nmsg.tooltip = tooltip;\nmsg.set = set;\n\nreturn msg;",
+        "func": "var label = global.get('maxnoise_label');\n\nmsg.label = label;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -17032,7 +16616,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "translations",
-        "func": "var label = global.get('sensorid_label');\nvar change = global.get('sensorid_change');\nvar tooltip = global.get('sensorid_tooltip');\nvar set = global.get('sensorid_set');\n\nmsg.label = label;\nmsg.change = change;\nmsg.tooltip = tooltip;\nmsg.set = set;\n\nreturn msg;",
+        "func": "var label = global.get('sequence_label');\n\nmsg.label = label;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -17051,7 +16635,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "translations",
-        "func": "var label = global.get('sensorid_label');\nvar change = global.get('sensorid_change');\nvar tooltip = global.get('sensorid_tooltip');\nvar set = global.get('sensorid_set');\n\nmsg.label = label;\nmsg.change = change;\nmsg.tooltip = tooltip;\nmsg.set = set;\n\nreturn msg;",
+        "func": "var label = global.get('status_label');\nvar change = global.get('status_change');\nvar tooltip = global.get('status_tooltip');\nvar set = global.get('status_set');\n\nmsg.label = label;\nmsg.change = change;\nmsg.tooltip = tooltip;\nmsg.set = set;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -17070,7 +16654,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "translations",
-        "func": "var label = global.get('sensorid_label');\nvar change = global.get('sensorid_change');\nvar tooltip = global.get('sensorid_tooltip');\nvar set = global.get('sensorid_set');\n\nmsg.label = label;\nmsg.change = change;\nmsg.tooltip = tooltip;\nmsg.set = set;\n\nreturn msg;",
+        "func": "var label = global.get('cap_label');\n\nmsg.label = label;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -17089,7 +16673,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "translations",
-        "func": "var label = global.get('sensorid_label');\nvar change = global.get('sensorid_change');\nvar tooltip = global.get('sensorid_tooltip');\nvar set = global.get('sensorid_set');\n\nmsg.label = label;\nmsg.change = change;\nmsg.tooltip = tooltip;\nmsg.set = set;\n\nreturn msg;",
+        "func": "var label = global.get('avgcap_label');\n\nmsg.label = label;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -17112,7 +16696,7 @@
             "a4b1082e.061d48"
         ],
         "x": 275,
-        "y": 1280,
+        "y": 1300,
         "wires": [
             [
                 "c1c56d91.222cb8"
@@ -17128,7 +16712,7 @@
             "a4b1082e.061d48"
         ],
         "x": 275,
-        "y": 1360,
+        "y": 1380,
         "wires": [
             [
                 "1c04be2f.98dae2"
@@ -17136,22 +16720,164 @@
         ]
     },
     {
-        "id": "179035e8.f0c72a",
+        "id": "804a3896.233a2",
+        "type": "postgrestor",
+        "z": "3fb5a67.37c495a",
+        "name": "sensor_config@localhost",
+        "query": "-- last configuration of the master\n-- mperiod \nSELECT measperiod AS lastconfig FROM sensor_config_table\nWHERE masterid = '{{{ msg.payload }}}' \nORDER BY ts  DESC\nLIMIT 1;\n\n-- mwindow\nSELECT meastime AS lastconfig FROM sensor_config_table\nWHERE masterid = '{{{ msg.payload }}}' \nORDER BY ts  DESC\nLIMIT 1;\n\n-- vhigh\nSELECT vhigh AS lastconfig FROM sensor_config_table\nWHERE masterid = '{{{ msg.payload }}}' \nORDER BY ts  DESC\nLIMIT 1;\n\n-- vlow\nSELECT vlow AS lastconfig FROM sensor_config_table\nWHERE masterid = '{{{ msg.payload }}}' \nORDER BY ts  DESC\nLIMIT 1;\n\n--rcharge\nSELECT rcharge AS lastconfig FROM sensor_config_table\nWHERE masterid = '{{{ msg.payload }}}' \nORDER BY ts  DESC\nLIMIT 1;\n\n--description\nSELECT description AS lastconfig FROM sensor_config_table\nWHERE masterid = '{{{ msg.payload }}}' AND description <> ''\nORDER BY ts  DESC\nLIMIT 1;\n",
+        "postgresDB": "6733d493.9cca6c",
+        "output": true,
+        "outputs": 1,
+        "x": 2110,
+        "y": 840,
+        "wires": [
+            [
+                "d425b770.1ed9d",
+                "7a663a5b.e5472c"
+            ]
+        ]
+    },
+    {
+        "id": "7a663a5b.e5472c",
         "type": "function",
         "z": "3fb5a67.37c495a",
-        "name": "",
-        "func": "var master_label = global.get('master_label');\n\nmsg.master_label = master_label;\nreturn msg;\n",
+        "name": "Last configs",
+        "func": "// mperiod\nmsg.mperiod = msg.payload[0].rows[0].lastconfig;\n\n// mwindow\nmsg.mwindow = msg.payload[1].rows[0].lastconfig;\n\n// vhigh\nmsg.vhigh = msg.payload[2].rows[0].lastconfig;\n\n// vlow\nmsg.vlow = msg.payload[3].rows[0].lastconfig;\n\n// rcharge\nmsg.rcharge = msg.payload[4].rows[0].lastconfig;\n\n// description\nmsg.description = msg.payload[5].rows[0].lastconfig;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
         "x": 2350,
-        "y": 740,
+        "y": 840,
         "wires": [
             [
-                "881accc2.12a77"
+                "9f616e80.a35118",
+                "a4b1082e.061d48"
             ]
         ]
+    },
+    {
+        "id": "9f616e80.a35118",
+        "type": "debug",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2550,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "93d7b3e6.9b3438",
+        "type": "link in",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "links": [
+            "a4b1082e.061d48"
+        ],
+        "x": 275,
+        "y": 1500,
+        "wires": [
+            [
+                "7508d564.810eb4"
+            ]
+        ]
+    },
+    {
+        "id": "91853a8c.c60ab",
+        "type": "function",
+        "z": "3fb5a67.37c495a",
+        "name": "translations",
+        "func": "var label = global.get('desc_label');\nvar change = global.get('desc_change');\nvar tooltip = global.get('desc_tooltip');\nvar set = global.get('desc_set');\n\nmsg.label = label;\nmsg.change = change;\nmsg.tooltip = tooltip;\nmsg.set = set;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 530,
+        "y": 1460,
+        "wires": [
+            [
+                "f79cdec1.a2e858"
+            ]
+        ]
+    },
+    {
+        "id": "7508d564.810eb4",
+        "type": "function",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "func": "var label = global.get('desc_label');\nvar change = global.get('desc_change');\nvar tooltip = global.get('desc_tooltip');\nvar set = global.get('desc_set');\n\nmsg.label = label;\nmsg.change = change;\nmsg.tooltip = tooltip;\nmsg.set = set;\n\nmsg.enabled = true;\nmsg.payload = msg.description;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 1500,
+        "wires": [
+            [
+                "a63a6e6e.c3f828",
+                "91853a8c.c60ab"
+            ]
+        ]
+    },
+    {
+        "id": "24e6b977.a26f6e",
+        "type": "debug",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1630,
+        "y": 1160,
+        "wires": []
+    },
+    {
+        "id": "f4c105f1.f86128",
+        "type": "debug",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 510,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "da36e4de.1aaad8",
+        "type": "debug",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 710,
+        "y": 760,
+        "wires": []
     }
 ]
