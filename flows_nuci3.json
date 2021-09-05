@@ -2732,7 +2732,7 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 670,
+        "x": 690,
         "y": 60,
         "wires": []
     },
