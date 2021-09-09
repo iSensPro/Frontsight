@@ -4563,7 +4563,7 @@
         "box": "",
         "disposition": "Read",
         "criteria": "UNSEEN",
-        "repeat": "60",
+        "repeat": "300",
         "fetch": "auto",
         "inputs": 0,
         "x": 70,
@@ -6485,19 +6485,20 @@
         "id": "26c4339.5d6b6cc",
         "type": "function",
         "z": "23aae268.c697d6",
-        "name": "",
+        "name": "set adressees",
         "func": "\nmsg.payload =   'Dear,\\n\\r' + \n                ' an iSensPro gateway access link has been created for you :\\n' + \n                '    for configuration  : https://nrcust1gw1.eu.ngrok.io/ui \\n' +\n                '    for graphs         : https://grcust1gw1.eu.ngrok.io/d/X6NRqJznk/isenspro?orgId=1&refresh=5m \\n'+\n                ' for a duration of 1 hour';\n\nmsg.originator = msg.from;\nmsg.to = msg.from + ',' + msg.cc;\nmsg.cc = 'log@isenspro.com';\n// msg.from = gateway address; subsequent request to this gateway will be bo-locked, but customers can use the existing tunnel for the remaining time\nmsg.from = msg.header.to.value[0].address;\nmsg.topic = 'iSensPro access request granted';\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 560,
+        "x": 520,
         "y": 180,
         "wires": [
             [
                 "fa83f601.a9576",
-                "98b51c0f.fa4d1"
+                "98b51c0f.fa4d1",
+                "ee9d704b.337628"
             ]
         ]
     },
@@ -6511,7 +6512,7 @@
         "tls": true,
         "name": "",
         "dname": "reply email",
-        "x": 970,
+        "x": 990,
         "y": 260,
         "wires": []
     },
@@ -7184,14 +7185,14 @@
         "id": "c14f01d3.7ae2f",
         "type": "function",
         "z": "23aae268.c697d6",
-        "name": "",
+        "name": "set adressees",
         "func": "\nmsg.payload =   'Dear,\\n\\r' + \n                ' an iSensPro gateway access link has been created for you :\\n\\r' + \n                '    for configuration  : https://nrisensprocust1gw1.eu.ngrok.io \\n\\r' +\n                '    for graphs         : https://grisensprocust1gw1.eu.ngrok.io \\n\\r' +\n                '    for postgres       : https://pgisensprocust1gw1.eu.ngrok.io \\n\\r'+\n                '    for vnc            : https://vncisensprocust1gw1.eu.ngrok.io \\n\\r'+\n                ' for a duration of 4 hours';\n\nmsg.originator = msg.from;\nmsg.to = msg.from + ',' + msg.cc;\nmsg.cc = 'log@isenspro.com';\n// msg.from = gateway address; subsequent request to this gateway will be bo-locked, but customers can use the existing tunnel for the remaining time\nmsg.from = msg.header.to.value[0].address;\nmsg.topic = 'iSensPro access request granted';\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 560,
+        "x": 520,
         "y": 360,
         "wires": [
             [
@@ -7221,18 +7222,19 @@
         "id": "be04ab5a.f8e3a",
         "type": "function",
         "z": "23aae268.c697d6",
-        "name": "",
+        "name": "set adressees",
         "func": "\nmsg.payload =   'Dear,\\n\\r' + \n                ' the iSensPro gateway access link has been stopped \\n';\n                \nmsg.to = msg.originator + ',' + msg.cc;\nmsg.cc = 'log@isenspro.com';\nmsg.from = msg.header.to.value[0].address;\nmsg.topic = 'iSensPro access request stopped';\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 760,
+        "x": 780,
         "y": 260,
         "wires": [
             [
-                "fa83f601.a9576"
+                "fa83f601.a9576",
+                "cfc1f2c8.91513"
             ]
         ]
     },
@@ -7241,7 +7243,7 @@
         "type": "debug",
         "z": "23aae268.c697d6",
         "name": "",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -7249,7 +7251,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1310,
+        "x": 1290,
         "y": 180,
         "wires": []
     },
@@ -7264,12 +7266,12 @@
         "inout": "out",
         "septopics": false,
         "property": "from",
-        "x": 950,
+        "x": 790,
         "y": 180,
         "wires": [
             [
-                "86b8cee1.18ef8",
-                "e7abff2e.4802b"
+                "17d23a58.b24a46",
+                "555a99fb.e05708"
             ]
         ]
     },
@@ -7278,7 +7280,7 @@
         "type": "function",
         "z": "23aae268.c697d6",
         "name": "reset block",
-        "func": "msg.reset = true;\nmsg.topic = 'iSensPro access request granted';\nreturn msg;",
+        "func": "msg.reset = true;\nmsg.topic = 'iSensPro access request granted';\nmsg.from = '';\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -7288,7 +7290,8 @@
         "y": 120,
         "wires": [
             [
-                "98b51c0f.fa4d1"
+                "98b51c0f.fa4d1",
+                "b139562.32aafa8"
             ]
         ]
     },
@@ -7303,12 +7306,11 @@
         "inout": "out",
         "septopics": false,
         "property": "from",
-        "x": 930,
+        "x": 790,
         "y": 360,
         "wires": [
             [
-                "26317863.e57f6",
-                "a1b4490f.0f5138"
+                "11344d99.e89d92"
             ]
         ]
     },
@@ -7337,12 +7339,13 @@
         "randomLast": "5",
         "randomUnits": "seconds",
         "drop": false,
-        "x": 580,
+        "x": 600,
         "y": 240,
         "wires": [
             [
                 "be04ab5a.f8e3a",
-                "abad2f99.75e8f"
+                "abad2f99.75e8f",
+                "fa68a92.81a11d8"
             ]
         ]
     },
@@ -7361,7 +7364,7 @@
         "randomLast": "5",
         "randomUnits": "seconds",
         "drop": false,
-        "x": 580,
+        "x": 600,
         "y": 300,
         "wires": [
             [
@@ -7375,7 +7378,7 @@
         "type": "function",
         "z": "23aae268.c697d6",
         "name": "reset block",
-        "func": "msg.reset = true;\nmsg.topic = 'iSensPro access request granted';\nreturn msg;",
+        "func": "msg.reset = true;\nmsg.topic = 'iSensPro access request granted';\nmsg.from = '';\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -7878,7 +7881,7 @@
         "type": "debug",
         "z": "23aae268.c697d6",
         "name": "",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -17994,6 +17997,151 @@
             [
                 "44928c.73f07d74"
             ]
+        ]
+    },
+    {
+        "id": "b139562.32aafa8",
+        "type": "debug",
+        "z": "23aae268.c697d6",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 930,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "ee9d704b.337628",
+        "type": "debug",
+        "z": "23aae268.c697d6",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 630,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "cfc1f2c8.91513",
+        "type": "debug",
+        "z": "23aae268.c697d6",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 910,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "fa68a92.81a11d8",
+        "type": "debug",
+        "z": "23aae268.c697d6",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 630,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "17d23a58.b24a46",
+        "type": "debug",
+        "z": "23aae268.c697d6",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1110,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "e929a807.d21e38",
+        "type": "debug",
+        "z": "23aae268.c697d6",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1290,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "555a99fb.e05708",
+        "type": "function",
+        "z": "23aae268.c697d6",
+        "name": "del reset",
+        "func": "//first message\nif (msg.reset == true)\n{\n    delete msg.reset;\n    return [null,msg];\n}\n\n    delete msg.reset;\n    return [msg,null]; \n\n",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 940,
+        "y": 180,
+        "wires": [
+            [
+                "86b8cee1.18ef8",
+                "e7abff2e.4802b",
+                "e929a807.d21e38"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "11344d99.e89d92",
+        "type": "function",
+        "z": "23aae268.c697d6",
+        "name": "del reset",
+        "func": "//first message\nif (msg.reset == true)\n{\n    delete msg.reset;\n    return [null,msg];\n}\n\n    delete msg.reset;\n    return [msg,null]; \n",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 940,
+        "y": 360,
+        "wires": [
+            [
+                "26317863.e57f6",
+                "a1b4490f.0f5138"
+            ],
+            []
         ]
     }
 ]
