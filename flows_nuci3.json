@@ -1171,15 +1171,6 @@
         "collapse": false
     },
     {
-        "id": "93a37a7d.51539",
-        "type": "ui_spacer",
-        "name": "spacer",
-        "group": "f12df54.fdd1f08",
-        "order": 1,
-        "width": 6,
-        "height": "2"
-    },
-    {
         "id": "3b11038a.8bdd8c",
         "type": "ui_spacer",
         "name": "spacer",
@@ -1246,15 +1237,6 @@
         "order": 1,
         "disabled": false,
         "hidden": false
-    },
-    {
-        "id": "3de6ad51.9f3582",
-        "type": "ui_spacer",
-        "name": "spacer",
-        "group": "f12df54.fdd1f08",
-        "order": 16,
-        "width": "6",
-        "height": "2"
     },
     {
         "id": "19ec838a.d731e4",
@@ -6526,7 +6508,8 @@
         "y": 1060,
         "wires": [
             [
-                "be96bd9d.aac458"
+                "be96bd9d.aac458",
+                "af3a836c.a6173"
             ]
         ]
     },
@@ -6653,7 +6636,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "Change sensor ID (1)",
-        "func": "msg.return_start = 1;\nmsg.return_end = 13;\nmsg.backspaces = 3;\n\n// reset max noise level\nflow.set('maxnoiseM1',0);\n\nmsg.newvalue = '';\n\nvar sensorid = String(flow.get('sensorIDM1'));\n\n//padding before number\nfor(var j = 0; j < (msg.backspaces-sensorid.length); j++)\n{ \n    msg.newvalue += '0';\n}\n\n\nfor(var i = 0; i < sensorid.length; i++)\n{ \n    msg.newvalue += sensorid[i];\n}\n\nmsg.newvalue = msg.newvalue.toString();\nmsg.topic = 1;\n\nreturn msg;",
+        "func": "msg.return_start = 1;\nmsg.return_end = 13;\nmsg.backspaces = 3;\n\n// reset max noise level\nflow.set('maxnoiseM1',0);\n\nmsg.newvalue = '';\n\n//var sensorid = String(flow.get('sensorIDM1'));\nvar sensorid = String(msg.topic);\n\n//padding before number\nfor(var j = 0; j < (msg.backspaces-sensorid.length); j++)\n{ \n    msg.newvalue += '0';\n}\n\n\nfor(var i = 0; i < sensorid.length; i++)\n{ \n    msg.newvalue += sensorid[i];\n}\n\nmsg.newvalue = msg.newvalue.toString();\nmsg.topic = 1;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -6663,7 +6646,8 @@
         "y": 1880,
         "wires": [
             [
-                "9ceb2bbb.7655c8"
+                "9ceb2bbb.7655c8",
+                "4957a6f9.97ee3"
             ]
         ]
     },
@@ -6672,7 +6656,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "Change measurement period (2)",
-        "func": "msg.return_start = 2;\nmsg.return_end = 12;\nmsg.backspaces = 5;\nmsg.newvalue = msg.payload;\n\n// reset max noise level\nflow.set('maxnoiseM1',0);\n\nmsg.newvalue = '';\n\nvar mperiod = String(flow.get('mperiodM1'));\n\n//padding before number\nfor(var j = 0; j < (msg.backspaces-mperiod.length); j++)\n{ \n    msg.newvalue += '0';\n}\n\n\nfor(var i = 0; i < mperiod.length; i++)\n{ \n    msg.newvalue += mperiod[i];\n}\n\nmsg.newvalue = msg.newvalue.toString();\nmsg.topic = 2;\n\nreturn msg;",
+        "func": "msg.return_start = 2;\nmsg.return_end = 12;\nmsg.backspaces = 5;\nmsg.newvalue = msg.payload;\n\n// reset max noise level\nflow.set('maxnoiseM1',0);\n\nmsg.newvalue = '';\n\n//var mperiod = String(flow.get('mperiodM1'));\nvar mperiod = String(msg.topic);\n\n//padding before number\nfor(var j = 0; j < (msg.backspaces-mperiod.length); j++)\n{ \n    msg.newvalue += '0';\n}\n\n\nfor(var i = 0; i < mperiod.length; i++)\n{ \n    msg.newvalue += mperiod[i];\n}\n\nmsg.newvalue = msg.newvalue.toString();\nmsg.topic = 2;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -6682,7 +6666,8 @@
         "y": 1960,
         "wires": [
             [
-                "9ceb2bbb.7655c8"
+                "9ceb2bbb.7655c8",
+                "4957a6f9.97ee3"
             ]
         ]
     },
@@ -6691,7 +6676,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "Change measurement window (3)",
-        "func": "msg.return_start = 3;\nmsg.return_end = 11;\nmsg.backspaces = 5;\nmsg.newvalue = msg.payload;\n\n// reset max noise level\nflow.set('maxnoiseM1',0);\n\nmsg.newvalue = '';\n\nvar mwindow = String(flow.get('mwindowM1'));\n\n//padding before number\nfor(var j = 0; j < (msg.backspaces-mwindow.length); j++)\n{ \n    msg.newvalue += '0';\n}\n\n\nfor(var i = 0; i < mwindow.length; i++)\n{ \n    msg.newvalue += mwindow[i];\n}\n\nmsg.newvalue = msg.newvalue.toString();\nmsg.topic = 3;\n\nreturn msg;",
+        "func": "msg.return_start = 3;\nmsg.return_end = 11;\nmsg.backspaces = 5;\nmsg.newvalue = msg.payload;\n\n// reset max noise level\nflow.set('maxnoiseM1',0);\n\nmsg.newvalue = '';\n\n//var mwindow = String(flow.get('mwindowM1'));\nvar mwindow = String(msg.topic);\n\n//padding before number\nfor(var j = 0; j < (msg.backspaces-mwindow.length); j++)\n{ \n    msg.newvalue += '0';\n}\n\n\nfor(var i = 0; i < mwindow.length; i++)\n{ \n    msg.newvalue += mwindow[i];\n}\n\nmsg.newvalue = msg.newvalue.toString();\nmsg.topic = 3;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -6701,7 +6686,8 @@
         "y": 2040,
         "wires": [
             [
-                "9ceb2bbb.7655c8"
+                "9ceb2bbb.7655c8",
+                "4957a6f9.97ee3"
             ]
         ]
     },
@@ -6710,7 +6696,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "Change VHigh (4)",
-        "func": "msg.return_start = 4;\nmsg.return_end = 10;\nmsg.backspaces = 4;\n\n// reset max noise level\nflow.set('maxnoiseM1',0);\n\nmsg.newvalue = '';\n\nvar vhigh = String(flow.get('vhighM1'));\n\n//padding before number\nfor(var j = 0; j < (msg.backspaces-vhigh.length); j++)\n{ \n    msg.newvalue += '0';\n}\n\n\nfor(var i = 0; i < vhigh.length; i++)\n{ \n    msg.newvalue += vhigh[i];\n}\n\nmsg.newvalue = msg.newvalue.toString();\nmsg.topic = 4;\n\nreturn msg;",
+        "func": "msg.return_start = 4;\nmsg.return_end = 10;\nmsg.backspaces = 4;\n\n// reset max noise level\nflow.set('maxnoiseM1',0);\n\nmsg.newvalue = '';\n\n//var vhigh = String(flow.get('vhighM1'));\nvar vhigh = String(msg.topic);\n\n//padding before number\nfor(var j = 0; j < (msg.backspaces-vhigh.length); j++)\n{ \n    msg.newvalue += '0';\n}\n\n\nfor(var i = 0; i < vhigh.length; i++)\n{ \n    msg.newvalue += vhigh[i];\n}\n\nmsg.newvalue = msg.newvalue.toString();\nmsg.topic = 4;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -6720,7 +6706,8 @@
         "y": 2120,
         "wires": [
             [
-                "9ceb2bbb.7655c8"
+                "9ceb2bbb.7655c8",
+                "4957a6f9.97ee3"
             ]
         ]
     },
@@ -6729,7 +6716,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "Change VLow (5)",
-        "func": "msg.return_start = 5;\nmsg.return_end = 9;\nmsg.backspaces = 4;\nmsg.newvalue = msg.payload;\n\n// reset max noise level\nflow.set('maxnoiseM1',0);\n\nmsg.newvalue = '';\n\nvar vlow = String(flow.get('vlowM1'));\n\n//padding before number\nfor(var j = 0; j < (msg.backspaces-vlow.length); j++)\n{ \n    msg.newvalue += '0';\n}\n\n\nfor(var i = 0; i < vlow.length; i++)\n{ \n    msg.newvalue += vlow[i];\n}\n\nmsg.newvalue = msg.newvalue.toString();\nmsg.topic = 5;\n\nreturn msg;",
+        "func": "msg.return_start = 5;\nmsg.return_end = 9;\nmsg.backspaces = 4;\nmsg.newvalue = msg.payload;\n\n// reset max noise level\nflow.set('maxnoiseM1',0);\n\nmsg.newvalue = '';\n\n//var vlow = String(flow.get('vlowM1'));\nvar vlow = String(msg.topic);\n\n//padding before number\nfor(var j = 0; j < (msg.backspaces-vlow.length); j++)\n{ \n    msg.newvalue += '0';\n}\n\n\nfor(var i = 0; i < vlow.length; i++)\n{ \n    msg.newvalue += vlow[i];\n}\n\nmsg.newvalue = msg.newvalue.toString();\nmsg.topic = 5;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -6739,7 +6726,8 @@
         "y": 2200,
         "wires": [
             [
-                "9ceb2bbb.7655c8"
+                "9ceb2bbb.7655c8",
+                "4957a6f9.97ee3"
             ]
         ]
     },
@@ -6748,7 +6736,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "Change RCharge (6)",
-        "func": "msg.return_start = 6;\nmsg.return_end = 8;\nmsg.backspaces = 6;\nmsg.newvalue = msg.payload;\n\n// reset max noise level\nflow.set('maxnoiseM1',0);\n\nmsg.newvalue = '';\n\nvar rcharge = String(flow.get('rchargeM1'));\n\n//padding before number\nfor(var j = 0; j < (msg.backspaces-rcharge.length); j++)\n{ \n    msg.newvalue += '0';\n}\n\n\nfor(var i = 0; i < rcharge.length; i++)\n{ \n    msg.newvalue += rcharge[i];\n}\n\nmsg.newvalue = msg.newvalue.toString();\nmsg.topic = 6;\n\nreturn msg;",
+        "func": "msg.return_start = 6;\nmsg.return_end = 8;\nmsg.backspaces = 6;\nmsg.newvalue = msg.payload;\n\n// reset max noise level\nflow.set('maxnoiseM1',0);\n\nmsg.newvalue = '';\n\n//var rcharge = String(flow.get('rchargeM1'));\nvar rcharge = String(msg.topic);\n\n//padding before number\nfor(var j = 0; j < (msg.backspaces-rcharge.length); j++)\n{ \n    msg.newvalue += '0';\n}\n\n\nfor(var i = 0; i < rcharge.length; i++)\n{ \n    msg.newvalue += rcharge[i];\n}\n\nmsg.newvalue = msg.newvalue.toString();\nmsg.topic = 6;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -6758,7 +6746,8 @@
         "y": 2280,
         "wires": [
             [
-                "9ceb2bbb.7655c8"
+                "9ceb2bbb.7655c8",
+                "4957a6f9.97ee3"
             ]
         ]
     },
@@ -8393,27 +8382,10 @@
         "y": 2280,
         "wires": [
             [
-                "25475b09.d7d524",
-                "a8bb996d.ba216"
+                "a8bb996d.ba216",
+                "be8d9df8.35b0e"
             ]
         ]
-    },
-    {
-        "id": "25475b09.d7d524",
-        "type": "debug",
-        "z": "3fb5a67.37c495a",
-        "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1890,
-        "y": 2200,
-        "wires": []
     },
     {
         "id": "63f9d66e.7b49b",
@@ -9063,7 +9035,7 @@
         "height": 1,
         "passthru": false,
         "mode": "text",
-        "delay": "100",
+        "delay": "0",
         "topic": "",
         "topicType": "str",
         "x": 600,
@@ -9230,7 +9202,7 @@
         "height": 1,
         "passthru": false,
         "mode": "text",
-        "delay": "100",
+        "delay": "0",
         "topic": "",
         "topicType": "str",
         "x": 600,
@@ -9290,7 +9262,7 @@
         "height": 1,
         "passthru": false,
         "mode": "text",
-        "delay": "100",
+        "delay": "0",
         "topic": "",
         "topicType": "str",
         "x": 600,
@@ -9380,7 +9352,7 @@
         "height": 1,
         "passthru": false,
         "mode": "text",
-        "delay": "100",
+        "delay": "0",
         "topic": "vhigh",
         "topicType": "str",
         "x": 590,
@@ -9520,7 +9492,7 @@
         "height": 1,
         "passthru": false,
         "mode": "text",
-        "delay": "100",
+        "delay": "0",
         "topic": "vlow",
         "topicType": "str",
         "x": 590,
@@ -9980,7 +9952,7 @@
         "height": 1,
         "passthru": false,
         "mode": "text",
-        "delay": "100",
+        "delay": "0",
         "topic": "",
         "topicType": "str",
         "x": 600,
@@ -10463,7 +10435,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "START",
-        "func": "var label = global.get('log_start');\n\n// set new flow variable\nflow.set('loggingM1',0);\n\nmsg.enabled = false;\nmsg.background = 'green';\n\nmsg.label = label;\nreturn msg;",
+        "func": "var label = global.get('log_startM1');\n\n// set new flow variable\nflow.set('loggingM1',0);\n\nmsg.enabled = false;\nmsg.background = 'green';\n\nmsg.label = label;\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -10482,7 +10454,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "LOGGING",
-        "func": "var label = global.get('log_logging');\n// set new flow variable\nflow.set('loggingM1',1);\n\nmsg.background = 'grey';\nmsg.enabled = false;\nmsg.label = label;\n\n\nreturn msg;",
+        "func": "var label = global.get('log_loggingM1');\n// set new flow variable\nflow.set('loggingM1',1);\n\nmsg.background = 'grey';\nmsg.enabled = false;\nmsg.label = label;\n\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -10529,7 +10501,9 @@
         "x": 520,
         "y": 1400,
         "wires": [
-            []
+            [
+                "8e2307df.e83af8"
+            ]
         ]
     },
     {
@@ -10537,7 +10511,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "",
-        "func": "var label = global.get('log_file');\n\nvar email = flow.get('LogToEmailM1');\n\nmsg.to = email;\n\nmsg.topic = topic;\nmsg.filename = '/home/nuci3/Desktop/logfileM1.csv';\n\nreturn msg;",
+        "func": "var label = global.get('log_fileM1');\n\nvar email = flow.get('LogToEmailM1');\n\nif (msg.payload =='confirm')\n{\n    msg.to = email;\n    msg.topic = label;\n    msg.filename = '/home/nuci3/Desktop/logfileM1.csv';\n}\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -10547,7 +10521,8 @@
         "y": 1600,
         "wires": [
             [
-                "baf55505.67997"
+                "baf55505.67997",
+                "cec7989d.b5bc1"
             ]
         ]
     },
@@ -10600,7 +10575,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "disable STOP",
-        "func": "var label = global.get('log_stop');\n// set new flow variable\n// flow.set('logging',0);\n\nmsg.background = 'grey';\nmsg.enabled = false;\nmsg.label = label;\nreturn msg;\n",
+        "func": "var label = global.get('log_stopM1');\n// set new flow variable\n// flow.set('logging',0);\n\nmsg.background = 'grey';\nmsg.enabled = false;\nmsg.label = label;\nreturn msg;\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -10629,7 +10604,7 @@
         "color": "",
         "bgcolor": "{{background}}",
         "icon": "",
-        "payload": "",
+        "payload": "confirm",
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
@@ -10648,7 +10623,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "enable STOP",
-        "func": "var label = global.get('log_stop');\n// set new flow variable\n//flow.set('logging',1);\n\nmsg.background = 'red';\nmsg.enabled = true;\nmsg.label = label;\n\n\nreturn msg;",
+        "func": "var label = global.get('log_stopM1');\n// set new flow variable\n//flow.set('logging',1);\n\nmsg.background = 'red';\nmsg.enabled = true;\nmsg.label = label;\n\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -10705,7 +10680,8 @@
         "y": 1600,
         "wires": [
             [
-                "44db0722.04334"
+                "44db0722.04334",
+                "d06a03c1.3b5cf"
             ]
         ]
     },
@@ -10733,7 +10709,8 @@
         "wires": [
             [
                 "bb223f84.15df6",
-                "c30ded45.66768"
+                "c30ded45.66768",
+                "d6ce1dd5.77ed9"
             ]
         ]
     },
@@ -10756,7 +10733,7 @@
         "type": "debug",
         "z": "3fb5a67.37c495a",
         "name": "",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -10773,7 +10750,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "enable START",
-        "func": "var label = global.get('log_start');\n// set new flow variable\nflow.set('loggingM1',0);\n\nmsg.background = 'green';\nmsg.label = label;\nmsg.payload != '' ? msg.enabled = true : msg.enabled = false;\n\nreturn msg;",
+        "func": "var label = global.get('log_startM1');\n// set new flow variable\nflow.set('loggingM1',0);\n\nmsg.background = 'green';\nmsg.label = label;\nmsg.payload != '' ? msg.enabled = true : msg.enabled = false;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -10812,10 +10789,11 @@
         "name": "",
         "serial": "fd6c249c.71f2d8",
         "x": 130,
-        "y": 1160,
+        "y": 1180,
         "wires": [
             [
-                "15d44a5b.90cc56"
+                "15d44a5b.90cc56",
+                "2c7813dc.062fd4"
             ]
         ]
     },
@@ -10831,7 +10809,7 @@
         "finalize": "",
         "libs": [],
         "x": 600,
-        "y": 1160,
+        "y": 1180,
         "wires": [
             [
                 "28bcd772.79931"
@@ -10845,10 +10823,11 @@
         "name": "",
         "serial": "50f22906.5ea4b",
         "x": 130,
-        "y": 1260,
+        "y": 1300,
         "wires": [
             [
-                "d02be727.9a2718"
+                "d02be727.9a2718",
+                "a8b3fefe.5ae648"
             ]
         ]
     },
@@ -10864,7 +10843,7 @@
         "finalize": "",
         "libs": [],
         "x": 600,
-        "y": 1260,
+        "y": 1300,
         "wires": [
             [
                 "595912c7.3a958c"
@@ -10928,7 +10907,7 @@
         "randomUnits": "seconds",
         "drop": false,
         "x": 800,
-        "y": 1160,
+        "y": 1180,
         "wires": [
             [
                 "77cf8a52.acbcec"
@@ -10951,7 +10930,7 @@
         "randomUnits": "seconds",
         "drop": false,
         "x": 780,
-        "y": 1260,
+        "y": 1300,
         "wires": [
             [
                 "77cf8a52.acbcec"
@@ -11129,48 +11108,15 @@
         "wires": [
             [
                 "10ceb888.3ae5df",
-                "11fe015e.8b3d37"
+                "bac7284.0ee80d8"
             ],
             [
-                "bea5926e.312c7"
+                "bea5926e.312c7",
+                "bac7284.0ee80d8"
             ],
             [
-                "4ac407a.42f9d78"
-            ]
-        ]
-    },
-    {
-        "id": "c3e4036d.f5db48",
-        "type": "file",
-        "z": "3fb5a67.37c495a",
-        "name": "append file",
-        "filename": "",
-        "appendNewline": true,
-        "createDir": false,
-        "overwriteFile": "false",
-        "encoding": "none",
-        "x": 870,
-        "y": 1720,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "97637aa3.7e8ee8",
-        "type": "function",
-        "z": "3fb5a67.37c495a",
-        "name": "trim",
-        "func": "\nmsg.original = msg.payload.trim();\nmsg.payload = String(msg.timestamp) + ',' + String(msg.topic) + ',' + String(msg.original);\nmsg.filename = '/home/nuci3/Desktop/logfileM1.csv';\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 710,
-        "y": 1720,
-        "wires": [
-            [
-                "c3e4036d.f5db48"
+                "4ac407a.42f9d78",
+                "bac7284.0ee80d8"
             ]
         ]
     },
@@ -11201,20 +11147,7 @@
         "wires": [
             [],
             [
-                "2388b177.5f7036"
-            ]
-        ]
-    },
-    {
-        "id": "2388b177.5f7036",
-        "type": "timestamp",
-        "z": "3fb5a67.37c495a",
-        "name": "",
-        "x": 550,
-        "y": 1720,
-        "wires": [
-            [
-                "97637aa3.7e8ee8"
+                "23370be2.c00774"
             ]
         ]
     },
@@ -11226,23 +11159,6 @@
         "info": "",
         "x": 410,
         "y": 1680,
-        "wires": []
-    },
-    {
-        "id": "11fe015e.8b3d37",
-        "type": "debug",
-        "z": "3fb5a67.37c495a",
-        "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 2010,
-        "y": 2160,
         "wires": []
     },
     {
@@ -11276,7 +11192,7 @@
         "finalize": "",
         "libs": [],
         "x": 460,
-        "y": 1160,
+        "y": 1180,
         "wires": [
             [
                 "1446fd08.2a02db"
@@ -11295,7 +11211,7 @@
         "finalize": "",
         "libs": [],
         "x": 460,
-        "y": 1260,
+        "y": 1300,
         "wires": [
             [
                 "2ca89b40.76cb24"
@@ -11321,7 +11237,7 @@
         "z": "3fb5a67.37c495a",
         "name": "",
         "x": 290,
-        "y": 1160,
+        "y": 1180,
         "wires": [
             [
                 "591e77af.79ada8"
@@ -11334,7 +11250,7 @@
         "z": "3fb5a67.37c495a",
         "name": "",
         "x": 290,
-        "y": 1260,
+        "y": 1300,
         "wires": [
             [
                 "362f57a3.ea9ca"
@@ -11380,8 +11296,7 @@
         "y": 1020,
         "wires": [
             [
-                "abba1082.46158",
-                "af3a836c.a6173"
+                "abba1082.46158"
             ]
         ]
     },
@@ -11413,11 +11328,10 @@
             "eb262a8f.019ba8"
         ],
         "x": 120,
-        "y": 1120,
+        "y": 1140,
         "wires": [
             [
-                "7b1ad4f7.ec60a4",
-                "af3a836c.a6173"
+                "7b1ad4f7.ec60a4"
             ]
         ]
     },
@@ -11430,11 +11344,10 @@
             "9120525e.fd0aa"
         ],
         "x": 120,
-        "y": 1220,
+        "y": 1260,
         "wires": [
             [
-                "f15fe6d.1f14818",
-                "af3a836c.a6173"
+                "f15fe6d.1f14818"
             ]
         ]
     },
@@ -11450,7 +11363,7 @@
         "finalize": "",
         "libs": [],
         "x": 290,
-        "y": 1120,
+        "y": 1140,
         "wires": [
             [
                 "88ce6c66.746dc"
@@ -11469,7 +11382,7 @@
         "finalize": "",
         "libs": [],
         "x": 290,
-        "y": 1220,
+        "y": 1260,
         "wires": [
             [
                 "a02d56b5.4d928"
@@ -11585,7 +11498,7 @@
         "height": 1,
         "passthru": false,
         "mode": "text",
-        "delay": "100",
+        "delay": "0",
         "topic": "",
         "topicType": "str",
         "x": 590,
@@ -12564,7 +12477,7 @@
         "type": "debug",
         "z": "3fb5a67.37c495a",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -12607,7 +12520,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "Reset MasterID & set options",
-        "func": "// show translated MasterID\nvar master_label = global.get('master1_label');\nmsg.master_label = master_label;\n\n\n// connected devices\nvar device0 = global.get('device0');\nvar device1 = global.get('device1');\nvar device2 = global.get('device2');\n\n\n//configs for empty selection\n// mperiod\nmsg.mperiod = 0;\n// mwindow\nmsg.mwindow = 0;\n// vhigh\nmsg.vhigh = 0;\n// vlow\nmsg.vlow = 0;\n// rcharge\nmsg.rcharge = 0;\n// description\nmsg.description = 'undefined';\n\n// when language selected, reset master ID\nmsg.payload = '';\nmsg.options = [device0,device1,device2];\n\n\nreturn msg;",
+        "func": "// show translated MasterID\nvar master_label = global.get('master1_labelM1');\nmsg.master_label = master_label;\n\n\n// connected devices\nvar device0 = global.get('device0');\nvar device1 = global.get('device1');\nvar device2 = global.get('device2');\n\n\n//configs for empty selection\n// mperiod\nmsg.mperiod = 0;\n// mwindow\nmsg.mwindow = 0;\n// vhigh\nmsg.vhigh = 0;\n// vlow\nmsg.vlow = 0;\n// rcharge\nmsg.rcharge = 0;\n// description\nmsg.description = 'undefined';\n\n// when language selected, reset master ID\nmsg.payload = '';\nmsg.options = [device0,device1,device2];\n\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -13015,7 +12928,7 @@
         "type": "debug",
         "z": "3fb5a67.37c495a",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -13196,7 +13109,7 @@
         "resendOnRefresh": true,
         "templateScope": "local",
         "x": 890,
-        "y": 2860,
+        "y": 2920,
         "wires": [
             []
         ]
@@ -13213,7 +13126,7 @@
         "finalize": "",
         "libs": [],
         "x": 450,
-        "y": 2860,
+        "y": 2920,
         "wires": [
             [
                 "4aa5e8d7.45b028"
@@ -13242,7 +13155,7 @@
         "payload": "",
         "payloadType": "str",
         "x": 310,
-        "y": 2860,
+        "y": 2920,
         "wires": [
             [
                 "b5dd372f.28786"
@@ -13260,7 +13173,7 @@
         "sendError": false,
         "encoding": "none",
         "x": 590,
-        "y": 2860,
+        "y": 2920,
         "wires": [
             [
                 "30287559.f8a95a"
@@ -13275,7 +13188,7 @@
         "action": "str",
         "property": "payload",
         "x": 740,
-        "y": 2860,
+        "y": 2920,
         "wires": [
             [
                 "b599ddb1.cf46"
@@ -13386,7 +13299,7 @@
         "type": "postgrestor",
         "z": "3fb5a67.37c495a",
         "name": "sensor_config@localhost",
-        "query": "INSERT INTO sensor_config_table \n\n\tvlow,\n\tmasterid,\n\tsensorid\n\t\n) VALUES\n(\n    '{{msg.vlow}}',\n    '{{{msg.masterid}}}',\n    '{{msg.sensorid}}'\n);",
+        "query": "INSERT INTO sensor_config_table \n(\n\tvlow,\n\tmasterid,\n\tsensorid\n\t\n) VALUES\n(\n    '{{msg.vlow}}',\n    '{{{msg.masterid}}}',\n    '{{msg.sensorid}}'\n);",
         "postgresDB": "6733d493.9cca6c",
         "output": true,
         "outputs": 1,
@@ -13403,7 +13316,7 @@
         "type": "postgrestor",
         "z": "3fb5a67.37c495a",
         "name": "sensor_config@localhost",
-        "query": "INSERT INTO sensor_config_table \n(\n\n\trcharge,\n\tmasterid,\n\tsensorid\n\n) VALUES\n(\n    '{{msg.rcharge}}',\n    '{{{msg.masterid}}}',\n    '{{msg.sensorid}}'\n);",
+        "query": "INSERT INTO sensor_config_table \n(\n\trcharge,\n\tmasterid,\n\tsensorid\n\n) VALUES\n(\n    '{{msg.rcharge}}',\n    '{{{msg.masterid}}}',\n    '{{msg.sensorid}}'\n);",
         "postgresDB": "6733d493.9cca6c",
         "output": true,
         "outputs": 1,
@@ -13504,7 +13417,7 @@
         "to": "",
         "reg": false,
         "x": 470,
-        "y": 1100,
+        "y": 1120,
         "wires": [
             [
                 "491d16d6.09384"
@@ -13531,7 +13444,7 @@
         "to": "",
         "reg": false,
         "x": 470,
-        "y": 1200,
+        "y": 1240,
         "wires": [
             [
                 "3a6f0db1.7824d2"
@@ -13600,7 +13513,8 @@
         "y": 1040,
         "wires": [
             [
-                "c9c084a.aa364f8"
+                "c9c084a.aa364f8",
+                "d216e22e.ec2318"
             ]
         ]
     },
@@ -13609,7 +13523,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "",
-        "func": "var label = global.get('log_email');\n\nvar masterid = flow.get('master1ID');\n\nif (msg.payload != '')\n{\n    msg.enabled = true;\n    msg.background = 'green';\n    msg.log_label = label;\n    msg.payload = '';\n}\nelse\n{\n    msg.enabled = false;\n    msg.background = 'grey';\n    msg.payload = ' ';\n    msg.log_label = '';\n}\n\n\n\n\nreturn msg;",
+        "func": "var label = global.get('log_emailM1');\n\nvar masterid = flow.get('master1ID');\n\nif (msg.payload != '')\n{\n    msg.enabled = true;\n    msg.background = 'green';\n    msg.log_label = label;\n    msg.payload = ' ';\n}\nelse\n{\n    msg.enabled = false;\n    msg.background = 'grey';\n    msg.payload = '';\n    msg.log_label = '';\n}\n\n\n\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -13638,7 +13552,7 @@
         "resendOnRefresh": true,
         "templateScope": "local",
         "x": 890,
-        "y": 2920,
+        "y": 2980,
         "wires": [
             []
         ]
@@ -13655,7 +13569,7 @@
         "finalize": "",
         "libs": [],
         "x": 450,
-        "y": 2920,
+        "y": 2980,
         "wires": [
             [
                 "9d843f9e.902848"
@@ -13684,7 +13598,7 @@
         "payload": "",
         "payloadType": "str",
         "x": 310,
-        "y": 2920,
+        "y": 2980,
         "wires": [
             [
                 "8aa63d86.58a968"
@@ -13702,7 +13616,7 @@
         "sendError": false,
         "encoding": "none",
         "x": 590,
-        "y": 2920,
+        "y": 2980,
         "wires": [
             [
                 "4fd089ac.42ffa8"
@@ -13717,7 +13631,7 @@
         "action": "str",
         "property": "payload",
         "x": 740,
-        "y": 2920,
+        "y": 2980,
         "wires": [
             [
                 "aae04f08.2e52d8"
@@ -13733,7 +13647,7 @@
         "order": 2,
         "width": 6,
         "height": 2,
-        "format": "\n \n <img width=\"100%\" height=\"1OO%\" alt=\"Image not found\" src=\"data:image/png;base64,{{msg.payload}}\" />\n",
+        "format": "\n \n <img width=\"100%\" height=\"80%\" alt=\"Image not found\" src=\"data:image/png;base64,{{msg.payload}}\" />\n",
         "storeOutMessages": true,
         "fwdInMessages": true,
         "resendOnRefresh": true,
@@ -13757,7 +13671,9 @@
         "wires": [
             [
                 "d5de4764.e839c",
-                "6357e3bc.d7df74"
+                "6357e3bc.d7df74",
+                "c21ffa36.231d98",
+                "4ccf4558.16df8c"
             ]
         ]
     },
@@ -13774,7 +13690,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1450,
+        "x": 1430,
         "y": 460,
         "wires": []
     },
@@ -13861,7 +13777,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "Change sensor ID (1)",
-        "func": "msg.return_start = 1;\nmsg.return_end = 13;\nmsg.backspaces = 3;\n\n// reset max noise level\nflow.set('maxnoiseM2',0);\n\nmsg.newvalue = '';\n\nvar sensorid = String(flow.get('sensorIDM2'));\n\n//padding before number\nfor(var j = 0; j < (msg.backspaces-sensorid.length); j++)\n{ \n    msg.newvalue += '0';\n}\n\n\nfor(var i = 0; i < sensorid.length; i++)\n{ \n    msg.newvalue += sensorid[i];\n}\n\nmsg.newvalue = msg.newvalue.toString();\nmsg.topic = 1;\n\nreturn msg;",
+        "func": "msg.return_start = 1;\nmsg.return_end = 13;\nmsg.backspaces = 3;\n\n// reset max noise level\nflow.set('maxnoiseM2',0);\n\nmsg.newvalue = '';\n\n//var sensorid = String(flow.get('sensorIDM2'));\nvar sensorid = String(msg.topic);\n\n//padding before number\nfor(var j = 0; j < (msg.backspaces-sensorid.length); j++)\n{ \n    msg.newvalue += '0';\n}\n\n\nfor(var i = 0; i < sensorid.length; i++)\n{ \n    msg.newvalue += sensorid[i];\n}\n\nmsg.newvalue = msg.newvalue.toString();\nmsg.topic = 1;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -13880,7 +13796,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "Change measurement period (2)",
-        "func": "msg.return_start = 2;\nmsg.return_end = 12;\nmsg.backspaces = 5;\nmsg.newvalue = msg.payload;\n\n// reset max noise level\nflow.set('maxnoiseM2',0);\n\nmsg.newvalue = '';\n\nvar mperiod = String(flow.get('mperiodM2'));\n\n//padding before number\nfor(var j = 0; j < (msg.backspaces-mperiod.length); j++)\n{ \n    msg.newvalue += '0';\n}\n\n\nfor(var i = 0; i < mperiod.length; i++)\n{ \n    msg.newvalue += mperiod[i];\n}\n\nmsg.newvalue = msg.newvalue.toString();\nmsg.topic = 2;\n\nreturn msg;",
+        "func": "msg.return_start = 2;\nmsg.return_end = 12;\nmsg.backspaces = 5;\nmsg.newvalue = msg.payload;\n\n// reset max noise level\nflow.set('maxnoiseM2',0);\n\nmsg.newvalue = '';\n\n//var mperiod = String(flow.get('mperiodM2'));\nvar mperiod = String(msg.topic);\n\n//padding before number\nfor(var j = 0; j < (msg.backspaces-mperiod.length); j++)\n{ \n    msg.newvalue += '0';\n}\n\n\nfor(var i = 0; i < mperiod.length; i++)\n{ \n    msg.newvalue += mperiod[i];\n}\n\nmsg.newvalue = msg.newvalue.toString();\nmsg.topic = 2;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -13899,7 +13815,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "Change measurement window (3)",
-        "func": "msg.return_start = 3;\nmsg.return_end = 11;\nmsg.backspaces = 5;\nmsg.newvalue = msg.payload;\n\n// reset max noise level\nflow.set('maxnoiseM2',0);\n\nmsg.newvalue = '';\n\nvar mwindow = String(flow.get('mwindowM2'));\n\n//padding before number\nfor(var j = 0; j < (msg.backspaces-mwindow.length); j++)\n{ \n    msg.newvalue += '0';\n}\n\n\nfor(var i = 0; i < mwindow.length; i++)\n{ \n    msg.newvalue += mwindow[i];\n}\n\nmsg.newvalue = msg.newvalue.toString();\nmsg.topic = 3;\n\nreturn msg;",
+        "func": "msg.return_start = 3;\nmsg.return_end = 11;\nmsg.backspaces = 5;\nmsg.newvalue = msg.payload;\n\n// reset max noise level\nflow.set('maxnoiseM2',0);\n\nmsg.newvalue = '';\n\n//var mwindow = String(flow.get('mwindowM2'));\nvar mwindow = String(msg.topic);\n\n//padding before number\nfor(var j = 0; j < (msg.backspaces-mwindow.length); j++)\n{ \n    msg.newvalue += '0';\n}\n\n\nfor(var i = 0; i < mwindow.length; i++)\n{ \n    msg.newvalue += mwindow[i];\n}\n\nmsg.newvalue = msg.newvalue.toString();\nmsg.topic = 3;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -13918,7 +13834,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "Change VHigh (4)",
-        "func": "msg.return_start = 4;\nmsg.return_end = 10;\nmsg.backspaces = 4;\n\n// reset max noise level\nflow.set('maxnoiseM2',0);\n\nmsg.newvalue = '';\n\nvar vhigh = String(flow.get('vhighM2'));\n\n//padding before number\nfor(var j = 0; j < (msg.backspaces-vhigh.length); j++)\n{ \n    msg.newvalue += '0';\n}\n\n\nfor(var i = 0; i < vhigh.length; i++)\n{ \n    msg.newvalue += vhigh[i];\n}\n\nmsg.newvalue = msg.newvalue.toString();\nmsg.topic = 4;\n\nreturn msg;",
+        "func": "msg.return_start = 4;\nmsg.return_end = 10;\nmsg.backspaces = 4;\n\n// reset max noise level\nflow.set('maxnoiseM2',0);\n\nmsg.newvalue = '';\n\n//var vhigh = String(flow.get('vhighM2'));\nvar vhigh = String(msg.topic);\n\n//padding before number\nfor(var j = 0; j < (msg.backspaces-vhigh.length); j++)\n{ \n    msg.newvalue += '0';\n}\n\n\nfor(var i = 0; i < vhigh.length; i++)\n{ \n    msg.newvalue += vhigh[i];\n}\n\nmsg.newvalue = msg.newvalue.toString();\nmsg.topic = 4;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -13937,7 +13853,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "Change VLow (5)",
-        "func": "msg.return_start = 5;\nmsg.return_end = 9;\nmsg.backspaces = 4;\nmsg.newvalue = msg.payload;\n\n// reset max noise level\nflow.set('maxnoiseM2',0);\n\nmsg.newvalue = '';\n\nvar vlow = String(flow.get('vlowM2'));\n\n//padding before number\nfor(var j = 0; j < (msg.backspaces-vlow.length); j++)\n{ \n    msg.newvalue += '0';\n}\n\n\nfor(var i = 0; i < vlow.length; i++)\n{ \n    msg.newvalue += vlow[i];\n}\n\nmsg.newvalue = msg.newvalue.toString();\nmsg.topic = 5;\n\nreturn msg;",
+        "func": "msg.return_start = 5;\nmsg.return_end = 9;\nmsg.backspaces = 4;\nmsg.newvalue = msg.payload;\n\n// reset max noise level\nflow.set('maxnoiseM2',0);\n\nmsg.newvalue = '';\n\n//var vlow = String(flow.get('vlowM2'));\nvar vlow = String(msg.topic);\n\n//padding before number\nfor(var j = 0; j < (msg.backspaces-vlow.length); j++)\n{ \n    msg.newvalue += '0';\n}\n\n\nfor(var i = 0; i < vlow.length; i++)\n{ \n    msg.newvalue += vlow[i];\n}\n\nmsg.newvalue = msg.newvalue.toString();\nmsg.topic = 5;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -13956,7 +13872,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "Change RCharge (6)",
-        "func": "msg.return_start = 6;\nmsg.return_end = 8;\nmsg.backspaces = 6;\nmsg.newvalue = msg.payload;\n\n// reset max noise level\nflow.set('maxnoiseM2',0);\n\nmsg.newvalue = '';\n\nvar rcharge = String(flow.get('rchargeM2'));\n\n//padding before number\nfor(var j = 0; j < (msg.backspaces-rcharge.length); j++)\n{ \n    msg.newvalue += '0';\n}\n\n\nfor(var i = 0; i < rcharge.length; i++)\n{ \n    msg.newvalue += rcharge[i];\n}\n\nmsg.newvalue = msg.newvalue.toString();\nmsg.topic = 6;\n\nreturn msg;",
+        "func": "msg.return_start = 6;\nmsg.return_end = 8;\nmsg.backspaces = 6;\nmsg.newvalue = msg.payload;\n\n// reset max noise level\nflow.set('maxnoiseM2',0);\n\nmsg.newvalue = '';\n\n//var rcharge = String(flow.get('rchargeM2'));\nvar rcharge = String(msg.topic);\n\n//padding before number\nfor(var j = 0; j < (msg.backspaces-rcharge.length); j++)\n{ \n    msg.newvalue += '0';\n}\n\n\nfor(var i = 0; i < rcharge.length; i++)\n{ \n    msg.newvalue += rcharge[i];\n}\n\nmsg.newvalue = msg.newvalue.toString();\nmsg.topic = 6;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -14403,7 +14319,7 @@
         "height": 1,
         "passthru": false,
         "mode": "text",
-        "delay": "100",
+        "delay": "0",
         "topic": "",
         "topicType": "str",
         "x": 620,
@@ -14419,7 +14335,7 @@
         "type": "ui_text",
         "z": "3fb5a67.37c495a",
         "group": "f12df54.fdd1f08",
-        "order": 20,
+        "order": 21,
         "width": 6,
         "height": 1,
         "name": "",
@@ -14436,7 +14352,7 @@
         "z": "3fb5a67.37c495a",
         "name": "",
         "group": "f12df54.fdd1f08",
-        "order": 22,
+        "order": 23,
         "width": 6,
         "height": 1,
         "passthru": false,
@@ -14467,12 +14383,12 @@
         "label": "{{change}}",
         "tooltip": "{{tooltip}}",
         "group": "f12df54.fdd1f08",
-        "order": 18,
+        "order": 19,
         "width": 6,
         "height": 1,
         "passthru": false,
         "mode": "text",
-        "delay": "100",
+        "delay": "0",
         "topic": "",
         "topicType": "str",
         "x": 620,
@@ -14508,7 +14424,7 @@
         "type": "ui_text",
         "z": "3fb5a67.37c495a",
         "group": "f12df54.fdd1f08",
-        "order": 21,
+        "order": 22,
         "width": 6,
         "height": 1,
         "name": "",
@@ -14527,12 +14443,12 @@
         "label": "{{change}}",
         "tooltip": "{{tooltip}}",
         "group": "f12df54.fdd1f08",
-        "order": 19,
+        "order": 20,
         "width": 6,
         "height": 1,
         "passthru": false,
         "mode": "text",
-        "delay": "100",
+        "delay": "0",
         "topic": "",
         "topicType": "str",
         "x": 620,
@@ -14569,7 +14485,7 @@
         "z": "3fb5a67.37c495a",
         "name": "",
         "group": "f12df54.fdd1f08",
-        "order": 23,
+        "order": 24,
         "width": 6,
         "height": 1,
         "passthru": false,
@@ -14621,7 +14537,7 @@
         "height": 1,
         "passthru": false,
         "mode": "text",
-        "delay": "100",
+        "delay": "0",
         "topic": "vhigh",
         "topicType": "str",
         "x": 610,
@@ -14759,7 +14675,7 @@
         "height": 1,
         "passthru": false,
         "mode": "text",
-        "delay": "100",
+        "delay": "0",
         "topic": "vlow",
         "topicType": "str",
         "x": 610,
@@ -14775,7 +14691,7 @@
         "type": "ui_text",
         "z": "3fb5a67.37c495a",
         "group": "f12df54.fdd1f08",
-        "order": 26,
+        "order": 27,
         "width": 6,
         "height": 1,
         "name": "",
@@ -14812,7 +14728,7 @@
         "z": "3fb5a67.37c495a",
         "name": "",
         "group": "f12df54.fdd1f08",
-        "order": 27,
+        "order": 28,
         "width": 6,
         "height": 1,
         "passthru": false,
@@ -14881,7 +14797,7 @@
         "label": "{{msg.label}}",
         "tooltip": "",
         "group": "f12df54.fdd1f08",
-        "order": 28,
+        "order": 29,
         "width": 0,
         "height": 0,
         "wrap": false,
@@ -15038,7 +14954,7 @@
         "label": "{{msg.label}}",
         "tooltip": "",
         "group": "f12df54.fdd1f08",
-        "order": 29,
+        "order": 30,
         "width": 0,
         "height": 0,
         "wrap": false,
@@ -15213,12 +15129,12 @@
         "label": "{{change}}",
         "tooltip": "{{tooltip}}",
         "group": "f12df54.fdd1f08",
-        "order": 24,
+        "order": 25,
         "width": 6,
         "height": 1,
         "passthru": false,
         "mode": "text",
-        "delay": "100",
+        "delay": "0",
         "topic": "",
         "topicType": "str",
         "x": 620,
@@ -15354,8 +15270,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 470,
-        "y": 4860,
+        "x": 1270,
+        "y": 4980,
         "wires": [
             [
                 "4712cba4.41ee7c"
@@ -15383,8 +15299,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "str",
-        "x": 330,
-        "y": 4860,
+        "x": 1130,
+        "y": 4980,
         "wires": [
             [
                 "9c46bda9.b88be"
@@ -15401,8 +15317,8 @@
         "chunk": false,
         "sendError": false,
         "encoding": "none",
-        "x": 610,
-        "y": 4860,
+        "x": 1410,
+        "y": 4980,
         "wires": [
             [
                 "29f31930.b4aaee"
@@ -15416,8 +15332,8 @@
         "name": "",
         "action": "str",
         "property": "payload",
-        "x": 760,
-        "y": 4860,
+        "x": 1560,
+        "y": 4980,
         "wires": [
             [
                 "9bf5d05b.f3bdd8"
@@ -15429,7 +15345,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "START",
-        "func": "var label = global.get('log_start');\n\n// set new flow variable\nflow.set('loggingM2',0);\n\nmsg.enabled = false;\nmsg.background = 'green';\n\nmsg.label = label;\nreturn msg;",
+        "func": "var label = global.get('log_startM2');\n\n// set new flow variable\nflow.set('loggingM2',0);\n\nmsg.enabled = false;\nmsg.background = 'green';\n\nmsg.label = label;\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -15448,7 +15364,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "LOGGING",
-        "func": "var label = global.get('log_logging');\n// set new flow variable\nflow.set('loggingM2',1);\n\nmsg.background = 'grey';\nmsg.enabled = false;\nmsg.label = label;\n\n\nreturn msg;",
+        "func": "var label = global.get('log_loggingM2');\n// set new flow variable\nflow.set('loggingM2',1);\n\nmsg.background = 'grey';\nmsg.enabled = false;\nmsg.label = label;\n\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -15503,7 +15419,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "",
-        "func": "var label = global.get('log_file');\n\nvar email = flow.get('LogToEmailM2');\n\nmsg.to = email;\n\nmsg.topic = topic;\nmsg.filename = '/home/nuci3/Desktop/logfileM2.csv';\n\nreturn msg;",
+        "func": "var label = global.get('log_fileM2');\n\nvar email = flow.get('LogToEmailM2');\n\nmsg.to = email;\n\nmsg.topic = topic;\nmsg.filename = '/home/nuci3/Desktop/logfileM2.csv';\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -15522,7 +15438,7 @@
         "type": "debug",
         "z": "3fb5a67.37c495a",
         "name": "",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -15566,7 +15482,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "disable STOP",
-        "func": "var label = global.get('log_stop');\n// set new flow variable\n// flow.set('logging',0);\n\nmsg.background = 'grey';\nmsg.enabled = false;\nmsg.label = label;\nreturn msg;\n",
+        "func": "var label = global.get('log_stopM2');\n// set new flow variable\n// flow.set('logging',0);\n\nmsg.background = 'grey';\nmsg.enabled = false;\nmsg.label = label;\nreturn msg;\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -15614,7 +15530,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "enable STOP",
-        "func": "var label = global.get('log_stop');\n// set new flow variable\n//flow.set('logging',1);\n\nmsg.background = 'red';\nmsg.enabled = true;\nmsg.label = label;\n\n\nreturn msg;",
+        "func": "var label = global.get('log_stopM2');\n// set new flow variable\n//flow.set('logging',1);\n\nmsg.background = 'red';\nmsg.enabled = true;\nmsg.label = label;\n\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -15720,7 +15636,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "enable START",
-        "func": "var label = global.get('log_start');\n// set new flow variable\nflow.set('loggingM2',0);\n\nmsg.background = 'green';\nmsg.label = label;\nmsg.payload != '' ? msg.enabled = true : msg.enabled = false;\n\nreturn msg;",
+        "func": "var label = global.get('log_startM2');\n// set new flow variable\nflow.set('loggingM2',0);\n\nmsg.background = 'green';\nmsg.label = label;\nmsg.payload != '' ? msg.enabled = true : msg.enabled = false;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -15848,41 +15764,6 @@
         ]
     },
     {
-        "id": "4f53d74f.6d70d8",
-        "type": "file",
-        "z": "3fb5a67.37c495a",
-        "name": "append file",
-        "filename": "",
-        "appendNewline": true,
-        "createDir": false,
-        "overwriteFile": "false",
-        "encoding": "none",
-        "x": 890,
-        "y": 3780,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "e5fd68c1.edae68",
-        "type": "function",
-        "z": "3fb5a67.37c495a",
-        "name": "trim",
-        "func": "\nmsg.original = msg.payload.trim();\nmsg.payload = String(msg.timestamp) + ',' + String(msg.topic) + ',' + String(msg.original);\nmsg.filename = '/home/nuci3/Desktop/logfileM2.csv';\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 730,
-        "y": 3780,
-        "wires": [
-            [
-                "4f53d74f.6d70d8"
-            ]
-        ]
-    },
-    {
         "id": "aeb65a01.3f1608",
         "type": "switch",
         "z": "3fb5a67.37c495a",
@@ -15909,20 +15790,7 @@
         "wires": [
             [],
             [
-                "287539fc.577136"
-            ]
-        ]
-    },
-    {
-        "id": "287539fc.577136",
-        "type": "timestamp",
-        "z": "3fb5a67.37c495a",
-        "name": "",
-        "x": 570,
-        "y": 3780,
-        "wires": [
-            [
-                "e5fd68c1.edae68"
+                "77289b0f.2e4404"
             ]
         ]
     },
@@ -15958,7 +15826,7 @@
         "type": "debug",
         "z": "3fb5a67.37c495a",
         "name": "",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -16061,7 +15929,7 @@
         "height": 1,
         "passthru": false,
         "mode": "text",
-        "delay": "100",
+        "delay": "0",
         "topic": "",
         "topicType": "str",
         "x": 610,
@@ -16922,7 +16790,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "",
-        "func": "var label = global.get('log_email');\n\nvar masterid = flow.get('master2ID');\n\nif (msg.payload != '')\n{\n    msg.enabled = true;\n    msg.background = 'green';\n    msg.log_label = label;\n    msg.payload = '';\n}\nelse\n{\n    msg.enabled = false;\n    msg.background = 'grey';\n    msg.payload = ' ';\n    msg.log_label = '';\n}\n\n\n\n\nreturn msg;",
+        "func": "var label = global.get('log_emailM2');\n\nvar masterid = flow.get('master2ID');\n\nif (msg.payload != '')\n{\n    msg.enabled = true;\n    msg.background = 'green';\n    msg.log_label = label;\n    msg.payload = ' ';\n}\nelse\n{\n    msg.enabled = false;\n    msg.background = 'grey';\n    msg.payload = ' ';\n    msg.log_label = '';\n}\n\n\n\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -16942,7 +16810,7 @@
         "z": "3fb5a67.37c495a",
         "group": "f12df54.fdd1f08",
         "name": "drawing3M2",
-        "order": 25,
+        "order": 26,
         "width": 6,
         "height": 3,
         "format": "\n \n <img width=\"100%\" height=\"100%\" alt=\"Image not found\" src=\"data:image/png;base64,{{msg.payload}}\" />\n",
@@ -16995,7 +16863,7 @@
         "z": "3fb5a67.37c495a",
         "group": "f12df54.fdd1f08",
         "name": "logo2M2",
-        "order": 17,
+        "order": 18,
         "width": 6,
         "height": 2,
         "format": "\n \n <img width=\"100%\" height=\"1OO%\" alt=\"Image not found\" src=\"data:image/png;base64,{{msg.payload}}\" />\n",
@@ -17003,8 +16871,8 @@
         "fwdInMessages": true,
         "resendOnRefresh": true,
         "templateScope": "local",
-        "x": 900,
-        "y": 4860,
+        "x": 1700,
+        "y": 4980,
         "wires": [
             []
         ]
@@ -17338,7 +17206,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "Reset MasterID & set options",
-        "func": "// show translated MasterID\nvar master_label = global.get('master2_label');\nmsg.master_label = master_label;\n\n\n// connected devices\nvar device0 = global.get('device0');\nvar device1 = global.get('device1');\nvar device2 = global.get('device2');\n\n\n//configs for empty selection\n// mperiod\nmsg.mperiod = 0;\n// mwindow\nmsg.mwindow = 0;\n// vhigh\nmsg.vhigh = 0;\n// vlow\nmsg.vlow = 0;\n// rcharge\nmsg.rcharge = 0;\n// description\nmsg.description = 'undefined';\n\n// when language selected, reset master ID\nmsg.payload = '';\nmsg.options = [device0,device1,device2];\n\n\nreturn msg;",
+        "func": "// show translated MasterID\nvar master_label = global.get('master2_labelM2');\nmsg.master_label = master_label;\n\n\n// connected devices\nvar device0 = global.get('device0');\nvar device1 = global.get('device1');\nvar device2 = global.get('device2');\n\n\n//configs for empty selection\n// mperiod\nmsg.mperiod = 0;\n// mwindow\nmsg.mwindow = 0;\n// vhigh\nmsg.vhigh = 0;\n// vlow\nmsg.vlow = 0;\n// rcharge\nmsg.rcharge = 0;\n// description\nmsg.description = 'undefined';\n\n// when language selected, reset master ID\nmsg.payload = '';\nmsg.options = [device0,device1,device2];\n\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -17586,7 +17454,7 @@
             "fbe3beb2.d62668"
         ],
         "x": 595,
-        "y": 1100,
+        "y": 1120,
         "wires": []
     },
     {
@@ -17599,7 +17467,7 @@
             "fbe3beb2.d62668"
         ],
         "x": 595,
-        "y": 1200,
+        "y": 1240,
         "wires": []
     },
     {
@@ -17822,7 +17690,7 @@
         "type": "debug",
         "z": "3fb5a67.37c495a",
         "name": "",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -17839,7 +17707,7 @@
         "type": "debug",
         "z": "3fb5a67.37c495a",
         "name": "",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -17856,7 +17724,7 @@
         "type": "debug",
         "z": "3fb5a67.37c495a",
         "name": "",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -18143,5 +18011,553 @@
             ],
             []
         ]
+    },
+    {
+        "id": "d216e22e.ec2318",
+        "type": "debug",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2030,
+        "y": 980,
+        "wires": []
+    },
+    {
+        "id": "bac7284.0ee80d8",
+        "type": "debug",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2190,
+        "y": 2240,
+        "wires": []
+    },
+    {
+        "id": "4957a6f9.97ee3",
+        "type": "debug",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1750,
+        "y": 1800,
+        "wires": []
+    },
+    {
+        "id": "be8d9df8.35b0e",
+        "type": "debug",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1890,
+        "y": 2200,
+        "wires": []
+    },
+    {
+        "id": "2c7813dc.062fd4",
+        "type": "debug",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 290,
+        "y": 1100,
+        "wires": []
+    },
+    {
+        "id": "a8b3fefe.5ae648",
+        "type": "debug",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 290,
+        "y": 1220,
+        "wires": []
+    },
+    {
+        "id": "44742ad8.fadcf4",
+        "type": "ui_template",
+        "z": "3fb5a67.37c495a",
+        "group": "f12df54.fdd1f08",
+        "name": "drawing1M1",
+        "order": 1,
+        "width": 6,
+        "height": "2",
+        "format": "\n \n <img width=\"100%\" height=\"100%\" alt=\"Image not found\" src=\"data:image/png;base64,{{msg.payload}}\" />\n",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "x": 890,
+        "y": 2860,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4095ddda.b9b82c",
+        "type": "function",
+        "z": "3fb5a67.37c495a",
+        "name": "msg.filename",
+        "func": "msg.filename = \"/home/nuci3/Desktop/PNG Tekeningen1.png\";\nreturn msg;\n    \n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 450,
+        "y": 2860,
+        "wires": [
+            [
+                "a3fbda9e.267e38"
+            ]
+        ]
+    },
+    {
+        "id": "d5a6474.c2ae238",
+        "type": "inject",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "x": 310,
+        "y": 2860,
+        "wires": [
+            [
+                "4095ddda.b9b82c"
+            ]
+        ]
+    },
+    {
+        "id": "a3fbda9e.267e38",
+        "type": "file in",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "filename": "",
+        "format": "",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "x": 590,
+        "y": 2860,
+        "wires": [
+            [
+                "cd5ab2f7.e34ed8"
+            ]
+        ]
+    },
+    {
+        "id": "cd5ab2f7.e34ed8",
+        "type": "base64",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "action": "str",
+        "property": "payload",
+        "x": 740,
+        "y": 2860,
+        "wires": [
+            [
+                "44742ad8.fadcf4"
+            ]
+        ]
+    },
+    {
+        "id": "24e59199.5f340e",
+        "type": "ui_template",
+        "z": "3fb5a67.37c495a",
+        "group": "f12df54.fdd1f08",
+        "name": "drawing1M2",
+        "order": 17,
+        "width": 6,
+        "height": "2",
+        "format": "\n \n <img width=\"100%\" height=\"100%\" alt=\"Image not found\" src=\"data:image/png;base64,{{msg.payload}}\" />\n",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "x": 1690,
+        "y": 4920,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e0c0859c.65411",
+        "type": "function",
+        "z": "3fb5a67.37c495a",
+        "name": "msg.filename",
+        "func": "msg.filename = \"/home/nuci3/Desktop/PNG Tekeningen1.png\";\nreturn msg;\n    \n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1250,
+        "y": 4920,
+        "wires": [
+            [
+                "1efaf06a.4f8d48"
+            ]
+        ]
+    },
+    {
+        "id": "b1784e98.13cb2",
+        "type": "inject",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "x": 1110,
+        "y": 4920,
+        "wires": [
+            [
+                "e0c0859c.65411"
+            ]
+        ]
+    },
+    {
+        "id": "1efaf06a.4f8d48",
+        "type": "file in",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "filename": "",
+        "format": "",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "x": 1390,
+        "y": 4920,
+        "wires": [
+            [
+                "23eb013e.3cff5e"
+            ]
+        ]
+    },
+    {
+        "id": "23eb013e.3cff5e",
+        "type": "base64",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "action": "str",
+        "property": "payload",
+        "x": 1540,
+        "y": 4920,
+        "wires": [
+            [
+                "24e59199.5f340e"
+            ]
+        ]
+    },
+    {
+        "id": "d06a03c1.3b5cf",
+        "type": "debug",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1090,
+        "y": 1540,
+        "wires": []
+    },
+    {
+        "id": "8e2307df.e83af8",
+        "type": "debug",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 610,
+        "y": 1360,
+        "wires": []
+    },
+    {
+        "id": "c21ffa36.231d98",
+        "type": "debug",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 770,
+        "y": 1360,
+        "wires": []
+    },
+    {
+        "id": "d6ce1dd5.77ed9",
+        "type": "debug",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1370,
+        "y": 1540,
+        "wires": []
+    },
+    {
+        "id": "cec7989d.b5bc1",
+        "type": "debug",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 950,
+        "y": 1520,
+        "wires": []
+    },
+    {
+        "id": "de3c3c5.39fd4c",
+        "type": "debug",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 890,
+        "y": 1620,
+        "wires": []
+    },
+    {
+        "id": "23370be2.c00774",
+        "type": "postgrestor",
+        "z": "3fb5a67.37c495a",
+        "name": "sensor_data@localhost",
+        "query": "SELECT  * FROM  sensor_data_table\nORDER BY \"ts\" DESC\nLIMIT 1;",
+        "postgresDB": "de6b1325.f01d58",
+        "output": true,
+        "outputs": 1,
+        "x": 630,
+        "y": 1720,
+        "wires": [
+            [
+                "7879118a.6a11f8"
+            ]
+        ]
+    },
+    {
+        "id": "7879118a.6a11f8",
+        "type": "function",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "func": "msg.payload =\n    'Time'+ ',' + msg.payload.rows[0].ts + ',' +\n    'MasterID'+ ',' + msg.payload.rows[0].masterid + ',' +\n    'SensorID'+ ',' + String(msg.payload.rows[0].sensorid) + ',' +\n    'Description'+ ',' + msg.payload.rows[0].description + ',' +\n    'Period(sec)'+ ',' + String(msg.payload.rows[0].mperiod) + ',' +\n    'Duration(sec)'+ ',' + String(msg.payload.rows[0].mwindow) + ',' +\n    'Charge Resistor(Ohm)'+ ',' + String(msg.payload.rows[0].rcharge) + ',' +\n    'V High(mV)'+ ',' + String(msg.payload.rows[0].vhigh) + ',' +\n    'V Low(mV)'+ ',' + String(msg.payload.rows[0].vlow) + ',' +\n    'Sequence'+ ',' + String(msg.payload.rows[0].sequence) + ',' +\n    'Measurement'+ ',' + String(msg.payload.rows[0].cap) + ',' +\n    'Surface Temp(°C)'+ ',' + String(msg.payload.rows[0].surftemp / 100.0) + ',' +\n    'Internal Temp(°C)'+ ',' + String(msg.payload.rows[0].inttemp / 100.0) + ',' +\n    'External Temp (°C)'+ ',' + String(msg.payload.rows[0].exttemp / 100.0) + ',' +\n    'Movements'+ ',' + String(msg.payload.rows[0].accel) + ',' +\n    'Battery(mV)'+ ',' + String(msg.payload.rows[0].mvbat) + ',' +\n    'Running Average Measurement'+ ',' + String(msg.payload.rows[0].average) + ',' +\n    'Standard Deviation'+ ',' + String(msg.payload.rows[0].stdev) + ',' +\n    'Z Score'+ ',' + String(msg.payload.rows[0].z) + ',' +\n    'Noise(mV)'+ ',' + String(msg.payload.rows[0].mvnoise);\n\n\nmsg.filename = '/home/nuci3/Desktop/logfileM1.csv';\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 840,
+        "y": 1720,
+        "wires": [
+            [
+                "cf8f5ac8.fc775"
+            ]
+        ]
+    },
+    {
+        "id": "cf8f5ac8.fc775",
+        "type": "file",
+        "z": "3fb5a67.37c495a",
+        "name": "append file",
+        "filename": "",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 1030,
+        "y": 1720,
+        "wires": [
+            [
+                "87874c94.c80878"
+            ]
+        ]
+    },
+    {
+        "id": "87874c94.c80878",
+        "type": "debug",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1170,
+        "y": 1720,
+        "wires": []
+    },
+    {
+        "id": "77289b0f.2e4404",
+        "type": "postgrestor",
+        "z": "3fb5a67.37c495a",
+        "name": "sensor_data@localhost",
+        "query": "SELECT  * FROM  sensor_data_table\nORDER BY \"ts\" DESC\nLIMIT 1;",
+        "postgresDB": "de6b1325.f01d58",
+        "output": true,
+        "outputs": 1,
+        "x": 650,
+        "y": 3780,
+        "wires": [
+            [
+                "28835e4f.4736f2"
+            ]
+        ]
+    },
+    {
+        "id": "28835e4f.4736f2",
+        "type": "function",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "func": "msg.payload =\n    'Time'+ ',' + msg.payload.rows[0].ts + ',' +\n    'MasterID'+ ',' + msg.payload.rows[0].masterid + ',' +\n    'SensorID'+ ',' + String(msg.payload.rows[0].sensorid) + ',' +\n    'Description'+ ',' + msg.payload.rows[0].description + ',' +\n    'Period(sec)'+ ',' + String(msg.payload.rows[0].mperiod) + ',' +\n    'Duration(sec)'+ ',' + String(msg.payload.rows[0].mwindow) + ',' +\n    'Charge Resistor(Ohm)'+ ',' + String(msg.payload.rows[0].rcharge) + ',' +\n    'V High(mV)'+ ',' + String(msg.payload.rows[0].vhigh) + ',' +\n    'V Low(mV)'+ ',' + String(msg.payload.rows[0].vlow) + ',' +\n    'Sequence'+ ',' + String(msg.payload.rows[0].sequence) + ',' +\n    'Measurement'+ ',' + String(msg.payload.rows[0].cap) + ',' +\n    'Surface Temp(°C)'+ ',' + String(msg.payload.rows[0].surftemp / 100.0) + ',' +\n    'Internal Temp(°C)'+ ',' + String(msg.payload.rows[0].inttemp / 100.0) + ',' +\n    'External Temp (°C)'+ ',' + String(msg.payload.rows[0].exttemp / 100.0) + ',' +\n    'Movements'+ ',' + String(msg.payload.rows[0].accel) + ',' +\n    'Battery(mV)'+ ',' + String(msg.payload.rows[0].mvbat) + ',' +\n    'Running Average Measurement'+ ',' + String(msg.payload.rows[0].average) + ',' +\n    'Standard Deviation'+ ',' + String(msg.payload.rows[0].stdev) + ',' +\n    'Z Score'+ ',' + String(msg.payload.rows[0].z) + ',' +\n    'Noise(mV)'+ ',' + String(msg.payload.rows[0].mvnoise);\n\n\nmsg.filename = '/home/nuci3/Desktop/logfileM2.csv';\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 860,
+        "y": 3780,
+        "wires": [
+            [
+                "2fd0612.756ba1e"
+            ]
+        ]
+    },
+    {
+        "id": "2fd0612.756ba1e",
+        "type": "file",
+        "z": "3fb5a67.37c495a",
+        "name": "append file",
+        "filename": "",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 1050,
+        "y": 3780,
+        "wires": [
+            [
+                "a9726312.f11d7"
+            ]
+        ]
+    },
+    {
+        "id": "a9726312.f11d7",
+        "type": "debug",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1190,
+        "y": 3780,
+        "wires": []
     }
 ]
