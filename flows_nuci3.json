@@ -1248,6 +1248,34 @@
         "height": 1
     },
     {
+        "id": "111f74ae.8cf32b",
+        "type": "serial-port",
+        "serialport": "/dev/ttyACM3",
+        "serialbaud": "115200",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": false,
+        "responsetimeout": "5000"
+    },
+    {
+        "id": "7fe74a3a.77476c",
+        "type": "serial-port",
+        "serialport": "/dev/ttyACM4",
+        "serialbaud": "115200",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": false,
+        "responsetimeout": "5000"
+    },
+    {
         "id": "3794180a.7bf398",
         "type": "inject",
         "z": "48325126.46d01",
@@ -2200,8 +2228,8 @@
         "z": "3fb5a67.37c495a",
         "name": "Receive data from Masters & write to Timeseries database",
         "info": "",
-        "x": 290,
-        "y": 940,
+        "x": 270,
+        "y": 760,
         "wires": []
     },
     {
@@ -6402,7 +6430,8 @@
         "y": 1060,
         "wires": [
             [
-                "145efc8d.715e83"
+                "145efc8d.715e83",
+                "10377342.5536dd"
             ]
         ]
     },
@@ -6504,12 +6533,11 @@
         "z": "3fb5a67.37c495a",
         "name": "",
         "serial": "dc726705.a597c8",
-        "x": 130,
-        "y": 1060,
+        "x": 110,
+        "y": 880,
         "wires": [
             [
-                "be96bd9d.aac458",
-                "af3a836c.a6173"
+                "be96bd9d.aac458"
             ]
         ]
     },
@@ -10132,7 +10160,7 @@
         "topic": "topic",
         "topicType": "msg",
         "x": 960,
-        "y": 1400,
+        "y": 1460,
         "wires": [
             [
                 "476a9d69.d7fe54",
@@ -10160,7 +10188,7 @@
         "topic": "topic",
         "topicType": "msg",
         "x": 510,
-        "y": 1460,
+        "y": 1520,
         "wires": [
             [
                 "bea6531.085873",
@@ -10442,7 +10470,7 @@
         "finalize": "",
         "libs": [],
         "x": 300,
-        "y": 1460,
+        "y": 1520,
         "wires": [
             [
                 "d82ac10e.a4e71"
@@ -10461,7 +10489,7 @@
         "finalize": "",
         "libs": [],
         "x": 710,
-        "y": 1460,
+        "y": 1520,
         "wires": [
             [
                 "d82ac10e.a4e71",
@@ -10481,7 +10509,7 @@
         "finalize": "",
         "libs": [],
         "x": 360,
-        "y": 1400,
+        "y": 1460,
         "wires": [
             [
                 "4ccf09bd.0ad968"
@@ -10499,7 +10527,7 @@
         "overwriteFile": "delete",
         "encoding": "none",
         "x": 520,
-        "y": 1400,
+        "y": 1460,
         "wires": [
             []
         ]
@@ -10516,7 +10544,7 @@
         "finalize": "",
         "libs": [],
         "x": 780,
-        "y": 1600,
+        "y": 1660,
         "wires": [
             [
                 "baf55505.67997"
@@ -10537,7 +10565,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 910,
-        "y": 1460,
+        "y": 1520,
         "wires": []
     },
     {
@@ -10560,7 +10588,7 @@
         "to": "",
         "reg": false,
         "x": 1180,
-        "y": 1360,
+        "y": 1400,
         "wires": [
             [
                 "885cb1be.630328"
@@ -10579,7 +10607,7 @@
         "finalize": "",
         "libs": [],
         "x": 300,
-        "y": 1540,
+        "y": 1600,
         "wires": [
             [
                 "ed02be4d.0777a8"
@@ -10606,7 +10634,7 @@
         "topic": "topic",
         "topicType": "msg",
         "x": 510,
-        "y": 1540,
+        "y": 1600,
         "wires": [
             [
                 "4ccf4558.16df8c",
@@ -10627,7 +10655,7 @@
         "finalize": "",
         "libs": [],
         "x": 780,
-        "y": 1540,
+        "y": 1600,
         "wires": [
             [
                 "ed02be4d.0777a8"
@@ -10641,7 +10669,7 @@
         "name": "data logging ui (part 1)",
         "info": "",
         "x": 180,
-        "y": 1400,
+        "y": 1460,
         "wires": []
     },
     {
@@ -10655,11 +10683,11 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 600,
-        "y": 1060,
+        "x": 580,
+        "y": 880,
         "wires": [
             [
-                "77cf8a52.acbcec"
+                "b9758b69.0dc918"
             ]
         ]
     },
@@ -10674,7 +10702,7 @@
         "sendError": false,
         "encoding": "none",
         "x": 950,
-        "y": 1600,
+        "y": 1660,
         "wires": [
             [
                 "44db0722.04334",
@@ -10702,7 +10730,7 @@
         "to": "",
         "reg": false,
         "x": 1160,
-        "y": 1600,
+        "y": 1660,
         "wires": [
             [
                 "bb223f84.15df6",
@@ -10722,7 +10750,7 @@
         "name": "",
         "dname": "",
         "x": 1370,
-        "y": 1600,
+        "y": 1660,
         "wires": []
     },
     {
@@ -10739,7 +10767,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 1370,
-        "y": 1360,
+        "y": 1400,
         "wires": []
     },
     {
@@ -10754,7 +10782,7 @@
         "finalize": "",
         "libs": [],
         "x": 1160,
-        "y": 1400,
+        "y": 1460,
         "wires": [
             [
                 "d82ac10e.a4e71",
@@ -10785,12 +10813,11 @@
         "z": "3fb5a67.37c495a",
         "name": "",
         "serial": "fd6c249c.71f2d8",
-        "x": 130,
-        "y": 1180,
+        "x": 110,
+        "y": 1000,
         "wires": [
             [
-                "15d44a5b.90cc56",
-                "2c7813dc.062fd4"
+                "15d44a5b.90cc56"
             ]
         ]
     },
@@ -10805,8 +10832,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 600,
-        "y": 1180,
+        "x": 580,
+        "y": 1000,
         "wires": [
             [
                 "28bcd772.79931"
@@ -10819,12 +10846,11 @@
         "z": "3fb5a67.37c495a",
         "name": "",
         "serial": "50f22906.5ea4b",
-        "x": 130,
-        "y": 1300,
+        "x": 110,
+        "y": 1120,
         "wires": [
             [
-                "d02be727.9a2718",
-                "a8b3fefe.5ae648"
+                "d02be727.9a2718"
             ]
         ]
     },
@@ -10839,8 +10865,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 600,
-        "y": 1300,
+        "x": 580,
+        "y": 1120,
         "wires": [
             [
                 "595912c7.3a958c"
@@ -10865,30 +10891,6 @@
         "wires": []
     },
     {
-        "id": "77cf8a52.acbcec",
-        "type": "delay",
-        "z": "3fb5a67.37c495a",
-        "name": "",
-        "pauseType": "rate",
-        "timeout": "5",
-        "timeoutUnits": "seconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "x": 930,
-        "y": 1060,
-        "wires": [
-            [
-                "b9758b69.0dc918",
-                "10377342.5536dd"
-            ]
-        ]
-    },
-    {
         "id": "28bcd772.79931",
         "type": "delay",
         "z": "3fb5a67.37c495a",
@@ -10903,11 +10905,11 @@
         "randomLast": "5",
         "randomUnits": "seconds",
         "drop": false,
-        "x": 800,
-        "y": 1180,
+        "x": 780,
+        "y": 1000,
         "wires": [
             [
-                "77cf8a52.acbcec"
+                "b9758b69.0dc918"
             ]
         ]
     },
@@ -10926,11 +10928,11 @@
         "randomLast": "5",
         "randomUnits": "seconds",
         "drop": false,
-        "x": 780,
-        "y": 1300,
+        "x": 760,
+        "y": 1120,
         "wires": [
             [
-                "77cf8a52.acbcec"
+                "b9758b69.0dc918"
             ]
         ]
     },
@@ -10947,8 +10949,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1050,
-        "y": 1020,
+        "x": 1150,
+        "y": 980,
         "wires": []
     },
     {
@@ -11041,7 +11043,7 @@
         "type": "debug",
         "z": "3fb5a67.37c495a",
         "name": "",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -11095,13 +11097,23 @@
                 "t": "eq",
                 "v": "/dev/ttyACM2",
                 "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "/dev/ttyACM3",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "/dev/ttyACM4",
+                "vt": "str"
             }
         ],
         "checkall": "true",
         "repair": false,
-        "outputs": 3,
+        "outputs": 5,
         "x": 1890,
-        "y": 2260,
+        "y": 2280,
         "wires": [
             [
                 "10ceb888.3ae5df",
@@ -11113,6 +11125,14 @@
             ],
             [
                 "4ac407a.42f9d78",
+                "bac7284.0ee80d8"
+            ],
+            [
+                "aaabb14e.b5476",
+                "bac7284.0ee80d8"
+            ],
+            [
+                "e49b889a.191b58",
                 "bac7284.0ee80d8"
             ]
         ]
@@ -11170,8 +11190,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 460,
-        "y": 1060,
+        "x": 440,
+        "y": 880,
         "wires": [
             [
                 "71cb0518.cbaef4"
@@ -11189,8 +11209,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 460,
-        "y": 1180,
+        "x": 440,
+        "y": 1000,
         "wires": [
             [
                 "1446fd08.2a02db"
@@ -11208,8 +11228,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 460,
-        "y": 1300,
+        "x": 440,
+        "y": 1120,
         "wires": [
             [
                 "2ca89b40.76cb24"
@@ -11221,8 +11241,8 @@
         "type": "timestamp",
         "z": "3fb5a67.37c495a",
         "name": "",
-        "x": 290,
-        "y": 1060,
+        "x": 270,
+        "y": 880,
         "wires": [
             [
                 "311261ad.c6341e"
@@ -11234,8 +11254,8 @@
         "type": "timestamp",
         "z": "3fb5a67.37c495a",
         "name": "",
-        "x": 290,
-        "y": 1180,
+        "x": 270,
+        "y": 1000,
         "wires": [
             [
                 "591e77af.79ada8"
@@ -11247,8 +11267,8 @@
         "type": "timestamp",
         "z": "3fb5a67.37c495a",
         "name": "",
-        "x": 290,
-        "y": 1300,
+        "x": 270,
+        "y": 1120,
         "wires": [
             [
                 "362f57a3.ea9ca"
@@ -11278,7 +11298,8 @@
         "y": 680,
         "wires": [
             [
-                "881accc2.12a77"
+                "881accc2.12a77",
+                "27734361.92531c"
             ]
         ]
     },
@@ -11290,8 +11311,8 @@
         "scope": [
             "694ff596.7d1114"
         ],
-        "x": 120,
-        "y": 1020,
+        "x": 100,
+        "y": 840,
         "wires": [
             [
                 "abba1082.46158"
@@ -11309,11 +11330,13 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 290,
-        "y": 1020,
+        "x": 270,
+        "y": 840,
         "wires": [
             [
-                "f4bf6a54.619718"
+                "f4bf6a54.619718",
+                "af3a836c.a6173",
+                "d84a1146.0d8108"
             ]
         ]
     },
@@ -11325,8 +11348,8 @@
         "scope": [
             "eb262a8f.019ba8"
         ],
-        "x": 120,
-        "y": 1140,
+        "x": 100,
+        "y": 960,
         "wires": [
             [
                 "7b1ad4f7.ec60a4"
@@ -11341,8 +11364,8 @@
         "scope": [
             "9120525e.fd0aa"
         ],
-        "x": 120,
-        "y": 1260,
+        "x": 100,
+        "y": 1080,
         "wires": [
             [
                 "f15fe6d.1f14818"
@@ -11354,17 +11377,19 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "default config",
-        "func": "// get status\n\nvar status = msg.status.text;\nvar parts = status.split(\".\");\nvar temp1 = parts[0];\nvar temp2 = parts[1];\nvar temp3 = parts[2];\n\nif (temp3 == 'connected')\n{\n    msg.sensorid = 0;\n    msg.masterid = '/dev/ttyACM1';\n    msg.mperiod = 5;\n    msg.rcharge = 364705;\n    msg.vhigh = 1034;\n    msg.vlow = 512;\n    msg.mwindow = 1;\n    msg.description = 'default config';\n // for global variable setting\n    msg.payload = msg.masterid;\n}\nelse\n{\n     // for global variable setting\n    msg.payload = null;\n}\n\n\nreturn msg;",
+        "func": "// get status\n// resets to default values when disconnect/connect or when redeployed\n\nvar status = msg.status.text;\nvar parts = status.split(\".\");\nvar temp1 = parts[0];\nvar temp2 = parts[1];\nvar temp3 = parts[2];\n\nif (temp3 == 'connected')\n{\n    msg.sensorid = 0;\n    msg.masterid = '/dev/ttyACM1';\n    msg.mperiod = 5;\n    msg.rcharge = 364705;\n    msg.vhigh = 1034;\n    msg.vlow = 512;\n    msg.mwindow = 1;\n    msg.description = 'default config';\n // for global variable setting\n    msg.payload = msg.masterid;\n}\nelse\n{\n     // for global variable setting\n    msg.payload = null;\n}\n\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 290,
-        "y": 1140,
+        "x": 270,
+        "y": 960,
         "wires": [
             [
-                "88ce6c66.746dc"
+                "88ce6c66.746dc",
+                "2c7813dc.062fd4",
+                "9ac2a826.57c5a"
             ]
         ]
     },
@@ -11379,11 +11404,13 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 290,
-        "y": 1260,
+        "x": 270,
+        "y": 1080,
         "wires": [
             [
-                "a02d56b5.4d928"
+                "a02d56b5.4d928",
+                "a8b3fefe.5ae648",
+                "8519f18c.a9dc68"
             ]
         ]
     },
@@ -11401,7 +11428,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 1370,
-        "y": 1400,
+        "y": 1460,
         "wires": []
     },
     {
@@ -11415,7 +11442,7 @@
         "name": "log@isenspro.com",
         "dname": "log email",
         "x": 1440,
-        "y": 1640,
+        "y": 1700,
         "wires": []
     },
     {
@@ -12518,7 +12545,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "Reset MasterID & set options",
-        "func": "// show translated MasterID\nvar master_label = global.get('master1_labelM1');\nmsg.master_label = master_label;\n\n\n// connected devices\nvar device0 = global.get('device0');\nvar device1 = global.get('device1');\nvar device2 = global.get('device2');\n\n\n//configs for empty selection\n// mperiod\nmsg.mperiod = 0;\n// mwindow\nmsg.mwindow = 0;\n// vhigh\nmsg.vhigh = 0;\n// vlow\nmsg.vlow = 0;\n// rcharge\nmsg.rcharge = 0;\n// description\nmsg.description = 'undefined';\n\n// when language selected, reset master ID\nmsg.payload = '';\nmsg.options = [device0,device1,device2];\n\n\nreturn msg;",
+        "func": "// show translated MasterID\nvar master_label = global.get('master1_labelM1');\nmsg.master_label = master_label;\n\n\n// connected devices\nvar device0 = global.get('device0');\nvar device1 = global.get('device1');\nvar device2 = global.get('device2');\nvar device3 = global.get('device3');\nvar device4 = global.get('device4');\n\n//configs for empty selection\n// mperiod\nmsg.mperiod = 0;\n// mwindow\nmsg.mwindow = 0;\n// vhigh\nmsg.vhigh = 0;\n// vlow\nmsg.vlow = 0;\n// rcharge\nmsg.rcharge = 0;\n// description\nmsg.description = 'undefined';\n\n// when language selected, reset master ID\nmsg.payload = '';\nmsg.options = [device0,device1,device2,device3,device4];\n\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -13388,7 +13415,7 @@
         "to": "",
         "reg": false,
         "x": 470,
-        "y": 1000,
+        "y": 800,
         "wires": [
             [
                 "638becee.ac7084"
@@ -13415,7 +13442,7 @@
         "to": "",
         "reg": false,
         "x": 470,
-        "y": 1120,
+        "y": 920,
         "wires": [
             [
                 "491d16d6.09384"
@@ -13442,7 +13469,7 @@
         "to": "",
         "reg": false,
         "x": 470,
-        "y": 1240,
+        "y": 1040,
         "wires": [
             [
                 "3a6f0db1.7824d2"
@@ -13492,7 +13519,8 @@
         "y": 1040,
         "wires": [
             [
-                "cc86b8c9.6d335"
+                "cc86b8c9.6d335",
+                "7ea445c9.bede9c"
             ]
         ]
     },
@@ -13528,7 +13556,7 @@
         "finalize": "",
         "libs": [],
         "x": 780,
-        "y": 1400,
+        "y": 1460,
         "wires": [
             [
                 "5c2b98c5.0b8918"
@@ -13665,7 +13693,7 @@
             "a4b1082e.061d48"
         ],
         "x": 675,
-        "y": 1400,
+        "y": 1460,
         "wires": [
             [
                 "d5de4764.e839c",
@@ -15740,11 +15768,21 @@
                 "t": "eq",
                 "v": "/dev/ttyACM2",
                 "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "/dev/ttyACM3",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "/dev/ttyACM4",
+                "vt": "str"
             }
         ],
         "checkall": "true",
         "repair": false,
-        "outputs": 3,
+        "outputs": 5,
         "x": 1910,
         "y": 4320,
         "wires": [
@@ -15753,10 +15791,20 @@
                 "510b0abd.0f0004"
             ],
             [
-                "29d6ab05.e3c854"
+                "29d6ab05.e3c854",
+                "510b0abd.0f0004"
             ],
             [
-                "239c45f2.7e42e2"
+                "239c45f2.7e42e2",
+                "510b0abd.0f0004"
+            ],
+            [
+                "510b0abd.0f0004",
+                "b0cf2726.756f9"
+            ],
+            [
+                "510b0abd.0f0004",
+                "df94ea95.5edca"
             ]
         ]
     },
@@ -15814,8 +15862,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 2030,
-        "y": 4220,
+        "x": 2070,
+        "y": 4200,
         "wires": []
     },
     {
@@ -16967,7 +17015,8 @@
         "y": 3320,
         "wires": [
             [
-                "af321811.136848"
+                "af321811.136848",
+                "4dcf5b75.e9b00c"
             ]
         ]
     },
@@ -17204,7 +17253,7 @@
         "type": "function",
         "z": "3fb5a67.37c495a",
         "name": "Reset MasterID & set options",
-        "func": "// show translated MasterID\nvar master_label = global.get('master2_labelM2');\nmsg.master_label = master_label;\n\n\n// connected devices\nvar device0 = global.get('device0');\nvar device1 = global.get('device1');\nvar device2 = global.get('device2');\n\n\n//configs for empty selection\n// mperiod\nmsg.mperiod = 0;\n// mwindow\nmsg.mwindow = 0;\n// vhigh\nmsg.vhigh = 0;\n// vlow\nmsg.vlow = 0;\n// rcharge\nmsg.rcharge = 0;\n// description\nmsg.description = 'undefined';\n\n// when language selected, reset master ID\nmsg.payload = '';\nmsg.options = [device0,device1,device2];\n\n\nreturn msg;",
+        "func": "// show translated MasterID\nvar master_label = global.get('master2_labelM2');\nmsg.master_label = master_label;\n\n\n// connected devices\nvar device0 = global.get('device0');\nvar device1 = global.get('device1');\nvar device2 = global.get('device2');\nvar device3 = global.get('device3');\nvar device4 = global.get('device4');\n\n\n//configs for empty selection\n// mperiod\nmsg.mperiod = 0;\n// mwindow\nmsg.mwindow = 0;\n// vhigh\nmsg.vhigh = 0;\n// vlow\nmsg.vlow = 0;\n// rcharge\nmsg.rcharge = 0;\n// description\nmsg.description = 'undefined';\n\n// when language selected, reset master ID\nmsg.payload = '';\nmsg.options = [device0,device1,device2,device3,device4];\n\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -17419,7 +17468,9 @@
         "links": [
             "638becee.ac7084",
             "491d16d6.09384",
-            "3a6f0db1.7824d2"
+            "3a6f0db1.7824d2",
+            "ca1a772c.7df75",
+            "7d801dee.b3d88c"
         ],
         "x": 95,
         "y": 680,
@@ -17439,7 +17490,7 @@
             "fbe3beb2.d62668"
         ],
         "x": 595,
-        "y": 1000,
+        "y": 800,
         "wires": []
     },
     {
@@ -17452,7 +17503,7 @@
             "fbe3beb2.d62668"
         ],
         "x": 595,
-        "y": 1120,
+        "y": 920,
         "wires": []
     },
     {
@@ -17465,7 +17516,7 @@
             "fbe3beb2.d62668"
         ],
         "x": 595,
-        "y": 1240,
+        "y": 1040,
         "wires": []
     },
     {
@@ -17476,7 +17527,9 @@
         "links": [
             "638becee.ac7084",
             "491d16d6.09384",
-            "3a6f0db1.7824d2"
+            "3a6f0db1.7824d2",
+            "ca1a772c.7df75",
+            "7d801dee.b3d88c"
         ],
         "x": 75,
         "y": 3320,
@@ -17739,7 +17792,7 @@
         "type": "debug",
         "z": "3fb5a67.37c495a",
         "name": "",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -17747,8 +17800,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 290,
-        "y": 980,
+        "x": 270,
+        "y": 800,
         "wires": []
     },
     {
@@ -18032,7 +18085,7 @@
         "type": "debug",
         "z": "3fb5a67.37c495a",
         "name": "",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -18083,7 +18136,7 @@
         "type": "debug",
         "z": "3fb5a67.37c495a",
         "name": "",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -18091,8 +18144,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 290,
-        "y": 1100,
+        "x": 270,
+        "y": 920,
         "wires": []
     },
     {
@@ -18100,7 +18153,7 @@
         "type": "debug",
         "z": "3fb5a67.37c495a",
         "name": "",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -18108,8 +18161,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 290,
-        "y": 1220,
+        "x": 270,
+        "y": 1040,
         "wires": []
     },
     {
@@ -18328,7 +18381,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 1090,
-        "y": 1540,
+        "y": 1600,
         "wires": []
     },
     {
@@ -18345,7 +18398,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 1370,
-        "y": 1540,
+        "y": 1600,
         "wires": []
     },
     {
@@ -18505,6 +18558,536 @@
         "statusType": "auto",
         "x": 570,
         "y": 1760,
+        "wires": []
+    },
+    {
+        "id": "ec100ada.e7ecc",
+        "type": "serial in",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "serial": "111f74ae.8cf32b",
+        "x": 110,
+        "y": 1240,
+        "wires": [
+            [
+                "679d208e.8d34d"
+            ]
+        ]
+    },
+    {
+        "id": "77aeee85.8606e8",
+        "type": "function",
+        "z": "3fb5a67.37c495a",
+        "name": "add topic",
+        "func": "msg.topic = msg.port;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 1240,
+        "wires": [
+            [
+                "2e6122c0.0b8756"
+            ]
+        ]
+    },
+    {
+        "id": "2e6122c0.0b8756",
+        "type": "delay",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "3",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 760,
+        "y": 1240,
+        "wires": [
+            [
+                "b9758b69.0dc918"
+            ]
+        ]
+    },
+    {
+        "id": "f4689629.0ed83",
+        "type": "function",
+        "z": "3fb5a67.37c495a",
+        "name": "delta time",
+        "func": "\n\n// get flow variable last time\nvar OldSecs=global.get('LastSecsACM3') || 0;\n\n//calculate difference\nvar NewTime = new Date();\n// set new flow variable\nglobal.set('LastMsgTimeACM3',NewTime);\n\nvar timestr = msg.timestamp;\nvar parts = timestr.split(\":\");\nvar hrs = parseInt(parts[0]);\nvar mins = parseInt(parts[1]);\nvar secs = parseInt(parts[2]);\n\nvar NewSecs = hrs*3600+mins*60+secs;\nglobal.set('LastSecsACM3',NewSecs);\n\nif (NewSecs > OldSecs)\n{\n//var temp = parseFloat((NewTime - OldTime)/1000).toFixed(0);\n    msg.mperiod = NewSecs-OldSecs;\n}\nelse\n{\n    msg.mperiod = NewSecs + (24*3600 - OldSecs);\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 1240,
+        "wires": [
+            [
+                "77aeee85.8606e8"
+            ]
+        ]
+    },
+    {
+        "id": "679d208e.8d34d",
+        "type": "timestamp",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "x": 270,
+        "y": 1240,
+        "wires": [
+            [
+                "f4689629.0ed83"
+            ]
+        ]
+    },
+    {
+        "id": "6a2e9f12.061088",
+        "type": "status",
+        "z": "3fb5a67.37c495a",
+        "name": "ttyACM3",
+        "scope": [
+            "ec100ada.e7ecc"
+        ],
+        "x": 100,
+        "y": 1200,
+        "wires": [
+            [
+                "ca33514a.8226d"
+            ]
+        ]
+    },
+    {
+        "id": "ca33514a.8226d",
+        "type": "function",
+        "z": "3fb5a67.37c495a",
+        "name": "default config",
+        "func": "// get status\n\nvar status = msg.status.text;\nvar parts = status.split(\".\");\nvar temp1 = parts[0];\nvar temp2 = parts[1];\nvar temp3 = parts[2];\n\nif (temp3 == 'connected')\n{\n    msg.sensorid = 0;\n    msg.masterid = '/dev/ttyACM3';\n    msg.mperiod = 5;\n    msg.rcharge = 364705;\n    msg.vhigh = 1034;\n    msg.vlow = 512;\n    msg.mwindow = 1;\n    msg.description = 'default config';\n//    msg.payload = 'connected';\n // for global variable setting\n    msg.payload = msg.masterid;\n}\nelse\n{\n     // for global variable setting\n    msg.payload = null\n}\n\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 270,
+        "y": 1200,
+        "wires": [
+            [
+                "e8c9a57f.fb6808",
+                "f63b059c.97db78",
+                "f9e83ec1.0a98f8"
+            ]
+        ]
+    },
+    {
+        "id": "e8c9a57f.fb6808",
+        "type": "change",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "device3",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 470,
+        "y": 1160,
+        "wires": [
+            [
+                "ca1a772c.7df75"
+            ]
+        ]
+    },
+    {
+        "id": "ca1a772c.7df75",
+        "type": "link out",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "links": [
+            "20ce21c7.87540e",
+            "fbe3beb2.d62668"
+        ],
+        "x": 595,
+        "y": 1160,
+        "wires": []
+    },
+    {
+        "id": "dbc897bc.f9fdd8",
+        "type": "serial in",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "serial": "7fe74a3a.77476c",
+        "x": 110,
+        "y": 1360,
+        "wires": [
+            [
+                "6d2b6881.4818b"
+            ]
+        ]
+    },
+    {
+        "id": "ed4f652.fddb398",
+        "type": "function",
+        "z": "3fb5a67.37c495a",
+        "name": "add topic",
+        "func": "msg.topic = msg.port;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 1360,
+        "wires": [
+            [
+                "74a68cce.9df4cc"
+            ]
+        ]
+    },
+    {
+        "id": "74a68cce.9df4cc",
+        "type": "delay",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "4",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 760,
+        "y": 1360,
+        "wires": [
+            [
+                "b9758b69.0dc918"
+            ]
+        ]
+    },
+    {
+        "id": "4ceac008.bb9638",
+        "type": "function",
+        "z": "3fb5a67.37c495a",
+        "name": "delta time",
+        "func": "\n\n// get flow variable last time\nvar OldSecs=global.get('LastSecsACM4') || 0;\n\n//calculate difference\nvar NewTime = new Date();\n// set new flow variable\nglobal.set('LastMsgTimeACM4',NewTime);\n\nvar timestr = msg.timestamp;\nvar parts = timestr.split(\":\");\nvar hrs = parseInt(parts[0]);\nvar mins = parseInt(parts[1]);\nvar secs = parseInt(parts[2]);\n\nvar NewSecs = hrs*3600+mins*60+secs;\nglobal.set('LastSecsACM4',NewSecs);\n\nif (NewSecs > OldSecs)\n{\n//var temp = parseFloat((NewTime - OldTime)/1000).toFixed(0);\n    msg.mperiod = NewSecs-OldSecs;\n}\nelse\n{\n    msg.mperiod = NewSecs + (24*3600 - OldSecs);\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 1360,
+        "wires": [
+            [
+                "ed4f652.fddb398"
+            ]
+        ]
+    },
+    {
+        "id": "6d2b6881.4818b",
+        "type": "timestamp",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "x": 270,
+        "y": 1360,
+        "wires": [
+            [
+                "4ceac008.bb9638"
+            ]
+        ]
+    },
+    {
+        "id": "1979b936.c7e6ff",
+        "type": "status",
+        "z": "3fb5a67.37c495a",
+        "name": "ttyACM4",
+        "scope": [
+            "dbc897bc.f9fdd8"
+        ],
+        "x": 100,
+        "y": 1320,
+        "wires": [
+            [
+                "6c8a8a7b.644c6c"
+            ]
+        ]
+    },
+    {
+        "id": "6c8a8a7b.644c6c",
+        "type": "function",
+        "z": "3fb5a67.37c495a",
+        "name": "default config",
+        "func": "// get status\n\nvar status = msg.status.text;\nvar parts = status.split(\".\");\nvar temp1 = parts[0];\nvar temp2 = parts[1];\nvar temp3 = parts[2];\n\nif (temp3 == 'connected')\n{\n    msg.sensorid = 0;\n    msg.masterid = '/dev/ttyACM4';\n    msg.mperiod = 5;\n    msg.rcharge = 364705;\n    msg.vhigh = 1034;\n    msg.vlow = 512;\n    msg.mwindow = 1;\n    msg.description = 'default config';\n//    msg.payload = 'connected';\n // for global variable setting\n    msg.payload = msg.masterid;\n}\nelse\n{\n     // for global variable setting\n    msg.payload = null\n}\n\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 270,
+        "y": 1320,
+        "wires": [
+            [
+                "ad15d028.fb8b9",
+                "d72161d3.7f07e8",
+                "44e75abf.a84a8c"
+            ]
+        ]
+    },
+    {
+        "id": "ad15d028.fb8b9",
+        "type": "change",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "device4",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 470,
+        "y": 1280,
+        "wires": [
+            [
+                "7d801dee.b3d88c"
+            ]
+        ]
+    },
+    {
+        "id": "7d801dee.b3d88c",
+        "type": "link out",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "links": [
+            "20ce21c7.87540e",
+            "fbe3beb2.d62668"
+        ],
+        "x": 595,
+        "y": 1280,
+        "wires": []
+    },
+    {
+        "id": "4dcf5b75.e9b00c",
+        "type": "debug",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 770,
+        "y": 3380,
+        "wires": []
+    },
+    {
+        "id": "27734361.92531c",
+        "type": "debug",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 730,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "7ea445c9.bede9c",
+        "type": "debug",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1850,
+        "y": 980,
+        "wires": []
+    },
+    {
+        "id": "aaabb14e.b5476",
+        "type": "serial out",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "serial": "111f74ae.8cf32b",
+        "x": 2080,
+        "y": 2420,
+        "wires": []
+    },
+    {
+        "id": "e49b889a.191b58",
+        "type": "serial out",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "serial": "7fe74a3a.77476c",
+        "x": 2080,
+        "y": 2500,
+        "wires": []
+    },
+    {
+        "id": "d84a1146.0d8108",
+        "type": "postgrestor",
+        "z": "3fb5a67.37c495a",
+        "name": "sensor_config@localhost",
+        "query": "INSERT INTO sensor_config_table \n(\n\tmeastime,\n\tmasterid,\n\tsensorid,\n\tmeasperiod,\n\trcharge,\n\tvhigh,\n\tvlow,\n\tdescription\n\n) VALUES\n(\n    '{{msg.mwindow}}',\n    '{{{msg.masterid}}}',\n    '{{msg.sensorid}}',\n    '{{msg.mperiod}}',\n    '{{msg.rcharge}}',\n    '{{msg.vhigh}}',\n    '{{msg.vlow}}',\n    '{{msg.description}}'\n);",
+        "postgresDB": "6733d493.9cca6c",
+        "output": true,
+        "outputs": 1,
+        "x": 510,
+        "y": 840,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9ac2a826.57c5a",
+        "type": "postgrestor",
+        "z": "3fb5a67.37c495a",
+        "name": "sensor_config@localhost",
+        "query": "INSERT INTO sensor_config_table \n(\n\tmeastime,\n\tmasterid,\n\tsensorid,\n\tmeasperiod,\n\trcharge,\n\tvhigh,\n\tvlow,\n\tdescription\n\n) VALUES\n(\n    '{{msg.mwindow}}',\n    '{{{msg.masterid}}}',\n    '{{msg.sensorid}}',\n    '{{msg.mperiod}}',\n    '{{msg.rcharge}}',\n    '{{msg.vhigh}}',\n    '{{msg.vlow}}',\n    '{{msg.description}}'\n);",
+        "postgresDB": "6733d493.9cca6c",
+        "output": true,
+        "outputs": 1,
+        "x": 490,
+        "y": 960,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8519f18c.a9dc68",
+        "type": "postgrestor",
+        "z": "3fb5a67.37c495a",
+        "name": "sensor_config@localhost",
+        "query": "INSERT INTO sensor_config_table \n(\n\tmeastime,\n\tmasterid,\n\tsensorid,\n\tmeasperiod,\n\trcharge,\n\tvhigh,\n\tvlow,\n\tdescription\n\n) VALUES\n(\n    '{{msg.mwindow}}',\n    '{{{msg.masterid}}}',\n    '{{msg.sensorid}}',\n    '{{msg.mperiod}}',\n    '{{msg.rcharge}}',\n    '{{msg.vhigh}}',\n    '{{msg.vlow}}',\n    '{{msg.description}}'\n);",
+        "postgresDB": "6733d493.9cca6c",
+        "output": true,
+        "outputs": 1,
+        "x": 490,
+        "y": 1080,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f63b059c.97db78",
+        "type": "postgrestor",
+        "z": "3fb5a67.37c495a",
+        "name": "sensor_config@localhost",
+        "query": "INSERT INTO sensor_config_table \n(\n\tmeastime,\n\tmasterid,\n\tsensorid,\n\tmeasperiod,\n\trcharge,\n\tvhigh,\n\tvlow,\n\tdescription\n\n) VALUES\n(\n    '{{msg.mwindow}}',\n    '{{{msg.masterid}}}',\n    '{{msg.sensorid}}',\n    '{{msg.mperiod}}',\n    '{{msg.rcharge}}',\n    '{{msg.vhigh}}',\n    '{{msg.vlow}}',\n    '{{msg.description}}'\n);",
+        "postgresDB": "6733d493.9cca6c",
+        "output": true,
+        "outputs": 1,
+        "x": 490,
+        "y": 1200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f9e83ec1.0a98f8",
+        "type": "debug",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 270,
+        "y": 1160,
+        "wires": []
+    },
+    {
+        "id": "d72161d3.7f07e8",
+        "type": "debug",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 270,
+        "y": 1280,
+        "wires": []
+    },
+    {
+        "id": "44e75abf.a84a8c",
+        "type": "postgrestor",
+        "z": "3fb5a67.37c495a",
+        "name": "sensor_config@localhost",
+        "query": "INSERT INTO sensor_config_table \n(\n\tmeastime,\n\tmasterid,\n\tsensorid,\n\tmeasperiod,\n\trcharge,\n\tvhigh,\n\tvlow,\n\tdescription\n\n) VALUES\n(\n    '{{msg.mwindow}}',\n    '{{{msg.masterid}}}',\n    '{{msg.sensorid}}',\n    '{{msg.mperiod}}',\n    '{{msg.rcharge}}',\n    '{{msg.vhigh}}',\n    '{{msg.vlow}}',\n    '{{msg.description}}'\n);",
+        "postgresDB": "6733d493.9cca6c",
+        "output": true,
+        "outputs": 1,
+        "x": 490,
+        "y": 1320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b0cf2726.756f9",
+        "type": "serial out",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "serial": "111f74ae.8cf32b",
+        "x": 2100,
+        "y": 4500,
+        "wires": []
+    },
+    {
+        "id": "df94ea95.5edca",
+        "type": "serial out",
+        "z": "3fb5a67.37c495a",
+        "name": "",
+        "serial": "7fe74a3a.77476c",
+        "x": 2100,
+        "y": 4580,
         "wires": []
     }
 ]
