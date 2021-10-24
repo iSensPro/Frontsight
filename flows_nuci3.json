@@ -2112,7 +2112,7 @@
         "type": "postgrestor",
         "z": "3fb5a67.37c495a",
         "name": "sensor_data@localhost",
-        "query": "DROP TABLE IF EXISTS \"{{ msg.topic }}\" CASCADE;\n\nCREATE TABLE \"{{ msg.topic }}\" (\n\t\"ts\" timestamptz NOT NULL,\n\t\"masterid\" varchar[50] NOT NULL,\n\t\"sensorid\" integer NOT NULL,\n\t\"description\" varchar[50],\n\t\"cap\" integer NOT NULL,\n\t\"accel\" integer NOT NULL,\n\t\"surftemp\" integer NOT NULL,\n\t\"inttemp\" integer NOT NULL,\n\t\"exttemp\" integer NOT NULL,\n\t\"mvbat\" integer NOT NULL,\n\t\"mvnoise\" integer,\n\t\"vhigh\" integer,\n    \"vlow\" integer,\n    \"rcharge\" integer,\n    \"mwindow\" integer,\n    \"mperiod\" integer,\n    \"sequence\" integer,\n    \"average\" integer,\n    \"stdev\" float,\n    \"z\" float,\n\tCONSTRAINT \"sensor_data_table_pk\" PRIMARY KEY (\"ts\")\n) WITH (\n  OIDS=FALSE\n)\nTABLESPACE pg_default;\n",
+        "query": "DROP TABLE IF EXISTS \"{{ msg.topic }}\" CASCADE;\n\n--CREATE TABLE \"{{ msg.topic }}\" (\n--\t\"ts\" timestamptz NOT NULL,\n--\t\"masterid\" varchar[50] NOT NULL,\n--\t\"sensorid\" integer NOT NULL,\n--\t\"description\" varchar[50],\n--\t\"cap\" integer NOT NULL,\n--\t\"accel\" integer NOT NULL,\n--\t\"surftemp\" integer NOT NULL,\n--\t\"inttemp\" integer NOT NULL,\n--\t\"exttemp\" integer NOT NULL,\n--\t\"mvbat\" integer NOT NULL,\n--\t\"mvnoise\" integer,\n--\t\"vhigh\" integer,\n--  \"vlow\" integer,\n--    \"rcharge\" integer,\n--    \"mwindow\" integer,\n--    \"mperiod\" integer,\n--    \"sequence\" integer,\n--    \"average\" integer,\n--    \"stdev\" float,\n--    \"z\" float,\n--\tCONSTRAINT \"sensor_data_table_pk\" PRIMARY KEY (\"ts\")\n--) WITH (\n--  OIDS=FALSE\n--)\n--TABLESPACE pg_default;\n\n-- change manually z to float instead of float4\n\nCREATE TABLE \"{{ msg.topic }}\" (\n    \"ts\" timestamptz NOT NULL,\n\t\"masterid\" varchar(50) NOT NULL,\n\t\"sensorid\" integer NOT NULL,\n\t\"accel\" integer,\n\t\"average\" integer,\n\t\"customer\" integer,\n\t\"cap\" integer,\n\t\"description\" varchar(50),\n\t\"exttemp\" integer,\n\t\"inttemp\" integer,\n\t\"mperiod\" integer NOT NULL,\n\t\"mvbat\" integer,\n\t\"mvnoise\" integer,\n\t\"mwindow\" integer NOT NULL,\n\t\"rcharge\" integer NOT NULL,\n\t\"sequence\" integer NOT NULL,\n\t\"stdev\" integer,\n\t\"surftemp\" integer,\n\t\"vhigh\" integer NOT NULL,\n\t\"vlow\" integer NOT NULL,\n\t\"z\" float,\n\t\"previous_rssi\" integer,\n\t\"previous_snr\" integer,\n\t\"localtime\" varchar(50),\n\tCONSTRAINT \"sensor_data_table_pk\" PRIMARY KEY (\"ts\",\"masterid\",\"sensorid\")\n) WITH (\n  OIDS=FALSE\n)\nTABLESPACE pg_default;\n",
         "postgresDB": "de28406b.eebd5",
         "output": true,
         "outputs": 1,
@@ -2335,7 +2335,7 @@
         "type": "postgrestor",
         "z": "a66ad1ae.ff0e18",
         "name": "weather_data@localhost",
-        "query": "DROP TABLE IF EXISTS \"{{ msg.topic }}\" CASCADE;\n\n-- lon/lat for geography (better than geometry for worldwide \n-- ST_Distance(geometry, geometry)\n-- ST_GeographyFromText(text)\n-- ST_Transform(geometry, srid)\n-- ST_X(point)\n-- POINT(lon lat)\nCREATE TABLE \"{{ msg.topic }}\"  (\n\t\"weatherts\" TIMESTAMPTZ DEFAULT Now(),\n--\t\"geom\" geography(POINT),\n--\t\"geom\" geography (LINESTRING),\n\t\"geom\" geography (POLYGON),\n\t\"latitude\" numeric,\n\t\"longitude\" numeric,\n\t\"local_time\" varchar(50),\n\t\"day_night\" char,\n\t\"timezone\" varchar(50),\n\t\"timezone_offset\" integer,\n\t\"customer\" integer,\n\t\"weather_id\" integer,\n\t\"weather_main\" varchar(50),\n\t\"weather_description\" varchar(50),\n\t\"weather_icon\" varchar(5),\n\t-- sunrise and sunset in EPOCH/1000\n\t\"dt\" bigint,\n\t\"sunrise\" bigint,\n\t\"sunset\" bigint,\n\t\"temp\" numeric,\n\t\"feelslike\" numeric,\n\t\"pressure\" numeric,\n\t\"humidity\" numeric,\n\t\"dewpoint\" numeric,\n\t\"uvindex\" numeric,\n\t\"clouds\" numeric,\n\t\"visibility\" numeric,\n\t\"windspeed\" numeric,\n\t\"winddirection\" numeric,\n\t\"windgust\" numeric,\n\t\"rain_1h\" numeric,\n\t\"snow_1h\" numeric,\n\t\"hourly_1_rain\" numeric,\n\t\"hourly_1_snow\" numeric,\n\t\"basestation\" varchar(50),\n\tCONSTRAINT \"weather_data_table_pk\" PRIMARY KEY (\"weatherts\")\n) WITH (\n  OIDS=FALSE\n)\nTABLESPACE pg_default;\n\n-- SELECT create_hypertable (\"geom\", \"weatherts\"); Does not work !!",
+        "query": "DROP TABLE IF EXISTS \"{{ msg.topic }}\" CASCADE;\n\n-- lon/lat for geography (better than geometry for worldwide \n-- ST_Distance(geometry, geometry)\n-- ST_GeographyFromText(text)\n-- ST_Transform(geometry, srid)\n-- ST_X(point)\n-- POINT(lon lat)\n\n-- set manually geom = geography (POLYGON)\n-- remove manually customer NOT NULL\n\nCREATE TABLE \"{{ msg.topic }}\"  (\n\t\"weatherts\" TIMESTAMPTZ DEFAULT Now(),\n\t\"gatewayid\" integer,\n\t\"basestation\" varchar(50),\n\t\"clouds\" numeric,\n\t\"day_night\" character,\n\t\"dewpoint\" numeric,\n\t\"dt\" bigint,\n\t\"feelslike\" numeric,\n\t\"geom\" geography (POLYGON),\n\t\"hourly_1_rain\" numeric,\n\t\"hourly_1_snow\" numeric,\n\t\"humidity\" numeric,\n\t\"latitude\" numeric,\n\t\"localtime\" varchar(50),\n\t\"longitude\" numeric,\n\t\"pressure\" numeric,\n\t\"rain_1h\" numeric,\n\t\"snow_1h\" numeric,\n\t\"sunrise\" bigint,\n\t\"sunset\" bigint,\n\t\"temp\" numeric,\n\t\"timezone\" varchar(50),\n\t\"timezone_offset\" integer,\n\t\"uvindex\" numeric,\n\t\"visibility\" numeric,\n\t\"weather_description\" varchar(50),\n\t\"weather_id\" integer,\n\t\"weather_icon\" varchar(5),\n\t\"customer\" integer,\n\t\"weather_main\" varchar(50),\n\t\"winddirection\" numeric,\n\t\"windgust\" numeric,\n\t\"windspeed\" numeric,\n\tCONSTRAINT \"weather_data_table_pk\" PRIMARY KEY (\"weatherts\")\n) WITH (\n  OIDS=FALSE\n)\nTABLESPACE pg_default;\n\n-- SELECT create_hypertable (\"geom\", \"weatherts\"); Does not work !!",
         "postgresDB": "a775e4e2.db3998",
         "output": true,
         "outputs": 1,
@@ -6475,11 +6475,16 @@
             },
             {
                 "t": "else"
+            },
+            {
+                "t": "eq",
+                "v": "iSensPro access request",
+                "vt": "str"
             }
         ],
         "checkall": "false",
         "repair": true,
-        "outputs": 3,
+        "outputs": 4,
         "x": 300,
         "y": 200,
         "wires": [
@@ -6489,7 +6494,10 @@
             [
                 "c14f01d3.7ae2f"
             ],
-            []
+            [],
+            [
+                "c14f01d3.7ae2f"
+            ]
         ]
     },
     {
@@ -6518,7 +6526,7 @@
         "type": "e-mail",
         "z": "23aae268.c697d6",
         "server": "mail.isenspro.com",
-        "port": "465",
+        "port": "587",
         "secure": true,
         "tls": true,
         "name": "",
@@ -6988,7 +6996,7 @@
         "type": "e-mail",
         "z": "23aae268.c697d6",
         "server": "mail.isenspro.com",
-        "port": "465",
+        "port": "587",
         "secure": true,
         "tls": true,
         "name": "log@isenspro.com",
@@ -10202,7 +10210,7 @@
         "type": "postgrestor",
         "z": "3fb5a67.37c495a",
         "name": "sensor_config@localhost",
-        "query": "DROP TABLE IF EXISTS \"{{ msg.topic }}\" CASCADE;\n\nCREATE TABLE \"{{ msg.topic }}\" (\n\t\"ts\" timestamptz DEFAULT NOW(),\n\t\"localisation\" point,\n\t\"description\" varchar(50),\n\t\"customerid\" integer,\n\t\"masterid\" varchar(50),\n\t\"sensorid\" integer,\n\t\"timeslot\" integer,\n\t\"vhigh\" integer,\n\t\"vlow\" integer,\n\t\"meastime\" integer,\n\t\"measperiod\" integer,\n\t\"rcharge\" integer,\n\t\"accel\" integer,\n\tCONSTRAINT \"sensor_config_table_pk\" PRIMARY KEY (\"ts\")\n) WITH (\n  OIDS=FALSE\n)\nTABLESPACE pg_default;\n",
+        "query": "DROP TABLE IF EXISTS \"{{ msg.topic }}\" CASCADE;\n\n-- CREATE TABLE \"{{ msg.topic }}\" (\n--\t\"ts\" timestamptz DEFAULT NOW(),\n--\t\"localisation\" point,\n--\t\"description\" varchar(50),\n--\t\"customerid\" integer,\n--\t\"masterid\" varchar(50),\n--\t\"sensorid\" integer,\n--\t\"timeslot\" integer,\n--\t\"vhigh\" integer,\n--\t\"vlow\" integer,\n--\t\"meastime\" integer,\n--\t\"measperiod\" integer,\n--\t\"rcharge\" integer,\n--\t\"accel\" integer,\n--\tCONSTRAINT \"sensor_config_table_pk\" PRIMARY KEY (\"ts\")\n--) WITH (\n--  OIDS=FALSE\n--)\n--TABLESPACE pg_default;\n\n\n-- changed manually localisation to geography(POINT)\n-- changed manually ts to \"ts\" timestamptz DEFAULT NOW(),\n\nCREATE TABLE \"{{ msg.topic }}\" (\n\t\"localisation\" geography(POINT) NOT NULL,\n\t\"ts\" timestamptz DEFAULT NOW(),\n\t\"customerid\" integer,\n\t\"masterid\" character varying(50) NOT NULL,\n\t\"sensorid\" integer NOT NULL,\n\t\"description\" varchar(50),\n\t\"accel\" integer,\n\t\"measperiod\" smallint NOT NULL,\n\t\"meastime\" smallint NOT NULL,\n\t\"rcharge\" integer NOT NULL,\n\t\"timeslot\" smallint,\n\t\"vhigh\" smallint NOT NULL,\n\t\"vlow\" smallint NOT NULL,\n\t\"sensortag\" varchar(50),\n\tCONSTRAINT \"sensor_config_table_pk\" PRIMARY KEY (\"ts\",\"masterid\",\"sensorid\")\n) WITH (\n  OIDS=FALSE\n)\nTABLESPACE pg_default;\n",
         "postgresDB": "6733d493.9cca6c",
         "output": true,
         "outputs": 1,
