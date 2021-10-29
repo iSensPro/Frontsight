@@ -4580,9 +4580,9 @@
         "y": 200,
         "wires": [
             [
-                "fd3e1605.06a6c8",
                 "85c5b32e.0cb0d",
-                "f0c5ccd4.c96c98"
+                "f0c5ccd4.c96c98",
+                "a88d0c42.50a7e8"
             ]
         ]
     },
@@ -4606,7 +4606,8 @@
         "wires": [
             [
                 "fc5285e6.9378e8"
-            ]
+            ],
+            []
         ]
     },
     {
@@ -6525,8 +6526,8 @@
         "id": "fa83f601.a9576",
         "type": "e-mail",
         "z": "23aae268.c697d6",
-        "server": "mail.isenspro.com",
-        "port": "587",
+        "server": "smtp.isenspro.com",
+        "port": "465",
         "secure": true,
         "tls": true,
         "name": "",
@@ -6995,14 +6996,14 @@
         "id": "fd3e1605.06a6c8",
         "type": "e-mail",
         "z": "23aae268.c697d6",
-        "server": "mail.isenspro.com",
-        "port": "587",
+        "server": "smtp.isenspro.com",
+        "port": "465",
         "secure": true,
         "tls": true,
         "name": "log@isenspro.com",
         "dname": "log email",
-        "x": 120,
-        "y": 140,
+        "x": 260,
+        "y": 300,
         "wires": []
     },
     {
@@ -19097,5 +19098,24 @@
         "x": 2100,
         "y": 4580,
         "wires": []
+    },
+    {
+        "id": "a88d0c42.50a7e8",
+        "type": "function",
+        "z": "23aae268.c697d6",
+        "name": "",
+        "func": "msg.payload =   'the iSensPro gateway access link has been requested by ' + msg.header.from.value[0].address + '\\n';\nmsg.to = 'log.isenspro.com';\nmsg.topic = 'iSensPro access request received from ' + msg.header.from.value[0].address;\nmsg.from = 'cust1.gw1@isenspro.com';\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 110,
+        "y": 300,
+        "wires": [
+            [
+                "fd3e1605.06a6c8"
+            ]
+        ]
     }
 ]
