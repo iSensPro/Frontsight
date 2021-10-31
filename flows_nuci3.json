@@ -31,7 +31,7 @@
         "id": "d6ad709e.7c639",
         "type": "tab",
         "label": "config setup",
-        "disabled": false,
+        "disabled": true,
         "info": ""
     },
     {
@@ -74,27 +74,6 @@
         "type": "tab",
         "label": "Etable Test",
         "disabled": true,
-        "info": ""
-    },
-    {
-        "id": "6a9ab149.4f5198",
-        "type": "tab",
-        "label": "Flow 1",
-        "disabled": false,
-        "info": ""
-    },
-    {
-        "id": "e73b0862.e9edb",
-        "type": "tab",
-        "label": "Flow 2",
-        "disabled": false,
-        "info": ""
-    },
-    {
-        "id": "8ab54f8b.ad0c68",
-        "type": "tab",
-        "label": "Flow 3",
-        "disabled": false,
         "info": ""
     },
     {
