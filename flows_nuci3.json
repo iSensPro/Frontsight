@@ -19125,5 +19125,34 @@
                 "e5adbf58.a31f4"
             ]
         ]
+    },
+    {
+        "id": "bb5a258c.b336e",
+        "type": "inject",
+        "z": "3fb5a67.37c495a",
+        "name": "init",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "en",
+        "payloadType": "str",
+        "x": 90,
+        "y": 800,
+        "wires": [
+            [
+                "be96bd9d.aac458",
+                "7b1ad4f7.ec60a4",
+                "f15fe6d.1f14818",
+                "ca33514a.8226d",
+                "6c8a8a7b.644c6c"
+            ]
+        ]
     }
 ]
