@@ -2207,8 +2207,8 @@
         "z": "3fb5a67.37c495a",
         "name": "Receive data from Masters & write to Timeseries database",
         "info": "",
-        "x": 270,
-        "y": 760,
+        "x": 250,
+        "y": 720,
         "wires": []
     },
     {
@@ -6522,7 +6522,7 @@
         "name": "",
         "serial": "dc726705.a597c8",
         "x": 110,
-        "y": 880,
+        "y": 860,
         "wires": [
             [
                 "be96bd9d.aac458"
@@ -10672,7 +10672,7 @@
         "finalize": "",
         "libs": [],
         "x": 580,
-        "y": 880,
+        "y": 860,
         "wires": [
             [
                 "b9758b69.0dc918"
@@ -10835,7 +10835,7 @@
         "name": "",
         "serial": "50f22906.5ea4b",
         "x": 110,
-        "y": 1120,
+        "y": 1140,
         "wires": [
             [
                 "d02be727.9a2718"
@@ -10854,7 +10854,7 @@
         "finalize": "",
         "libs": [],
         "x": 580,
-        "y": 1120,
+        "y": 1140,
         "wires": [
             [
                 "595912c7.3a958c"
@@ -10917,7 +10917,7 @@
         "randomUnits": "seconds",
         "drop": false,
         "x": 760,
-        "y": 1120,
+        "y": 1140,
         "wires": [
             [
                 "b9758b69.0dc918"
@@ -11179,7 +11179,7 @@
         "finalize": "",
         "libs": [],
         "x": 440,
-        "y": 880,
+        "y": 860,
         "wires": [
             [
                 "71cb0518.cbaef4"
@@ -11217,7 +11217,7 @@
         "finalize": "",
         "libs": [],
         "x": 440,
-        "y": 1120,
+        "y": 1140,
         "wires": [
             [
                 "2ca89b40.76cb24"
@@ -11230,7 +11230,7 @@
         "z": "3fb5a67.37c495a",
         "name": "",
         "x": 270,
-        "y": 880,
+        "y": 860,
         "wires": [
             [
                 "311261ad.c6341e"
@@ -11256,7 +11256,7 @@
         "z": "3fb5a67.37c495a",
         "name": "",
         "x": 270,
-        "y": 1120,
+        "y": 1140,
         "wires": [
             [
                 "362f57a3.ea9ca"
@@ -11300,7 +11300,7 @@
             "694ff596.7d1114"
         ],
         "x": 100,
-        "y": 840,
+        "y": 820,
         "wires": [
             [
                 "abba1082.46158"
@@ -11319,7 +11319,7 @@
         "finalize": "",
         "libs": [],
         "x": 270,
-        "y": 840,
+        "y": 820,
         "wires": [
             [
                 "f4bf6a54.619718",
@@ -11353,7 +11353,7 @@
             "9120525e.fd0aa"
         ],
         "x": 100,
-        "y": 1080,
+        "y": 1100,
         "wires": [
             [
                 "f15fe6d.1f14818"
@@ -11376,7 +11376,6 @@
         "wires": [
             [
                 "88ce6c66.746dc",
-                "2c7813dc.062fd4",
                 "9ac2a826.57c5a"
             ]
         ]
@@ -11393,11 +11392,10 @@
         "finalize": "",
         "libs": [],
         "x": 270,
-        "y": 1080,
+        "y": 1100,
         "wires": [
             [
                 "a02d56b5.4d928",
-                "a8b3fefe.5ae648",
                 "8519f18c.a9dc68"
             ]
         ]
@@ -13402,8 +13400,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 470,
-        "y": 800,
+        "x": 490,
+        "y": 780,
         "wires": [
             [
                 "638becee.ac7084"
@@ -13457,7 +13455,7 @@
         "to": "",
         "reg": false,
         "x": 470,
-        "y": 1040,
+        "y": 1060,
         "wires": [
             [
                 "3a6f0db1.7824d2"
@@ -17458,7 +17456,8 @@
             "491d16d6.09384",
             "3a6f0db1.7824d2",
             "ca1a772c.7df75",
-            "7d801dee.b3d88c"
+            "7d801dee.b3d88c",
+            "f5b69bdc.e7a898"
         ],
         "x": 95,
         "y": 680,
@@ -17477,8 +17476,8 @@
             "20ce21c7.87540e",
             "fbe3beb2.d62668"
         ],
-        "x": 595,
-        "y": 800,
+        "x": 615,
+        "y": 780,
         "wires": []
     },
     {
@@ -17504,7 +17503,7 @@
             "fbe3beb2.d62668"
         ],
         "x": 595,
-        "y": 1040,
+        "y": 1060,
         "wires": []
     },
     {
@@ -17517,7 +17516,8 @@
             "491d16d6.09384",
             "3a6f0db1.7824d2",
             "ca1a772c.7df75",
-            "7d801dee.b3d88c"
+            "7d801dee.b3d88c",
+            "f5b69bdc.e7a898"
         ],
         "x": 75,
         "y": 3320,
@@ -17788,8 +17788,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 270,
-        "y": 800,
+        "x": 550,
+        "y": 740,
         "wires": []
     },
     {
@@ -18117,40 +18117,6 @@
         "statusType": "auto",
         "x": 1890,
         "y": 2200,
-        "wires": []
-    },
-    {
-        "id": "2c7813dc.062fd4",
-        "type": "debug",
-        "z": "3fb5a67.37c495a",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 270,
-        "y": 920,
-        "wires": []
-    },
-    {
-        "id": "a8b3fefe.5ae648",
-        "type": "debug",
-        "z": "3fb5a67.37c495a",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 270,
-        "y": 1040,
         "wires": []
     },
     {
@@ -18555,7 +18521,7 @@
         "name": "",
         "serial": "111f74ae.8cf32b",
         "x": 110,
-        "y": 1240,
+        "y": 1280,
         "wires": [
             [
                 "679d208e.8d34d"
@@ -18574,7 +18540,7 @@
         "finalize": "",
         "libs": [],
         "x": 580,
-        "y": 1240,
+        "y": 1280,
         "wires": [
             [
                 "2e6122c0.0b8756"
@@ -18597,7 +18563,7 @@
         "randomUnits": "seconds",
         "drop": false,
         "x": 760,
-        "y": 1240,
+        "y": 1280,
         "wires": [
             [
                 "b9758b69.0dc918"
@@ -18616,7 +18582,7 @@
         "finalize": "",
         "libs": [],
         "x": 440,
-        "y": 1240,
+        "y": 1280,
         "wires": [
             [
                 "77aeee85.8606e8"
@@ -18629,7 +18595,7 @@
         "z": "3fb5a67.37c495a",
         "name": "",
         "x": 270,
-        "y": 1240,
+        "y": 1280,
         "wires": [
             [
                 "f4689629.0ed83"
@@ -18645,7 +18611,7 @@
             "ec100ada.e7ecc"
         ],
         "x": 100,
-        "y": 1200,
+        "y": 1240,
         "wires": [
             [
                 "ca33514a.8226d"
@@ -18664,12 +18630,11 @@
         "finalize": "",
         "libs": [],
         "x": 270,
-        "y": 1200,
+        "y": 1240,
         "wires": [
             [
                 "e8c9a57f.fb6808",
-                "f63b059c.97db78",
-                "f9e83ec1.0a98f8"
+                "f63b059c.97db78"
             ]
         ]
     },
@@ -18693,7 +18658,7 @@
         "to": "",
         "reg": false,
         "x": 470,
-        "y": 1160,
+        "y": 1200,
         "wires": [
             [
                 "ca1a772c.7df75"
@@ -18710,7 +18675,7 @@
             "fbe3beb2.d62668"
         ],
         "x": 595,
-        "y": 1160,
+        "y": 1200,
         "wires": []
     },
     {
@@ -18720,7 +18685,7 @@
         "name": "",
         "serial": "7fe74a3a.77476c",
         "x": 110,
-        "y": 1360,
+        "y": 1420,
         "wires": [
             [
                 "6d2b6881.4818b"
@@ -18739,7 +18704,7 @@
         "finalize": "",
         "libs": [],
         "x": 580,
-        "y": 1360,
+        "y": 1420,
         "wires": [
             [
                 "74a68cce.9df4cc"
@@ -18762,7 +18727,7 @@
         "randomUnits": "seconds",
         "drop": false,
         "x": 760,
-        "y": 1360,
+        "y": 1420,
         "wires": [
             [
                 "b9758b69.0dc918"
@@ -18781,7 +18746,7 @@
         "finalize": "",
         "libs": [],
         "x": 440,
-        "y": 1360,
+        "y": 1420,
         "wires": [
             [
                 "ed4f652.fddb398"
@@ -18794,7 +18759,7 @@
         "z": "3fb5a67.37c495a",
         "name": "",
         "x": 270,
-        "y": 1360,
+        "y": 1420,
         "wires": [
             [
                 "4ceac008.bb9638"
@@ -18810,7 +18775,7 @@
             "dbc897bc.f9fdd8"
         ],
         "x": 100,
-        "y": 1320,
+        "y": 1380,
         "wires": [
             [
                 "6c8a8a7b.644c6c"
@@ -18829,11 +18794,10 @@
         "finalize": "",
         "libs": [],
         "x": 270,
-        "y": 1320,
+        "y": 1380,
         "wires": [
             [
                 "ad15d028.fb8b9",
-                "d72161d3.7f07e8",
                 "44e75abf.a84a8c"
             ]
         ]
@@ -18858,7 +18822,7 @@
         "to": "",
         "reg": false,
         "x": 470,
-        "y": 1280,
+        "y": 1340,
         "wires": [
             [
                 "7d801dee.b3d88c"
@@ -18875,7 +18839,7 @@
             "fbe3beb2.d62668"
         ],
         "x": 595,
-        "y": 1280,
+        "y": 1340,
         "wires": []
     },
     {
@@ -18959,7 +18923,7 @@
         "output": true,
         "outputs": 1,
         "x": 510,
-        "y": 840,
+        "y": 820,
         "wires": [
             []
         ]
@@ -18989,7 +18953,7 @@
         "output": true,
         "outputs": 1,
         "x": 490,
-        "y": 1080,
+        "y": 1100,
         "wires": [
             []
         ]
@@ -19004,44 +18968,10 @@
         "output": true,
         "outputs": 1,
         "x": 490,
-        "y": 1200,
+        "y": 1240,
         "wires": [
             []
         ]
-    },
-    {
-        "id": "f9e83ec1.0a98f8",
-        "type": "debug",
-        "z": "3fb5a67.37c495a",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 270,
-        "y": 1160,
-        "wires": []
-    },
-    {
-        "id": "d72161d3.7f07e8",
-        "type": "debug",
-        "z": "3fb5a67.37c495a",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 270,
-        "y": 1280,
-        "wires": []
     },
     {
         "id": "44e75abf.a84a8c",
@@ -19053,7 +18983,7 @@
         "output": true,
         "outputs": 1,
         "x": 490,
-        "y": 1320,
+        "y": 1380,
         "wires": [
             []
         ]
@@ -19143,15 +19073,206 @@
         "topic": "",
         "payload": "en",
         "payloadType": "str",
-        "x": 90,
-        "y": 800,
+        "x": 110,
+        "y": 780,
         "wires": [
             [
-                "be96bd9d.aac458",
-                "7b1ad4f7.ec60a4",
-                "f15fe6d.1f14818",
-                "ca33514a.8226d",
-                "6c8a8a7b.644c6c"
+                "9e81b1a4.3fea"
+            ]
+        ]
+    },
+    {
+        "id": "b55088f4.c80fe",
+        "type": "inject",
+        "z": "3fb5a67.37c495a",
+        "name": "init",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "en",
+        "payloadType": "str",
+        "x": 110,
+        "y": 920,
+        "wires": [
+            [
+                "f1679aef.713db"
+            ]
+        ]
+    },
+    {
+        "id": "ab63cf44.6d7c68",
+        "type": "inject",
+        "z": "3fb5a67.37c495a",
+        "name": "init",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "en",
+        "payloadType": "str",
+        "x": 110,
+        "y": 1060,
+        "wires": [
+            [
+                "d31e8c57.45aca8"
+            ]
+        ]
+    },
+    {
+        "id": "f75f1c5f.43ab68",
+        "type": "inject",
+        "z": "3fb5a67.37c495a",
+        "name": "init",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "en",
+        "payloadType": "str",
+        "x": 110,
+        "y": 1200,
+        "wires": [
+            [
+                "cf8393db.a97cf8"
+            ]
+        ]
+    },
+    {
+        "id": "931a359a.913018",
+        "type": "inject",
+        "z": "3fb5a67.37c495a",
+        "name": "init",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "en",
+        "payloadType": "str",
+        "x": 110,
+        "y": 1340,
+        "wires": [
+            [
+                "d7d6d11a.3a97c"
+            ]
+        ]
+    },
+    {
+        "id": "d7d6d11a.3a97c",
+        "type": "function",
+        "z": "3fb5a67.37c495a",
+        "name": "default config",
+        "func": "// get status\n\n    msg.sensorid = 0;\n    msg.masterid = '/dev/ttyACM4';\n    msg.mperiod = 5;\n    msg.rcharge = 364705;\n    msg.vhigh = 1034;\n    msg.vlow = 512;\n    msg.mwindow = 1;\n    msg.description = 'default config Master 5';\n//    msg.payload = 'connected';\n // for global variable setting\n    msg.payload = msg.masterid;\n\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 270,
+        "y": 1340,
+        "wires": [
+            [
+                "44e75abf.a84a8c"
+            ]
+        ]
+    },
+    {
+        "id": "cf8393db.a97cf8",
+        "type": "function",
+        "z": "3fb5a67.37c495a",
+        "name": "default config",
+        "func": "// get status\n\n    msg.sensorid = 0;\n    msg.masterid = '/dev/ttyACM3';\n    msg.mperiod = 5;\n    msg.rcharge = 364705;\n    msg.vhigh = 1034;\n    msg.vlow = 512;\n    msg.mwindow = 1;\n    msg.description = 'default config Master 4';\n//    msg.payload = 'connected';\n // for global variable setting\n    msg.payload = msg.masterid;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 270,
+        "y": 1200,
+        "wires": [
+            [
+                "f63b059c.97db78"
+            ]
+        ]
+    },
+    {
+        "id": "d31e8c57.45aca8",
+        "type": "function",
+        "z": "3fb5a67.37c495a",
+        "name": "default config",
+        "func": "// get status\n\n    msg.sensorid = 0;\n    msg.masterid = '/dev/ttyACM2';\n    msg.mperiod = 5;\n    msg.rcharge = 364705;\n    msg.vhigh = 1034;\n    msg.vlow = 512;\n    msg.mwindow = 1;\n    msg.description = 'default config Master 3';\n//    msg.payload = 'connected';\n // for global variable setting\n    msg.payload = msg.masterid;\n\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 270,
+        "y": 1060,
+        "wires": [
+            [
+                "8519f18c.a9dc68"
+            ]
+        ]
+    },
+    {
+        "id": "f1679aef.713db",
+        "type": "function",
+        "z": "3fb5a67.37c495a",
+        "name": "default config",
+        "func": "// get status\n// resets to default values when disconnect/connect or when redeployed\n\n    msg.sensorid = 0;\n    msg.masterid = '/dev/ttyACM1';\n    msg.mperiod = 5;\n    msg.rcharge = 364705;\n    msg.vhigh = 1034;\n    msg.vlow = 512;\n    msg.mwindow = 1;\n    msg.description = 'default config Master 2';\n // for global variable setting\n    msg.payload = msg.masterid;\n\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 270,
+        "y": 920,
+        "wires": [
+            [
+                "9ac2a826.57c5a"
+            ]
+        ]
+    },
+    {
+        "id": "9e81b1a4.3fea",
+        "type": "function",
+        "z": "3fb5a67.37c495a",
+        "name": "default config",
+        "func": "// get status\n\n    msg.sensorid = 0;\n    msg.masterid = '/dev/ttyACM0';\n    msg.mperiod = 5;\n    msg.rcharge = 300000;\n    msg.vhigh = 1034;\n    msg.vlow = 512;\n    msg.mwindow = 1;\n    msg.description = 'default config Master 1';\n    // for global variable setting\n    msg.payload = msg.masterid;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 270,
+        "y": 780,
+        "wires": [
+            [
+                "d84a1146.0d8108"
             ]
         ]
     }
