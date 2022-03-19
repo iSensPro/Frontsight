@@ -12407,16 +12407,6 @@
         ]
     },
     {
-        "id": "fd7c54f.cd630a8",
-        "type": "comment",
-        "z": "3fb5a67.37c495a",
-        "name": "Language choice M1",
-        "info": "",
-        "x": 630,
-        "y": 480,
-        "wires": []
-    },
-    {
         "id": "42cca9bb.83e3",
         "type": "comment",
         "z": "3fb5a67.37c495a",
@@ -18864,7 +18854,7 @@
         "type": "debug",
         "z": "3fb5a67.37c495a",
         "name": "",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -18881,7 +18871,7 @@
         "type": "debug",
         "z": "3fb5a67.37c495a",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -19275,5 +19265,25 @@
                 "d84a1146.0d8108"
             ]
         ]
+    },
+    {
+        "id": "38e12571.aa757a",
+        "type": "comment",
+        "z": "3fb5a67.37c495a",
+        "name": "Initial language choice M2",
+        "info": "",
+        "x": 130,
+        "y": 3160,
+        "wires": []
+    },
+    {
+        "id": "a25ead7b.09e108",
+        "type": "comment",
+        "z": "3fb5a67.37c495a",
+        "name": "Initial language choice M1",
+        "info": "",
+        "x": 110,
+        "y": 520,
+        "wires": []
     }
 ]
